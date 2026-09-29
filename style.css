@@ -880,8 +880,8 @@ details[open] .accordion-content {
 @media (min-width: 1024px) {
   .product-layout-grid {
     display: grid;
-    grid-template-columns: 1.2fr, 1fr; 
-    align-items: start; 
+    grid-template-columns: 1.2fr, 1fr;
+    align-items: start;
   }
 
   /* 1. Coluna do Carrossel: Fica fixa no ecrã ao fazer scroll */
