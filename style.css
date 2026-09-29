@@ -332,7 +332,6 @@ main,
   cursor: pointer;
   font-size: 18px;
   position: relative;
-  margin-bottom: 40px;
   transition:
     transform 0.1s,
     background-color 0.2s;
@@ -372,7 +371,6 @@ main,
   cursor: pointer;
   font-size: 15px;
   position: relative;
-  margin-bottom: 40px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition:
     transform 0.1s,
