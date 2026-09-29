@@ -12,11 +12,25 @@
   font-style: italic;
   font-display: swap;
 }
+@font-face {
+  font-family: "Merrie";
+  src: url("merriweather-bold-webfont.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mont";
+  src: url("Montserrat-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 html,
 body {
-  background-color: #d5cfc33e;
-  color: #333333;
+  background-color: #e0d4b956;
+  color: #3d2d2d;
   width: 100%;
   height: auto;
   margin: 0;
@@ -42,12 +56,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 16px;
+  padding: 20px;
 }
-@media (min-width: 440px) {
+@media (min-width: 1200px) {
   .header {
-    padding: 5px 5px;
-    width: 1200px;
+    padding: 0 60px;
   }
 }
 
@@ -55,8 +68,7 @@ main,
 .container {
   width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -76,11 +88,61 @@ main,
   width: 100%;
   padding: 0px 8vw 0px 8vw;
 }
+
 .nav-menu {
   display: flex;
   gap: 32px;
+  box-sizing: border-box;
 }
+.menu-hamburguer {
+  display: none;
+  background: #ffffff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+@media (max-width: 1024px) {
+  .menu-hamburguer {
+    display: flex !important;
+  }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #e0d4b956;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 10000;
+    display: flex !important;
 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    pointer-events: none; /* Impede cliques quando fechado */
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      visibility 0.35s ease;
+  }
+  .nav-menu.ativo {
+    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
 .nav-menu a {
   text-decoration: none;
   color: #4a4a4a;
@@ -91,12 +153,10 @@ main,
   gap: 4px;
   transition: color 0.2s;
 }
-
 .nav-menu a:hover,
 .nav-menu a.active {
   color: #000000;
 }
-
 .header-actions {
   display: flex;
   align-items: center;
@@ -120,7 +180,7 @@ main,
   padding: 8px 10px 8px 16px;
   font-size: 14px;
   outline: none;
-  width: 180px; /* Largura fixa segura para aparecer */
+  width: 120px; /* Largura fixa segura para aparecer */
   height: 38px; /* Altura explícita para evitar colapso */
   color: #666;
 }
@@ -200,13 +260,6 @@ main,
   }
 }
 
-.thumbnails-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
 .nav-arrow {
   background: none;
   border: none;
@@ -216,61 +269,6 @@ main,
   padding: 4px;
 }
 
-.thumbnails {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.thumb {
-  width: 70px;
-  height: 70px;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: #e8ded2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid transparent;
-  transition:
-    border-color 0.2s,
-    opacity 0.2s;
-  opacity: 0.7;
-}
-
-.thumb:hover,
-.thumb.active {
-  border-color: #a8937d;
-  opacity: 1;
-}
-
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  mix-blend-mode: multiply;
-}
-
-.main-image-container {
-  position: relative;
-  width: 420px;
-  height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-image {
-  position: relative;
-  z-index: 2;
-  max-height: 460px;
-  object-fit: contain;
-  transform: rotate(-12deg);
-  filter: drop-shadow(15px 15px 25px rgba(0, 0, 0, 0.25));
-  transition: opacity 0.2s ease-in-out;
-}
-
 /* Detalhes do Produto */
 .product-info {
   display: flex;
@@ -278,26 +276,31 @@ main,
   gap: 16px;
 }
 
-.product-header .subtitle {
-  font-size: 22px;
-  font-weight: 600;
-  color: #2b2b2b;
-  display: block;
-  line-height: 1.2;
-}
-
-.product-header .title {
-  font-size: 34px;
+/* TEXTOS */
+.product-header .subtitulo {
+  font-family: "Merrie", serif;
   font-weight: 700;
-  color: #111111;
+  display: block;
+  line-height: 1.5;
+  -webkit-text-stroke: 1px;
+}
+.product-header .titulo {
+  font-family: "Merrie", serif;
+  font-weight: 700;
   line-height: 1.1;
   margin-bottom: 6px;
+  -webkit-text-stroke: 1.5px;
 }
-
-.product-header .meta {
+.product-header .informacao {
+  font-weight: 700;
   font-size: 13px;
-  color: #888888;
   font-weight: 600;
+}
+.preco {
+  font-size: 30px;
+  font-family: "Mont", serif;
+  font-weight: 700;
+  -webkit-text-stroke: 2px;
 }
 .quantidade-carrinho {
   display: flex;
@@ -305,12 +308,6 @@ main,
   justify-content: space-between;
   margin-top: 4px;
 }
-.price {
-  font-size: 38px;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
 .quantity-selector {
   display: flex;
   align-items: center;
@@ -325,7 +322,6 @@ main,
   justify-content: center;
   cursor: pointer;
   font-size: 18px;
-  color: #333333;
   position: relative;
   transition:
     transform 0.1s,
@@ -340,7 +336,6 @@ main,
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  color: #333333;
   padding: 0 4px;
   user-select: none;
 }
@@ -348,20 +343,6 @@ main,
 .qty-value {
   font-weight: 700;
   text-align: center;
-}
-
-/* Avaliações e Ações */
-.rating-and-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.stars {
-  display: flex;
-  gap: 4px;
-  color: #111111;
-  font-size: 18px;
 }
 
 .action-buttons {
@@ -379,8 +360,7 @@ main,
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 18px;
-  color: #333333;
+  font-size: 15px;
   position: relative;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition:
@@ -407,8 +387,7 @@ main,
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 18px;
-  color: #333333;
+  font-size: 15px;
   position: relative;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition:
@@ -424,82 +403,24 @@ main,
   margin-top: 3px;
 }
 
-.plus-badge {
-  font-size: 10px;
-  font-weight: bold;
-  position: absolute;
-  top: 10px;
-  right: 8px;
-}
-
 /* Botão WhatsApp */
 .whatsapp-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #000000;
+  background-color: #3d2d2d;
   color: #ffffff;
   text-decoration: none;
   padding: 16px 24px;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.5px;
   margin-top: 12px;
   transition: background-color 0.2s;
 }
-
 .whatsapp-btn:hover {
   background-color: #222222;
-}
-
-.whatsapp-btn i {
-  font-size: 18px;
-}
-
-/* Responsividade */
-@media (max-width: 868px) {
-  .header {
-    padding: 16px 20px;
-  }
-
-  .nav-menu,
-  .search-bar,
-  .header-actions .icon-btn:first-child {
-    display: none;
-  }
-
-  .thumbnails-wrapper {
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .thumbnails {
-    flex-direction: row;
-  }
-
-  .nav-arrow.up-arrow {
-    transform: rotate(-90deg);
-  }
-
-  .nav-arrow.down-arrow {
-    transform: rotate(-90deg);
-  }
-
-  .main-image-container {
-    width: 100%;
-    height: 300px;
-  }
-
-  .image-circle-bg {
-    width: 260px;
-    height: 260px;
-  }
-
-  .main-image {
-    max-height: 320px;
-  }
 }
 
 .carousel-container {
@@ -603,7 +524,7 @@ main,
 .carousel-progress-thumb {
   width: 10px;
   height: 100%;
-  background-color: #000000;
+  background-color: #3d2d2d;
   border-radius: 2px;
   transition: transform 0.1s ease-in-out;
 }
@@ -617,31 +538,6 @@ main,
   width: 100%;
   height: auto;
   display: block;
-}
-
-.phone-mockup {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.phone-video {
-  position: absolute;
-  left: 5%;
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  border-radius: 50px;
-}
-.phone-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
 }
 
 .accordion-list {
@@ -667,7 +563,6 @@ main,
   list-style: none;
   font-weight: 700;
   font-size: 14px;
-  color: #222222;
   user-select: none;
   box-sizing: border-box;
 }
@@ -675,16 +570,18 @@ main,
   display: none;
 }
 .accordion-title {
+  font-size: 15px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 .accordion-title i {
-  font-size: 18px;
+  font-size: 20px;
 }
 .accordion-arrow {
   transition: transform 0.3s ease;
-  font-size: 16px;
+  font-size: 20px;
 }
 .accordion-item[open] .accordion-arrow {
   transform: rotate(180deg);
@@ -698,9 +595,10 @@ main,
     opacity 0.25s ease-in-out,
     padding 0.35s ease-in-out;
   padding: 0 16px;
-  font-size: 12px;
+  font-family: "Inter", serif;
+  font-size: 15px;
   line-height: 1.6;
-  color: #666666;
+  color: #3d2d2dbc;
   box-sizing: border-box;
 }
 details[open] .accordion-content {
@@ -751,7 +649,6 @@ details[open] .accordion-content {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #333;
 }
 
 .search-results-list {
@@ -765,7 +662,6 @@ details[open] .accordion-content {
   padding: 10px;
   border-bottom: 1px solid #eee;
   text-decoration: none;
-  color: #333;
   display: block;
   border-radius: 6px;
   transition: background 0.2s;
@@ -935,7 +831,7 @@ details[open] .accordion-content {
 /* Botão de avançar para a página de Checkout */
 .checkout-link-btn {
   display: block;
-  background-color: #25d366;
+  background-color: #3d2d2d;
   color: white;
   text-align: center;
   padding: 12px;
@@ -948,4 +844,51 @@ details[open] .accordion-content {
 
 .checkout-link-btn:hover {
   background-color: #1ebe5d;
+}
+
+/* =================================================_
+   LAYOUT DE GRID (2 COLUNAS)
+   ================================================= */
+
+/* 1. Mobile (Estado padrão): empilhado em coluna única */
+.product-layout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.product-column-gallery {
+  width: 100%;
+  position: sticky;
+}
+.product-column-accordion {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .product-column-gallery {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .product-layout-grid {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .product-layout-grid {
+    display: grid;
+    grid-template-columns: 1.2fr, 1fr; /* Divide o ecrã em 2 colunas */
+    align-items: start; /* Obrigatório para o sticky funcionar */
+  }
+
+  /* 1. Coluna do Carrossel: Fica fixa no ecrã ao fazer scroll */
+  .product-column-gallery {
+    width: clamp(300px, 50vw, 800px);
+  }
+  .product-column-accordion {
+    width: 100%;
+  }
 }
