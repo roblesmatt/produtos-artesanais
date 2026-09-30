@@ -29,8 +29,7 @@
 
 html,
 body {
-  background-color: #e0d4b956;
-  color: #3d2d2d;
+  background-color: #e0d4b9;
   width: 100%;
   height: auto;
   margin: 0;
@@ -42,6 +41,11 @@ body {
 * {
   margin: 0;
   padding: 0;
+  background-color: #e0d4b9;
+  color: #3d2d2d;
+  font-family: "Merrie" serif;
+  font-weight: 700;
+  -webkit-text-stroke: 0.5px;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -57,6 +61,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  border: 2px solid #3d2d2d;
 }
 @media (min-width: 1200px) {
   .header {
@@ -83,29 +88,25 @@ main,
     margin-left: 24px; /* Zera no Desktop */
   }
 }
-
-.texto {
-  width: 100%;
-  padding: 0px 8vw 0px 8vw;
+.container-border {
+  border: 2px solid #3d2d2d;
 }
-
 .nav-menu {
   display: flex;
   gap: 32px;
   box-sizing: border-box;
+  border: 2px solid #3d2d2d;
 }
 .menu-hamburguer {
   display: none;
-  background: #ffffff;
-  border: none;
   width: 38px;
   height: 38px;
-  border-radius: 8px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  border: 2px solid #3d2d2d;
 }
 @media (max-width: 1024px) {
   .menu-hamburguer {
@@ -167,6 +168,7 @@ main,
   position: relative;
   display: flex !important;
   align-items: center;
+  border: 2px solid #3d2d2d;
 }
 @media (min-width: 768px) {
   .search-bar {
@@ -174,33 +176,29 @@ main,
   }
 }
 .search-bar input {
-  background-color: #ffffff;
   border: none;
-  border-radius: 20px;
   padding: 8px 10px 8px 16px;
   font-size: 14px;
   outline: none;
   width: 120px; /* Largura fixa segura para aparecer */
   height: 38px; /* Altura explícita para evitar colapso */
-  color: #666;
+  color: #3d2d2d;
 }
 .search-bar input::placeholder {
-  color: #cccccc;
+  color: #3d2d2d;
 }
 .search-bar i {
   position: absolute;
   right: 12px;
-  color: #888888;
+  color: #3d2d2d;
   font-size: 16px;
   pointer-events: none;
 }
 
 .icon-btn {
-  background: #ffffff;
   border: none;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -273,7 +271,6 @@ main,
 .product-info {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 /* TEXTOS */
@@ -284,15 +281,14 @@ main,
   display: block;
   line-height: 1.5;
   -webkit-text-stroke: 1px;
+  border: 2px solid #3d2d2d;
 }
 .product-header .titulo {
   font-family: "Merrie", serif;
   font-size: clamp(40px, 10vw, 50px);
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 6px;
+  margin: 20px;
   -webkit-text-stroke: 1.5px;
-  margin-bottom: 20px;
 }
 .product-header .informacao {
   font-weight: 700;
@@ -302,36 +298,36 @@ main,
 .preco-container {
   display: flex;
   align-items: baseline; /* Alinha o texto do preço com a base da unidade */
-  gap: 20px; /* Espaçamento elegante entre o preço e o subtítulo */
+  gap: 20px; /* Espaçamento ele gante entre o preço e o subtítulo */
+  border: 2px solid #3d2d2d;
 }
 .preco {
   font-size: 40px;
   font-family: "Mont", serif;
   font-weight: 700;
   -webkit-text-stroke: 4px;
-  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-left: 10px;
 }
 .quantidade-carrinho {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4px;
 }
 .quantity-selector {
   display: flex;
   align-items: center;
-  background-color: #ffffff;
-  border-radius: 20px;
   padding: 4px 12px;
-  gap: 16px;
+  gap: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   width: 100px;
   height: 38px;
-  border-radius: 8px;
   justify-content: center;
   cursor: pointer;
   font-size: 18px;
   position: relative;
+  border: 2px solid #3d2d2d;
+
   transition:
     transform 0.1s,
     background-color 0.2s;
@@ -345,7 +341,6 @@ main,
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  padding: 0 4px;
   user-select: none;
 }
 
@@ -360,17 +355,16 @@ main,
 }
 
 .botao-carrinho {
-  background-color: #ffffff;
   border: none;
   width: 200px;
   height: 38px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 15px;
   position: relative;
+  border: 2px solid #3d2d2d;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition:
     transform 0.1s,
@@ -387,17 +381,17 @@ main,
   margin-top: 3px;
 }
 .botao-icone {
-  background-color: #ffffff;
   border: none;
   width: 50px;
   height: 38px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 15px;
   position: relative;
+  border: 2px solid #3d2d2d;
+
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition:
     transform 0.1s,
@@ -417,16 +411,14 @@ main,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #3d2d2d;
-  color: #ffffff;
   text-decoration: none;
   padding: 16px 24px;
-  border-radius: 10px;
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.5px;
-  margin-top: 40px;
   margin-bottom: 40px;
+  border: 2px solid #3d2d2d;
+
   transition: background-color 0.2s;
 }
 .whatsapp-btn:hover {
@@ -444,6 +436,7 @@ main,
   margin-bottom: 50px;
   box-sizing: border-box;
   overflow: visible;
+  border: 2px solid #3d2d2d;
 }
 .carousel-track {
   display: flex;
@@ -553,16 +546,15 @@ main,
 .accordion-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: 100%;
   box-sizing: border-box;
 }
 .accordion-item {
   background: #ffffff;
-  border-radius: 12px;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
+  border: 2px solid #3d2d2d;
 }
 .accordion-header {
   padding: 14px 16px;
