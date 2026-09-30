@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Lista com todos os produtos da loja (o catálogo completo)
   const produtosDisponiveis = [
-    { nome: "Perfume Artesanal de Capim Limão", preco: "R$ 79,90", imagem: "sua-imagem.jpg", link: "produto-capim.html" },
+    { nome: "Perfume Artesanal de Capim Limão", preco: "R$ 79,90", imagem: "produtos/thairo-1x1.svg", link: "index.html" },
     { nome: "Sabonete Artesanal de Fubá", preco: "R$ 25,00", imagem: "sua-imagem2.jpg", link: "#" },
     { nome: "Esfoliante Corporal de Mel", preco: "R$ 45,00", imagem: "sua-imagem3.jpg", link: "#" },
     { nome: "Perfume Botânico Lavanda", preco: "R$ 89,90", imagem: "sua-imagem4.jpg", link: "#" }

@@ -105,8 +105,8 @@ main,
 .menu-hamburguer {
   background-color: #e0d4b9;
   display: none;
-  width: 38px;
-  height: 38px;
+  width: 25px;
+  height: auto;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -128,8 +128,6 @@ main,
     flex-direction: column;
     padding: 20px;
     gap: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     z-index: 10000;
     display: flex !important;
 
@@ -378,7 +376,6 @@ main,
   border-radius: 20px;
   background-color: #e0d4b9;
   border: 2px solid #3d2d2d;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition:
     transform 0.1s,
     background-color 0.2s;
@@ -387,16 +384,9 @@ main,
   transform: scale(0.95);
 }
 
-.icone-carrinho {
-  width: 20px;
-  height: auto;
-  margin-left: 10px;
-  margin-top: 3px;
-}
 .botao-icone {
   border: none;
   width: 50px;
-  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,7 +394,6 @@ main,
   font-size: 15px;
   position: relative;
   background-color: #e0d4b9;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition:
     transform 0.1s,
     background-color 0.2s;
@@ -413,7 +402,7 @@ main,
   transform: scale(0.95);
 }
 .icone {
-  width: 20px;
+  width: 60%;
   height: auto;
   margin-top: 3px;
 }
@@ -533,7 +522,7 @@ main,
   width: 60px;
   height: 10px;
   margin: 15px auto 0 auto;
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
   margin-top: -30px;
   border: 2px solid #3d2d2d; /* Cria o sublinhado na cor pretendida */
@@ -542,7 +531,7 @@ main,
   width: 10px;
   height: 100%;
   background-color: #3d2d2d;
-  border-radius: 2px;
+  border-radius: 30px;
   transition: transform 0.1s ease-in-out;
 }
 
@@ -571,7 +560,7 @@ main,
   margin-top: -2px;
 }
 .accordion-header {
-  padding: 14px 16px;
+  padding: 8px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -591,10 +580,12 @@ main,
   display: flex;
   align-items: center;
   gap: 10px;
+  -webkit-text-stroke: 1.2px;
 }
 .accordion-arrow {
-  transition: transform 0.3s ease;
-  font-size: 30px;
+  transition: transform 0.3s ease-in-out;
+  font-size: 20px;
+  -webkit-text-stroke: 2px;
 }
 .accordion-item[open] .accordion-arrow {
   transform: rotate(180deg);
