@@ -891,6 +891,9 @@ details[open] .accordion-content {
 }
 .product-column-accordion {
   width: 100%;
+  background-color: #e0d4b9;
+  z-index: 10;
+  padding: 20px;
 }
 .product-column-accordion0 {
   width: 100%;
