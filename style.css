@@ -75,17 +75,25 @@ main,
   box-sizing: border-box;
 }
 
-.logo {
-  width: clamp(90px, 20vw, 150px);
-  height: auto;
-  display: block;
-  margin-left: 0;
+.logo-desktop {
+  display: none;
 }
-@media (min-width: 1024px) {
-  .logo {
-    margin-left: 24px; /* Zera no Desktop */
+.logo-mobile {
+  display: block;
+  width: 60px;
+  height: auto;
+}
+@media (min-width: 480px) {
+  .logo-desktop {
+    display: block;
+    width: 180px;
+    height: auto;
+  }
+  .logo-mobile {
+    display: none;
   }
 }
+
 .container-border {
   border: 2px solid #3d2d2d;
 }
