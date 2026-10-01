@@ -155,13 +155,18 @@ main,
 }
 .nav-menu a {
   text-decoration: none;
-  color: #4a4a4a;
+  color: #3d2d2d;
   font-weight: 700;
   font-size: 15px;
   display: flex;
   align-items: center;
   gap: 4px;
   transition: color 0.2s;
+}
+@media (max-width: 1024px) {
+  .nav-menu a {
+    font-size: 40px; /* Ou o tamanho grande que tinhas posto antes */
+  }
 }
 .nav-menu a:hover,
 .nav-menu a.active {
@@ -967,4 +972,22 @@ details[open] .accordion-content {
 
 .espaco {
   margin: 1px;
+}
+
+.texto-temporario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Deixa passar os cliques para os botões de trás */
+}
+.texto-temporario span {
+  pointer-events: auto;
+  font-size: 50px;
+  font-weight: 700;
+  color: #3d2d2d;
 }
