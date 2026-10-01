@@ -120,21 +120,26 @@ main,
   }
   .nav-menu {
     display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #e0d4b956;
+    position: fixed; /* Mudei de absolute para fixed para cobrir a janela inteira */
+    top: 0; /* Cola no topo absoluto da tela */
+    left: 0; /* Cola na esquerda absoluta */
+    width: 100vw; /* Ocupa 100% da largura da viewport */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    background-color: #e0d4b9; /* Mantém a cor com transparência */
     flex-direction: column;
-    padding: 20px;
-    gap: 16px;
+    justify-content: center; /* Centraliza os itens verticalmente no ecran */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 40px;
+    gap: 24px;
     z-index: 10000;
-    display: flex !important;
 
+    /* Mantém as tuas propriedades de transição */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-12px);
-    pointer-events: none; /* Impede cliques quando fechado */
+    transform: translateY(
+      0
+    ); /* Ajustado para não deslocar para fora do ecran no eixo Y */
+    pointer-events: none;
     transition:
       opacity 0.35s ease,
       transform 0.35s ease,
@@ -161,6 +166,16 @@ main,
 .nav-menu a:hover,
 .nav-menu a.active {
   color: #000000;
+}
+.menu-fechar {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: none;
+  border: none;
+  font-size: 36px;
+  color: #3d2d2d;
+  cursor: pointer;
 }
 .header-actions {
   display: flex;
@@ -560,7 +575,7 @@ main,
   margin-top: -2px;
 }
 .accordion-header {
-  padding: 8px 16px;
+  padding: 15px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -580,7 +595,7 @@ main,
   display: flex;
   align-items: center;
   gap: 10px;
-  -webkit-text-stroke: 1.2px;
+  -webkit-text-stroke: 1px;
 }
 .accordion-arrow {
   transition: transform 0.3s ease-in-out;
