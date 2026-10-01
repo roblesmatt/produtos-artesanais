@@ -989,7 +989,6 @@ details[open] .accordion-content {
   display: none;
 }
 
-
 /* Estrutura das tabelas/linhas de botões */
 .menu-linha {
   display: flex;
@@ -1060,24 +1059,24 @@ details[open] .accordion-content {
 #sub-mais-vendido:checked ~ .submenu-todos label[for="sub-mais-vendido"],
 #sub-lancamentos:checked ~ .submenu-todos label[for="sub-lancamentos"],
 #sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
-
 #sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
 #sub-premium:checked ~ .submenu-linhas label[for="sub-premium"],
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
 #sub-rosas:checked ~ .submenu-linhas label[for="sub-rosas"],
 #sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"],
-  
 #sub-sabonete:checked ~ .submenu-funcao label[for="sub-sabonete"],
-#sub-sabonete-liquido:checked ~ .submenu-funcao label[for="sub-sabonete-liquido"],
+#sub-sabonete-liquido:checked
+  ~ .submenu-funcao
+  label[for="sub-sabonete-liquido"],
 #sub-perfume:checked ~ .submenu-funcao label[for="sub-perfume"],
 #sub-velas:checked ~ .submenu-funcao label[for="sub-velas"],
-
 #sub-capim-limao:checked ~ .submenu-ativos label[for="sub-capim-limao"],
-#sub-lavanda-provence:checked ~ .submenu-ativos label[for="sub-lavanda-provence"],
+#sub-lavanda-provence:checked
+  ~ .submenu-ativos
+  label[for="sub-lavanda-provence"],
 #sub-alecrim:checked ~ .submenu-ativos label[for="sub-alecrim"],
 #sub-laranja-doce:checked ~ .submenu-ativos label[for="sub-laranja-doce"],
 #sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"],
-
 #sub-verde:checked ~ .submenu-cores label[for="sub-verde"],
 #sub-amarelo:checked ~ .submenu-cores label[for="sub-amarelo"],
 #sub-vermelho:checked ~ .submenu-cores label[for="sub-vermelho"],
@@ -1088,7 +1087,6 @@ details[open] .accordion-content {
   background-color: #3d2d2d;
   color: #e0d4b9;
 }
-
 
 .conteudo-vitrine {
   border: 1px solid #3d2d2d;
@@ -1103,7 +1101,6 @@ details[open] .accordion-content {
   display: none;
 }
 
-
 /* Mostra o item correspondente ao rádio selecionado */
 #sub-todos:checked ~ .conteudo-vitrine .item-todos,
 #sub-mais-vendido:checked ~ .conteudo-vitrine .item-mais-vendido,
@@ -1115,6 +1112,7 @@ details[open] .accordion-content {
 #sub-velas:checked ~ .conteudo-vitrine .item-velas,
 #sub-classico:checked ~ .conteudo-vitrine .item-classico {
   display: block;
+  width: 100%;
 }
 
 .vitrine-grid {
@@ -1123,8 +1121,6 @@ details[open] .accordion-content {
   gap: 15px;
   width: 100%;
 }
-
-
 
 /* Estilo individual de cada cartão de produto */
 .produto-card {
@@ -1167,4 +1163,31 @@ details[open] .accordion-content {
   .vitrine-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.menu-linha a.menu-link {
+  flex: 1;
+  text-align: center;
+  padding: 12px 5px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #3d2d2d;
+  background-color: #e0d4b9;
+  border-right: 2px solid #3d2d2d;
+  border-bottom: 2px solid #3d2d2d;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background 0.1s,
+    color 0.1s;
+}
+
+.menu-linha a.menu-link:hover {
+  background-color: #3d2d2d;
+  color: #e0d4b9;
+}
+
+.menu-linha a.menu-link:last-child {
+  border-right: none;
 }
