@@ -83,11 +83,12 @@ main,
   width: 60px;
   height: auto;
 }
-@media (min-width: 480px) {
+@media (min-width: 370px) {
   .logo-desktop {
     display: block;
-    width: 180px;
+    width: 120px;
     height: auto;
+    padding: 0 20% 0 0;
   }
   .logo-mobile {
     display: none;
@@ -97,12 +98,9 @@ main,
 .container-border {
   border: 2px solid #3d2d2d;
 }
-.nav-menu {
-  display: flex;
-  gap: 32px;
-  box-sizing: border-box;
-}
+
 .menu-hamburguer {
+  display: flex !important;
   background-color: #e0d4b9;
   display: none;
   width: 25px;
@@ -114,44 +112,39 @@ main,
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   border: none;
 }
-@media (max-width: 1024px) {
-  .menu-hamburguer {
-    display: flex !important;
-  }
-  .nav-menu {
-    display: none;
-    position: fixed; /* Mudei de absolute para fixed para cobrir a janela inteira */
-    top: 0; /* Cola no topo absoluto da tela */
-    left: 0; /* Cola na esquerda absoluta */
-    width: 100vw; /* Ocupa 100% da largura da viewport */
-    height: 100vh; /* Ocupa 100% da altura da viewport */
-    background-color: #e0d4b9; /* Mantém a cor com transparência */
-    flex-direction: column;
-    justify-content: center; /* Centraliza os itens verticalmente no ecran */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    padding: 40px;
-    gap: 24px;
-    z-index: 10000;
+.nav-menu {
+  display: none;
+  position: fixed; /* Mudei de absolute para fixed para cobrir a janela inteira */
+  top: 0; /* Cola no topo absoluto da tela */
+  left: 0; /* Cola na esquerda absoluta */
+  width: 100vw; /* Ocupa 100% da largura da viewport */
+  height: 100vh; /* Ocupa 100% da altura da viewport */
+  background-color: #e0d4b9; /* Mantém a cor com transparência */
+  flex-direction: column;
+  justify-content: center; /* Centraliza os itens verticalmente no ecran */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  padding: 40px;
+  gap: 24px;
+  z-index: 10000;
 
-    /* Mantém as tuas propriedades de transição */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(
-      0
-    ); /* Ajustado para não deslocar para fora do ecran no eixo Y */
-    pointer-events: none;
-    transition:
-      opacity 0.35s ease,
-      transform 0.35s ease,
-      visibility 0.35s ease;
-  }
-  .nav-menu.ativo {
-    display: flex !important;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+  /* Mantém as tuas propriedades de transição */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(
+    0
+  ); /* Ajustado para não deslocar para fora do ecran no eixo Y */
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0.35s ease;
+}
+.nav-menu.ativo {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 .nav-menu a {
   text-decoration: none;
@@ -605,7 +598,6 @@ main,
   display: flex;
   align-items: center;
   gap: 10px;
-  -webkit-text-stroke: 1px;
 }
 .accordion-arrow {
   transition: transform 0.3s ease-in-out;
@@ -990,4 +982,74 @@ details[open] .accordion-content {
   font-size: 50px;
   font-weight: 700;
   color: #3d2d2d;
+}
+
+/* Esconde todos os radio buttons */
+.container-filtros input {
+  display: none;
+}
+
+/* Estrutura das tabelas/linhas de botões */
+.menu-linha {
+  display: flex;
+  border: 1px solid #3d2d2d;
+  background-color: #e0d4b9;
+}
+
+.menu-linha label {
+  flex: 1;
+  text-align: center;
+  padding: 12px 5px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #3d322c;
+  border-right: 1px solid #3d322c;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.menu-linha label:last-child {
+  border-right: none;
+}
+
+/* Oculta o submenu secundário por defeito */
+.menu-submenu {
+  display: none;
+  border-top: none;
+}
+
+/* QUANDO CLICA EM "LINHAS", MOSTRA O SUBMENU DESTA CATEGORIA */
+#linhas:checked ~ .submenu-linhas {
+  display: flex;
+}
+
+/* Destaca visualmente a aba principal selecionada */
+#todos:checked ~ .menu-principal label[for="todos"],
+#linhas:checked ~ .menu-principal label[for="linhas"],
+#funcao:checked ~ .menu-principal label[for="funcao"],
+#ativos:checked ~ .menu-principal label[for="ativos"],
+#cores:checked ~ .menu-principal label[for="cores"] {
+  background-color: #3d322c;
+  color: #e0d4b9;
+}
+
+/* Destaca visualmente a sub-aba selecionada */
+#sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
+#sub-premium:checked ~ .submenu-linhas label[for="sub-premium"],
+#sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
+#sub-rosas:checked ~ .submenu-linhas label[for="sub-rosas"],
+#sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"] {
+  background-color: #3d322c;
+  color: #e0d4b9;
+}
+
+/* Caixa da Vitrine */
+.conteudo-vitrine {
+  border: 1px solid #3d322c;
+  border-top: none;
+  min-height: 350px;
+  padding: 20px;
+  background-color: #e0d4b9;
+  text-align: center;
 }

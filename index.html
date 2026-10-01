@@ -3,13 +3,56 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Perfume Artesanal - Docura Cítrica</title>
+<title>Perfume Artesanal</title>
 <link rel="stylesheet" href="style.css" />
+    <!-- Ícones Phosphor Icons -->
 </head>
 <body>
+
 <div id="cabecalho-container"></div>
 
-<div class="texto-temporario"><span>HOME</span></div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container-filtros">
+  <!-- Inputs invisíveis para a Categoria Principal -->
+  <input type="radio" name="principal" id="todos" checked>
+  <input type="radio" name="principal" id="linhas">
+  <input type="radio" name="principal" id="funcao">
+  <input type="radio" name="principal" id="ativos">
+  <input type="radio" name="principal" id="cores">
+
+  <!-- Inputs invisíveis para o Submenu de LINHAS -->
+  <input type="radio" name="sub-linhas" id="sub-classico" checked>
+  <input type="radio" name="sub-linhas" id="sub-premium">
+  <input type="radio" name="sub-linhas" id="sub-esoterica">
+  <input type="radio" name="sub-linhas" id="sub-rosas">
+  <input type="radio" name="sub-linhas" id="sub-nopou">
+
+  <!-- 1ª Linha: Menu Principal -->
+  <div class="menu-linha menu-principal">
+    <label for="todos">TODOS</label>
+    <label for="linhas">LINHAS</label>
+    <label for="funcao">FUNÇÃO</label>
+    <label for="ativos">ATIVOS</label>
+    <label for="cores">CORES</label>
+  </div>
+
+  <!-- 2ª Linha: Submenus (Exemplo visível apenas quando "LINHAS" está selecionado) -->
+  <div class="menu-linha menu-submenu submenu-linhas">
+    <label for="sub-classico">CLÁSSICO</label>
+    <label for="sub-premium">PREMIUM</label>
+    <label for="sub-esoterica">ESOTÉRICA</label>
+    <label for="sub-rosas">ROSAS</label>
+    <label for="sub-nopou">NOPOU</label>
+  </div>
+
+  <!-- Caixa de Conteúdo / Vitrine de Produtos -->
+  <div class="conteudo-vitrine">
+    <!-- O conteúdo muda aqui com base nos seletores CSS -->
+    <p class="msg-filtro">Selecione uma linha</p>
+  </div>
+</div>
+
     
 <script src="scripts.js"></script>
     
