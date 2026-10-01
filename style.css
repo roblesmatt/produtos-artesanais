@@ -1089,9 +1089,8 @@ details[open] .accordion-content {
 }
 
 .conteudo-vitrine {
-  border: 1px solid #3d2d2d;
   border-top: none;
-  min-height: 750px;
+  min-height: 100px;
   background-color: #e0d4b9;
   text-align: center;
 }
@@ -1123,13 +1122,13 @@ details[open] .accordion-content {
 /* Ajusta o contentor ou o próprio iframe para ter espaço suficiente */
 .vitrine-item {
   width: 100%;
-  min-height: 500px; /* Aumenta este valor conforme o tamanho que precisas (ex: 600px) */
+  min-height: auto; /* Aumenta este valor conforme o tamanho que precisas (ex: 600px) */
 }
 
 .vitrine-item iframe {
   width: 100%;
   height: 100%;
-  min-height: 500px; /* Garante que o iframe também acompanha a altura */
+  min-height: 650px; /* Garante que o iframe também acompanha a altura */
 }
 
 /* Estilo individual de cada cartão de produto */
@@ -1141,7 +1140,7 @@ details[open] .accordion-content {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 50px;
 }
 
 /* Imagem do produto */
