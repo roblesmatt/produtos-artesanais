@@ -1,102 +1,175 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfume Artesanal</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="cabecalho-container"></div>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perfume Artesanal</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-    <div class="container-filtros">
-      <input type="radio" name="principal" id="todos" checked />
-      <input type="radio" name="principal" id="linhas" />
-      <input type="radio" name="principal" id="funcao" />
-      <input type="radio" name="principal" id="ativos" />
-      <input type="radio" name="principal" id="cores" />
+<div id="cabecalho-container"></div>
 
-      <input type="radio" name="sub-todos" id="sub-mais-vendido" checked />
-      <input type="radio" name="sub-todos" id="sub-lancamentos" />
-      <input type="radio" name="sub-todos" id="sub-promocao" />
 
-      <input type="radio" name="sub-linhas" id="sub-classico" checked />
-      <input type="radio" name="sub-linhas" id="sub-premium" />
-      <input type="radio" name="sub-linhas" id="sub-esoterica" />
-      <input type="radio" name="sub-linhas" id="sub-rosas" />
-      <input type="radio" name="sub-linhas" id="sub-nopou" />
+  <div class="container-filtros">
+  <input type="radio" name="principal" id="todos" checked>
+  <input type="radio" name="principal" id="linhas">
+  <input type="radio" name="principal" id="funcao">
+  <input type="radio" name="principal" id="ativos">
+  <input type="radio" name="principal" id="cores">
 
-      <input type="radio" name="sub-funcao" id="sub-sabonete" checked />
-      <input type="radio" name="sub-funcao" id="sub-sabonete-liquido" />
-      <input type="radio" name="sub-funcao" id="sub-perfume" />
-      <input type="radio" name="sub-funcao" id="sub-velas" />
+  <input type="radio" name="sub-todos" id="sub-mais-vendido" checked>
+  <input type="radio" name="sub-todos" id="sub-lancamentos">
+  <input type="radio" name="sub-todos" id="sub-promocao">
 
-      <input type="radio" name="sub-ativos" id="sub-capim-limao" checked />
-      <input type="radio" name="sub-ativos" id="sub-lavanda-provence" />
-      <input type="radio" name="sub-ativos" id="sub-alecrim" />
-      <input type="radio" name="sub-ativos" id="sub-laranja-doce" />
-      <input type="radio" name="sub-ativos" id="sub-amendoa-doce" />
+  <input type="radio" name="sub-linhas" id="sub-classico" checked>
+  <input type="radio" name="sub-linhas" id="sub-premium">
+  <input type="radio" name="sub-linhas" id="sub-esoterica">
+  <input type="radio" name="sub-linhas" id="sub-rosas">
+  <input type="radio" name="sub-linhas" id="sub-nopou">
 
-      <input type="radio" name="sub-cores" id="sub-verde" checked />
-      <input type="radio" name="sub-cores" id="sub-amarelo" />
-      <input type="radio" name="sub-cores" id="sub-vermelho" />
-      <input type="radio" name="sub-cores" id="sub-laranja" />
-      <input type="radio" name="sub-cores" id="sub-branco" />
-      <input type="radio" name="sub-cores" id="sub-azul" />
-      <input type="radio" name="sub-cores" id="sub-lilás" />
+  <input type="radio" name="sub-funcao" id="sub-sabonete" checked>
+  <input type="radio" name="sub-funcao" id="sub-sabonete-liquido">
+  <input type="radio" name="sub-funcao" id="sub-perfume">
+  <input type="radio" name="sub-funcao" id="sub-velas">
 
-      <div class="menu-linha menu-principal">
-        <label for="todos">TODOS</label>
-        <label for="linhas">LINHAS</label>
-        <label for="funcao">FUNÇÃO</label>
-        <label for="ativos">ATIVOS</label>
-        <label for="cores">CORES</label>
-      </div>
+  <input type="radio" name="sub-ativos" id="sub-capim-limao" checked>
+  <input type="radio" name="sub-ativos" id="sub-lavanda-provence">
+  <input type="radio" name="sub-ativos" id="sub-alecrim">
+  <input type="radio" name="sub-ativos" id="sub-laranja-doce">
+  <input type="radio" name="sub-ativos" id="sub-amendoa-doce">
 
-      <div class="menu-linha menu-submenu submenu-todos">
-        <label for="sub-mais-vendido">MAIS VENDIDO</label>
-        <label for="sub-lancamentos">LANÇAMENTOS</label>
-        <label for="sub-promocao">PROMOÇÃO</label>
-      </div>
+ <input type="radio" name="sub-cores" id="sub-verde" checked>
+  <input type="radio" name="sub-cores" id="sub-amarelo">
+  <input type="radio" name="sub-cores" id="sub-vermelho">
+  <input type="radio" name="sub-cores" id="sub-laranja">
+  <input type="radio" name="sub-cores" id="sub-branco">
+  <input type="radio" name="sub-cores" id="sub-azul">
+  <input type="radio" name="sub-cores" id="sub-lilás">
 
-      <div class="menu-linha menu-submenu submenu-linhas">
-        <label for="sub-classico">CLÁSSICO</label>
-        <label for="sub-premium">PREMIUM</label>
-        <label for="sub-esoterica">ESOTÉRICA</label>
-        <label for="sub-rosas">ROSAS</label>
-        <label for="sub-nopou">NOPOU</label>
-      </div>
 
-      <div class="menu-linha menu-submenu submenu-funcao">
-        <label for="sub-sabonete">SABONETE</label>
-        <label for="sub-sabonete-liquido">SABONETE LÍQUIDO</label>
-        <label for="sub-perfume">PERFUME</label>
-        <label for="sub-velas">VELAS</label>
-      </div>
+  <div class="menu-linha menu-principal">
+    <label for="todos">TODOS</label>
+    <label for="linhas">LINHAS</label>
+    <label for="funcao">FUNÇÃO</label>
+    <label for="ativos">ATIVOS</label>
+    <label for="cores">CORES</label>
+  </div>
 
-      <div class="menu-linha menu-submenu submenu-ativos">
-        <label for="sub-capim-limao">CAPIM LIMÃO</label>
-        <label for="sub-lavanda-provence">LAVANDA PROVENCE</label>
-        <label for="sub-alecrim">ALECRIM</label>
-        <label for="sub-laranja-doce">LARANJA DOCE</label>
-        <label for="sub-amendoa-doce">AMENDOÃ DOCE</label>
-      </div>
+<div class="menu-linha menu-submenu submenu-todos">
+  <label for="sub-mais-vendido">MAIS VENDIDO</label>
+  <label for="sub-lancamentos">LANÇAMENTOS</label>
+  <label for="sub-promocao">PROMOÇÃO</label>
+</div>
 
-      <div class="menu-linha menu-submenu submenu-cores">
-        <label for="sub-verde">VERDE</label>
-        <label for="sub-amarelo">AMARELO</label>
-        <label for="sub-vermelho">VERMELHO</label>
-        <label for="sub-laranja">LARANJA</label>
-        <label for="sub-branco">BRANCO</label>
-        <label for="sub-azul">AZUL</label>
-        <label for="sub-lilás">LILÁS</label>
-      </div>
+  <div class="menu-linha menu-submenu submenu-linhas">
+    <label for="sub-classico">CLÁSSICO</label>
+    <label for="sub-premium">PREMIUM</label>
+    <label for="sub-esoterica">ESOTÉRICA</label>
+    <label for="sub-rosas">ROSAS</label>
+    <label for="sub-nopou">NOPOU</label>
+  </div>
 
-      <div class="conteudo-vitrine">
-        <p class="msg-filtro">Selecione uma linha</p>
-      </div>
-    </div>
+  <div class="menu-linha menu-submenu submenu-funcao">
+    <label for="sub-sabonete">SABONETE</label>
+    <label for="sub-sabonete-liquido">SABONETE LÍQUIDO</label>
+    <label for="sub-perfume">PERFUME</label>
+    <label for="sub-velas">VELAS</label>
+  </div>
+  
+    <div class="menu-linha menu-submenu submenu-ativos">
+    <label for="sub-capim-limao">CAPIM LIMÃO</label>
+    <label for="sub-lavanda-provence">LAVANDA PROVENCE</label>
+    <label for="sub-alecrim">ALECRIM</label>
+    <label for="sub-laranja-doce">LARANJA DOCE</label>
+    <label for="sub-amendoa-doce">AMENDOÃ DOCE</label>
+  </div>
 
-    <script src="scripts.js"></script>
-  </body>
+  <div class="menu-linha menu-submenu submenu-cores">
+    <label for="sub-verde">VERDE</label>
+    <label for="sub-amarelo">AMARELO</label>
+    <label for="sub-vermelho">VERMELHO</label>
+    <label for="sub-laranja">LARANJA</label>
+    <label for="sub-branco">BRANCO</label>
+    <label for="sub-azul">AZUL</label>
+    <label for="sub-lilás">LILÁS</label>
+  </div>
+
+
+  <div class="conteudo-vitrine">
+  <!-- Conteúdo para Mais Vendido -->
+  <div class="vitrine-item item-mais-vendido">
+    <h3>Produto Mais Vendido 1</h3>
+    <p>Descrição do sabonete artesanal...</p>
+  </div>
+
+  <!-- Conteúdo para Lançamentos -->
+  <div class="vitrine-item item-lancamentos"><div class="vitrine-grid">
+    <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Capim Limão">
+    <h4>Perfume Artesanal de Capim Limão</h4>
+    <span class="preco">R$79,90</span>
+  </div>
+
+  <!-- Produto 2 -->
+  <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Lavanda">
+    <h4>Perfume Artesanal de Lavanda Provence...</h4>
+    <span class="preco">R$79,90</span>
+  </div>
+
+  <!-- Produto 3 -->
+  <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Alecrim">
+    <h4>Perfume Artesanal de Alecrim</h4>
+    <span class="preco">R$79,90</span>
+  </div>
+
+  <!-- Produto 4 -->
+  <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Laranja Doce">
+    <h4>Perfume Artesanal de Laranja Doce</h4>
+    <span class="preco">R$79,90</span>
+  </div></div></div>
+
+
+  <div class="vitrine-item item-promocao"><div class="vitrine-grid">
+    <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Capim Limão">
+    <h4>Perfume Artesanal de Capim Limão</h4>
+    <span class="preco">R$79,90</span>
+  </div>
+
+  <!-- Produto 2 -->
+  <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Lavanda">
+    <h4>Perfume Artesanal de Lavanda Provence...</h4>
+    <span class="preco">R$79,90</span>
+  </div>
+
+  <div class="vitrine-item item-classico"><div class="vitrine-grid">
+    <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Capim Limão">
+    <h4>Perfume Artesanal de Capim Limão</h4>
+    <span class="preco">R$79,90</span>
+  </div>
+
+  <!-- Produto 2 -->
+  <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Lavanda">
+    <h4>Perfume Artesanal de Lavanda Provence...</h4>
+    <span class="preco">R$79,90</span>
+  </div>
+
+  <!-- Produto 3 -->
+  <div class="produto-card">
+    <img src="produtos/thairo-1x1.svg" alt="Perfume Alecrim">
+    <h4>Perfume Artesanal de Alecrim</h4>
+    <span class="preco">R$79,90</span>
+  </div></div></div>
+
+
+<script src="scripts.js"></script>
+    
+</body>
 </html>

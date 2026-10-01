@@ -989,6 +989,7 @@ details[open] .accordion-content {
   display: none;
 }
 
+
 /* Estrutura das tabelas/linhas de botões */
 .menu-linha {
   display: flex;
@@ -1023,18 +1024,10 @@ details[open] .accordion-content {
   border-top: none;
 }
 
-.submenu-todos {
-  border-top: none;
-}
-.submenu-linhas {
-  border-top: none;
-}
-.submenu-funcao {
-  border-top: none;
-}
-.submenu-ativos {
-  border-top: none;
-}
+.submenu-todos,
+.submenu-linhas,
+.submenu-funcao,
+.submenu-ativos,
 .submenu-cores {
   border-top: none;
 }
@@ -1064,36 +1057,38 @@ details[open] .accordion-content {
   color: #e0d4b9;
 }
 
-#sub-mais-vendido:checked ~ .submenu-todos label[for="sub-mais-vendido"]
-#sub-lancamentos:checked ~ .submenu-todos label[for="sub-lancamentos"]
-#sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"]
+#sub-mais-vendido:checked ~ .submenu-todos label[for="sub-mais-vendido"],
+#sub-lancamentos:checked ~ .submenu-todos label[for="sub-lancamentos"],
+#sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
+
 #sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
 #sub-premium:checked ~ .submenu-linhas label[for="sub-premium"],
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
 #sub-rosas:checked ~ .submenu-linhas label[for="sub-rosas"],
-#sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"]
+#sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"],
   
 #sub-sabonete:checked ~ .submenu-funcao label[for="sub-sabonete"],
 #sub-sabonete-liquido:checked ~ .submenu-funcao label[for="sub-sabonete-liquido"],
 #sub-perfume:checked ~ .submenu-funcao label[for="sub-perfume"],
-#sub-velas:checked ~ .submenu-funcao label[for="sub-velas"]
+#sub-velas:checked ~ .submenu-funcao label[for="sub-velas"],
 
 #sub-capim-limao:checked ~ .submenu-ativos label[for="sub-capim-limao"],
 #sub-lavanda-provence:checked ~ .submenu-ativos label[for="sub-lavanda-provence"],
 #sub-alecrim:checked ~ .submenu-ativos label[for="sub-alecrim"],
 #sub-laranja-doce:checked ~ .submenu-ativos label[for="sub-laranja-doce"],
-#sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"]
+#sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"],
 
 #sub-verde:checked ~ .submenu-cores label[for="sub-verde"],
 #sub-amarelo:checked ~ .submenu-cores label[for="sub-amarelo"],
 #sub-vermelho:checked ~ .submenu-cores label[for="sub-vermelho"],
-#sub-laranja:checked ~ .submenu-cores label[for="sub-laranja"]
+#sub-laranja:checked ~ .submenu-cores label[for="sub-laranja"],
 #sub-branco:checked ~ .submenu-cores label[for="sub-branco"],
 #sub-azul:checked ~ .submenu-cores label[for="sub-azul"],
 #sub-lilas:checked ~ .submenu-cores label[for="sub-lilas"] {
   background-color: #3d2d2d;
   color: #e0d4b9;
 }
+
 
 .conteudo-vitrine {
   border: 1px solid #3d2d2d;
@@ -1102,4 +1097,74 @@ details[open] .accordion-content {
   padding: 20px;
   background-color: #e0d4b9;
   text-align: center;
+}
+/* 1. Oculta TODOS os itens da vitrine por defeito */
+.conteudo-vitrine .vitrine-item {
+  display: none;
+}
+
+
+/* Mostra o item correspondente ao rádio selecionado */
+#sub-todos:checked ~ .conteudo-vitrine .item-todos,
+#sub-mais-vendido:checked ~ .conteudo-vitrine .item-mais-vendido,
+#sub-lancamentos:checked ~ .conteudo-vitrine .item-lancamentos,
+#sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
+#sub-sabonete:checked ~ .conteudo-vitrine .item-sabonete,
+#sub-sabonete-liquido:checked ~ .conteudo-vitrine .item-sabonete-liquido,
+#sub-perfume:checked ~ .conteudo-vitrine .item-perfume,
+#sub-velas:checked ~ .conteudo-vitrine .item-velas,
+#sub-classico:checked ~ .conteudo-vitrine .item-classico {
+  display: block;
+}
+
+.vitrine-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+
+
+/* Estilo individual de cada cartão de produto */
+.produto-card {
+  border: 1px solid #3d2d2d;
+  background-color: #e0d4b9;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Imagem do produto */
+.produto-card img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+/* Nome do produto */
+.produto-card h4 {
+  font-size: 13px;
+  font-weight: bold;
+  color: #3d2d2d;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* Preço do produto */
+.produto-card .preco {
+  font-size: 16px;
+  font-weight: bold;
+  color: #3d2d2d;
+}
+
+/* Versão Mobile: Quando o ecrã for menor que 768px, muda para 2 colunas */
+@media (max-width: 768px) {
+  .vitrine-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
