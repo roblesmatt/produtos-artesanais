@@ -168,14 +168,19 @@ main,
   color: #000000;
 }
 .menu-fechar {
-  position: absolute;
-  top: 25px;
-  right: 25px;
+  display: none; /* Esconde por padrão no desktop */
   background: none;
   border: none;
   font-size: 36px;
   color: #3d2d2d;
   cursor: pointer;
+}
+/* Quando o menu mobile estiver ativo (aberto), o botão de fechar ganha vida lá dentro */
+.nav-menu.ativo .menu-fechar {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 25px;
 }
 .header-actions {
   display: flex;
