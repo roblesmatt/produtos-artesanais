@@ -1,60 +1,102 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Perfume Artesanal</title>
-<link rel="stylesheet" href="style.css" />
-    <!-- Ícones Phosphor Icons -->
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfume Artesanal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cabecalho-container"></div>
 
-<div id="cabecalho-container"></div>
-
-
-    <!-- Conteúdo Principal -->
     <div class="container-filtros">
-  <!-- Inputs invisíveis para a Categoria Principal -->
-  <input type="radio" name="principal" id="todos" checked>
-  <input type="radio" name="principal" id="linhas">
-  <input type="radio" name="principal" id="funcao">
-  <input type="radio" name="principal" id="ativos">
-  <input type="radio" name="principal" id="cores">
+      <input type="radio" name="principal" id="todos" checked />
+      <input type="radio" name="principal" id="linhas" />
+      <input type="radio" name="principal" id="funcao" />
+      <input type="radio" name="principal" id="ativos" />
+      <input type="radio" name="principal" id="cores" />
 
-  <!-- Inputs invisíveis para o Submenu de LINHAS -->
-  <input type="radio" name="sub-linhas" id="sub-classico" checked>
-  <input type="radio" name="sub-linhas" id="sub-premium">
-  <input type="radio" name="sub-linhas" id="sub-esoterica">
-  <input type="radio" name="sub-linhas" id="sub-rosas">
-  <input type="radio" name="sub-linhas" id="sub-nopou">
+      <input type="radio" name="sub-todos" id="sub-mais-vendido" checked />
+      <input type="radio" name="sub-todos" id="sub-lancamentos" />
+      <input type="radio" name="sub-todos" id="sub-promocao" />
 
-  <!-- 1ª Linha: Menu Principal -->
-  <div class="menu-linha menu-principal">
-    <label for="todos">TODOS</label>
-    <label for="linhas">LINHAS</label>
-    <label for="funcao">FUNÇÃO</label>
-    <label for="ativos">ATIVOS</label>
-    <label for="cores">CORES</label>
-  </div>
+      <input type="radio" name="sub-linhas" id="sub-classico" checked />
+      <input type="radio" name="sub-linhas" id="sub-premium" />
+      <input type="radio" name="sub-linhas" id="sub-esoterica" />
+      <input type="radio" name="sub-linhas" id="sub-rosas" />
+      <input type="radio" name="sub-linhas" id="sub-nopou" />
 
-  <!-- 2ª Linha: Submenus (Exemplo visível apenas quando "LINHAS" está selecionado) -->
-  <div class="menu-linha menu-submenu submenu-linhas">
-    <label for="sub-classico">CLÁSSICO</label>
-    <label for="sub-premium">PREMIUM</label>
-    <label for="sub-esoterica">ESOTÉRICA</label>
-    <label for="sub-rosas">ROSAS</label>
-    <label for="sub-nopou">NOPOU</label>
-  </div>
+      <input type="radio" name="sub-funcao" id="sub-sabonete" checked />
+      <input type="radio" name="sub-funcao" id="sub-sabonete-liquido" />
+      <input type="radio" name="sub-funcao" id="sub-perfume" />
+      <input type="radio" name="sub-funcao" id="sub-velas" />
 
-  <!-- Caixa de Conteúdo / Vitrine de Produtos -->
-  <div class="conteudo-vitrine">
-    <!-- O conteúdo muda aqui com base nos seletores CSS -->
-    <p class="msg-filtro">Selecione uma linha</p>
-  </div>
-</div>
+      <input type="radio" name="sub-ativos" id="sub-capim-limao" checked />
+      <input type="radio" name="sub-ativos" id="sub-lavanda-provence" />
+      <input type="radio" name="sub-ativos" id="sub-alecrim" />
+      <input type="radio" name="sub-ativos" id="sub-laranja-doce" />
+      <input type="radio" name="sub-ativos" id="sub-amendoa-doce" />
 
-    
-<script src="scripts.js"></script>
-    
-</body>
+      <input type="radio" name="sub-cores" id="sub-verde" checked />
+      <input type="radio" name="sub-cores" id="sub-amarelo" />
+      <input type="radio" name="sub-cores" id="sub-vermelho" />
+      <input type="radio" name="sub-cores" id="sub-laranja" />
+      <input type="radio" name="sub-cores" id="sub-branco" />
+      <input type="radio" name="sub-cores" id="sub-azul" />
+      <input type="radio" name="sub-cores" id="sub-lilás" />
+
+      <div class="menu-linha menu-principal">
+        <label for="todos">TODOS</label>
+        <label for="linhas">LINHAS</label>
+        <label for="funcao">FUNÇÃO</label>
+        <label for="ativos">ATIVOS</label>
+        <label for="cores">CORES</label>
+      </div>
+
+      <div class="menu-linha menu-submenu submenu-todos">
+        <label for="sub-mais-vendido">MAIS VENDIDO</label>
+        <label for="sub-lancamentos">LANÇAMENTOS</label>
+        <label for="sub-promocao">PROMOÇÃO</label>
+      </div>
+
+      <div class="menu-linha menu-submenu submenu-linhas">
+        <label for="sub-classico">CLÁSSICO</label>
+        <label for="sub-premium">PREMIUM</label>
+        <label for="sub-esoterica">ESOTÉRICA</label>
+        <label for="sub-rosas">ROSAS</label>
+        <label for="sub-nopou">NOPOU</label>
+      </div>
+
+      <div class="menu-linha menu-submenu submenu-funcao">
+        <label for="sub-sabonete">SABONETE</label>
+        <label for="sub-sabonete-liquido">SABONETE LÍQUIDO</label>
+        <label for="sub-perfume">PERFUME</label>
+        <label for="sub-velas">VELAS</label>
+      </div>
+
+      <div class="menu-linha menu-submenu submenu-ativos">
+        <label for="sub-capim-limao">CAPIM LIMÃO</label>
+        <label for="sub-lavanda-provence">LAVANDA PROVENCE</label>
+        <label for="sub-alecrim">ALECRIM</label>
+        <label for="sub-laranja-doce">LARANJA DOCE</label>
+        <label for="sub-amendoa-doce">AMENDOÃ DOCE</label>
+      </div>
+
+      <div class="menu-linha menu-submenu submenu-cores">
+        <label for="sub-verde">VERDE</label>
+        <label for="sub-amarelo">AMARELO</label>
+        <label for="sub-vermelho">VERMELHO</label>
+        <label for="sub-laranja">LARANJA</label>
+        <label for="sub-branco">BRANCO</label>
+        <label for="sub-azul">AZUL</label>
+        <label for="sub-lilás">LILÁS</label>
+      </div>
+
+      <div class="conteudo-vitrine">
+        <p class="msg-filtro">Selecione uma linha</p>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
 </html>
