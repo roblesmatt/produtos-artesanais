@@ -992,7 +992,8 @@ details[open] .accordion-content {
 /* Estrutura das tabelas/linhas de botões */
 .menu-linha {
   display: flex;
-  border: 2px solid #3d2d2d;
+  flex-wrap: wrap;
+  border-top: 2px solid #3d2d2d;
   background-color: #e0d4b9;
 }
 
@@ -1004,6 +1005,7 @@ details[open] .accordion-content {
   font-weight: bold;
   color: #3d2d2d;
   border-right: 2px solid #3d2d2d;
+  border-bottom: 2px solid #3d2d2d;
   cursor: pointer;
   user-select: none;
   transition: background 0.1s;
