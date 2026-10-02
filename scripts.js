@@ -673,7 +673,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const produtoExiste = carrinho.some(item => item.nome === nomeAtual);
 
     if (produtoExiste && nomeAtual !== "") {
-      btnAdicionarCesta.innerText = "ADICIONADO À CESTA ✓";
+      btnAdicionarCesta.innerText = "ADICIONADO À CESTA";
       btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
       btnAdicionarCesta.style.color = "#ffffff";
       btnAdicionarCesta.style.borderColor = "#3d2d2d";
@@ -704,6 +704,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       localStorage.setItem("carrinho", JSON.stringify(carrinhoAtualizado));
+      if (typeof atualizarContadorCarrinho === "function") {
+        atualizarContadorCarrinho();
+      }
 
       // --- MUDANÇA VISUAL PERMANENTE AO CLICAR ---
       btnAdicionarCesta.innerText = "ADICIONADO À CESTA";
