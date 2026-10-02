@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minha Cesta</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Minha Cesta</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="cabecalho-container"></div>
+    <!-- Container onde o global.html (menu/topo) é injetado -->
+    <div id="cabecalho-container"></div>
 
-<h1>Minha cesta</h1>
+    <main class="container-cesta" style="padding: 20px;">
+        <h2>Minha cesta</h2>
 
+        <!-- LISTA ONDE OS PRODUTOS VÃO APARECER -->
+        <div id="cartItemsList"></div>
+
+        <!-- TOTAL DO CARRINHO -->
+        <div class="cart-summary" style="margin-top: 20px; font-weight: bold;">
+            Total: <span id="cartTotal">R$ 0,00</span>
+        </div>
+        
+
+
+<button><a href="checkout.html" class="whatsapp-btn">Finalizar Pedido via WhatsApp</a></button>
+</main>
 
 <script src="scripts.js"></script>
 

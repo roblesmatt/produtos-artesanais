@@ -92,24 +92,43 @@
 
   <script>
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      // Recolhe os dados do cliente
-      const nome = document.getElementById('nome').value;
-      const cpf = document.getElementById('cpf').value;
-      const endereco = document.getElementById('endereco').value;
+    // Recolhe os dados do cliente preenchidos no formulário
+    const nome = document.getElementById('nome').value;
+    const cpf = document.getElementById('cpf').value;
+    const endereco = document.getElementById('endereco').value;
 
-      // Monta os dados do cliente para juntar à mensagem do pedido
-      const dadosCliente = `*Dados do Cliente:*\n👤 Nome: ${nome}\n📄 CPF: ${cpf}\n📍 Endereço: ${endereco}\n\n`;
+    const dadosCliente = `*Dados do Cliente:*\n👤 Nome: ${nome}\n📄 CPF: ${cpf}\n📍 Endereço: ${endereco}\n\n`;
 
-      // Aqui pode resgatar os produtos guardados no localStorage ou variáveis globais e juntar a 'dadosCliente'
-      // Exemplo de envio simulado para o WhatsApp com os dados:
-      const numeroWhatsApp = "5511996624974";
-      const mensagemFinal = dadosCliente + "*Pedido:* \n- 1x Sabonete Artesanal de Fubá (R$ 25,00)\n\n*Total: R$ 25,00*";
+    // Resgata os produtos guardados no localStorage (que vieram da página do produto ou da cesta)
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let mensagemProdutos = "*Pedido:* \n";
+    let totalGeral = 0;
 
-      const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemFinal)}`;
-      window.location.href = urlWhatsApp;
+    if (carrinho.length === 0) {
+        alert("O seu carrinho está vazio!");
+        return;
+    }
+
+    carrinho.forEach((item) => {
+        let valorNumerico = parseFloat(
+            item.preco.replace("R$", "").replace(".", "").replace(",", ".").trim()
+        ) || 0;
+        const subtotal = valorNumerico * item.quantidade;
+        totalGeral += subtotal;
+
+        mensagemProdutos += `- ${item.quantidade}x ${item.nome} (${item.preco}) [Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}]\n`;
     });
+
+    mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+
+    const numeroWhatsApp = "551199624974"; // Insira o seu número correto com DDI e DDD
+    const mensagemFinal = dadosCliente + mensagemProdutos;
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemFinal)}`;
+    
+    window.location.href = urlWhatsApp;
+});
   </script>
 
 </body>

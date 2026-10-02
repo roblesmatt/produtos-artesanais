@@ -468,3 +468,184 @@ function enviarPedidoWhatsApp() {
   const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   window.open(urlWhatsApp, "_blank");
 }
+
+
+
+// ==========================================
+// 5. LÓGICA DE PERSISTÊNCIA DA CESTA (LocalStorage)
+// ==========================================
+
+// A. Adicionar Produto à Cesta (Página do Produto - ex: Capim Limão)
+document.addEventListener("DOMContentLoaded", () => {
+  const btnAdicionarCesta = document.getElementById("cartBtn");
+
+  if (btnAdicionarCesta) {
+    btnAdicionarCesta.addEventListener("click", () => {
+      const nomeElemento = document.querySelector("h1");
+      const nome = nomeElemento ? nomeElemento.innerText : "Produto Artesanal";
+
+      const precoElemento = document.querySelector(".preco");
+      const preco = precoElemento ? precoElemento.innerText : "R$ 0,00";
+
+      const qtyElemento = document.getElementById("qtyValue");
+      const quantidade = qtyElemento ? parseInt(qtyElemento.innerText) || 1 : 1;
+
+      const imgElemento = document.querySelector("img");
+      const imagem = imgElemento ? imgElemento.getAttribute("src") : "produtos/thairo-1x1.svg";
+
+      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+      const indexExistente = carrinho.findIndex((item) => item.nome === nome);
+      if (indexExistente >= 0) {
+        carrinho[indexExistente].quantidade += quantidade;
+      } else {
+        carrinho.push({ nome, preco, imagem, quantidade });
+      }
+
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
+      alert("Produto adicionado à cesta com sucesso!");
+    });
+  }
+});
+
+// B. Renderizar Produtos na Página "cesta.html" com Layout Moderno
+document.addEventListener("DOMContentLoaded", () => {
+  const cartItemsList = document.getElementById("cartItemsList");
+  const cartTotal = document.getElementById("cartTotal");
+
+  if (cartItemsList) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    cartItemsList.innerHTML = "";
+    let totalGeral = 0;
+
+    if (carrinho.length === 0) {
+      cartItemsList.innerHTML = "<p style='text-align: center; padding: 20px; color: #666;'>A sua cesta está vazia.</p>";
+      if (cartTotal) cartTotal.innerText = "R$ 0,00";
+      return;
+    }
+
+    carrinho.forEach((item, index) => {
+      let valorNumerico = parseFloat(
+        item.preco.replace("R$", "").replace(".", "").replace(",", ".").trim()
+      );
+      let subtotal = valorNumerico * item.quantidade;
+      totalGeral += subtotal;
+
+      const divItem = document.createElement("div");
+      divItem.classList.add("cart-item-card");
+
+      divItem.innerHTML = `
+        <img src="${item.imagem || 'produtos/thairo-1x1.svg'}" alt="${item.nome}" class="cart-item-img">
+        
+        <div class="cart-item-details">
+            <h4 class="cart-item-title">${item.nome}</h4>
+            <span class="cart-item-price">${item.preco}</span>
+        </div>
+
+        <div class="cart-item-controls">
+            <div class="qty-selector">
+                <button onclick="alterarQtd(${index}, -1)">-</button>
+                <span>${item.quantidade}</span>
+                <button onclick="alterarQtd(${index}, 1)">+</button>
+            </div>
+            <button onclick="removerDaCesta(${index})" class="cart-item-delete">
+                🗑️
+            </button>
+        </div>
+      `;
+      cartItemsList.appendChild(divItem);
+    });
+
+    if (cartTotal) {
+      cartTotal.innerText = `R$ ${totalGeral.toFixed(2).replace(".", ",")}`;
+    }
+  }
+});
+
+// ==========================================
+// 6. FUNÇÕES GLOBAIS DE CONTROLO DO CARRINHO
+// ==========================================
+window.removerDaCesta = function (index) {
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  carrinho.splice(index, 1);
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  location.reload();
+};
+
+window.alterarQtd = function (index, delta) {
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  carrinho[index].quantidade += delta;
+
+  if (carrinho[index].quantidade < 1) {
+    carrinho[index].quantidade = 1;
+  }
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  location.reload();
+};
+
+// ==========================================
+// 7. ENVIO DE PEDIDO VIA WHATSAPP
+// ==========================================
+function enviarPedidoWhatsApp() {
+  const numeroWhatsApp = "551199624974";
+  const itensCarrinho = document.querySelectorAll(".item-carrinho");
+
+  if (itensCarrinho.length === 0) {
+    alert("O seu carrinho está vazio!");
+    return;
+  }
+
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n*Produtos:* \n";
+  let totalGeral = 0;
+
+  carrinho.forEach((item) => {
+    let valorNumerico = parseFloat(
+      item.preco.replace("R$", "").replace(".", "").replace(",", ".").trim()
+    );
+    const subtotal = valorNumerico * item.quantidade;
+    totalGeral += subtotal;
+
+    mensagem += `- ${item.quantidade}x ${item.nome} (R$ ${subtotal.toFixed(2).replace(".", ",")})\n`;
+  });
+
+  mensagem += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+  const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+  window.open(urlWhatsApp, "_blank");
+}
+
+
+
+// ==========================================
+// COMPRAR AGORA (Direto para o Checkout)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+  const btnComprarAgora = document.getElementById("btnComprarAgora");
+
+  if (btnComprarAgora) {
+    btnComprarAgora.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // 1. Recolhe os dados da página atual do produto
+      const nomeElemento = document.querySelector("h1");
+      const nome = nomeElemento ? nomeElemento.innerText.trim() : "Produto Artesanal";
+
+      const precoElemento = document.querySelector(".preco");
+      const preco = precoElemento ? precoElemento.innerText.trim() : "R$ 0,00";
+
+      const qtyElemento = document.getElementById("qtyValue");
+      const quantidade = qtyElemento ? parseInt(qtyElemento.innerText) || 1 : 1;
+
+      const imgElemento = document.querySelector(".main-image, .produto-img, img");
+      const imagem = imgElemento ? imgElemento.getAttribute("src") : "produtos/thairo-1x1.svg";
+
+      // 2. Cria ou atualiza o carrinho apenas com este produto (ou adiciona a ele)
+      let carrinho = [{ nome, preco, imagem, quantidade }];
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+      // 3. Redireciona para o checkout
+      window.location.href = "checkout.html";
+    });
+  }
+});
