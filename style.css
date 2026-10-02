@@ -984,11 +984,11 @@ details[open] .accordion-content {
   color: #3d2d2d;
 }
 
-/* Esconde todos os radio buttons */
+
+
 .container-filtros input {
   display: none;
 }
-
 /* Estrutura das tabelas/linhas de botões */
 .menu-linha {
   display: flex;
@@ -996,7 +996,6 @@ details[open] .accordion-content {
   border-top: 2px solid #3d2d2d;
   background-color: #e0d4b9;
 }
-
 .menu-linha label {
   flex: 1;
   text-align: center;
@@ -1010,10 +1009,12 @@ details[open] .accordion-content {
   user-select: none;
   transition: background 0.1s;
 }
+
 .menu-linha label:hover {
-  background-color: #3d2d2d; /* ou uma cor intermédia ao teu gosto para o hover */
+  background-color: #3d2d2d;
   color: #e0d4b9;
 }
+
 .menu-linha label:last-child {
   border-right: none;
 }
@@ -1022,31 +1023,15 @@ details[open] .accordion-content {
   display: none;
   border-top: none;
 }
-
-.submenu-todos,
-.submenu-linhas,
-.submenu-funcao,
-.submenu-ativos,
-.submenu-cores {
-  border-top: none;
-}
-
-#todos:checked ~ .submenu-todos {
-  display: flex;
-}
-#linhas:checked ~ .submenu-linhas {
-  display: flex;
-}
-#funcao:checked ~ .submenu-funcao {
-  display: flex;
-}
-#ativos:checked ~ .submenu-ativos {
-  display: flex;
-}
+/* Comportamento de exibição dos submenus baseados no menu principal selecionado */
+#todos:checked ~ .submenu-todos,
+#linhas:checked ~ .submenu-linhas,
+#funcao:checked ~ .submenu-funcao,
+#ativos:checked ~ .submenu-ativos,
 #cores:checked ~ .submenu-cores {
   display: flex;
 }
-
+/* Cores ativas do menu principal */
 #todos:checked ~ .menu-principal label[for="todos"],
 #linhas:checked ~ .menu-principal label[for="linhas"],
 #funcao:checked ~ .menu-principal label[for="funcao"],
@@ -1055,7 +1040,7 @@ details[open] .accordion-content {
   background-color: #3d322c;
   color: #e0d4b9;
 }
-
+/* Cores ativas dos submenus */
 #sub-mais-vendido:checked ~ .submenu-todos label[for="sub-mais-vendido"],
 #sub-lancamentos:checked ~ .submenu-todos label[for="sub-lancamentos"],
 #sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
@@ -1064,16 +1049,16 @@ details[open] .accordion-content {
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
 #sub-rosas:checked ~ .submenu-linhas label[for="sub-rosas"],
 #sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"],
-#sub-sabonete:checked ~ .submenu-funcao label[for="sub-sabonete"],
-#sub-sabonete-liquido:checked
-  ~ .submenu-funcao
-  label[for="sub-sabonete-liquido"],
-#sub-perfume:checked ~ .submenu-funcao label[for="sub-perfume"],
-#sub-velas:checked ~ .submenu-funcao label[for="sub-velas"],
+#sub-sabonete-corporal:checked ~ .submenu-funcao label[for="sub-sabonete-corporal"],
+#sub-sabonete-liquido:checked ~ .submenu-funcao label[for="sub-sabonete-liquido"],
+#sub-perfume-artesanal:checked ~ .submenu-funcao label[for="sub-perfume-artesanal"],
+#sub-vela-aromatica:checked ~ .submenu-funcao label[for="sub-vela-aromatica"],
+#sub-shampoo-e-condicionador:checked ~ .submenu-funcao label[for="sub-shampoo-e-condicionador"],
+#sub-creme-capilar:checked ~ .submenu-funcao label[for="sub-creme-capilar"],
+#sub-creme-para-rosto:checked ~ .submenu-funcao label[for="sub-creme-para-rosto"],
+#sub-locao-pos-barba:checked ~ .submenu-funcao label[for="sub-locao-pos-barba"],
 #sub-capim-limao:checked ~ .submenu-ativos label[for="sub-capim-limao"],
-#sub-lavanda-provence:checked
-  ~ .submenu-ativos
-  label[for="sub-lavanda-provence"],
+#sub-lavanda-provence:checked ~ .submenu-ativos label[for="sub-lavanda-provence"],
 #sub-alecrim:checked ~ .submenu-ativos label[for="sub-alecrim"],
 #sub-laranja-doce:checked ~ .submenu-ativos label[for="sub-laranja-doce"],
 #sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"],
@@ -1083,6 +1068,7 @@ details[open] .accordion-content {
 #sub-laranja:checked ~ .submenu-cores label[for="sub-laranja"],
 #sub-branco:checked ~ .submenu-cores label[for="sub-branco"],
 #sub-azul:checked ~ .submenu-cores label[for="sub-azul"],
+#sub-rosa:checked ~ .submenu-cores label[for="sub-rosa"],
 #sub-lilas:checked ~ .submenu-cores label[for="sub-lilas"] {
   background-color: #3d2d2d;
   color: #e0d4b9;
@@ -1094,44 +1080,75 @@ details[open] .accordion-content {
   background-color: #e0d4b9;
   text-align: center;
 }
-/* 1. Oculta TODOS os itens da vitrine por defeito */
+
+/* Oculta TODOS os itens da vitrine por defeito */
 .conteudo-vitrine .vitrine-item {
   display: none;
 }
 
-/* Mostra o item correspondente ao rádio selecionado */
-#sub-todos:checked ~ .conteudo-vitrine .item-todos,
-#sub-mais-vendido:checked ~ .conteudo-vitrine .item-mais-vendido,
-#sub-lancamentos:checked ~ .conteudo-vitrine .item-lancamentos,
-#sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
-#sub-sabonete:checked ~ .conteudo-vitrine .item-sabonete,
-#sub-sabonete-liquido:checked ~ .conteudo-vitrine .item-sabonete-liquido,
-#sub-perfume:checked ~ .conteudo-vitrine .item-perfume,
-#sub-velas:checked ~ .conteudo-vitrine .item-velas,
-#sub-classico:checked ~ .conteudo-vitrine .item-classico {
+#todos:checked ~ #sub-mais-vendido:checked ~ .conteudo-vitrine .item-mais-vendido,
+#todos:checked ~ #sub-lancamentos:checked ~ .conteudo-vitrine .item-lancamentos,
+#todos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
+
+#linhas:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
+#linhas:checked ~ #sub-premium:checked ~ .conteudo-vitrine .item-premium,
+#linhas:checked ~ #sub-esoterica:checked ~ .conteudo-vitrine .item-esoterica,
+#linhas:checked ~ #sub-rosas:checked ~ .conteudo-vitrine .item-rosas,
+#linhas:checked ~ #sub-nopou:checked ~ .conteudo-vitrine .item-nopou,
+
+#funcao:checked ~ #sub-sabonete-corporal:checked ~ .conteudo-vitrine .item-sabonete-corporal,
+#funcao:checked ~ #sub-sabonete-liquido:checked ~ .conteudo-vitrine .item-sabonete-liquido,
+#funcao:checked ~ #sub-perfume-artesanal:checked ~ .conteudo-vitrine .item-perfume-artesanal,
+#funcao:checked ~ #sub-vela-aromatica:checked ~ .conteudo-vitrine .item-vela-aromatica,
+#funcao:checked ~ #sub-shampoo-e-condicionador:checked ~ .conteudo-vitrine .item-shampoo-e-condicionador,
+#funcao:checked ~ #sub-creme-capilar:checked ~ .conteudo-vitrine .item-creme-capilar,
+#funcao:checked ~ #sub-creme-para-rosto:checked ~ .conteudo-vitrine .item-creme-para-rosto,
+#funcao:checked ~ #sub-locao-pos-barba:checked ~ .conteudo-vitrine .item-locao-pos-barba,
+
+#ativos:checked ~ #sub-capim-limao:checked ~ .conteudo-vitrine .item-capim-limao,
+#ativos:checked ~ #sub-lavanda-provence:checked ~ .conteudo-vitrine .item-lavanda-provence,
+#ativos:checked ~ #sub-alecrim:checked ~ .conteudo-vitrine .item-alecrim,
+#ativos:checked ~ #sub-laranja-doce:checked ~ .conteudo-vitrine .item-laranja-doce,
+#ativos:checked ~ #sub-amendoa-doce:checked ~ .conteudo-vitrine .item-amendoa-doce,
+
+#cores:checked ~ #sub-verde:checked ~ .conteudo-vitrine .item-verde,
+#cores:checked ~ #sub-amarelo:checked ~ .conteudo-vitrine .item-amarelo,
+#cores:checked ~ #sub-vermelho:checked ~ .conteudo-vitrine .item-vermelho,
+#cores:checked ~ #sub-laranja:checked ~ .conteudo-vitrine .item-laranja,
+#cores:checked ~ #sub-branco:checked ~ .conteudo-vitrine .item-branco,
+#cores:checked ~ #sub-azul:checked ~ .conteudo-vitrine .item-azul,
+#cores:checked ~ #sub-rosa:checked ~ .conteudo-vitrine .item-rosa,
+#cores:checked ~ #sub-lilas:checked ~ .conteudo-vitrine .item-lilas {
   display: block;
   width: 100%;
 }
 
+
 .vitrine-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Cria colunas automáticas com no mínimo 420px de largura cada, preenchendo o espaço uniformemente */
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   width: 100%;
-  gap: 0;
+  gap: 0; /* Ou ajuste para um espaçamento se preferir separar os cartões (ex: 10px) */
 }
-/* Ajusta o contentor ou o próprio iframe para ter espaço suficiente */
 .vitrine-item {
   width: 100%;
-  min-height: auto; /* Aumenta este valor conforme o tamanho que precisas (ex: 600px) */
+  min-height: auto;
 }
-
 .vitrine-item iframe {
   width: 100%;
   height: 100%;
-  min-height: 650px; /* Garante que o iframe também acompanha a altura */
+  min-height: 650px;
+}
+/* Versão Mobile */
+@media (max-width: 768px) {
+  .vitrine-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Estilo individual de cada cartão de produto */
+
+
 .produto-card {
   border: 2px solid #3d2d2d;
   background-color: #e0d4b9;

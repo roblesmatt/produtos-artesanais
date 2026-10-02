@@ -10,44 +10,54 @@
 
 <div id="cabecalho-container"></div>
 
-
-  <div class="container-filtros">
+<div class="container-filtros">
+  <!-- Inputs do Menu Principal -->
   <input type="radio" name="principal" id="todos" checked>
   <input type="radio" name="principal" id="linhas">
   <input type="radio" name="principal" id="funcao">
   <input type="radio" name="principal" id="ativos">
   <input type="radio" name="principal" id="cores">
 
+  <!-- Inputs do Submenu: TODOS -->
   <input type="radio" name="sub-todos" id="sub-mais-vendido" checked>
   <input type="radio" name="sub-todos" id="sub-lancamentos">
   <input type="radio" name="sub-todos" id="sub-promocao">
 
+  <!-- Inputs do Submenu: LINHAS -->
   <input type="radio" name="sub-linhas" id="sub-classico" checked>
   <input type="radio" name="sub-linhas" id="sub-premium">
   <input type="radio" name="sub-linhas" id="sub-esoterica">
   <input type="radio" name="sub-linhas" id="sub-rosas">
   <input type="radio" name="sub-linhas" id="sub-nopou">
 
-  <input type="radio" name="sub-funcao" id="sub-sabonete" checked>
+  <!-- Inputs do Submenu: FUNÇÃO -->
+  <input type="radio" name="sub-funcao" id="sub-sabonete-corporal" checked>
   <input type="radio" name="sub-funcao" id="sub-sabonete-liquido">
-  <input type="radio" name="sub-funcao" id="sub-perfume">
-  <input type="radio" name="sub-funcao" id="sub-velas">
+  <input type="radio" name="sub-funcao" id="sub-perfume-artesanal">
+  <input type="radio" name="sub-funcao" id="sub-vela-aromatica">
+  <input type="radio" name="sub-funcao" id="sub-shampoo-e-condicionador">
+  <input type="radio" name="sub-funcao" id="sub-creme-capilar">
+  <input type="radio" name="sub-funcao" id="sub-creme-para-rosto">
+  <input type="radio" name="sub-funcao" id="sub-locao-pos-barba">
 
+  <!-- Inputs do Submenu: ATIVOS -->
   <input type="radio" name="sub-ativos" id="sub-capim-limao" checked>
   <input type="radio" name="sub-ativos" id="sub-lavanda-provence">
   <input type="radio" name="sub-ativos" id="sub-alecrim">
   <input type="radio" name="sub-ativos" id="sub-laranja-doce">
   <input type="radio" name="sub-ativos" id="sub-amendoa-doce">
 
- <input type="radio" name="sub-cores" id="sub-verde" checked>
+  <!-- Inputs do Submenu: CORES (Acentuação removida do ID para evitar conflitos) -->
+  <input type="radio" name="sub-cores" id="sub-verde" checked>
   <input type="radio" name="sub-cores" id="sub-amarelo">
   <input type="radio" name="sub-cores" id="sub-vermelho">
   <input type="radio" name="sub-cores" id="sub-laranja">
   <input type="radio" name="sub-cores" id="sub-branco">
   <input type="radio" name="sub-cores" id="sub-azul">
-  <input type="radio" name="sub-cores" id="sub-lilás">
+  <input type="radio" name="sub-cores" id="sub-rosa">
+  <input type="radio" name="sub-cores" id="sub-lilas">
 
-
+  <!-- Menu Principal -->
   <div class="menu-linha menu-principal">
     <label for="todos">TODOS</label>
     <label for="linhas">LINHAS</label>
@@ -56,11 +66,12 @@
     <label for="cores">CORES</label>
   </div>
 
-<div class="menu-linha menu-submenu submenu-todos">
-  <label for="sub-mais-vendido">MAIS VENDIDO</label>
-  <label for="sub-lancamentos">LANÇAMENTOS</label>
-  <label for="sub-promocao">PROMOÇÃO</label>
-</div>
+  <!-- Submenus -->
+  <div class="menu-linha menu-submenu submenu-todos">
+    <label for="sub-mais-vendido">MAIS VENDIDO</label>
+    <label for="sub-lancamentos">LANÇAMENTOS</label>
+    <label for="sub-promocao">PROMOÇÃO</label>
+  </div>
 
   <div class="menu-linha menu-submenu submenu-linhas">
     <label for="sub-classico">CLÁSSICO</label>
@@ -71,18 +82,22 @@
   </div>
 
   <div class="menu-linha menu-submenu submenu-funcao">
-    <label for="sub-sabonete">SABONETE</label>
+    <label for="sub-sabonete-corporal">SABONETE CORPORAL</label>
     <label for="sub-sabonete-liquido">SABONETE LÍQUIDO</label>
-    <label for="sub-perfume">PERFUME</label>
-    <label for="sub-velas">VELAS</label>
+    <label for="sub-perfume-artesanal">PERFUME ARTESANAL</label>
+    <label for="sub-vela-aromatica">VELA AROMÁTICA</label>
+    <label for="sub-shampoo-e-condicionador">SHAMPOO E CONDICIONADOR</label>
+    <label for="sub-creme-capilar">CREME CAPILAR</label>
+    <label for="sub-creme-para-rosto">CREME PARA ROSTO</label>
+    <label for="sub-locao-pos-barba">LOÇÃO PÓS BARBA</label>
   </div>
   
-    <div class="menu-linha menu-submenu submenu-ativos">
+  <div class="menu-linha menu-submenu submenu-ativos">
     <label for="sub-capim-limao">CAPIM LIMÃO</label>
     <label for="sub-lavanda-provence">LAVANDA PROVENCE</label>
     <label for="sub-alecrim">ALECRIM</label>
     <label for="sub-laranja-doce">LARANJA DOCE</label>
-    <label for="sub-amendoa-doce">AMENDOÃ DOCE</label>
+    <label for="sub-amendoa-doce">AMÊNDOA DOCE</label>
   </div>
 
   <div class="menu-linha menu-submenu submenu-cores">
@@ -92,23 +107,110 @@
     <label for="sub-laranja">LARANJA</label>
     <label for="sub-branco">BRANCO</label>
     <label for="sub-azul">AZUL</label>
-    <label for="sub-lilás">LILÁS</label>
+    <label for="sub-rosa">ROSA</label>
+    <label for="sub-lilas">LILÁS</label>
   </div>
 
 
-<div class="conteudo-vitrine">
   
+<div class="conteudo-vitrine">
+  <!-- Submenu: TODOS -->
   <div class="vitrine-item item-mais-vendido">
     <iframe src="mais-vendido.html" name="frame-mais-vendido" frameborder="0" width="100%" height="100%"></iframe>
   </div>
-
   <div class="vitrine-item item-lancamentos">
     <iframe src="lancamentos.html" name="frame-lancamentos" frameborder="0" width="100%" height="100%"></iframe>
   </div>
-
   <div class="vitrine-item item-promocao">
     <iframe src="promocao.html" name="frame-promocao" frameborder="0" width="100%" height="100%"></iframe>
   </div>
+
+  <!-- Submenu: LINHAS -->
+  <div class="vitrine-item item-classico">
+    <iframe src="classico.html" name="frame-classico" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-premium">
+    <iframe src="premium.html" name="frame-premium" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-esoterica">
+    <iframe src="esoterica.html" name="frame-esoterica" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-rosas">
+    <iframe src="rosas.html" name="frame-rosas" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-nopou">
+    <iframe src="nopou.html" name="frame-nopou" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Submenu: FUNÇÃO -->
+  <div class="vitrine-item item-sabonete-corporal">
+    <iframe src="sabonete-corporal.html" name="frame-sabonete-corporal" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-sabonete-liquido">
+    <iframe src="sabonete-liquido.html" name="frame-sabonete-liquido" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-perfume-artesanal">
+    <iframe src="perfume-artesanal.html" name="frame-perfume-artesanal" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-vela-aromatica">
+    <iframe src="vela-aromatica.html" name="frame-vela-aromatica" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-shampoo-e-condicionador">
+    <iframe src="shampoo-e-condicionador.html" name="frame-shampoo-e-condicionador" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-creme-capilar">
+    <iframe src="creme-capilar.html" name="frame-creme-capilar" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-creme-para-rosto">
+    <iframe src="creme-para-rosto.html" name="frame-creme-para-rosto" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-locao-pos-barba">
+    <iframe src="locao-pos-barba.html" name="frame-locao-pos-barba" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Submenu: ATIVOS -->
+  <div class="vitrine-item item-capim-limao">
+    <iframe src="capim-limao.html" name="frame-capim-limao" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-lavanda-provence">
+    <iframe src="lavanda-provence.html" name="frame-lavanda-provence" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-alecrim">
+    <iframe src="alecrim.html" name="frame-alecrim" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-laranja-doce">
+    <iframe src="laranja-doce.html" name="frame-laranja-doce" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-amendoa-doce">
+    <iframe src="amendoa-doce.html" name="frame-amendoa-doce" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Submenu: CORES -->
+  <div class="vitrine-item item-verde">
+    <iframe src="verde.html" name="frame-verde" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-amarelo">
+    <iframe src="amarelo.html" name="frame-amarelo" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-vermelho">
+    <iframe src="vermelho.html" name="frame-vermelho" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-laranja">
+    <iframe src="laranja.html" name="frame-laranja" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-branco">
+    <iframe src="branco.html" name="frame-branco" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-azul">
+    <iframe src="azul.html" name="frame-azul" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+  <div class="vitrine-item item-rosa">
+    <iframe src="rosa.html" name="frame-rosa" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+    <div class="vitrine-item item-lilas">
+    <iframe src="lilas.html" name="frame-lilas" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+</div>
 
 
 <script src="scripts.js"></script>
