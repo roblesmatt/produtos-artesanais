@@ -1336,7 +1336,7 @@ details[open] .accordion-content {
     position: absolute !important;
     top: 5px;
     left: 30px;
-    background-color: #ff3b30 !important;
+    background-color: #e9170c !important;
     color: #ffffff !important;
     font-size: 11px !important;
     font-weight: bold !important;
@@ -1347,5 +1347,4 @@ details[open] .accordion-content {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    z-index: 99999 !important;
 }
