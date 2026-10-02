@@ -503,7 +503,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
-      alert("Produto adicionado à cesta com sucesso!");
     });
   }
 });
@@ -646,6 +645,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 3. Redireciona para o checkout
       window.location.href = "checkout.html";
+    });
+  }
+});
+
+
+
+
+// ==========================================
+// ADICIONAR À CESTA (CORRIGIDO PARA NÃO DUPLICAR)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+  const btnAdicionarCesta = document.getElementById("cartBtn");
+
+  if (btnAdicionarCesta) {
+    const nomeElemento = document.querySelector("h1");
+    const nomeAtual = nomeElemento ? nomeElemento.innerText.trim() : "";
+
+    // 1. Verifica ao carregar a página se o produto já está no carrinho
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const produtoExiste = carrinho.some(item => item.nome === nomeAtual);
+
+    if (produtoExiste && nomeAtual !== "") {
+      btnAdicionarCesta.innerText = "ADICIONADO À CESTA ✓";
+      btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
+      btnAdicionarCesta.style.color = "#ffffff";
+      btnAdicionarCesta.style.borderColor = "#3d2d2d";
+    }
+
+    // 2. Ação ao clicar no botão
+    btnAdicionarCesta.addEventListener("click", () => {
+      const nome = nomeAtual || "Produto Artesanal";
+
+      const precoElemento = document.querySelector(".preco");
+      const preco = precoElemento ? precoElemento.innerText.trim() : "R$ 0,00";
+
+      const qtyElemento = document.getElementById("qtyValue");
+      const quantidadeSelecionada = qtyElemento ? parseInt(qtyElemento.innerText) || 1 : 1;
+
+      const imgElemento = document.querySelector(".main-image, .produto-img, img");
+      const imagem = imgElemento ? imgElemento.getAttribute("src") : "produtos/thairo-1x1.svg";
+
+      let carrinhoAtualizado = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+      const indexExistente = carrinhoAtualizado.findIndex((item) => item.nome === nome);
+      
+      if (indexExistente >= 0) {
+        // Em vez de somar, define exatamente a quantidade que está selecionada no ecrã no momento do clique
+        carrinhoAtualizado[indexExistente].quantidade = quantidadeSelecionada;
+      } else {
+        carrinhoAtualizado.push({ nome, preco, imagem, quantidade: quantidadeSelecionada });
+      }
+
+      localStorage.setItem("carrinho", JSON.stringify(carrinhoAtualizado));
+
+      // --- MUDANÇA VISUAL PERMANENTE AO CLICAR ---
+      btnAdicionarCesta.innerText = "ADICIONADO À CESTA";
+      btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
+      btnAdicionarCesta.style.color = "#e0d4b9";
+      btnAdicionarCesta.style.borderColor = "#3d2d2d";
+      btnAdicionarCesta.style.transition = "all 0.3s ease";
     });
   }
 });
