@@ -53,6 +53,7 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+
 .header {
   width: 100%;
   height: auto;
@@ -987,6 +988,8 @@ details[open] .accordion-content {
 
 .container-filtros {
   width: 100%;
+  margin-right: 2px;
+  margin-left: 2px;
   position: sticky; /* Ou position: relative se preferir que ele role com a página */
   top: 0;
   z-index: 1000;
@@ -1004,6 +1007,9 @@ details[open] .accordion-content {
 }
 .menu-linha label {
   flex: 1;
+  display: flex;             /* Transforma o label num container flexível */
+  align-items: center;       /* Centraliza o texto verticalmente */
+  justify-content: center;
   text-align: center;
   padding: 12px 5px;
   font-size: 13px;
@@ -1065,7 +1071,7 @@ details[open] .accordion-content {
 #sub-locao-pos-barba:checked ~ .submenu-funcao label[for="sub-locao-pos-barba"],
 #sub-capim-limao:checked ~ .submenu-ativos label[for="sub-capim-limao"],
 #sub-lavanda-provence:checked ~ .submenu-ativos label[for="sub-lavanda-provence"],
-#sub-alecrim:checked ~ .submenu-ativos label[for="sub-alecrim"],
+#sub-alecrim-rosmarino:checked ~ .submenu-ativos label[for="sub-alecrim-rosmarino"],
 #sub-laranja-doce:checked ~ .submenu-ativos label[for="sub-laranja-doce"],
 #sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"],
 #sub-verde:checked ~ .submenu-cores label[for="sub-verde"],
@@ -1113,7 +1119,7 @@ details[open] .accordion-content {
 
 #ativos:checked ~ #sub-capim-limao:checked ~ .conteudo-vitrine .item-capim-limao,
 #ativos:checked ~ #sub-lavanda-provence:checked ~ .conteudo-vitrine .item-lavanda-provence,
-#ativos:checked ~ #sub-alecrim:checked ~ .conteudo-vitrine .item-alecrim,
+#ativos:checked ~ #sub-alecrim-rosmarino:checked ~ .conteudo-vitrine .item-alecrim-rosmarino,
 #ativos:checked ~ #sub-laranja-doce:checked ~ .conteudo-vitrine .item-laranja-doce,
 #ativos:checked ~ #sub-amendoa-doce:checked ~ .conteudo-vitrine .item-amendoa-doce,
 
@@ -1166,6 +1172,8 @@ details[open] .accordion-content {
   align-items: center;
   justify-content: space-between;
   padding: 50px;
+  margin-right: 2px;
+  margin-left: 2px;
 }
 
 /* Imagem do produto */
