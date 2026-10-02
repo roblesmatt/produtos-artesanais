@@ -985,7 +985,13 @@ details[open] .accordion-content {
 }
 
 
-
+.container-filtros {
+  width: 100%;
+  position: sticky; /* Ou position: relative se preferir que ele role com a página */
+  top: 0;
+  z-index: 1000;
+  background-color: #e0d4b9; /* Garante fundo sólido para não misturar com os produtos */
+}
 .container-filtros input {
   display: none;
 }
@@ -1037,7 +1043,7 @@ details[open] .accordion-content {
 #funcao:checked ~ .menu-principal label[for="funcao"],
 #ativos:checked ~ .menu-principal label[for="ativos"],
 #cores:checked ~ .menu-principal label[for="cores"] {
-  background-color: #3d322c;
+  background-color: #3d2d2d;
   color: #e0d4b9;
 }
 /* Cores ativas dos submenus */
@@ -1150,7 +1156,9 @@ details[open] .accordion-content {
 
 
 .produto-card {
-  border: 2px solid #3d2d2d;
+  border-right: 2px solid #3d2d2d;  /* Linha divisória vertical */
+  border-bottom: 2px solid #3d2d2d; /* Linha divisória horizontal */
+  box-sizing: border-box;
   background-color: #e0d4b9;
   text-align: center;
   display: flex;
