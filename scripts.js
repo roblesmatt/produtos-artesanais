@@ -6,6 +6,11 @@ fetch("global.html")
   .then((data) => {
     document.getElementById("cabecalho-container").innerHTML = data;
 
+    // >>> CHAMAMOS AQUI PARA GARANTIR QUE O BADGE JÁ EXISTE NO ECRÃ <<<
+    if (typeof atualizarContadorCarrinho === "function") {
+      atualizarContadorCarrinho();
+    }
+
     // Lógica do Menu Hambúrguer (Mobile) - Injetado dinamicamente
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
@@ -27,6 +32,7 @@ fetch("global.html")
     const searchModal = document.getElementById("searchModal");
     const closeSearchModal = document.getElementById("closeSearchModal");
     const searchResultsList = document.getElementById("searchResultsList");
+    // ... (o resto do código continua igualzinho abaixo)
 
     const produtosDisponiveis = [
       {
@@ -708,3 +714,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ==========================================
+// CONTADOR DINÂMICO DO CARRINHO (BADGE)
+// ==========================================
+function atualizarContadorCarrinho() {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
+    
+    let badge = document.getElementById("cart-count");
+    if (badge) {
+        badge.innerText = totalItens;
+        
+        if (totalItens > 0) {
+            badge.style.setProperty("display", "inline-flex", "important");
+            badge.style.setProperty("visibility", "visible", "important");
+        } else {
+            // Força ocultação total ignorando qualquer CSS externo
+            badge.style.setProperty("display", "none", "important");
+            badge.style.setProperty("visibility", "hidden", "important");
+        }
+    }
+}
+

@@ -420,11 +420,6 @@ main,
 .botao-icone:active {
   transform: scale(0.95);
 }
-.icone {
-  width: 60%;
-  height: auto;
-  margin-top: 3px;
-}
 
 /* Botão WhatsApp */
 .whatsapp-btn {
@@ -1329,4 +1324,28 @@ details[open] .accordion-content {
 
 .cart-item-delete:hover {
     opacity: 1;
+}
+
+
+.icone {
+    position: relative !important;
+    display: inline-flex !important;
+}
+
+.badge-contador {
+    position: absolute !important;
+    top: 5px;
+    left: 30px;
+    background-color: #ff3b30 !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 4px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 99999 !important;
 }
