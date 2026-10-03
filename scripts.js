@@ -6,7 +6,6 @@ fetch("global.html")
   .then((data) => {
     document.getElementById("cabecalho-container").innerHTML = data;
 
-    // >>> CHAMAMOS AQUI PARA GARANTIR QUE O BADGE JÁ EXISTE NO ECRÃ <<<
     if (typeof atualizarContadorCarrinho === "function") {
       atualizarContadorCarrinho();
     }
@@ -32,7 +31,6 @@ fetch("global.html")
     const searchModal = document.getElementById("searchModal");
     const closeSearchModal = document.getElementById("closeSearchModal");
     const searchResultsList = document.getElementById("searchResultsList");
-    // ... (o resto do código continua igualzinho abaixo)
 
     const produtosDisponiveis = [
       {
@@ -121,7 +119,7 @@ document.addEventListener("mousedown", () => {
 });
 
 // ==========================================
-// 3. LÓGICA DO CARROSSEL (Isolada e Segura)
+// 3. LÓGICA DO CARROSSEL
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
@@ -147,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startX,
     scrollLeft;
   let isHovered = false;
-  let carouselIndex = 0; // Nome único para evitar conflitos
+  let carouselIndex = 0;
   let isCarouselVisible = false;
 
   const HOVER_PAUSE_DURATION = 6000;
@@ -298,23 +296,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
-// 4. VÍDEOS, CARRINHO E OUTRAS FUNCIONALIDADES
+// 4. VÍDEOS, TEMA E INTERAÇÕES DA PÁGINA
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Carrinho
-  const cartBtn = document.getElementById("cartBtn");
+  // Carrinho Modal Header
+  const cartBtn = document.getElementById("cartBtnModal"); // Se aplicável
   const cartModal = document.getElementById("cartModal");
   const closeCartModal = document.getElementById("closeCartModal");
 
-  if (cartBtn && cartModal) {
-    cartBtn.addEventListener("click", () => {
-      cartModal.style.display = "flex";
+  if (cartModal && closeCartModal) {
+    closeCartModal.addEventListener("click", () => {
+      cartModal.style.display = "none";
     });
-    if (closeCartModal) {
-      closeCartModal.addEventListener("click", () => {
-        cartModal.style.display = "none";
-      });
-    }
   }
 
   // Tema Claro/Escuro
@@ -364,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
     videos.forEach((video) => videoObserver.observe(video));
   }
 
-  // Seletor de Quantidade e Galeria de Produtos (Páginas de Detalhe)
+  // Seletor de Quantidade
   const btnMinus = document.getElementById("btnMinus");
   const btnPlus = document.getElementById("btnPlus");
   const qtyValue = document.getElementById("qtyValue");
@@ -383,6 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Galeria de Fotos do Produto
   const thumbs = document.querySelectorAll(".thumb");
   const mainImage = document.getElementById("mainImage");
   const prevThumbBtn = document.getElementById("prevThumb");
@@ -419,7 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (nextThumbBtn) {
       nextThumbBtn.addEventListener("click", () => {
-        thumbIndex = (thumbIndex + 1) % thumbs.length;
+        thumbIndex = (thumbIndex + 1 + thumbs.length) % thumbs.length;
         updateMainImage(thumbIndex);
       });
     }
@@ -439,81 +433,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
-// 5. FUNÇÕES GLOBAIS (WhatsApp, etc.)
+// 5. RENDERIZAÇÃO DA CESTA / CHECKOUT
 // ==========================================
-function enviarPedidoWhatsApp() {
-  const numeroWhatsApp = "5511996624974";
-  const itensCarrinho = document.querySelectorAll(".item-carrinho");
-
-  if (itensCarrinho.length === 0) {
-    alert("O seu carrinho está vazio!");
-    return;
-  }
-
-  let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n*Produtos:* \n";
-  let totalGeral = 0;
-
-  itensCarrinho.forEach((item) => {
-    const nome = item.querySelector(".nome-produto").innerText;
-    const quantidade = item.querySelector(".qtd-produto").value;
-    const precoUnitario = parseFloat(
-      item
-        .querySelector(".preco-produto")
-        .innerText.replace("R$", "")
-        .replace(",", ".")
-        .trim(),
-    );
-
-    const subtotal = precoUnitario * quantidade;
-    totalGeral += subtotal;
-
-    mensagem += `- ${quantidade}x ${nome} (R$ ${subtotal.toFixed(2)})\n`;
-  });
-
-  mensagem += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2)}*`;
-  const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-  window.open(urlWhatsApp, "_blank");
-}
-
-
-
-// ==========================================
-// 5. LÓGICA DE PERSISTÊNCIA DA CESTA (LocalStorage)
-// ==========================================
-
-// A. Adicionar Produto à Cesta (Página do Produto - ex: Capim Limão)
-document.addEventListener("DOMContentLoaded", () => {
-  const btnAdicionarCesta = document.getElementById("cartBtn");
-
-  if (btnAdicionarCesta) {
-    btnAdicionarCesta.addEventListener("click", () => {
-      const nomeElemento = document.querySelector("h1");
-      const nome = nomeElemento ? nomeElemento.innerText : "Produto Artesanal";
-
-      const precoElemento = document.querySelector(".preco");
-      const preco = precoElemento ? precoElemento.innerText : "R$ 0,00";
-
-      const qtyElemento = document.getElementById("qtyValue");
-      const quantidade = qtyElemento ? parseInt(qtyElemento.innerText) || 1 : 1;
-
-      const imgElemento = document.querySelector("img");
-      const imagem = imgElemento ? imgElemento.getAttribute("src") : "produtos/thairo-1x1.svg";
-
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-      const indexExistente = carrinho.findIndex((item) => item.nome === nome);
-      if (indexExistente >= 0) {
-        carrinho[indexExistente].quantidade += quantidade;
-      } else {
-        carrinho.push({ nome, preco, imagem, quantidade });
-      }
-
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    });
-  }
-});
-
-// B. Renderizar Produtos na Página "cesta.html" com Layout Moderno
 document.addEventListener("DOMContentLoaded", () => {
   const cartItemsList = document.getElementById("cartItemsList");
   const cartTotal = document.getElementById("cartTotal");
@@ -590,18 +511,17 @@ window.alterarQtd = function (index, delta) {
 };
 
 // ==========================================
-// 7. ENVIO DE PEDIDO VIA WHATSAPP
+// 7. ENVIO DE PEDIDO VIA WHATSAPP (ÚNICO E CORRETO)
 // ==========================================
 function enviarPedidoWhatsApp() {
   const numeroWhatsApp = "5511996624974";
-  const itensCarrinho = document.querySelectorAll(".item-carrinho");
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-  if (itensCarrinho.length === 0) {
+  if (carrinho.length === 0) {
     alert("O seu carrinho está vazio!");
     return;
   }
 
-  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n*Produtos:* \n";
   let totalGeral = 0;
 
@@ -616,14 +536,13 @@ function enviarPedidoWhatsApp() {
   });
 
   mensagem += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+  
   const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   window.open(urlWhatsApp, "_blank");
 }
 
-
-
 // ==========================================
-// COMPRAR AGORA (Direto para o Checkout)
+// 8. BOTÃO "COMPRAR AGORA" (Direto para Checkout)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   const btnComprarAgora = document.getElementById("btnComprarAgora");
@@ -632,7 +551,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btnComprarAgora.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // 1. Recolhe os dados da página atual do produto
       const nomeElemento = document.querySelector("h1");
       const nome = nomeElemento ? nomeElemento.innerText.trim() : "Produto Artesanal";
 
@@ -645,21 +563,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const imgElemento = document.querySelector(".main-image, .produto-img, img");
       const imagem = imgElemento ? imgElemento.getAttribute("src") : "produtos/thairo-1x1.svg";
 
-      // 2. Cria ou atualiza o carrinho apenas com este produto (ou adiciona a ele)
       let carrinho = [{ nome, preco, imagem, quantidade }];
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-      // 3. Redireciona para o checkout
       window.location.href = "checkout.html";
     });
   }
 });
 
-
-
-
 // ==========================================
-// ADICIONAR À CESTA (CORRIGIDO PARA NÃO DUPLICAR)
+// 9. ADICIONAR À CESTA
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   const btnAdicionarCesta = document.getElementById("cartBtn");
@@ -668,7 +581,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const nomeElemento = document.querySelector("h1");
     const nomeAtual = nomeElemento ? nomeElemento.innerText.trim() : "";
 
-    // 1. Verifica ao carregar a página se o produto já está no carrinho
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const produtoExiste = carrinho.some(item => item.nome === nomeAtual);
 
@@ -679,7 +591,6 @@ document.addEventListener("DOMContentLoaded", () => {
       btnAdicionarCesta.style.borderColor = "#3d2d2d";
     }
 
-    // 2. Ação ao clicar no botão
     btnAdicionarCesta.addEventListener("click", () => {
       const nome = nomeAtual || "Produto Artesanal";
 
@@ -697,7 +608,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const indexExistente = carrinhoAtualizado.findIndex((item) => item.nome === nome);
       
       if (indexExistente >= 0) {
-        // Em vez de somar, define exatamente a quantidade que está selecionada no ecrã no momento do clique
         carrinhoAtualizado[indexExistente].quantidade = quantidadeSelecionada;
       } else {
         carrinhoAtualizado.push({ nome, preco, imagem, quantidade: quantidadeSelecionada });
@@ -708,7 +618,6 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarContadorCarrinho();
       }
 
-      // --- MUDANÇA VISUAL PERMANENTE AO CLICAR ---
       btnAdicionarCesta.innerText = "ADICIONADO À CESTA";
       btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
       btnAdicionarCesta.style.color = "#e0d4b9";
@@ -719,7 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
-// CONTADOR DINÂMICO DO CARRINHO (BADGE)
+// 10. CONTADOR DINÂMICO DO CARRINHO (BADGE)
 // ==========================================
 function atualizarContadorCarrinho() {
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -733,10 +642,8 @@ function atualizarContadorCarrinho() {
             badge.style.setProperty("display", "inline-flex", "important");
             badge.style.setProperty("visibility", "visible", "important");
         } else {
-            // Força ocultação total ignorando qualquer CSS externo
             badge.style.setProperty("display", "none", "important");
             badge.style.setProperty("visibility", "hidden", "important");
         }
     }
 }
-
