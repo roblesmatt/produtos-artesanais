@@ -51,43 +51,45 @@
 
   <script>
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+      e.preventDefault();
 
-    // Recolhe os dados do cliente preenchidos no formulário
-    const nome = document.getElementById('nome').value;
-    const cpf = document.getElementById('cpf').value;
-    const endereco = document.getElementById('endereco').value;
+      // Recolhe todos os dados preenchidos no formulário (incluindo os novos)
+      const nome = document.getElementById('nome').value;
+      const cpf = document.getElementById('cpf').value;
+      const telefone = document.getElementById('telefone').value;
+      const endereco = document.getElementById('endereco').value;
+      const cep = document.getElementById('cep').value;
 
-    const dadosCliente = `*Dados do Cliente:*\n👤 Nome: ${nome}\n📄 CPF: ${cpf}\n📍 Endereço: ${endereco}\n\n`;
+      const dadosCliente = `*Dados do Cliente:*\n👤 Nome: ${nome}\n📄 CPF: ${cpf}\n📞 Telefone: ${telefone}\n📍 Endereço: ${endereco}\n📮 CEP: ${cep}\n\n`;
 
-    // Resgata os produtos guardados no localStorage (que vieram da página do produto ou da cesta)
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    let mensagemProdutos = "*Pedido:* \n";
-    let totalGeral = 0;
+      // Resgata os produtos guardados no localStorage
+      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+      let mensagemProdutos = "*Pedido:* \n";
+      let totalGeral = 0;
 
-    if (carrinho.length === 0) {
-        alert("O seu carrinho está vazio!");
-        return;
-    }
+      if (carrinho.length === 0) {
+          alert("O seu carrinho está vazio!");
+          return;
+      }
 
-    carrinho.forEach((item) => {
-        let valorNumerico = parseFloat(
-            item.preco.replace("R$", "").replace(".", "").replace(",", ".").trim()
-        ) || 0;
-        const subtotal = valorNumerico * item.quantidade;
-        totalGeral += subtotal;
+      carrinho.forEach((item) => {
+          let valorNumerico = parseFloat(
+              item.preco.replace("R$", "").replace(".", "").replace(",", ".").trim()
+          ) || 0;
+          const subtotal = valorNumerico * item.quantidade;
+          totalGeral += subtotal;
 
-        mensagemProdutos += `- ${item.quantidade}x ${item.nome} (${item.preco}) [Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}]\n`;
+          mensagemProdutos += `- ${item.quantidade}x ${item.nome} (${item.preco}) [Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}]\n`;
+      });
+
+      mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+
+      const numeroWhatsApp = "5511996624974"; // Número correto com o 6 atualizado
+      const mensagemFinal = dadosCliente + mensagemProdutos;
+      const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemFinal)}`;
+      
+      window.location.href = urlWhatsApp;
     });
-
-    mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
-
-    const numeroWhatsApp = "551199624974"; // Insira o seu número correto com DDI e DDD
-    const mensagemFinal = dadosCliente + mensagemProdutos;
-    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemFinal)}`;
-    
-    window.location.href = urlWhatsApp;
-});
   </script>
 
 <script src="scripts.js"></script>
