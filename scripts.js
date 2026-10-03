@@ -442,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 5. FUNÇÕES GLOBAIS (WhatsApp, etc.)
 // ==========================================
 function enviarPedidoWhatsApp() {
-  const numeroWhatsApp = "551199624974";
+  const numeroWhatsApp = "5511996624974";
   const itensCarrinho = document.querySelectorAll(".item-carrinho");
 
   if (itensCarrinho.length === 0) {
@@ -675,7 +675,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (produtoExiste && nomeAtual !== "") {
       btnAdicionarCesta.innerText = "ADICIONADO À CESTA";
       btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
-      btnAdicionarCesta.style.color = "#ffffff";
+      btnAdicionarCesta.style.color = "#e0d4b9";
       btnAdicionarCesta.style.borderColor = "#3d2d2d";
     }
 
