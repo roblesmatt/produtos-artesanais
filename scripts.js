@@ -593,7 +593,7 @@ window.alterarQtd = function (index, delta) {
 // 7. ENVIO DE PEDIDO VIA WHATSAPP
 // ==========================================
 function enviarPedidoWhatsApp() {
-  const numeroWhatsApp = "551199624974";
+  const numeroWhatsApp = "5511996624974";
   const itensCarrinho = document.querySelectorAll(".item-carrinho");
 
   if (itensCarrinho.length === 0) {
