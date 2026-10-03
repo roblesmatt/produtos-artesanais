@@ -187,8 +187,6 @@ main,
   gap: 12px;
 }
 
-
-
 /* =================================================
 BARRA DE BUSCA
 ================================================= */
@@ -226,15 +224,13 @@ BARRA DE BUSCA
   pointer-events: none;
 }
 .search-bar input:focus {
-    outline: none;
-    border-color: #3d2d2d50;
+  outline: none;
+  border-color: #3d2d2d50;
 }
 .search-bar input:focus::placeholder {
-    color: #3d2d2d50;
-    opacity: 1;
+  color: #3d2d2d50;
+  opacity: 1;
 }
-
-
 
 .icon-btn {
   border: none;
@@ -992,17 +988,17 @@ details[open] .accordion-content {
 }
 
 .descricao {
-    margin-top: 25px; /* Aumente este valor para afastar ainda mais do botão */
-    width: 100%;
+  margin-top: 25px; /* Aumente este valor para afastar ainda mais do botão */
+  width: 100%;
 }
 .descricao span {
-    display: block;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 500;
-    color: #3d2d2d;
-    line-height: 1.4;
-    padding: 0 15px; /* Mantém o recuo nas laterais para não colar nas bordas */
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3d2d2d;
+  line-height: 1.4;
+  padding: 0 15px; /* Mantém o recuo nas laterais para não colar nas bordas */
 }
 
 /* =================================================
@@ -1077,17 +1073,31 @@ BARRA DE BUSCA
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
 #sub-rosas:checked ~ .submenu-linhas label[for="sub-rosas"],
 #sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"],
-#sub-sabonete-corporal:checked ~ .submenu-funcao label[for="sub-sabonete-corporal"],
-#sub-sabonete-liquido:checked ~ .submenu-funcao label[for="sub-sabonete-liquido"],
-#sub-perfume-artesanal:checked ~ .submenu-funcao label[for="sub-perfume-artesanal"],
+#sub-sabonete-corporal:checked
+  ~ .submenu-funcao
+  label[for="sub-sabonete-corporal"],
+#sub-sabonete-liquido:checked
+  ~ .submenu-funcao
+  label[for="sub-sabonete-liquido"],
+#sub-perfume-artesanal:checked
+  ~ .submenu-funcao
+  label[for="sub-perfume-artesanal"],
 #sub-vela-aromatica:checked ~ .submenu-funcao label[for="sub-vela-aromatica"],
-#sub-shampoo-e-condicionador:checked ~ .submenu-funcao label[for="sub-shampoo-e-condicionador"],
+#sub-shampoo-e-condicionador:checked
+  ~ .submenu-funcao
+  label[for="sub-shampoo-e-condicionador"],
 #sub-creme-capilar:checked ~ .submenu-funcao label[for="sub-creme-capilar"],
-#sub-creme-para-rosto:checked ~ .submenu-funcao label[for="sub-creme-para-rosto"],
+#sub-creme-para-rosto:checked
+  ~ .submenu-funcao
+  label[for="sub-creme-para-rosto"],
 #sub-locao-pos-barba:checked ~ .submenu-funcao label[for="sub-locao-pos-barba"],
 #sub-capim-limao:checked ~ .submenu-ativos label[for="sub-capim-limao"],
-#sub-lavanda-provence:checked ~ .submenu-ativos label[for="sub-lavanda-provence"],
-#sub-alecrim-rosmarino:checked ~ .submenu-ativos label[for="sub-alecrim-rosmarino"],
+#sub-lavanda-provence:checked
+  ~ .submenu-ativos
+  label[for="sub-lavanda-provence"],
+#sub-alecrim-rosmarino:checked
+  ~ .submenu-ativos
+  label[for="sub-alecrim-rosmarino"],
 #sub-laranja-doce:checked ~ .submenu-ativos label[for="sub-laranja-doce"],
 #sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"],
 #sub-verde:checked ~ .submenu-cores label[for="sub-verde"],
@@ -1110,31 +1120,69 @@ BARRA DE BUSCA
 .conteudo-vitrine .vitrine-item {
   display: none;
 }
-#todos:checked ~ #sub-mais-vendido:checked ~ .conteudo-vitrine .item-mais-vendido,
+#todos:checked
+  ~ #sub-mais-vendido:checked
+  ~ .conteudo-vitrine
+  .item-mais-vendido,
 #todos:checked ~ #sub-lancamentos:checked ~ .conteudo-vitrine .item-lancamentos,
 #todos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
-
 #linhas:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
 #linhas:checked ~ #sub-premium:checked ~ .conteudo-vitrine .item-premium,
 #linhas:checked ~ #sub-esoterica:checked ~ .conteudo-vitrine .item-esoterica,
 #linhas:checked ~ #sub-rosas:checked ~ .conteudo-vitrine .item-rosas,
 #linhas:checked ~ #sub-nopou:checked ~ .conteudo-vitrine .item-nopou,
-
-#funcao:checked ~ #sub-sabonete-corporal:checked ~ .conteudo-vitrine .item-sabonete-corporal,
-#funcao:checked ~ #sub-sabonete-liquido:checked ~ .conteudo-vitrine .item-sabonete-liquido,
-#funcao:checked ~ #sub-perfume-artesanal:checked ~ .conteudo-vitrine .item-perfume-artesanal,
-#funcao:checked ~ #sub-vela-aromatica:checked ~ .conteudo-vitrine .item-vela-aromatica,
-#funcao:checked ~ #sub-shampoo-e-condicionador:checked ~ .conteudo-vitrine .item-shampoo-e-condicionador,
-#funcao:checked ~ #sub-creme-capilar:checked ~ .conteudo-vitrine .item-creme-capilar,
-#funcao:checked ~ #sub-creme-para-rosto:checked ~ .conteudo-vitrine .item-creme-para-rosto,
-#funcao:checked ~ #sub-locao-pos-barba:checked ~ .conteudo-vitrine .item-locao-pos-barba,
-
-#ativos:checked ~ #sub-capim-limao:checked ~ .conteudo-vitrine .item-capim-limao,
-#ativos:checked ~ #sub-lavanda-provence:checked ~ .conteudo-vitrine .item-lavanda-provence,
-#ativos:checked ~ #sub-alecrim-rosmarino:checked ~ .conteudo-vitrine .item-alecrim-rosmarino,
-#ativos:checked ~ #sub-laranja-doce:checked ~ .conteudo-vitrine .item-laranja-doce,
-#ativos:checked ~ #sub-amendoa-doce:checked ~ .conteudo-vitrine .item-amendoa-doce,
-
+#funcao:checked
+  ~ #sub-sabonete-corporal:checked
+  ~ .conteudo-vitrine
+  .item-sabonete-corporal,
+#funcao:checked
+  ~ #sub-sabonete-liquido:checked
+  ~ .conteudo-vitrine
+  .item-sabonete-liquido,
+#funcao:checked
+  ~ #sub-perfume-artesanal:checked
+  ~ .conteudo-vitrine
+  .item-perfume-artesanal,
+#funcao:checked
+  ~ #sub-vela-aromatica:checked
+  ~ .conteudo-vitrine
+  .item-vela-aromatica,
+#funcao:checked
+  ~ #sub-shampoo-e-condicionador:checked
+  ~ .conteudo-vitrine
+  .item-shampoo-e-condicionador,
+#funcao:checked
+  ~ #sub-creme-capilar:checked
+  ~ .conteudo-vitrine
+  .item-creme-capilar,
+#funcao:checked
+  ~ #sub-creme-para-rosto:checked
+  ~ .conteudo-vitrine
+  .item-creme-para-rosto,
+#funcao:checked
+  ~ #sub-locao-pos-barba:checked
+  ~ .conteudo-vitrine
+  .item-locao-pos-barba,
+#ativos:checked
+  ~ #sub-capim-limao:checked
+  ~ .conteudo-vitrine
+  .item-capim-limao,
+#ativos:checked
+  ~ #sub-lavanda-provence:checked
+  ~ .conteudo-vitrine
+  .item-lavanda-provence,
+#ativos:checked
+  ~ #sub-alecrim-rosmarino:checked
+  ~ .conteudo-vitrine
+  .item-alecrim-rosmarino,
+#ativos:checked
+  ~ #sub-laranja-doce:checked
+  ~ .conteudo-vitrine
+  .item-laranja-doce,
+#ativos:checked
+  ~ #sub-amendoa-doce:checked
+  ~ .conteudo-vitrine
+  .item-amendoa-doce,
 #cores:checked ~ #sub-verde:checked ~ .conteudo-vitrine .item-verde,
 #cores:checked ~ #sub-amarelo:checked ~ .conteudo-vitrine .item-amarelo,
 #cores:checked ~ #sub-vermelho:checked ~ .conteudo-vitrine .item-vermelho,
@@ -1146,8 +1194,6 @@ BARRA DE BUSCA
   display: block;
   width: 100%;
 }
-
-
 
 /* =================================================
 CARD DE PRODUTOS
@@ -1175,7 +1221,7 @@ CARD DE PRODUTOS
   }
 }
 .produto-card {
-  border-right: 2px solid #3d2d2d;  /* Linha divisória vertical */
+  border-right: 2px solid #3d2d2d; /* Linha divisória vertical */
   border-bottom: 2px solid #3d2d2d; /* Linha divisória horizontal */
   box-sizing: border-box;
   background-color: #e0d4b9;
@@ -1189,18 +1235,18 @@ CARD DE PRODUTOS
   margin-left: 2px;
 }
 .produto-card img {
-    width: 100%;
-    max-width: 400px; /* Imagem maior em telas grandes */
+  width: 100%;
+  max-width: 400px; /* Imagem maior em telas grandes */
 }
 
 /* Estilo específico para Mobile (abaixo de 768px) */
 @media (max-width: 480px) {
-    .produto-card img {
-        max-width: 200px; /* Imagem ajustada para telas pequenas */
-    }
-        .produto-card {
-        padding: 10px;
-    }
+  .produto-card img {
+    max-width: 200px; /* Imagem ajustada para telas pequenas */
+  }
+  .produto-card {
+    padding: 10px;
+  }
 }
 .produto-card h4 {
   font-size: 13px;
@@ -1214,15 +1260,12 @@ CARD DE PRODUTOS
   color: #3d2d2d;
   margin-bottom: 10px;
   -webkit-text-stroke: 2.5px;
-
 }
 @media (max-width: 768px) {
   .vitrine-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-
 
 /* =================================================
 TEMPLATE
@@ -1254,189 +1297,183 @@ TEMPLATE
   border-right: none;
 }
 
-
-
 /* =================================================
 CARD DE CESTA
 ================================================= */
 .cart-item-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #e0d4b9; /* Tom de fundo levemente diferente ou o mesmo do seu tema */
-    border: 2px solid #3d2d2d;
-    padding: 12px;
-    margin-bottom: 12px;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e0d4b9; /* Tom de fundo levemente diferente ou o mesmo do seu tema */
+  border: 2px solid #3d2d2d;
+  padding: 12px;
+  margin-bottom: 12px;
+  gap: 12px;
 }
 /* Imagem do produto no carrinho */
 .cart-item-img {
-    width: 55px;
-    height: 55px;
-    object-fit: cover;
-    background-color: #e0d4b9;
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  background-color: #e0d4b9;
 }
 /* Detalhes do texto (Nome e Preço) */
 .cart-item-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .cart-item-title {
-    font-size: 18px;
-    font-family: "Merrie", serif;
-    font-weight: 700;
-    -webkit-text-stroke: 1px;
-    color: #3d2d2d;
-    margin: 0;
-    line-height: 1.2;
+  font-size: 18px;
+  font-family: "Merrie", serif;
+  font-weight: 700;
+  -webkit-text-stroke: 1px;
+  color: #3d2d2d;
+  margin: 0;
+  line-height: 1.2;
 }
 .cart-item-price {
-    font-family: "Mont", serif;
-    font-weight: 700;
-    -webkit-text-stroke: 2.5px;
-    letter-spacing: 1px;
-    font-size: 20px;
-    color: #3d2d2d;
-    font-weight: 600;
+  font-family: "Mont", serif;
+  font-weight: 700;
+  -webkit-text-stroke: 2.5px;
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: #3d2d2d;
+  font-weight: 600;
 }
 /* Controles de quantidade e lixeira */
 .cart-item-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 /* Caixa com os botões - 1 + */
 .qty-selector {
-    display: flex;
-    align-items: center;
-    background: #e0d4b9;
-    border: 2px solid #3d2d2d;
-    border-radius: 20px;
-    padding: 5px 10px;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  background: #e0d4b9;
+  border: 2px solid #3d2d2d;
+  border-radius: 20px;
+  padding: 5px 10px;
+  gap: 10px;
 }
 .qty-selector button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    color: #3d2d2d;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #3d2d2d;
 }
 .qty-selector span {
-    font-size: 13px;
-    font-weight: 600;
-    color: #3d2d2d;
-    min-width: 15px;
-    text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3d2d2d;
+  min-width: 15px;
+  text-align: center;
 }
 /* Botão de lixeira */
 .cart-item-delete {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 4px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 .cart-item-delete:hover {
-    opacity: 1;
+  opacity: 1;
 }
-
-
 
 /* =================================================
 ICONE DE CESTA
 ================================================= */
 .icone {
-    position: relative;
-    display: inline-flex;
+  position: relative;
+  display: inline-flex;
 }
 .badge-contador {
-    position: absolute;
-    left: 22px;
-    outline: 2px solid #e0d4b9;
-    background-color: #3d2d2d;
-    color: #e0d4b9;
-    font-size: 11px;
-    font-weight: bold;
-    min-width: 20px;
-    height: 20px;
-    padding: 0 4px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  left: 22px;
+  outline: 2px solid #e0d4b9;
+  background-color: #3d2d2d;
+  color: #e0d4b9;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
 
 /* =================================================
 CHECKOUT
 ================================================= */
-    .checkout-container {
-      background: #e0d4b9;
-      padding: 30px;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 500px;
-    }
-    @media (min-width: 480px) {
-      .checkout-container {
-      position: absolute;
+.checkout-container {
+  background: #e0d4b9;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+@media (min-width: 480px) {
+  .checkout-container {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-      }
-    }
-    h2 {
-      color: #3d2d2d;
-      font-size: 22px;
-      text-align: center;
-      margin-bottom: 30px;
-      -webkit-text-stroke: 1px;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    .input {
-    width: 100%;
-    padding: 10px;
-    background-color: #e0d4b9; /* Adicione esta linha com a cor que preferir */
-    border: 2px solid #3d2d2d;
-    font-size: 14px;
-    box-sizing: border-box;
-    color: #3d2d2d;
+  }
+}
+h2 {
+  color: #3d2d2d;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 30px;
+  -webkit-text-stroke: 1px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  background-color: #e0d4b9; /* Adicione esta linha com a cor que preferir */
+  border: 2px solid #3d2d2d;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #3d2d2d;
 }
 .input::placeholder {
-    color: #3d2d2d; /* Altere para a cor desejada */
-    opacity: 1;     /* Garante que o navegador mostre a cor sólida */
+  color: #3d2d2d; /* Altere para a cor desejada */
+  opacity: 1; /* Garante que o navegador mostre a cor sólida */
 }
 .input:focus {
-    outline: none; /* Remove o contorno padrão do navegador */
-    border-color: #3d2d2d50; 
+  outline: none; /* Remove o contorno padrão do navegador */
+  border-color: #3d2d2d50;
 }
 .input:focus::placeholder {
-    color: #3d2d2d50; /* Coloque aqui a mesma cor que usa no seu contorno/borda */
-    opacity: 1;     /* Garante que a cor fique sólida */
+  color: #3d2d2d50; /* Coloque aqui a mesma cor que usa no seu contorno/borda */
+  opacity: 1; /* Garante que a cor fique sólida */
 }
-    .button1 {
-      background-color: #3d2d2d;
-      color: #e0d4b9;
-      border: none;
-      padding: 12px;
-      width: 100%;
-      border-radius: 30px;
-      font-size: 16px;
-      border: 2px solid #3d2d2d;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.2s;
-    }
-    .button1:hover {
-      color: #3d2d2d;
-      background-color: #e0d4b9;
-    }
+.button1 {
+  background-color: #3d2d2d;
+  color: #e0d4b9;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 16px;
+  border: 2px solid #3d2d2d;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.button1:hover {
+  color: #3d2d2d;
+  background-color: #e0d4b9;
+}
