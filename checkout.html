@@ -60,7 +60,7 @@
       const endereco = document.getElementById('endereco').value;
       const cep = document.getElementById('cep').value;
 
-      const dadosCliente = `*Dados do Cliente:*\n👤 Nome: ${nome}\n📄 CPF: ${cpf}\n📞 Telefone: ${telefone}\n📍 Endereço: ${endereco}\n📮 CEP: ${cep}\n\n`;
+      const dadosCliente = `*Dados do Cliente:*\n- Nome: ${nome}\n- CPF: ${cpf}\n- Telefone: ${telefone}\n- Endereço: ${endereco}\n- CEP: ${cep}\n\n`;
 
       // Resgata os produtos guardados no localStorage
       let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
