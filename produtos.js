@@ -132,7 +132,18 @@ function renderizarVitrinesAutomaticas() {
       if (produto.esgotado) {
         classeEsgotado = "produto-esgotado";
         seloEsgotadoHtml = `
-          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); background-color: #3d2d2d; color: #e0d4b9; padding: 10px 20px; font-weight: bold; border: 2px solid #000; z-index: 10; font-size: 18px; pointer-events: none; box-shadow: 4px 4px 0px #000;">
+          <div class="button1" style="
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 70%; /* Sobrescreve o width: 100% do button1 para não ficar gigante */
+            margin: 0;   /* Sobrescreve o margin-top do button1 */
+            z-index: 10; 
+            pointer-events: none; 
+            text-align: center;
+            font-family: inherit; /* Garante que herda a fonte do card */
+          ">
             ESGOTADO
           </div>`;
       }
