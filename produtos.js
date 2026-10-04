@@ -6,8 +6,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-capim-limao",
     nome: "Perfume Artesanal de Capim Limão",
-    precoOriginal: "R$ 89,90",
-    precoDesconto: "R$ 79,90",
+    precoOriginal: "R$89,90",
+    precoDesconto: "",
     subtitulo: "[1 un. / 60ml]",
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
@@ -35,8 +35,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-lavanda-provence",
     nome: "Perfume Artesanal de Lavanda Provence",
-    precoOriginal: "R$ 79,90",
-    precoDesconto: "R$ 69,90",
+    precoOriginal: "R$79,90",
+    precoDesconto: "R$69,90",
     subtitulo: "[1 un. / 60ml]",
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
@@ -60,7 +60,37 @@ const BANCO_PRODUTOS = [
       frete: "Enviado para todo o Brasil.",
       trocas: "Até 7 dias após o recebimento."
     }
-  }];
+  },
+  {
+    id: "perfume-alecrim-rosmarino",
+    nome: "Perfume Artesanal de Alecrim Rosmarino",
+    precoOriginal: "R$79,90",
+    precoDesconto: "R$69,90",
+    subtitulo: "[1 un. / 60ml]",
+    esgotado: true,
+    imagemFrente: "produtos/thairo-1x1.svg",
+    imagemVerso: "produtos/thairo-1x1.svg",
+    video3d: "produtos/perfume-teste.webm",
+    linkPagina: "perfume-artesanal-alecrim-rosmarino.html",
+    tags: {
+      linha: "linhas-classico",
+      funcao: "funcao-perfume-artesanal",
+      ativo: "ativos-alecrim-rosmarino",
+      cor: "cores-verde",
+      categoria: "mais-vendido"
+    },
+    acordeoes: {
+      sobre: "Perfume artesanal formulado com extratos naturais de capim-limão.",
+      composicao: "Álcool para perfume, óleo vegetal de amêndoa doce, óleo essencial de capim-limão, essência e corante verde.",
+      modoUso: "Borrifar a 20cm da pele.",
+      advertencias: "Manter fora do alcance de crianças.",
+      fichaTecnica: "Volume: 50ml",
+      pagamentos: "Pix, cartão e boleto.",
+      frete: "Enviado para todo o Brasil.",
+      trocas: "Até 7 dias após o recebimento."
+    }
+  }
+];
 
 // ==========================================
 // RENDERIZAÇÃO AUTOMÁTICA DAS VITRINES E FILTROS
@@ -164,8 +194,22 @@ function preencherPaginaProduto() {
   if (h1El) h1El.innerText = produto.nome;
 
   const precoEl = document.querySelector(".preco");
+  const unidadeEl = document.querySelector(".unidade");
+  
   if (precoEl) {
-    precoEl.innerHTML = produto.precoDesconto ? `${produto.precoDesconto}` : produto.precoOriginal;
+    if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
+      precoEl.innerHTML = `
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <span class="preco">${produto.precoDesconto}</span>
+          ${unidadeEl ? unidadeEl.outerHTML : ''}
+        </div>
+        <del style="font-family: 'Merrie', sans-serif; font-size: 16px; color: #3d2d2d50; display: block; line-height: 1; margin-top: 6px; text-decoration: line-through;">${produto.precoOriginal}</del>
+      `;
+      
+      if (unidadeEl) unidadeEl.style.display = 'none';
+    } else {
+      precoEl.innerHTML = produto.precoOriginal;
+    }
   }
 
   const subtituloEl = document.getElementById("subtituloProduto") || document.querySelector(".substitulo");
