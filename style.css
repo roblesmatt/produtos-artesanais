@@ -205,7 +205,7 @@ BARRA DE BUSCA
   padding: 8px 10px 8px 16px;
   font-size: 14px;
   outline: none;
-  width: 132px;
+  width: 126px;
   height: 38px;
   color: #3d2d2d;
   border-radius: 20px;
@@ -1392,6 +1392,7 @@ ICONE DE CESTA
 .icone {
   position: relative;
   display: inline-flex;
+  margin-top: 8px;
 }
 .badge-contador {
   position: absolute;

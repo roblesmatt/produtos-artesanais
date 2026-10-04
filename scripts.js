@@ -585,7 +585,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const produtoExiste = carrinho.some(item => item.nome === nomeAtual);
 
     if (produtoExiste && nomeAtual !== "") {
-      btnAdicionarCesta.innerText = "ADICIONADO À CESTA";
+      btnAdicionarCesta.innerText = "Adicionado à Cesta";
       btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
       btnAdicionarCesta.style.color = "#e0d4b9";
       btnAdicionarCesta.style.borderColor = "#3d2d2d";
@@ -618,7 +618,7 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarContadorCarrinho();
       }
 
-      btnAdicionarCesta.innerText = "ADICIONADO À CESTA";
+      btnAdicionarCesta.innerText = "Adicionado à Cesta";
       btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
       btnAdicionarCesta.style.color = "#e0d4b9";
       btnAdicionarCesta.style.borderColor = "#3d2d2d";
