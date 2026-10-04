@@ -1392,7 +1392,7 @@ ICONE DE CESTA
 .icone {
   position: relative;
   display: inline-flex;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 .badge-contador {
   position: absolute;
