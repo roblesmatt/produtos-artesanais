@@ -1213,9 +1213,7 @@ CARD DE PRODUTOS
 
 .vitrine-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Força sempre 2 colunas lado a lado */
-  width: 100%;
-  gap: 0; 
+grid-template-columns: repeat(4, 1fr); /* Força sempre 4 colunas no desktop */  gap: 0; 
 }
 .vitrine-item {
   width: 100%;
