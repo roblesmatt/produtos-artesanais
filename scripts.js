@@ -647,3 +647,9 @@ function atualizarContadorCarrinho() {
         }
     }
 }
+// Força a atualização da página e reconstrói o carrinho ao usar o botão "Voltar" do navegador/telemóvel
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    window.location.reload();
+  }
+});
