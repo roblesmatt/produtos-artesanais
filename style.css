@@ -225,10 +225,10 @@ BARRA DE BUSCA
 }
 .search-bar input:focus {
   outline: none;
-  border-color: #3d2d2d50;
+  border-color: #3d2d2d80;
 }
 .search-bar input:focus::placeholder {
-  color: #3d2d2d50;
+  color: #3d2d2d80;
   opacity: 1;
 }
 
@@ -1467,7 +1467,7 @@ h2 {
 }
 .input:focus {
   outline: none; /* Remove o contorno padrão do navegador */
-  border-color: #3d2d2d50;
+  border-color: #3d2d2d80;
 }
 .input:focus::placeholder {
   color: #3d2d2d50; /* Coloque aqui a mesma cor que usa no seu contorno/borda */

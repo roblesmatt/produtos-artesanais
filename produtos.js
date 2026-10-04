@@ -94,7 +94,7 @@ function renderizarVitrinesAutomaticas() {
       // Criação do HTML do card
       let blocoPreco = `<span class="preco">${produto.precoOriginal}</span>`;
       if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
-        blocoPreco = `<del style="font-size: 14px; color: #777; margin-right: 8px;">${produto.precoOriginal}</del><span class="preco" style="color: #b22222;">${produto.precoDesconto}</span>`;
+        blocoPreco = `<del style="font-size: 14px; color: #3d2d2d80; margin-right: 8px;">${produto.precoOriginal}</del><span class="preco" style="color: #3d2d2d;">${produto.precoDesconto}</span>`;
       }
 
       let seloEsgotadoHtml = "";
