@@ -174,25 +174,32 @@ function inicializarGlobalEvents() {
             item.style.cssText =
               "display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; padding: 8px;";
 
-            const precoExibido =
-              produto.precoDesconto && produto.precoDesconto.trim() !== ""
-                ? produto.precoDesconto
-                : produto.precoOriginal;
+            let blocoPrecoBusca = `<span class="preco-atual">${produto.precoOriginal}</span>`;
+
+            if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
+              blocoPrecoBusca = `
+                <div style="display: flex; flex-direction: row; align-items: baseline; gap: 6px;">                  
+                <span class="preco-antigo"style="margin-top: 2px;">${produto.precoOriginal}</span>
+                <span class="preco-atual";">${produto.precoDesconto}</span>
+                </div>
+              `;
+            }
 
             item.innerHTML = `
               <img src="${produto.imagemFrente}" alt="" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
               <div>
-                <h4 style="margin: 0 0 4px 0; font-size: 14px; color: #333;">${produto.nome}</h4>
-                <span style="font-size: 13px; font-weight: bold; color: #111;">${precoExibido}</span>
+                <h4 style="margin: 0 0 4px 0; font-size: 14px; color: #3d2d2d;">${produto.nome}</h4>
+                ${blocoPrecoBusca}
               </div>
             `;
+
             searchResultsList.appendChild(item);
           }
         });
 
         if (encontrados === 0) {
           searchResultsList.innerHTML =
-            '<p style="color: #777; text-align: center; padding: 10px;">Nenhum produto encontrado</p>';
+            '<p style="color: #9A8E7E; text-align: center; padding: 10px;">Nenhum produto encontrado</p>';
         }
       } else {
         searchModal.style.display = "none";
