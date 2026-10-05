@@ -592,8 +592,7 @@ BARRA DE BUSCA
 }
 .accordion-arrow {
   transition: transform 0.3s ease-in-out;
-  font-size: 20px;
-  -webkit-text-stroke: 2px;
+
 }
 .accordion-item[open] .accordion-arrow {
   transform: rotate(180deg);
