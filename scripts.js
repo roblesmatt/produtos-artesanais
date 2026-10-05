@@ -732,37 +732,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     carrinho.forEach((item, index) => {
+      let precoParaCalculo =
+        item.precoDesconto && item.precoDesconto.trim() !== ""
+          ? item.precoDesconto
+          : item.preco;
+
       let valorNumerico =
         parseFloat(
-          item.preco
+          precoParaCalculo
             .replace("R$", "")
             .replace(/\./g, "")
             .replace(",", ".")
             .trim(),
         ) || 0;
+
       let subtotal = valorNumerico * item.quantidade;
       totalGeral += subtotal;
 
       const divItem = document.createElement("div");
       divItem.classList.add("cart-item-card");
 
+      // Montagem do bloco de preço corrigido (com desconto em destaque e original menor, riscado e em cinza/suave)
+      let blocoPrecoCarrinho = `<span style="font-weight: bold; font-size: 16px; color: #3d2d2d;">${item.preco}</span>`;
+
+      if (item.precoDesconto && item.precoDesconto.trim() !== "") {
+        blocoPrecoCarrinho = `
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-family: 'Mont' serif font-weight: bold; font-size: 16px; color: #3d2d2d; line-height: 1.2;">${item.precoDesconto}</span>
+            <span style="font-size: 13px; color: #9A8E7E; text-decoration: line-through; line-height: 1; margin-top: 2px;">${item.preco}</span>
+          </div>
+        `;
+      }
+
       divItem.innerHTML = `
         <img src="${item.imagem || "produtos/thairo-1x1.svg"}" alt="${item.nome}" class="cart-item-img">
         
-        <div class="cart-item-details">
-            <h4 class="cart-item-title">${item.nome}</h4>
-            <span class="cart-item-price">${item.preco}</span>
-        </div>
+        <div class="cart-item-content" style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+            <h4 class="cart-item-title" style="margin: 0; font-size: 15px; font-weight: bold; color: #3d2d2d;">${item.nome}</h4>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="cart-item-price-area">
+                    ${blocoPrecoCarrinho}
+                </div>
 
-        <div class="cart-item-controls">
-            <div class="qty-selector">
-                <button onclick="alterarQtd(${index}, -1)">-</button>
-                <span>${item.quantidade}</span>
-                <button onclick="alterarQtd(${index}, 1)">+</button>
-            </div>
-            <button onclick="removerDaCesta(${index})" class="cart-item-delete">
-                🗑️
-            </button>
+                <div class="cart-item-controls" style="display: flex; align-items: center; gap: 12px;">
+                    <div class="qty-selector" style="display: flex; align-items: center; border: 2px solid #3d2d2d; border-radius: 20px; padding: 2px 8px;">
+                        <button onclick="alterarQtd(${index}, -1)" style="background: none; border: none; cursor: pointer; font-size: 14px;">-</button>
+                        <span style="margin: 0 8px; font-size: 14px;">${item.quantidade}</span>
+                        <button onclick="alterarQtd(${index}, 1)" style="background: none; border: none; cursor: pointer; font-size: 14px;">+</button>
+                    </div>
+                    <button onclick="removerDaCesta(${index})" class="cart-item-delete" style="background: none; border: none; cursor: pointer; font-size: 16px;" title="Remover item">
+<svg xmlns="http://www.w3.org/2000/svg" width="32.8" height="32.8" viewBox="0 0 32.8 32.8"><path d="M60.4-0.4c.5 0 2.3-0.1 4 .6c.4 .2 1.3 .7 1.4 .8c.4 .3 .9 .7 1 .8c.1 .1 .9 1.1 1 1.3c1.5 2.3 1.3 3.3 1.3 9.4c0 1.9 0 2.2 .2 2.4c.1 .1 .1 .1 7.2 .1c15.7 0 15.7 0 16.5 .1c1.5 .1 2.4 .6 3.4 1.2c.2 .1 1.2 .9 1.3 1.1c2.4 2.8 2.1 4.3 2.1 9.7c0 3.1 .2 4.4-0.6 6.2c-0.4 1-1 1.8-1.2 2c-0.5 .5-0.5 .5-1.3 1.2c-0.7 .6-2 1.1-3 1.3c-0.4 .1-1.2 .2-1.4 .3c-0.1 .2-0.1 .2-0.1 8.4c0 60.4 0 60.4-0.1 61.5c-0.1 2.8-1.3 7.1-4.9 10.5c-4.9 4.5-10.8 4-11.5 4c-52.9 0-52.9 0-53 0c-2.1-0.1-4.4-0.3-7.9-2.4c-0.2-0.1-1.7-1.2-2.8-2.3c-4.8-5.1-4.3-10.5-4.3-12.9c0-66.5 0-66.5 0-66.5c-0.1-0.8-1.4 .1-4.2-1.7c-0.3-0.1-1.3-0.9-1.3-1c-0.9-1-1.2-1.6-1.2-1.7c-1.5-2.6-0.8-5.4-1-11c0-0.3 .1-1.5 .2-2.1c.4-1.7 1.5-2.9 1.6-3.1c.5-0.6 .5-0.6 1-1c2.4-2.1 4.5-1.8 8.9-1.8c18.6 0 18.6 0 18.7 0c.4-0.1 .3-0.2 .3-0.6c.1-5.1-0.3-7.7 .7-10.1c.4-1.1 1.5-2.4 1.7-2.5c.6-0.5 2.2-2.1 5.4-2.2c.3 0 .3 0 21.9 0Zm26.9 30.8c.6 0 3.2 .3 4.4-2.1c1.2-2.2 0-5.6-3.5-5.6c-0.2 0-0.2 0-75.3 0c-0.6 0-3.1-0.4-4.5 1.6c-1.6 2.3-0.3 6 3.3 6c1.2 .1 73.8 0 75.6 .1Zm-71.9 7.7c0 .1 0 68.6 0 68.7c0 2.9 1 4.3 2.1 5.7c.1 .1 1.1 .9 1.3 1c2.4 1.5 3.7 1.3 7.7 1.3c50.4 0 50.4 0 50.9 0c4.6-0.5 6.6-4.2 6.9-6.1c.2-1.3 .2-1.3 .2-10.1c0-60.2 0-60.2 0-60.2c-0.1-0.4-0.2-0.4-0.6-0.4c-0.7 0-66.5 .1-67.9 0c-0.2 0-0.2 0-0.3 0c-0.1 .1-0.1 .1-0.3 .1Zm49.9 20.2c0-0.9 0-1.5 .1-1.9c1.1-4.2 7.2-3.9 7.6 .7c0 .1 0 .1 0 44.2c0 1.8 .1 3.2-0.8 4.3c-2.4 3-7 1.3-6.9-2.7c0-0.6 0-0.6 0-44.6Zm-38.4 0c0-0.9-0.2-2.7 1.4-4c2.1-1.8 6-0.9 6.3 2.8c0 .1 0 .1 0 44.2c0 1.8 .1 3.2-0.8 4.3c-2.4 3-7 1.3-6.9-2.7c0-0.6 0-0.6 0-44.6Zm19.2 0c0-0.9-0.2-2.7 1.4-4c2.1-1.8 6-0.9 6.3 2.8c0 .1 0 .1 0 44.2c0 1.8 .1 3.2-0.8 4.3c-2.4 3-7 1.3-6.9-2.7c0-0.6 0-0.6 0-44.6Zm-2.8-51c-0.6 0-3.2-0.3-4.4 2.1c-0.6 1.1-0.4 2.1-0.5 5c0 .6 .2 .6 .9 .6c20.7 0 20.7 0 21.6 0c.7 0 .5-0.3 .5-1.1c0-3 .3-4.2-1.2-5.6c-1.3-1.1-2.4-1-5.1-1c-11 0-11 0-11.8 0Z" fill="#3d2d2d" stroke="#3d2d2d" stroke-width="2" transform="translate(16.4,16.4) scale(.25,.25) translate(-49.9,-61.1)"/></svg>            </div>
         </div>
       `;
       cartItemsList.appendChild(divItem);
