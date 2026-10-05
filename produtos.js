@@ -19,18 +19,27 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-capim-limao",
       cor: "cores-verde",
-      categoria: "mais-vendido"
+      categoria: "mais-vendido",
     },
     acordeoes: {
-      sobre: "Perfume artesanal formulado com extratos naturais de capim-limão.",
-      composicao: "Álcool para perfume, óleo vegetal de amêndoa doce, óleo essencial de capim-limão, essência e corante verde.",
-      modoUso: "Borrifar a 20cm da pele.",
-      advertencias: "Manter fora do alcance de crianças.",
-      fichaTecnica: "Volume: 50ml",
-      pagamentos: "Pix, cartão e boleto.",
-      frete: "Enviado para todo o Brasil.",
-      trocas: "Até 7 dias após o recebimento."
-    }
+      sobre:
+        "Frescor, limpeza e revigorante. Um estímulo natural de frescor e bem-estar.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes</strong>].",
+      beneficios:
+        "<strong>*produção artesanal<br>*com ativos naturais<br>*sem corantes<br>*aroma acentuado<br>*sensação imediata<br>*não testado em animais",
+      composicao:
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Capim-Limão, Óleo Essencial de Capim-Limão.",
+      modoUso:
+        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). <strong>Após aberto, consumir em até 12 (doze) meses.</strong>",
+      advertencias:
+        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conserva em local seco, fresco e longe da luz solar.",
+      fichaTecnica:
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+      pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
+      frete:
+        "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
+      trocas:
+        "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso. <strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC. <strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contacto connosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
+    },
   },
   {
     id: "perfume-lavanda-provence",
@@ -48,18 +57,27 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-lavanda-provence",
       cor: "cores-lilas",
-      categoria: "mais-vendido"
+      categoria: "mais-vendido",
     },
     acordeoes: {
-      sobre: "Perfume artesanal formulado com extratos naturais de capim-limão.",
-      composicao: "Álcool para perfume, óleo vegetal de amêndoa doce, óleo essencial de capim-limão, essência e corante verde.",
-      modoUso: "Borrifar a 20cm da pele.",
-      advertencias: "Manter fora do alcance de crianças.",
-      fichaTecnica: "Volume: 50ml",
-      pagamentos: "Pix, cartão e boleto.",
-      frete: "Enviado para todo o Brasil.",
-      trocas: "Até 7 dias após o recebimento."
-    }
+      sobre:
+        "Relaxante, harmonioso e suave. A energia das ervas frescas para despertar o foco e a vitalidade.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes</strong>].",
+      beneficios:
+        "<strong>*produção artesanal<br>*com ativos naturais<br>*sem corantes<br>*aroma acentuado<br>*sensação imediata<br>*não testado em animais",
+      composicao:
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Lavanda Provence, Óleo Essencial de Lavanda Provence.",
+      modoUso:
+        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). <strong>Após aberto, consumir em até 12 (doze) meses.</strong>",
+      advertencias:
+        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conserva em local seco, fresco e longe da luz solar.",
+      fichaTecnica:
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+      pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
+      frete:
+        "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
+      trocas:
+        "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso. <strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC. <strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contacto connosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
+    },
   },
   {
     id: "perfume-alecrim-rosmarino",
@@ -77,40 +95,49 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-alecrim-rosmarino",
       cor: "cores-verde",
-      categoria: "mais-vendido"
+      categoria: "mais-vendido",
     },
     acordeoes: {
-      sobre: "Perfume artesanal formulado com extratos naturais de capim-limão.",
-      composicao: "Álcool para perfume, óleo vegetal de amêndoa doce, óleo essencial de capim-limão, essência e corante verde.",
-      modoUso: "Borrifar a 20cm da pele.",
-      advertencias: "Manter fora do alcance de crianças.",
-      fichaTecnica: "Volume: 50ml",
-      pagamentos: "Pix, cartão e boleto.",
-      frete: "Enviado para todo o Brasil.",
-      trocas: "Até 7 dias após o recebimento."
-    }
-  }
+      sobre:
+        "Tonificação, ativador e adstringente. A energia das ervas frescas para despertar o foco e a vitalidade.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes</strong>].",
+      beneficios:
+        "<strong>*produção artesanal<br>*com ativos naturais<br>*sem corantes<br>*aroma acentuado<br>*sensação imediata<br>*não testado em animais",
+      composicao:
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Alecrim Rosmarino, Óleo Essencial de Alecrim Rosamrino",
+      modoUso:
+        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). <strong>Após aberto, consumir em até 12 (doze) meses.</strong>",
+      advertencias:
+        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conserva em local seco, fresco e longe da luz solar.",
+      fichaTecnica:
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+      pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
+      frete:
+        "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
+      trocas:
+        "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso. <strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC. <strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contacto connosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
+    },
+  },
 ];
 
 // ==========================================
 // RENDERIZAÇÃO AUTOMÁTICA DAS VITRINES E FILTROS
 // ==========================================
 function renderizarVitrinesAutomaticas() {
-  if (typeof BANCO_PRODUTOS === 'undefined') return;
+  if (typeof BANCO_PRODUTOS === "undefined") return;
 
-  BANCO_PRODUTOS.forEach(produto => {
+  BANCO_PRODUTOS.forEach((produto) => {
     // Mapeamento das tags para os IDs das grelhas no HTML
     const destinos = [
-      produto.tags.categoria,   // ex: "mais-vendido", "lancamentos", "promocao"
-      produto.tags.linha,       // ex: "linhas-classico" -> precisamos tratar para "classico" ou usar o ID correto
-      produto.tags.funcao,      // ex: "funcao-perfume-artesanal"
-      produto.tags.ativo,       // ex: "ativos-capim-limao"
-      produto.tags.cor          // ex: "cores-verde"
+      produto.tags.categoria, // ex: "mais-vendido", "lancamentos", "promocao"
+      produto.tags.linha, // ex: "linhas-classico" -> precisamos tratar para "classico" ou usar o ID correto
+      produto.tags.funcao, // ex: "funcao-perfume-artesanal"
+      produto.tags.ativo, // ex: "ativos-capim-limao"
+      produto.tags.cor, // ex: "cores-verde"
     ];
 
-    destinos.forEach(tagCompleta => {
+    destinos.forEach((tagCompleta) => {
       if (!tagCompleta) return;
-      
+
       // Limpa prefixes como "linhas-", "funcao-", "ativos-", "cores-" para bater certo com os IDs do HTML ("grid-classico", "grid-verde", etc.)
       const tagId = tagCompleta
         .replace("linhas-", "")
@@ -151,10 +178,10 @@ function renderizarVitrinesAutomaticas() {
       const card = document.createElement("div");
       card.className = `produto-card ${classeEsgotado}`;
       card.style.cssText = "position: relative; display: block;";
-      
+
       card.innerHTML = `
         ${seloEsgotadoHtml}
-        <a href="${produto.linkPagina}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 100%; height: 100%; ${produto.esgotado ? 'pointer-events: none; opacity: 0.4;' : ''}">
+        <a href="${produto.linkPagina}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 100%; height: 100%; ${produto.esgotado ? "pointer-events: none; opacity: 0.4;" : ""}">
           <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
             <img src="${produto.imagemFrente}" alt="${produto.nome}">
           </div>
@@ -179,7 +206,9 @@ function preencherPaginaProduto() {
 
   if (!idProduto) {
     const paginaAtual = window.location.pathname.split("/").pop();
-    const produtoEncontrado = BANCO_PRODUTOS.find(p => p.linkPagina === paginaAtual);
+    const produtoEncontrado = BANCO_PRODUTOS.find(
+      (p) => p.linkPagina === paginaAtual,
+    );
     if (produtoEncontrado) {
       idProduto = produtoEncontrado.id;
     }
@@ -187,7 +216,7 @@ function preencherPaginaProduto() {
 
   if (!idProduto) return;
 
-  const produto = BANCO_PRODUTOS.find(p => p.id === idProduto);
+  const produto = BANCO_PRODUTOS.find((p) => p.id === idProduto);
   if (!produto) return;
 
   if (produto.esgotado) {
@@ -206,24 +235,26 @@ function preencherPaginaProduto() {
 
   const precoEl = document.querySelector(".preco");
   const unidadeEl = document.querySelector(".unidade");
-  
+
   if (precoEl) {
     if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
       precoEl.innerHTML = `
         <div style="display: flex; align-items: baseline; gap: 10px;">
           <span class="preco">${produto.precoDesconto}</span>
-          ${unidadeEl ? unidadeEl.outerHTML : ''}
+          ${unidadeEl ? unidadeEl.outerHTML : ""}
         </div>
-        <del style="font-family: 'Merrie', sans-serif; font-size: 16px; color: #3d2d2d50; display: block; line-height: 1; margin-top: 6px; text-decoration: line-through;">${produto.precoOriginal}</del>
+        <del style="font-family: 'Merrie', sans-serif; font-size: 16px; color: #9A8E7E; display: block; line-height: 1; margin-top: 6px; text-decoration: line-through;">${produto.precoOriginal}</del>
       `;
-      
-      if (unidadeEl) unidadeEl.style.display = 'none';
+
+      if (unidadeEl) unidadeEl.style.display = "none";
     } else {
       precoEl.innerHTML = produto.precoOriginal;
     }
   }
 
-  const subtituloEl = document.getElementById("subtituloProduto") || document.querySelector(".substitulo");
+  const subtituloEl =
+    document.getElementById("subtituloProduto") ||
+    document.querySelector(".substitulo");
   if (subtituloEl && produto.subtitulo) {
     subtituloEl.innerText = produto.subtitulo;
   }
@@ -253,6 +284,7 @@ function preencherPaginaProduto() {
 
   if (produto.acordeoes) {
     preencherAcordeao("#conteudo-sobre", produto.acordeoes.sobre);
+    preencherAcordeao("#conteudo-beneficios", produto.acordeoes.beneficios);
     preencherAcordeao("#conteudo-composicao", produto.acordeoes.composicao);
     preencherAcordeao("#conteudo-modo-uso", produto.acordeoes.modoUso);
     preencherAcordeao("#conteudo-advertencias", produto.acordeoes.advertencias);

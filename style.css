@@ -22,7 +22,6 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  font-family: "Merrie", sans-serif;
 }
 * {
   margin: 0;
@@ -37,6 +36,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-family: "Merrie", serif;
 }
 
 .header {
@@ -210,10 +210,10 @@ BARRA DE BUSCA
 }
 .search-bar input:focus {
   outline: none;
-  border-color: #3d2d2d80;
+  border-color: #9A8E7E;
 }
 .search-bar input:focus::placeholder {
-  color: #3d2d2d80;
+  color: #9A8E7E;
   opacity: 1;
 }
 
@@ -1450,10 +1450,10 @@ h2 {
 }
 .input:focus {
   outline: none; /* Remove o contorno padrão do navegador */
-  border-color: #3d2d2d80;
+  border-color: #9A8E7E;
 }
 .input:focus::placeholder {
-  color: #3d2d2d50; /* Coloque aqui a mesma cor que usa no seu contorno/borda */
+  color: #9A8E7E; /* Coloque aqui a mesma cor que usa no seu contorno/borda */
   opacity: 1; /* Garante que a cor fique sólida */
 }
 .button1 {
@@ -1472,4 +1472,12 @@ h2 {
 .button1:hover {
   color: #3d2d2d;
   background-color: #e0d4b9;
+}
+
+
+
+
+strong, b {
+  -webkit-text-stroke: 1px;
+
 }
