@@ -244,8 +244,8 @@ function renderizarVitrinesAutomaticas() {
         ${seloEsgotadoHtml}
         <${cardContentTag} ${cardContentAttributes} style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 100%; height: 100%; ${produto.esgotado ? "opacity: 0.4; cursor: default;" : ""}">
           <div class="media-container" style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
-            <img src="${produto.imagemFrente}" alt="${produto.nome}" class="card-img" style="width: 100%; display: block; transition: opacity 0.3s ease;">
-            ${produto.video3d ? `<video src="${produto.video3d}" class="card-video" muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none;"></video>` : ""}
+            <img src="${resolveAssetUrl(produto.imagemFrente)}" alt="${produto.nome}" class="card-img" style="width: 100%; display: block; transition: opacity 0.3s ease;">
+            ${produto.video3d ? `<video src="${resolveAssetUrl(produto.video3d)}" class="card-video" muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none;"></video>` : ""}
           </div>
           <div style="width: 100%;">
             <h4>${produto.nome}</h4>
@@ -311,6 +311,8 @@ function preencherPaginaProduto() {
   const produto = BANCO_PRODUTOS.find((p) => p.id === idProduto);
   if (!produto) return;
 
+  document.title = produto.nome;
+
   if (produto.esgotado) {
     document.body.innerHTML = `
       <main class="stock-unavailable">
@@ -352,21 +354,37 @@ function preencherPaginaProduto() {
   }
 
   const mainImage = document.getElementById("mainImage");
-  if (mainImage) mainImage.setAttribute("src", resolveAssetUrl(produto.imagemFrente));
+  if (mainImage) {
+    mainImage.setAttribute("src", resolveAssetUrl(produto.imagemFrente));
+    mainImage.setAttribute("alt", produto.nome);
+  }
 
   const thumb1 = document.querySelector(".thumb-frente");
   if (thumb1) thumb1.setAttribute("src", resolveAssetUrl(produto.imagemFrente));
 
   const thumb2 = document.querySelector(".thumb-verso");
-  if (thumb2) thumb2.setAttribute("src", resolveAssetUrl(produto.imagemVerso));
+  if (thumb2) {
+    thumb2.setAttribute("src", resolveAssetUrl(produto.imagemVerso));
+    thumb2.setAttribute("alt", `${produto.nome} - verso`);
+  }
 
   const videoSourceEl = document.getElementById("videoSource");
-  if (videoSourceEl) {
-    videoSourceEl.setAttribute("src", resolveAssetUrl(produto.video3d));
-    videoSourceEl.closest("video")?.load();
-  } else {
-    const videoEl = document.querySelector(".phone-video, .responsive-video");
-    if (videoEl) videoEl.setAttribute("src", resolveAssetUrl(produto.video3d));
+  const videoEl =
+    videoSourceEl?.closest("video") ||
+    document.querySelector(".phone-video, .responsive-video");
+  if (videoEl) {
+    if (produto.video3d) {
+      const videoSource = videoSourceEl || videoEl;
+      videoSource.setAttribute("src", resolveAssetUrl(produto.video3d));
+      videoEl.load();
+    } else {
+      videoEl.pause();
+      videoEl.removeAttribute("src");
+      videoSourceEl?.removeAttribute("src");
+      videoEl.load();
+      videoEl.closest(".carousel-item")?.remove();
+      document.querySelector(".carousel-progress-dot:last-child")?.remove();
+    }
   }
 
   const preencherAcordeao = (seletor, texto) => {
@@ -730,11 +748,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     carrinho.forEach((item, index) => {
-      const produto = BANCO_PRODUTOS.find(
-        (produto) => produto.nome === item.nome,
-      );
-      const precoOriginal = produto?.precoOriginal || item.preco;
-      const precoDesconto = produto?.precoDesconto || item.precoDesconto || "";
+      const produto = encontrarProdutoDoCarrinho(item);
+      const nomeProduto = produto?.nome || item.nome;
+      const precoOriginal = produto ? produto.precoOriginal : item.preco;
+      const precoDesconto = produto
+        ? produto.precoDesconto
+        : item.precoDesconto || "";
       let precoParaCalculo =
         precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
 
@@ -752,6 +771,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const divItem = document.createElement("div");
       divItem.classList.add("cart-item-card");
+      const imagem =
+        produto?.imagemFrente || item.imagem || "produtos/thairo-1x1.svg";
 
       let blocoPrecoCarrinho = `<span class="preco-atual">${precoOriginal}</span>`;
 
@@ -765,10 +786,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       divItem.innerHTML = `
-        <img src="${item.imagem || "produtos/thairo-1x1.svg"}" alt="${item.nome}" class="cart-item-img">
+        <img src="${resolveAssetUrl(imagem)}" alt="${nomeProduto}" class="cart-item-img">
         
         <div class="cart-item-content" style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
-            <h4 class="cart-item-title" style="margin: 0; font-size: 15px; font-weight: bold; color: #3d2d2d;">${item.nome}</h4>
+            <h4 class="cart-item-title" style="margin: 0; font-size: 15px; font-weight: bold; color: #3d2d2d;">${nomeProduto}</h4>
             
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="cart-item-price-area">
@@ -834,11 +855,12 @@ function enviarPedidoWhatsApp() {
   let totalGeral = 0;
 
   carrinho.forEach((item) => {
-    const produto = BANCO_PRODUTOS.find(
-      (produto) => produto.nome === item.nome,
-    );
-    const precoOriginal = produto?.precoOriginal || item.preco;
-    const precoDesconto = produto?.precoDesconto || item.precoDesconto || "";
+    const produto = encontrarProdutoDoCarrinho(item);
+    const nomeProduto = produto?.nome || item.nome;
+    const precoOriginal = produto ? produto.precoOriginal : item.preco;
+    const precoDesconto = produto
+      ? produto.precoDesconto
+      : item.precoDesconto || "";
     const precoCobrado =
       precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
     let valorNumerico =
@@ -852,7 +874,7 @@ function enviarPedidoWhatsApp() {
     const subtotal = valorNumerico * item.quantidade;
     totalGeral += subtotal;
 
-    mensagem += `- ${item.quantidade}x ${item.nome} (R$ ${subtotal.toFixed(2).replace(".", ",")})\n`;
+    mensagem += `- ${item.quantidade}x ${nomeProduto} (R$ ${subtotal.toFixed(2).replace(".", ",")})\n`;
   });
 
   mensagem += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
@@ -887,13 +909,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const quantidade = qtyElemento ? parseInt(qtyElemento.innerText) || 1 : 1;
 
       const imgElemento = document.querySelector(
-        ".main-image, .produto-img, img",
+        "#mainImage, .main-image, .produto-img",
       );
-      const imagem = imgElemento
-        ? imgElemento.getAttribute("src")
-        : "produtos/thairo-1x1.svg";
+      const imagem =
+        produto?.imagemFrente ||
+        (imgElemento?.getAttribute("src")
+          ? new URL(imgElemento.getAttribute("src"), document.baseURI).href
+          : "produtos/thairo-1x1.svg");
 
-      let carrinho = [{ nome, preco, precoDesconto, imagem, quantidade }];
+      let carrinho = [
+        {
+          id: produto?.id,
+          nome: produto?.nome || nome,
+          preco,
+          precoDesconto,
+          imagem,
+          quantidade,
+        },
+      ];
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
       window.location.href = resolveUrlParaPagina("checkout.html");
@@ -912,7 +945,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const nomeAtual = nomeElemento ? nomeElemento.innerText.trim() : "";
 
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    const produtoExiste = carrinho.some((item) => item.nome === nomeAtual);
+    const produtoAtual = BANCO_PRODUTOS.find((produto) => produto.nome === nomeAtual);
+    const produtoExiste = carrinho.some(
+      (item) =>
+        (produtoAtual && item.id === produtoAtual.id) ||
+        (!item.id && item.nome === (produtoAtual?.nome || nomeAtual)),
+    );
 
     if (produtoExiste && nomeAtual !== "") {
       btnAdicionarCesta.innerText = "Adicionado à Cesta";
@@ -937,26 +975,34 @@ document.addEventListener("DOMContentLoaded", () => {
         : 1;
 
       const imgElemento = document.querySelector(
-        ".main-image, .produto-img, img",
+        "#mainImage, .main-image, .produto-img",
       );
-      const imagem = imgElemento
-        ? imgElemento.getAttribute("src")
-        : "produtos/thairo-1x1.svg";
+      const imagem =
+        produto?.imagemFrente ||
+        (imgElemento?.getAttribute("src")
+          ? new URL(imgElemento.getAttribute("src"), document.baseURI).href
+          : "produtos/thairo-1x1.svg");
 
       let carrinhoAtualizado =
         JSON.parse(localStorage.getItem("carrinho")) || [];
 
       const indexExistente = carrinhoAtualizado.findIndex(
-        (item) => item.nome === nome,
+        (item) =>
+          (produto && item.id === produto.id) ||
+          (!item.id && item.nome === (produto?.nome || nome)),
       );
 
       if (indexExistente >= 0) {
+        carrinhoAtualizado[indexExistente].id = produto?.id;
+        carrinhoAtualizado[indexExistente].nome = produto?.nome || nome;
         carrinhoAtualizado[indexExistente].quantidade = quantidadeSelecionada;
         carrinhoAtualizado[indexExistente].preco = preco;
         carrinhoAtualizado[indexExistente].precoDesconto = precoDesconto;
+        carrinhoAtualizado[indexExistente].imagem = imagem;
       } else {
         carrinhoAtualizado.push({
-          nome,
+          id: produto?.id,
+          nome: produto?.nome || nome,
           preco,
           precoDesconto,
           imagem,

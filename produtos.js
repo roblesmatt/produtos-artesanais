@@ -117,3 +117,10 @@ const BANCO_PRODUTOS = [
     },
   },
 ];
+
+function encontrarProdutoDoCarrinho(item) {
+  return (
+    BANCO_PRODUTOS.find((produto) => produto.id === item.id) ||
+    BANCO_PRODUTOS.find((produto) => produto.nome === item.nome)
+  );
+}
