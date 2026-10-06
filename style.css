@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 * {
   margin: 0;
@@ -61,12 +61,18 @@ main,
   width: 60px;
   height: auto;
 }
-@media (min-width: 370px) {
+.logo-link {
+  display: inline-flex;
+  transition: transform 0.1s;
+}
+.logo-link:active {
+  transform: scale(0.95);
+}
+@media (min-width: 376px) {
   .logo-desktop {
     display: block;
-    width: 120px;
+    width: clamp(100px, 31vw, 120px);
     height: auto;
-    padding: 0 20% 0 0;
   }
   .logo-mobile {
     display: none;
@@ -89,6 +95,10 @@ main,
   font-size: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   border: none;
+  transition: transform 0.1s;
+}
+.menu-hamburguer:active {
+  transform: scale(0.95);
 }
 .nav-menu {
   display: none;
@@ -150,6 +160,10 @@ main,
   font-size: 36px;
   color: #3d2d2d;
   cursor: pointer;
+  transition: transform 0.1s;
+}
+.menu-fechar:active {
+  transform: scale(0.95);
 }
 /* Quando o menu mobile estiver ativo (aberto), o botão de fechar ganha vida lá dentro */
 .nav-menu.ativo .menu-fechar {
@@ -182,11 +196,17 @@ BARRA DE BUSCA
   padding: 8px 10px 8px 16px;
   font-size: 14px;
   outline: none;
-  width: 120px;
+  width: clamp(100px, 31vw, 120px);
   height: 38px;
   color: #3d2d2d;
   border-radius: 20px;
   border: 2px solid #3d2d2d;
+  transition:
+    transform 0.1s,
+    border-color 0.2s;
+}
+.search-bar input:active {
+  transform: scale(0.95);
 }
 .search-bar input::placeholder {
   color: #3d2d2d;
@@ -419,7 +439,12 @@ BARRA DE BUSCA
   background-color: #3d2d2d;
   color: #e0d4b9;
   border: 2px solid #3d2d2d;
-  transition: background-color 0.2s;
+  transition:
+    transform 0.1s,
+    background-color 0.2s;
+}
+.whatsapp-btn:active {
+  transform: scale(0.95);
 }
 .whatsapp-btn:hover {
   background-color: #e0d4b9;
@@ -489,6 +514,7 @@ BARRA DE BUSCA
     right: auto;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 20px;
   }
 
   .carousel-track {
@@ -666,6 +692,10 @@ details[open] .accordion-content {
   background: none;
   font-size: 24px;
   cursor: pointer;
+  transition: transform 0.1s;
+}
+.close-btn:active {
+  transform: scale(0.95);
 }
 
 .search-results-list {
@@ -693,14 +723,16 @@ details[open] .accordion-content {
   gap: 12px;
   padding: 10px;
   background-color: #e0d4b9;
+  color: #3d2d2d;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: transform 0.1s;
   border: 2px solid #3d2d2d;
   margin-bottom: -2px;
 }
 
-.search-result-card:hover {
-  background-color: #F0EADC;
+.search-result-card:hover,
+.search-result-card:active {
+  transform: scale(0.95);
 }
 
 /* Preço principal (atual ou com desconto) */
@@ -818,12 +850,13 @@ details[open] .accordion-content {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #666;
-  transition: color 0.2s;
+  color: #3d2d2d;
+  transition: transform 0.1s;
 }
 
-.close-btn:hover {
-  color: #111;
+.close-btn:hover,
+.close-btn:active {
+  transform: scale(0.95);
 }
 
 /* Contentor da lista de itens com scroll se necessário */
@@ -907,30 +940,27 @@ details[open] .accordion-content {
     margin-bottom: 50px;
   }
 }
-@media (min-width: 1200px) {
-  .product-layout-grid {
-    margin-top: 50px;
-  }
-}
 @media (min-width: 1024px) {
   .product-layout-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     align-items: start;
+    column-gap: clamp(24px, 4vw, 50px);
   }
 
-  /* 1. Coluna do Carrossel: Fica fixa no ecrã ao fazer scroll */
   .product-column-gallery {
-    width: clamp(300px, 50vw, 800px);
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0;
+    position: sticky;
+    top: 20px;
+    align-self: start;
   }
+
   .product-column-accordion {
     width: 100%;
+    min-width: 0;
     padding: 20px;
-    max-height: calc(
-      100vh - 80px
-    ); /* 100% da altura da tela menos as margens superior/inferior */
-    overflow-y: auto; /* Ativa a barra de rolagem apenas nesta coluna */
-    padding-right: 12px; /* Espaço para a scrollbar não colar no texto/acordeões */
   }
 }
 
@@ -1251,11 +1281,20 @@ grid-template-columns: repeat(4, 1fr); /* Força sempre 4 colunas no desktop */ 
 }
 .produto-card a {
   text-decoration: none; /* Remove o sublinhado de qualquer link dentro do card */
+  transition: transform 0.1s;
+}
+.produto-card a:active {
+  transform: scale(0.95);
 }
 .produto-card .preco {
   font-size: 16px;
   color: #3d2d2d;
   margin-bottom: 10px;
+  -webkit-text-stroke: 1.5px;
+}
+.produto-card .preco-atual {
+  font-size: 16px;
+  color: #3d2d2d;
   -webkit-text-stroke: 1.5px;
 }
 @media (max-width: 768px) {
@@ -1304,8 +1343,24 @@ CARD DE CESTA
   background-color: #e0d4b9; /* Tom de fundo levemente diferente ou o mesmo do seu tema */
   border: 2px solid #3d2d2d;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: -2px;
   gap: 12px;
+}
+.cart-item-card:hover {
+  background-color: #f0eadc;
+}
+.cart-item-card:hover .cart-item-img {
+  background-color: #f0eadc;
+}
+.cart-item-card:hover .qty-selector,
+.cart-item-card:hover .cart-item-delete {
+  background-color: #f0eadc;
+}
+@media (min-width: 769px) {
+  .container-cesta {
+    max-width: 1040px;
+    margin-inline: auto;
+  }
 }
 /* Imagem do produto no carrinho */
 .cart-item-img {
@@ -1350,22 +1405,38 @@ CARD DE CESTA
   background: #e0d4b9;
   border: 2px solid #3d2d2d;
   border-radius: 20px;
-  padding: 5px 10px;
-  gap: 10px;
+  width: 92px;
+  height: 34px;
+  padding: 3px 6px;
+  gap: 12px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.qty-selector.animando,
+.cart-item-delete.animando {
+  animation: cart-control-press 0.15s ease;
+}
+@keyframes cart-control-press {
+  50% {
+    transform: scale(0.95);
+  }
 }
 .qty-selector button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  color: #3d2d2d;
-}
-.qty-selector span {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: #3d2d2d;
-  min-width: 15px;
+  transition: transform 0.1s;
+}
+.qty-selector button:active {
+  transform: scale(0.95);
+}
+.qty-selector span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3d2d2d;
   text-align: center;
 }
 /* Botão de lixeira */
@@ -1375,11 +1446,32 @@ CARD DE CESTA
   cursor: pointer;
   font-size: 20px;
   padding: 4px;
-  opacity: 0.7;
-  transition: opacity 0.2s;
+  color: #3d2d2d;
+  transition: transform 0.1s;
 }
-.cart-item-delete:hover {
-  opacity: 1;
+.cart-item-delete:active {
+  transform: scale(0.95);
+}
+@media (max-width: 480px) {
+  .qty-selector {
+    width: 78px;
+    height: 30px;
+    padding: 2px 4px;
+    gap: 8px;
+  }
+  .qty-selector button,
+  .qty-selector span {
+    font-size: 14px;
+  }
+  .cart-item-delete {
+    width: 30px;
+    height: 34px;
+    padding: 2px;
+  }
+  .cart-item-delete svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* =================================================
@@ -1443,6 +1535,12 @@ h2 {
   font-size: 14px;
   box-sizing: border-box;
   color: #3d2d2d;
+  transition:
+    transform 0.1s,
+    border-color 0.2s;
+}
+.input:active {
+  transform: scale(0.95);
 }
 .input::placeholder {
   color: #3d2d2d; /* Altere para a cor desejada */
@@ -1467,7 +1565,12 @@ h2 {
   border: 2px solid #3d2d2d;
   cursor: pointer;
   margin-top: 10px;
-  transition: background 0.2s;
+  transition:
+    transform 0.1s,
+    background 0.2s;
+}
+.button1:active {
+  transform: scale(0.95);
 }
 .button1:hover {
   color: #3d2d2d;
