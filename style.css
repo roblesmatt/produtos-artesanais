@@ -20,8 +20,7 @@ body {
   margin: 0;
   padding: 0;
   color: #3d2d2d;
-  -webkit-text-stroke: 0;
-  font-weight: 700;
+  -webkit-text-stroke: 0.3px;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
