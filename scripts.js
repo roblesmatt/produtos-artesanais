@@ -11,7 +11,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "produtos/perfume-teste.mov",
     linkPagina: "perfume-artesanal-capim-limao.html",
     tags: {
       linha: "linhas-classico",
@@ -49,7 +49,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "produtos/perfume-teste.mov",
     linkPagina: "perfume-artesanal-lavanda-provence.html",
     tags: {
       linha: "linhas-classico",
@@ -87,7 +87,7 @@ const BANCO_PRODUTOS = [
     esgotado: true,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "produtos/perfume-teste.mov",
     linkPagina: "perfume-artesanal-alecrim-rosmarino.html",
     tags: {
       linha: "linhas-classico",
@@ -179,9 +179,9 @@ function inicializarGlobalEvents() {
 
             if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
               blocoPrecoBusca = `
-                <div style="display: flex; flex-direction: row; align-items: baseline; gap: 6px;">                  
-                <span class="preco-antigo"style="margin-top: 2px;">${produto.precoOriginal}</span>
-                <span class="preco-atual";">${produto.precoDesconto}</span>
+                <div class="preco-com-desconto">
+                  <span class="preco-atual">${produto.precoDesconto}</span>
+                  <span class="preco-antigo">${produto.precoOriginal}</span>
                 </div>
               `;
             }
@@ -788,14 +788,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const divItem = document.createElement("div");
       divItem.classList.add("cart-item-card");
 
-      // Montagem do bloco de preço corrigido (com desconto em destaque e original menor, riscado e em cinza/suave)
-      let blocoPrecoCarrinho = `<span style="font-weight: bold; font-size: 16px; color: #3d2d2d;">${item.preco}</span>`;
+      let blocoPrecoCarrinho = `<span class="preco-atual">${item.preco}</span>`;
 
       if (item.precoDesconto && item.precoDesconto.trim() !== "") {
         blocoPrecoCarrinho = `
-          <div style="display: flex; flex-direction: column;">
-            <span style="font-size: 16px; color: #3d2d2d; line-height: 1.2;">${item.precoDesconto}</span>
-            <span style="font-size: 13px; color: #9A8E7E; text-decoration: line-through; line-height: 1; margin-top: 2px;">${item.preco}</span>
+          <div class="preco-com-desconto">
+            <span class="preco-atual">${item.precoDesconto}</span>
+            <span class="preco-antigo">${item.preco}</span>
           </div>
         `;
       }
