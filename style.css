@@ -217,10 +217,16 @@ main {
   display: none; /* Esconde por padrão no desktop */
   background: none;
   border: none;
-  font-size: 36px;
   color: #3d2d2d;
   cursor: pointer;
   transition: transform 0.1s;
+}
+.menu-fechar svg,
+.close-btn svg,
+.cart-item-delete svg {
+  display: block;
+  width: 32.8px;
+  height: 32.8px;
 }
 .menu-fechar:active {
   transform: scale(0.95);
@@ -729,7 +735,6 @@ details[open] .accordion-content {
   right: 16px;
   background: none;
   border: none;
-  font-size: 24px;
   cursor: pointer;
   color: #3d2d2d;
   transition: transform 0.1s;
@@ -1237,8 +1242,9 @@ CARD DE CESTA
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  padding: 4px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   color: #3d2d2d;
   transition: transform 0.1s;
 }
@@ -1255,15 +1261,6 @@ CARD DE CESTA
   .qty-selector button,
   .qty-selector span {
     font-size: 14px;
-  }
-  .cart-item-delete {
-    width: 30px;
-    height: 34px;
-    padding: 2px;
-  }
-  .cart-item-delete svg {
-    width: 24px;
-    height: 24px;
   }
 }
 
