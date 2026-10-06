@@ -18,11 +18,11 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-capim-limao",
       cor: "cores-verde",
-      categoria: "mais-vendido",
+      categoria: ["mais-vendido", "promocao"],
     },
     acordeoes: {
       sobre:
-        "Frescor, limpeza e revigorante. Um estímulo natural de frescor e bem-estar.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes</strong>].",
+        "Frescor, limpeza e revigorante. Um estímulo natural de frescor e bem-estar.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].</strong>",
       beneficios:
         "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
@@ -60,7 +60,7 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Relaxante, harmonioso e suave. A energia das ervas frescas para despertar o foco e a vitalidade.",
+        "Relaxante, harmonioso e suave. A energia das ervas frescas para despertar o foco e a vitalidade.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].</strong>",
       beneficios:
         "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
@@ -97,7 +97,8 @@ const BANCO_PRODUTOS = [
       categoria: "mais-vendido",
     },
     acordeoes: {
-      sobre: "Tonificação, ativador e adstringente.",
+      sobre:
+        "Tonificação, ativador e adstringente.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].</strong>",
       beneficios:
         "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
@@ -250,8 +251,13 @@ function renderizarVitrinesAutomaticas() {
   if (typeof BANCO_PRODUTOS === "undefined") return;
 
   BANCO_PRODUTOS.forEach((produto) => {
+    // Garante que se 'categoria' for um array, ele espalha os valores individualmente
+    const categoriasArray = Array.isArray(produto.tags.categoria)
+      ? produto.tags.categoria
+      : [produto.tags.categoria];
+
     const destinos = [
-      produto.tags.categoria,
+      ...categoriasArray,
       produto.tags.linha,
       produto.tags.funcao,
       produto.tags.ativo,
