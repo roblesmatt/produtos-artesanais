@@ -16,6 +16,12 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
+#cabecalho-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #e0d4b9;
+}
 * {
   margin: 0;
   padding: 0;
@@ -953,7 +959,7 @@ details[open] .accordion-content {
     min-width: 0;
     margin-bottom: 0;
     position: sticky;
-    top: 20px;
+    top: calc(var(--header-height, 110px) + 20px);
     align-self: start;
   }
 
@@ -961,6 +967,11 @@ details[open] .accordion-content {
     width: 100%;
     min-width: 0;
     padding: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --header-height: 70px;
   }
 }
 
