@@ -616,13 +616,18 @@ BARRA DE BUSCA
 }
 .carousel-progress-dot {
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: #9a8e7e;
   border-radius: 50%;
-  transition: opacity 0.2s ease;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    opacity 0.2s ease;
 }
 .carousel-progress-dot.ativo {
+  width: 10px;
+  height: 10px;
   background-color: #3d2d2d;
   opacity: 1;
 }
