@@ -799,14 +799,13 @@ details[open] .accordion-content {
   background-color: #e0d4b9;
   color: #3d2d2d;
   text-decoration: none;
-  transition: transform 0.1s;
+  transition: background-color 0.2s;
   border: 2px solid #3d2d2d;
   margin-bottom: -2px;
 }
 
-.search-result-card:hover,
-.search-result-card:active {
-  transform: scale(0.95);
+.search-result-card:hover {
+  background-color: #f0eadc;
 }
 
 /* Preço principal (atual ou com desconto) */
