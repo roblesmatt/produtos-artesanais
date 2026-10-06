@@ -105,8 +105,7 @@ body {
   }
 }
 
-main,
-.container {
+main {
   width: 100%;
   max-width: 1400px;
   padding: 0 20px;
@@ -144,14 +143,9 @@ main,
   }
 }
 
-.container-border {
-  border: 2px solid #3d2d2d;
-}
-
 .menu-hamburguer {
   display: flex !important;
   background-color: #e0d4b9;
-  display: none;
   width: 25px;
   height: auto;
   cursor: pointer;
@@ -294,76 +288,10 @@ BARRA DE BUSCA
   opacity: 1;
 }
 
-.icon-btn {
-  border: none;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #333333;
-  font-size: 18px;
-  transition: background-color 0.2s;
-}
-.icon-btn:hover {
-  background-color: #e5e5e5;
-}
-
-.product-page {
-  grid-template-columns: 1fr;
-  padding: 10px 20px 40px 20px;
-  gap: 24px;
-}
-.product-gallery {
-  flex-direction: column-reverse;
-  padding-top: 0;
-  margin-top: -40px;
-  margin-bottom: 40px;
-}
 @media (min-width: 1024px) {
-  .product-page {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 420px;
-    gap: 40px;
-    padding: 20px 32px 60px 32px;
-    align-items: start;
-    position: relative;
-  }
-  .product-gallery {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 0;
-  }
   .product-info {
-    grid-column: 2;
     position: relative;
   }
-  .product-gallery .product-item {
-    flex: 0 0 auto;
-    width: 200px;
-  }
-  .product-gallery {
-    width: calc(100% - 500px);
-  }
-}
-@media (min-width: 1400px) {
-  .product-gallery {
-    width: calc(100% - 1020px);
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-}
-
-.nav-arrow {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: #333333;
-  cursor: pointer;
-  padding: 4px;
 }
 
 /* Detalhes do Produto */
@@ -383,11 +311,6 @@ BARRA DE BUSCA
   font-weight: 700;
   display: block;
   line-height: 1.5;
-}
-.product-header .informacao {
-  font-weight: 700;
-  font-size: 13px;
-  font-weight: 600;
 }
 .preco-container {
   display: flex;
@@ -442,11 +365,6 @@ BARRA DE BUSCA
 .qty-value {
   font-weight: 700;
   text-align: center;
-}
-
-.action-buttons {
-  display: flex;
-  gap: 10px;
 }
 
 .botao-carrinho {
@@ -708,10 +626,6 @@ BARRA DE BUSCA
 .accordion-content::-webkit-scrollbar-track {
   background: transparent; /* Cor de fundo da pista da barra */
 }
-.accordion-content.conteudo-acordeao::-webkit-scrollbar-thumb {
-  background-color: #3d2d2d; /* Cor da barrinha que se move (pode usar o tom escuro do seu site) */
-  border-radius: 4px; /* Cantos arredondados da barrinha */
-}
 .accordion-content::-webkit-scrollbar-thumb:hover {
   background-color: #5c4343;
 }
@@ -724,12 +638,6 @@ details[open] .accordion-content {
   max-height: 300px;
   opacity: 1;
   padding: 0 16px 16px 16px;
-}
-.icone-arcordeao {
-  width: 20px;
-  height: auto;
-  margin-left: 10px;
-  margin-top: 3px;
 }
 .accordion-list:active {
   transform: scale(0.99);
@@ -779,18 +687,6 @@ details[open] .accordion-content {
   gap: 0px;
 }
 
-.search-result-item {
-  padding: 10px;
-  border-bottom: 1px solid #3d2d2d;
-  text-decoration: none;
-  display: block;
-  transition: background 0.2s;
-}
-
-.search-result-item:hover {
-  background-color: #f5f5f5;
-}
-
 .search-result-card {
   display: flex;
   align-items: center;
@@ -825,95 +721,6 @@ details[open] .accordion-content {
   text-decoration: line-through;
 }
 
-/* Estilo para escurecer o fundo e centralizar o modal */
-.cart-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Caixa branca do conteúdo do carrinho */
-.cart-content {
-  background: #e0d4b9;
-  padding: 25px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.cart-content h3 {
-  margin-top: 0;
-  color: #333;
-}
-
-.cart-footer {
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  padding-top: 15px;
-  text-align: right;
-}
-
-/* Botão de avançar para checkout dentro do carrinho */
-.checkout-link-btn {
-  display: block;
-  background-color: #25d366;
-  color: #e0d4b9;
-  text-align: center;
-  padding: 10px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.checkout-link-btn:hover {
-  background-color: #1ebe5d;
-}
-
-/* Fundo escurecido e centralização do modal */
-.cart-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: none; /* Oculto por padrão até o utilizador clicar no ícone */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Caixa principal do conteúdo do carrinho */
-.cart-content {
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 450px;
-  max-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Título */
-.cart-content h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 20px;
-}
-
 /* Botão de fechar (X) */
 .close-btn {
   position: absolute;
@@ -930,57 +737,6 @@ details[open] .accordion-content {
 .close-btn:hover,
 .close-btn:active {
   transform: scale(0.95);
-}
-
-/* Contentor da lista de itens com scroll se necessário */
-.cart-items-container {
-  flex-grow: 1;
-  overflow-y: auto;
-  max-height: 50vh;
-  margin-bottom: 15px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  padding: 10px 0;
-}
-
-.cart-empty-msg {
-  color: #777;
-  text-align: center;
-  font-size: 14px;
-  margin: 20px 0;
-}
-
-/* Rodapé do Carrinho */
-.cart-footer {
-  padding-top: 10px;
-}
-
-.cart-total-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #222;
-  margin-bottom: 15px;
-}
-
-/* Botão de avançar para a página de Checkout */
-.checkout-link-btn {
-  display: block;
-  background-color: #3d2d2d;
-  color: white;
-  text-align: center;
-  padding: 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-  transition: background-color 0.2s;
-}
-
-.checkout-link-btn:hover {
-  background-color: #1ebe5d;
 }
 
 /* =================================================_
@@ -1385,36 +1141,6 @@ grid-template-columns: repeat(4, 1fr); /* Força sempre 4 colunas no desktop */ 
   -webkit-text-stroke: 1.5px;
 }
 /* =================================================
-TEMPLATE
-================================================= */
-.menu-linha a.menu-link {
-  flex: 1;
-  text-align: center;
-  padding: 12px 5px;
-  font-size: 13px;
-  font-weight: bold;
-  color: #3d2d2d;
-  background-color: #e0d4b9;
-  border-right: 2px solid #3d2d2d;
-  border-bottom: 2px solid #3d2d2d;
-  text-decoration: none;
-  cursor: pointer;
-  user-select: none;
-  transition:
-    background 0.1s,
-    color 0.1s;
-}
-
-.menu-linha a.menu-link:hover {
-  background-color: #3d2d2d;
-  color: #e0d4b9;
-}
-
-.menu-linha a.menu-link:last-child {
-  border-right: none;
-}
-
-/* =================================================
 CARD DE CESTA
 ================================================= */
 .cart-item-card {
@@ -1450,13 +1176,6 @@ CARD DE CESTA
   object-fit: cover;
   background-color: #e0d4b9;
 }
-/* Detalhes do texto (Nome e Preço) */
-.cart-item-details {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 .cart-item-title {
   font-size: 18px;
   font-weight: 700;
@@ -1464,14 +1183,6 @@ CARD DE CESTA
   color: #3d2d2d;
   margin: 0;
   line-height: 1.2;
-}
-.cart-item-price {
-  font-weight: 700;
-  -webkit-text-stroke: 5px;
-  letter-spacing: 1px;
-  font-size: 20px;
-  color: #3d2d2d;
-  font-weight: 600;
 }
 /* Controles de quantidade e lixeira */
 .cart-item-controls {
