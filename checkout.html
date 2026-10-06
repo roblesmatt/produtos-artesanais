@@ -11,16 +11,11 @@
 <div id="cabecalho-container"></div>
 
   <div class="checkout-container">
-    <h2>DADOS PARA ENTREGA<br>E FATURAÇÃO</h2>
+    <h2>DADOS PARA ENTREGA<br>E FATURAMENTO</h2>
     <form id="checkoutForm">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" class="input" required placeholder="Digite o seu nome completo">
-      </div>
-
-      <div class="form-group">
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" class="input" required placeholder="000.000.000-00">
       </div>
 
       <div class="form-group">
@@ -41,7 +36,7 @@
     <button class="button1" type="submit">Avançar para o WhatsApp</button>
   
 
-<div class="descricao"><span>"Os seus dados são utilizados apenas para o envio do pedido via WhatsApp e não são armazenados em servidores externos."</span>
+<div class="descricao"><span>Seus dados e o pedido serão enviados pelo WhatsApp. O site não armazena os dados do formulário.</span>
 </div>
  </form>
 
@@ -50,14 +45,13 @@
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Recolhe todos os dados preenchidos no formulário (incluindo os novos)
+      // Recolhe os dados preenchidos no formulário
       const nome = document.getElementById('nome').value;
-      const cpf = document.getElementById('cpf').value;
       const telefone = document.getElementById('telefone').value;
       const endereco = document.getElementById('endereco').value;
       const cep = document.getElementById('cep').value;
 
-      const dadosCliente = `*Dados do Cliente:*\n- Nome: ${nome}\n- CPF: ${cpf}\n- Telefone: ${telefone}\n- Endereço: ${endereco}\n- CEP: ${cep}\n\n`;
+      const dadosCliente = `*Dados do Cliente:*\n- Nome: ${nome}\n- Telefone: ${telefone}\n- Endereço: ${endereco}\n- CEP: ${cep}\n\n`;
 
       // Resgata os produtos guardados no localStorage
       let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
