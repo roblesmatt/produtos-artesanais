@@ -12,7 +12,7 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "perfume-artesanal-capim-limao.html",
+    linkPagina: "produtos/perfume-artesanal-capim-limao.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -50,7 +50,7 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "perfume-artesanal-lavanda-provence.html",
+    linkPagina: "produtos/perfume-artesanal-lavanda-provence.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -88,7 +88,7 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "perfume-artesanal-alecrim-rosmarino.html",
+    linkPagina: "produtos/perfume-artesanal-alecrim-rosmarino.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",

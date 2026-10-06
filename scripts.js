@@ -1,12 +1,47 @@
 // ==========================================
 // 2. INJETA O GLOBAL (Header, Menu e Busca)
 // ==========================================
-fetch("global.html")
+function resolveUrlParaPagina(caminho) {
+  if (!caminho || caminho.startsWith("http") || caminho.startsWith("/") || caminho.startsWith("#") || caminho.startsWith("mailto:") || caminho.startsWith("tel:")) {
+    return caminho;
+  }
+
+  const estaNaPastaProdutos = window.location.pathname.includes("/produtos/");
+  if (estaNaPastaProdutos && !caminho.startsWith("../")) {
+    return `../${caminho}`;
+  }
+
+  return caminho;
+}
+
+function resolveAssetUrl(caminho) {
+  if (!caminho || caminho.startsWith("http") || caminho.startsWith("/") || caminho.startsWith("data:")) {
+    return caminho;
+  }
+
+  const estaNaPastaProdutos = window.location.pathname.includes("/produtos/");
+  if (estaNaPastaProdutos && !caminho.startsWith("../") && !caminho.startsWith("./")) {
+    return `../${caminho}`;
+  }
+
+  return caminho;
+}
+
+const paginaGlobal = window.location.pathname.includes("/produtos/") ? "../global.html" : "global.html";
+
+fetch(paginaGlobal)
   .then((response) => response.text())
   .then((data) => {
     const cabecalhoContainer = document.getElementById("cabecalho-container");
     if (cabecalhoContainer) {
       cabecalhoContainer.innerHTML = data;
+
+      cabecalhoContainer.querySelectorAll("a[href]").forEach((link) => {
+        const hrefOriginal = link.getAttribute("href");
+        if (hrefOriginal) {
+          link.setAttribute("href", resolveUrlParaPagina(hrefOriginal));
+        }
+      });
 
       const rodape = cabecalhoContainer.querySelector(".site-footer");
       if (rodape) {
@@ -55,7 +90,7 @@ function inicializarGlobalEvents() {
           if (produto.nome.toLowerCase().includes(termo)) {
             encontrados++;
             const item = document.createElement("a");
-            item.href = produto.linkPagina;
+            item.href = resolveUrlParaPagina(produto.linkPagina);
             item.className = "search-result-card";
             item.style.cssText =
               "display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; padding: 8px;";
@@ -202,7 +237,7 @@ function renderizarVitrinesAutomaticas() {
       const cardContentTag = produto.esgotado ? "div" : "a";
       const cardContentAttributes = produto.esgotado
         ? 'aria-disabled="true"'
-        : `href="${produto.linkPagina}"`;
+        : `href="${resolveUrlParaPagina(produto.linkPagina)}"`;
 
       // Estrutura interna contendo a imagem e o vídeo (inicialmente oculto/pausado)
       card.innerHTML = `
@@ -256,8 +291,16 @@ function preencherPaginaProduto() {
 
   if (!idProduto) {
     const paginaAtual = window.location.pathname.split("/").pop();
+    const paginaAtualSemDiretorio = window.location.pathname
+      .split("/")
+      .filter(Boolean)
+      .slice(-1)[0];
     const produtoEncontrado = BANCO_PRODUTOS.find(
-      (p) => p.linkPagina === paginaAtual,
+      (p) =>
+        p.linkPagina === paginaAtual ||
+        p.linkPagina === paginaAtualSemDiretorio ||
+        p.linkPagina.endsWith(`/${paginaAtual}`) ||
+        p.linkPagina.endsWith(`/${paginaAtualSemDiretorio}`),
     );
     if (produtoEncontrado) {
       idProduto = produtoEncontrado.id;
@@ -274,7 +317,7 @@ function preencherPaginaProduto() {
       <main class="stock-unavailable">
         <h1>LOTE ESGOTADO</h1>
         <p>O produto <strong>${produto.nome}</strong> encontra-se esgotado no momento.</p>
-        <a href="index.html" class="button1">Voltar para a Vitrine</a>
+        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para a Vitrine</a>
       </main>
     `;
     return;
@@ -310,21 +353,21 @@ function preencherPaginaProduto() {
   }
 
   const mainImage = document.getElementById("mainImage");
-  if (mainImage) mainImage.setAttribute("src", produto.imagemFrente);
+  if (mainImage) mainImage.setAttribute("src", resolveAssetUrl(produto.imagemFrente));
 
   const thumb1 = document.querySelector(".thumb-frente");
-  if (thumb1) thumb1.setAttribute("src", produto.imagemFrente);
+  if (thumb1) thumb1.setAttribute("src", resolveAssetUrl(produto.imagemFrente));
 
   const thumb2 = document.querySelector(".thumb-verso");
-  if (thumb2) thumb2.setAttribute("src", produto.imagemVerso);
+  if (thumb2) thumb2.setAttribute("src", resolveAssetUrl(produto.imagemVerso));
 
   const videoSourceEl = document.getElementById("videoSource");
   if (videoSourceEl) {
-    videoSourceEl.setAttribute("src", produto.video3d);
+    videoSourceEl.setAttribute("src", resolveAssetUrl(produto.video3d));
     videoSourceEl.closest("video")?.load();
   } else {
     const videoEl = document.querySelector(".phone-video, .responsive-video");
-    if (videoEl) videoEl.setAttribute("src", produto.video3d);
+    if (videoEl) videoEl.setAttribute("src", resolveAssetUrl(produto.video3d));
   }
 
   const preencherAcordeao = (seletor, texto) => {
