@@ -493,7 +493,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function syncCarouselIndicator() {
-    const trackCenter = track.getBoundingClientRect().left + track.clientWidth / 2;
+    const trackCenter =
+      track.getBoundingClientRect().left + track.clientWidth / 2;
     let closestIndex = 0;
     let closestDistance = Infinity;
 
