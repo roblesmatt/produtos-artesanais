@@ -484,18 +484,34 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!track) return;
 
   const items = track.querySelectorAll(".carousel-item");
-  const thumb = document.querySelector(".carousel-progress-thumb");
+  const indicatorDots = document.querySelectorAll(".carousel-progress-dot");
 
-  track.addEventListener("scroll", () => {
-    const maxScrollLeft = track.scrollWidth - track.clientWidth;
-    if (maxScrollLeft <= 0 || !thumb) return;
+  function updateCarouselIndicator(index) {
+    indicatorDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("ativo", dotIndex === index);
+    });
+  }
 
-    const scrollProgress = track.scrollLeft / maxScrollLeft;
-    const maxTranslatePx = thumb.parentElement.clientWidth - thumb.offsetWidth;
-    const translateValue = scrollProgress * maxTranslatePx;
+  function syncCarouselIndicator() {
+    const trackCenter = track.getBoundingClientRect().left + track.clientWidth / 2;
+    let closestIndex = 0;
+    let closestDistance = Infinity;
 
-    thumb.style.transform = `translateX(${translateValue}px)`;
-  });
+    items.forEach((item, index) => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenter = itemRect.left + itemRect.width / 2;
+      const distance = Math.abs(trackCenter - itemCenter);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    updateCarouselIndicator(closestIndex);
+  }
+
+  track.addEventListener("scroll", syncCarouselIndicator, { passive: true });
+  syncCarouselIndicator();
 
   let autoPlayTimer = null;
   let hoverResumeTimer = null;

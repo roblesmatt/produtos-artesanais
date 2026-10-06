@@ -93,6 +93,12 @@ body {
   justify-content: space-between;
   padding: 20px;
 }
+@media (max-width: 767px) {
+  .header {
+    justify-content: center;
+    gap: clamp(24px, 7.5vw, 30px);
+  }
+}
 @media (min-width: 1200px) {
   .header {
     padding: 0 60px;
@@ -125,11 +131,16 @@ main,
 @media (min-width: 376px) {
   .logo-desktop {
     display: block;
-    width: clamp(100px, 31vw, 120px);
+    width: clamp(84px, 24vw, 100px);
     height: auto;
   }
   .logo-mobile {
     display: none;
+  }
+}
+@media (min-width: 768px) {
+  .logo-desktop {
+    width: clamp(100px, 31vw, 120px);
   }
 }
 
@@ -596,20 +607,24 @@ BARRA DE BUSCA
   scroll-snap-type: none;
 }
 .carousel-progress-bar {
-  width: 60px;
-  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   margin: 15px auto 0 auto;
-  border-radius: 30px;
-  overflow: hidden;
   margin-top: -30px;
-  border: 2px solid #3d2d2d; /* Cria o sublinhado na cor pretendida */
 }
-.carousel-progress-thumb {
-  width: 10px;
-  height: 100%;
+.carousel-progress-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #9a8e7e;
+  border-radius: 50%;
+  transition: opacity 0.2s ease;
+}
+.carousel-progress-dot.ativo {
   background-color: #3d2d2d;
-  border-radius: 30px;
-  transition: transform 0.1s ease-in-out;
+  opacity: 1;
 }
 
 .video-container {
