@@ -107,7 +107,7 @@ function inicializarGlobalEvents() {
             }
 
             item.innerHTML = `
-              <img src="${produto.imagemFrente}" alt="" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+              <img src="${resolveAssetUrl(produto.imagemFrente)}" alt="" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
               <div>
                 <h4 style="margin: 0 0 4px 0; font-size: 14px; color: #3d2d2d;">${produto.nome}</h4>
                 ${blocoPrecoBusca}
@@ -886,7 +886,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let carrinho = [{ nome, preco, precoDesconto, imagem, quantidade }];
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-      window.location.href = "checkout.html";
+      window.location.href = resolveUrlParaPagina("checkout.html");
     });
   }
 });
