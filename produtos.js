@@ -3,7 +3,7 @@
 // ==========================================
 const BANCO_PRODUTOS = [
   {
-    id: "perfume-capim-limao",
+    id: "perfume-artesanal-capim-limao",
     nome: "Perfume Artesanal de Capim Limão",
     precoOriginal: "R$89,90",
     precoDesconto: "",
@@ -41,7 +41,7 @@ const BANCO_PRODUTOS = [
     },
   },
   {
-    id: "perfume-lavanda-provence",
+    id: "perfume-artesanal-lavanda-provence",
     nome: "Perfume Artesanal de Lavanda Provence",
     precoOriginal: "R$79,90",
     precoDesconto: "R$69,90",
@@ -79,7 +79,7 @@ const BANCO_PRODUTOS = [
     },
   },
   {
-    id: "perfume-alecrim-rosmarino",
+    id: "perfume-artesanal-alecrim-rosmarino",
     nome: "Perfume Artesanal de Alecrim Rosmarino",
     precoOriginal: "R$79,90",
     precoDesconto: "R$69,90",
