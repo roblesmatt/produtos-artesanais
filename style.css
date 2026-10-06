@@ -720,29 +720,6 @@ details[open] .accordion-content {
   text-decoration: line-through;
 }
 
-.preco-com-desconto {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 6px;
-  white-space: nowrap;
-}
-
-.cart-item-price-area .preco-com-desconto {
-  flex-wrap: nowrap;
-}
-
-.cart-item-price-area .preco-atual,
-.cart-item-price-area .preco-antigo {
-  flex-shrink: 0;
-}
-
-.cart-item-price-area .preco-antigo {
-  color: #9A8E7E;
-  font-size: 10px;
-  text-decoration: line-through;
-}
-
 /* Estilo para escurecer o fundo e centralizar o modal */
 .cart-modal {
   position: fixed;
