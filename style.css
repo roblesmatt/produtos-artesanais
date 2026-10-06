@@ -43,6 +43,33 @@ body {
   font-family: inherit;
   -webkit-text-stroke: 0;
 }
+.stock-unavailable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+.stock-unavailable h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+.stock-unavailable p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.stock-unavailable .button1 {
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+  padding: 12px 24px;
+  text-decoration: none;
+}
 * {
   margin: 0;
   padding: 0;

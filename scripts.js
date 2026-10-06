@@ -319,11 +319,15 @@ function renderizarVitrinesAutomaticas() {
       const card = document.createElement("div");
       card.className = `produto-card ${classeEsgotado}`;
       card.style.cssText = "position: relative; display: block;";
+      const cardContentTag = produto.esgotado ? "div" : "a";
+      const cardContentAttributes = produto.esgotado
+        ? 'aria-disabled="true"'
+        : `href="${produto.linkPagina}"`;
 
       // Estrutura interna contendo a imagem e o vídeo (inicialmente oculto/pausado)
       card.innerHTML = `
         ${seloEsgotadoHtml}
-        <a href="${produto.linkPagina}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 100%; height: 100%; ${produto.esgotado ? "pointer-events: none; opacity: 0.4;" : ""}">
+        <${cardContentTag} ${cardContentAttributes} style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 100%; height: 100%; ${produto.esgotado ? "opacity: 0.4; cursor: default;" : ""}">
           <div class="media-container" style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
             <img src="${produto.imagemFrente}" alt="${produto.nome}" class="card-img" style="width: 100%; display: block; transition: opacity 0.3s ease;">
             ${produto.video3d ? `<video src="${produto.video3d}" class="card-video" muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none;"></video>` : ""}
@@ -332,7 +336,7 @@ function renderizarVitrinesAutomaticas() {
             <h4>${produto.nome}</h4>
             <div style="width: 100%; margin-top: 5px; text-align: center;">${blocoPreco}</div>
           </div>
-        </a>
+        </${cardContentTag}>
       `;
 
       // Adiciona a lógica de Hover para trocar a imagem pelo vídeo se ele existir
@@ -387,11 +391,11 @@ function preencherPaginaProduto() {
 
   if (produto.esgotado) {
     document.body.innerHTML = `
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #e0d4b9; color: #3d2d2d; font-family: sans-serif; text-align: center; padding: 20px;">
-        <h1 style="font-size: 32px; margin-bottom: 10px; border: 3px solid #3d2d2d; padding: 15px; box-shadow: 6px 6px 0px #3d2d2d;">LOTE ESGOTADO</h1>
-        <p style="font-size: 18px; margin-bottom: 20px;">O produto <strong>${produto.nome}</strong> encontra-se esgotado no momento.</p>
-        <a href="index.html" style="background-color: #3d2d2d; color: #e0d4b9; padding: 12px 24px; text-decoration: none; font-weight: bold; border: 2px solid #3d2d2d; box-shadow: 3px 3px 0px #000;">Voltar para a Vitrine</a>
-      </div>
+      <main class="stock-unavailable">
+        <h1>LOTE ESGOTADO</h1>
+        <p>O produto <strong>${produto.nome}</strong> encontra-se esgotado no momento.</p>
+        <a href="index.html" class="button1">Voltar para a Vitrine</a>
+      </main>
     `;
     return;
   }
