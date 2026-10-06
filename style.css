@@ -964,6 +964,7 @@ details[open] .accordion-content {
   left: 0;
   width: 100vw;
   height: 100vh;
+  margin-top: 70px;  
   pointer-events: none; /* Deixa passar os cliques para os botões de trás */
 }
 .texto-temporario span {
