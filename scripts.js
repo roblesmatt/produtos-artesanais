@@ -18,7 +18,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-capim-limao",
       cor: "cores-verde",
-      categoria: ["mais-vendido", "promocao"],
+      categoria: "mais-vendido",
     },
     acordeoes: {
       sobre:
@@ -56,7 +56,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-lavanda-provence",
       cor: "cores-lilas",
-      categoria: "mais-vendido",
+      categoria: ["mais-vendido", "promocao"],
     },
     acordeoes: {
       sobre:
@@ -94,7 +94,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-alecrim-rosmarino",
       cor: "cores-verde",
-      categoria: "mais-vendido",
+      categoria: ["mais-vendido", "promocao"],
     },
     acordeoes: {
       sobre:

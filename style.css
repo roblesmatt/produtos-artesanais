@@ -1057,7 +1057,7 @@ BARRA DE BUSCA
 #sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
 #sub-premium:checked ~ .submenu-linhas label[for="sub-premium"],
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
-#sub-rosas:checked ~ .submenu-linhas label[for="sub-rosas"],
+#sub-roosi:checked ~ .submenu-linhas label[for="sub-roosi"],
 #sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"],
 #sub-sabonete-corporal:checked
   ~ .submenu-funcao
@@ -1115,7 +1115,7 @@ BARRA DE BUSCA
 #linhas:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
 #linhas:checked ~ #sub-premium:checked ~ .conteudo-vitrine .item-premium,
 #linhas:checked ~ #sub-esoterica:checked ~ .conteudo-vitrine .item-esoterica,
-#linhas:checked ~ #sub-rosas:checked ~ .conteudo-vitrine .item-rosas,
+#linhas:checked ~ #sub-roosi:checked ~ .conteudo-vitrine .item-roosi,
 #linhas:checked ~ #sub-nopou:checked ~ .conteudo-vitrine .item-nopou,
 #funcao:checked
   ~ #sub-sabonete-corporal:checked
