@@ -225,8 +225,8 @@ main {
 .close-btn svg,
 .cart-item-delete svg {
   display: block;
-  width: 32.8px;
-  height: 32.8px;
+  width: 26px;
+  height: 26px;
 }
 .menu-fechar:active {
   transform: scale(0.95);
@@ -674,6 +674,26 @@ details[open] .accordion-content {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+.search-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search-modal-header h3 {
+  margin: 0;
+}
+
+.search-modal-header .close-btn {
+  position: static;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+}
+
 .close-btn {
   position: absolute;
   top: 12px;
@@ -688,7 +708,7 @@ details[open] .accordion-content {
 }
 
 .search-results-list {
-  margin-top: 16px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -731,7 +751,7 @@ details[open] .accordion-content {
 /* Botão de fechar (X) */
 .close-btn {
   position: absolute;
-  top: 16px;
+  top: 20px;
   right: 16px;
   background: none;
   border: none;
@@ -1252,6 +1272,9 @@ CARD DE CESTA
   transform: scale(0.95);
 }
 @media (max-width: 480px) {
+  .cart-item-controls {
+    transform: translateX(8px);
+  }
   .qty-selector {
     width: 78px;
     height: 30px;

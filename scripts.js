@@ -844,7 +844,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ${blocoPrecoCarrinho}
                 </div>
 
-                <div class="cart-item-controls" style="display: flex; align-items: center; gap: 6px;">
+                <div class="cart-item-controls" style="display: flex; align-items: center; gap: 14px;">
                     <div class="qty-selector">
                         <button onclick="alterarQtd(${index}, -1, this)" aria-label="Diminuir quantidade">-</button>
                         <span>${item.quantidade}</span>
