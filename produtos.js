@@ -24,7 +24,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Frescor, limpeza e revigorante. Um estímulo natural de frescor e bem-estar.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].</strong>",
       beneficios:
-        "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais</strong>",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Capim-Limão, Óleo Essencial de Capim-Limão.",
       modoUso:
@@ -62,7 +62,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Relaxante, harmonioso e suave. A energia das ervas frescas para despertar o foco e a vitalidade.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].</strong>",
       beneficios:
-        "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais</strong>",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Lavanda Provence, Óleo Essencial de Lavanda Provence.",
       modoUso:
@@ -100,7 +100,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br><strong>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].</strong>",
       beneficios:
-        "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "<strong>- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais</strong>",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Alecrim, Óleo Essencial de Alecrim.",
       modoUso:
