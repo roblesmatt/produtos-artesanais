@@ -673,7 +673,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (carrinho.length === 0) {
       cartItemsList.innerHTML =
-        "<p style='text-align: center; padding: 20px; color: #666;'>A sua cesta está vazia.</p>";
+        "<p style='text-align: center; padding: 20px; color: #9A8E7E;'>A sua cesta está vazia.</p>";
       if (cartTotal) cartTotal.innerText = "R$ 0,00";
       return;
     }

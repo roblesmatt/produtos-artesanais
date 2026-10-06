@@ -213,6 +213,9 @@ main {
 .nav-menu a.active {
   color: #000000;
 }
+.menu-titulo {
+  text-align: center;
+}
 .menu-fechar {
   display: none; /* Esconde por padrão no desktop */
   background: none;
