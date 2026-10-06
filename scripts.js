@@ -706,11 +706,21 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const cartItemsList = document.getElementById("cartItemsList");
   const cartTotal = document.getElementById("cartTotal");
+  const checkoutLink = document.getElementById("checkoutLink");
 
   if (cartItemsList) {
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     cartItemsList.innerHTML = "";
     let totalGeral = 0;
+
+    if (checkoutLink) {
+      const cestaVazia = carrinho.length === 0;
+      checkoutLink.setAttribute("aria-disabled", String(cestaVazia));
+      checkoutLink.tabIndex = cestaVazia ? -1 : 0;
+      checkoutLink.addEventListener("click", (event) => {
+        if (cestaVazia) event.preventDefault();
+      });
+    }
 
     if (carrinho.length === 0) {
       cartItemsList.innerHTML =

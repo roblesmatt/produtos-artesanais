@@ -10,9 +10,6 @@
 
 <div id="cabecalho-container"></div>
 
-</head>
-<body>
-
   <div class="checkout-container">
     <h2>DADOS PARA ENTREGA<br>E FATURAÇÃO</h2>
     <form id="checkoutForm">
@@ -73,13 +70,17 @@
       }
 
       carrinho.forEach((item) => {
+          const produto = BANCO_PRODUTOS.find((produto) => produto.nome === item.nome);
+          const precoOriginal = produto?.precoOriginal || item.preco;
+          const precoDesconto = produto?.precoDesconto || item.precoDesconto || "";
+          const precoCobrado = precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
           let valorNumerico = parseFloat(
-              item.preco.replace("R$", "").replace(".", "").replace(",", ".").trim()
+              precoCobrado.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
           ) || 0;
           const subtotal = valorNumerico * item.quantidade;
           totalGeral += subtotal;
 
-          mensagemProdutos += `- ${item.quantidade}x ${item.nome} (${item.preco}) [Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}]\n`;
+          mensagemProdutos += `- ${item.quantidade}x ${item.nome} (${precoCobrado}) [Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}]\n`;
       });
 
       mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
