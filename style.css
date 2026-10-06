@@ -16,11 +16,32 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 #cabecalho-container {
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: #e0d4b9;
+}
+.site-footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 16px 24px;
+  background-color: #e0d4b9;
+  color: #3d2d2d;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+.site-footer p {
+  color: inherit;
+  font-family: inherit;
+  -webkit-text-stroke: 0;
 }
 * {
   margin: 0;
@@ -1036,7 +1057,6 @@ BARRA DE BUSCA
   width: 100%;
 
   top: 0;
-  z-index: 1000;
   background-color: #e0d4b9;
 }
 .container-filtros input {
@@ -1127,6 +1147,7 @@ BARRA DE BUSCA
   label[for="sub-alecrim-rosmarino"],
 #sub-laranja-doce:checked ~ .submenu-ativos label[for="sub-laranja-doce"],
 #sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"],
+#sub-rosa-mosqueta:checked ~ .submenu-ativos label[for="sub-rosa-mosqueta"],
 #sub-verde:checked ~ .submenu-cores label[for="sub-verde"],
 #sub-amarelo:checked ~ .submenu-cores label[for="sub-amarelo"],
 #sub-vermelho:checked ~ .submenu-cores label[for="sub-vermelho"],
@@ -1210,6 +1231,10 @@ BARRA DE BUSCA
   ~ #sub-amendoa-doce:checked
   ~ .conteudo-vitrine
   .item-amendoa-doce,
+#ativos:checked
+  ~ #sub-rosa-mosqueta:checked
+  ~ .conteudo-vitrine
+  .item-rosa-mosqueta,
 #cores:checked ~ #sub-verde:checked ~ .conteudo-vitrine .item-verde,
 #cores:checked ~ #sub-amarelo:checked ~ .conteudo-vitrine .item-amarelo,
 #cores:checked ~ #sub-vermelho:checked ~ .conteudo-vitrine .item-vermelho,

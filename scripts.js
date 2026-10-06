@@ -127,6 +127,11 @@ fetch("global.html")
     const cabecalhoContainer = document.getElementById("cabecalho-container");
     if (cabecalhoContainer) {
       cabecalhoContainer.innerHTML = data;
+
+      const rodape = cabecalhoContainer.querySelector(".site-footer");
+      if (rodape) {
+        document.body.appendChild(rodape);
+      }
     }
 
     if (typeof atualizarContadorCarrinho === "function") {
