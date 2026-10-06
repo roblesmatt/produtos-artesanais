@@ -179,9 +179,9 @@ function inicializarGlobalEvents() {
 
             if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
               blocoPrecoBusca = `
-                <div style="display: flex; flex-direction: row; align-items: baseline; gap: 6px;">                  
-                <span class="preco-antigo"style="margin-top: 2px;">${produto.precoOriginal}</span>
-                <span class="preco-atual";">${produto.precoDesconto}</span>
+                <div style="display: flex; flex-direction: row; align-items: baseline; gap: 6px;">
+                  <span class="preco-atual">${produto.precoDesconto}</span>
+                  <span class="preco-antigo">${produto.precoOriginal}</span>
                 </div>
               `;
             }
@@ -768,10 +768,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     carrinho.forEach((item, index) => {
+      const produto = BANCO_PRODUTOS.find(
+        (produto) => produto.nome === item.nome,
+      );
+      const precoOriginal = produto?.precoOriginal || item.preco;
+      const precoDesconto = produto?.precoDesconto || item.precoDesconto || "";
       let precoParaCalculo =
-        item.precoDesconto && item.precoDesconto.trim() !== ""
-          ? item.precoDesconto
-          : item.preco;
+        precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
 
       let valorNumerico =
         parseFloat(
@@ -788,14 +791,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const divItem = document.createElement("div");
       divItem.classList.add("cart-item-card");
 
-      // Montagem do bloco de preço corrigido (com desconto em destaque e original menor, riscado e em cinza/suave)
-      let blocoPrecoCarrinho = `<span style="font-weight: bold; font-size: 16px; color: #3d2d2d;">${item.preco}</span>`;
+      let blocoPrecoCarrinho = `<span class="preco-atual">${precoOriginal}</span>`;
 
-      if (item.precoDesconto && item.precoDesconto.trim() !== "") {
+      if (precoDesconto.trim() !== "") {
         blocoPrecoCarrinho = `
-          <div style="display: flex; flex-direction: column;">
-            <span style="font-size: 16px; color: #3d2d2d; line-height: 1.2;">${item.precoDesconto}</span>
-            <span style="font-size: 13px; color: #9A8E7E; text-decoration: line-through; line-height: 1; margin-top: 2px;">${item.preco}</span>
+          <div style="display: flex; flex-direction: row; align-items: baseline; gap: 6px;">
+            <span class="preco-atual">${precoDesconto}</span>
+            <span class="preco-antigo">${precoOriginal}</span>
           </div>
         `;
       }
@@ -868,9 +870,16 @@ function enviarPedidoWhatsApp() {
   let totalGeral = 0;
 
   carrinho.forEach((item) => {
+    const produto = BANCO_PRODUTOS.find(
+      (produto) => produto.nome === item.nome,
+    );
+    const precoOriginal = produto?.precoOriginal || item.preco;
+    const precoDesconto = produto?.precoDesconto || item.precoDesconto || "";
+    const precoCobrado =
+      precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
     let valorNumerico =
       parseFloat(
-        item.preco
+        precoCobrado
           .replace("R$", "")
           .replace(/\./g, "")
           .replace(",", ".")
@@ -903,8 +912,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ? nomeElemento.innerText.trim()
         : "Produto Artesanal";
 
+      const produto = BANCO_PRODUTOS.find((produto) => produto.nome === nome);
       const precoElemento = document.querySelector(".preco");
-      const preco = precoElemento ? precoElemento.innerText.trim() : "R$ 0,00";
+      const preco =
+        produto?.precoOriginal ||
+        (precoElemento ? precoElemento.innerText.trim() : "R$ 0,00");
+      const precoDesconto = produto?.precoDesconto || "";
 
       const qtyElemento = document.getElementById("qtyValue");
       const quantidade = qtyElemento ? parseInt(qtyElemento.innerText) || 1 : 1;
@@ -916,7 +929,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ? imgElemento.getAttribute("src")
         : "produtos/thairo-1x1.svg";
 
-      let carrinho = [{ nome, preco, imagem, quantidade }];
+      let carrinho = [{ nome, preco, precoDesconto, imagem, quantidade }];
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
       window.location.href = "checkout.html";
@@ -947,8 +960,12 @@ document.addEventListener("DOMContentLoaded", () => {
     btnAdicionarCesta.addEventListener("click", () => {
       const nome = nomeAtual || "Produto Artesanal";
 
+      const produto = BANCO_PRODUTOS.find((produto) => produto.nome === nome);
       const precoElemento = document.querySelector(".preco");
-      const preco = precoElemento ? precoElemento.innerText.trim() : "R$ 0,00";
+      const preco =
+        produto?.precoOriginal ||
+        (precoElemento ? precoElemento.innerText.trim() : "R$ 0,00");
+      const precoDesconto = produto?.precoDesconto || "";
 
       const qtyElemento = document.getElementById("qtyValue");
       const quantidadeSelecionada = qtyElemento
@@ -971,10 +988,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (indexExistente >= 0) {
         carrinhoAtualizado[indexExistente].quantidade = quantidadeSelecionada;
+        carrinhoAtualizado[indexExistente].preco = preco;
+        carrinhoAtualizado[indexExistente].precoDesconto = precoDesconto;
       } else {
         carrinhoAtualizado.push({
           nome,
           preco,
+          precoDesconto,
           imagem,
           quantidade: quantidadeSelecionada,
         });
