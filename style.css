@@ -735,10 +735,6 @@ details[open] .accordion-content {
   margin-bottom: -2px;
 }
 
-.search-result-card:hover {
-  background-color: #f0eadc;
-}
-
 /* Preço principal (atual ou com desconto) */
 .preco-atual {
   font-weight: 700;
@@ -1186,16 +1182,6 @@ CARD DE CESTA
   padding: 12px;
   margin-bottom: -2px;
   gap: 12px;
-}
-.cart-item-card:hover {
-  background-color: #f0eadc;
-}
-.cart-item-card:hover .cart-item-img {
-  background-color: #f0eadc;
-}
-.cart-item-card:hover .qty-selector,
-.cart-item-card:hover .cart-item-delete {
-  background-color: #f0eadc;
 }
 @media (min-width: 769px) {
   .container-cesta {

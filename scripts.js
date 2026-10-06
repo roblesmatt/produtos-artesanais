@@ -89,11 +89,15 @@ function inicializarGlobalEvents() {
         BANCO_PRODUTOS.forEach((produto) => {
           if (produto.nome.toLowerCase().includes(termo)) {
             encontrados++;
-            const item = document.createElement("a");
-            item.href = resolveUrlParaPagina(produto.linkPagina);
+            const item = document.createElement(produto.esgotado ? "div" : "a");
+            if (produto.esgotado) {
+              item.setAttribute("aria-disabled", "true");
+            } else {
+              item.href = resolveUrlParaPagina(produto.linkPagina);
+            }
             item.className = "search-result-card";
             item.style.cssText =
-              "display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; padding: 8px;";
+              `display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; padding: 8px;${produto.esgotado ? " opacity: 0.6; cursor: default;" : ""}`;
 
             let blocoPrecoBusca = `<span class="preco-atual">${produto.precoOriginal}</span>`;
 
@@ -111,6 +115,7 @@ function inicializarGlobalEvents() {
               <div>
                 <h4 style="margin: 0 0 4px 0; font-size: 14px; color: #3d2d2d;">${produto.nome}</h4>
                 ${blocoPrecoBusca}
+                ${produto.esgotado ? '<span class="produto-esgotado-label">ESGOTADO</span>' : ""}
               </div>
             `;
 
