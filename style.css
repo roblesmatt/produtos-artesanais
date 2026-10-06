@@ -968,7 +968,7 @@ details[open] .accordion-content {
 }
 .texto-temporario span {
   pointer-events: auto;
-  font-size: 50px;
+  font-size: 15px;
   font-weight: 700;
   color: #3d2d2d;
 }
