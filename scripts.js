@@ -263,7 +263,6 @@ function renderizarVitrinesAutomaticas() {
           if (imgEl) imgEl.style.opacity = "0";
           if (videoEl) {
             videoEl.style.opacity = "1";
-            videoEl.currentTime = 0;
             videoEl.play().catch(() => {});
           }
         });
@@ -615,7 +614,6 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           const video = entry.target;
           if (entry.isIntersecting) {
-            video.currentTime = 0;
             video.play().catch(() => {
               video.muted = true;
               video.play();
