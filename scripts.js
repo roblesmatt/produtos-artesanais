@@ -370,7 +370,7 @@ function preencherPaginaProduto() {
           <span class="preco">${produto.precoDesconto}</span>
           ${unidadeEl ? unidadeEl.outerHTML : ""}
         </div>
-        <del style="font-family: 'Merrie', sans-serif; font-size: 16px; color: #9A8E7E; display: block; line-height: 1; margin-top: 6px; text-decoration: line-through;">${produto.precoOriginal}</del>
+        <del style="font-size: 16px; color: #9A8E7E; display: block; line-height: 1; margin-top: 6px; text-decoration: line-through;">${produto.precoOriginal}</del>
       `;
 
       if (unidadeEl) unidadeEl.style.display = "none";
@@ -765,7 +765,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (item.precoDesconto && item.precoDesconto.trim() !== "") {
         blocoPrecoCarrinho = `
           <div style="display: flex; flex-direction: column;">
-            <span style="font-family: 'Mont' serif font-weight: bold; font-size: 16px; color: #3d2d2d; line-height: 1.2;">${item.precoDesconto}</span>
+            <span style="font-size: 16px; color: #3d2d2d; line-height: 1.2;">${item.precoDesconto}</span>
             <span style="font-size: 13px; color: #9A8E7E; text-decoration: line-through; line-height: 1; margin-top: 2px;">${item.preco}</span>
           </div>
         `;
