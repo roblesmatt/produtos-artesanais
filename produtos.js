@@ -122,7 +122,7 @@ const BANCO_PRODUTOS = [
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
-    esgotado: false,
+    esgotado: true,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
