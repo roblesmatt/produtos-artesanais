@@ -233,17 +233,12 @@ function renderizarVitrinesAutomaticas() {
   if (typeof BANCO_PRODUTOS === "undefined") return;
 
   BANCO_PRODUTOS.forEach((produto) => {
-    const categoriasArray = Array.isArray(produto.tags.categoria)
-      ? produto.tags.categoria
-      : [produto.tags.categoria];
-
-    const destinos = [
-      ...categoriasArray,
-      produto.tags.linha,
-      produto.tags.funcao,
-      produto.tags.ativo,
-      produto.tags.cor,
-    ];
+    const destinos = ["categoria", "linha", "funcao", "ativo", "cor"].flatMap(
+      (classificacao) => {
+        const valor = produto.tags[classificacao];
+        return Array.isArray(valor) ? valor : [valor];
+      },
+    );
 
     destinos.forEach((tagCompleta) => {
       if (!tagCompleta) return;

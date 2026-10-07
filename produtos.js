@@ -3,8 +3,8 @@
 // ==========================================
 const BANCO_PRODUTOS = [
   {
-    id: "perfume-artesanal-capim-limao",
-    nome: "Perfume Artesanal de Capim Limão",
+    id: "perfume-artesanal-docura-citrica",
+    nome: "Perfume Artesanal de Doçura Cítrica",
     precoOriginal: "R$89,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -12,7 +12,7 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "produtos/perfume-artesanal-capim-limao.html",
+    linkPagina: "produtos/perfume-artesanal-docura-citrica.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -41,8 +41,8 @@ const BANCO_PRODUTOS = [
     },
   },
   {
-    id: "perfume-artesanal-lavanda-provence",
-    nome: "Perfume Artesanal de Lavanda Provence",
+    id: "perfume-artesanal-renascenca-purpura",
+    nome: "Perfume Artesanal de Renascença Púrpura",
     precoOriginal: "R$79,90",
     precoDesconto: "R$69,90",
     subtitulo: "[1 un. / 60ml].",
@@ -50,7 +50,7 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "produtos/perfume-artesanal-lavanda-provence.html",
+    linkPagina: "produtos/perfume-artesanal-renascenca-purpura.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -79,8 +79,8 @@ const BANCO_PRODUTOS = [
     },
   },
   {
-    id: "perfume-artesanal-alecrim-rosmarino",
-    nome: "Perfume Artesanal de Alecrim Rosmarino",
+    id: "perfume-artesanal-raio-verde",
+    nome: "Perfume Artesanal de Raio Verde",
     precoOriginal: "R$79,90",
     precoDesconto: "R$69,90",
     subtitulo: "[1 un. / 60ml].",
@@ -88,11 +88,11 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "produtos/perfume-artesanal-alecrim-rosmarino.html",
+    linkPagina: "produtos/perfume-artesanal-raio-verde.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "ativos-alecrim-rosmarino",
+      ativo: ["ativos-capim-limao", "ativos-alecrim-rosmarino"],
       cor: "cores-verde",
       categoria: ["mais-vendido", "promocao"],
     },
