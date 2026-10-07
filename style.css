@@ -1174,6 +1174,7 @@ grid-template-columns: repeat(4, 1fr); /* Força sempre 4 colunas no desktop */ 
 CARD DE CESTA
 ================================================= */
 .cart-item-card {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1202,6 +1203,7 @@ CARD DE CESTA
   -webkit-text-stroke: 0.5px;
   color: #3d2d2d;
   margin: 0;
+  padding-right: 56px;
   line-height: 1.2;
 }
 /* Controles de quantidade e lixeira */
@@ -1253,11 +1255,14 @@ CARD DE CESTA
 }
 /* Botão de lixeira */
 .cart-item-delete {
+  position: absolute;
+  top: 12px;
+  right: 12px;
   background: none;
   border: none;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   padding: 0;
   color: #3d2d2d;
   transition: transform 0.1s;
@@ -1265,10 +1270,10 @@ CARD DE CESTA
 .cart-item-delete:active {
   transform: scale(0.95);
 }
+.cart-item-delete svg {
+  transform: translate(11px, -10px);
+}
 @media (max-width: 480px) {
-  .cart-item-controls {
-    transform: translateX(8px);
-  }
   .qty-selector {
     width: 78px;
     height: 30px;
