@@ -704,6 +704,7 @@ details[open] .accordion-content {
   width: 32px;
   height: 32px;
   padding: 3px;
+  margin-right: -8px;
 }
 
 .close-btn {
