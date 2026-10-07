@@ -370,7 +370,7 @@ function preencherPaginaProduto() {
       <section class="stock-unavailable">
         <h1>PRODUTO NÃO ENCONTRADO</h1>
         <p>Não foi possível identificar o produto solicitado.</p>
-        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para a Vitrine</a>
+        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para o Catálogo</a>
       </section>
     `;
     return;
@@ -382,7 +382,7 @@ function preencherPaginaProduto() {
       <section class="stock-unavailable">
         <h1>PRODUTO NÃO ENCONTRADO</h1>
         <p>Este produto não está disponível no catálogo.</p>
-        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para a Vitrine</a>
+        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para o Catálogo</a>
       </section>
     `;
     return;
@@ -395,7 +395,7 @@ function preencherPaginaProduto() {
       <main class="stock-unavailable">
         <h1>LOTE ESGOTADO</h1>
         <p>O produto <strong>${produto.nome}</strong> encontra-se esgotado no momento.</p>
-        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para a Vitrine</a>
+        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para o Catálogo</a>
       </main>
     `;
     return;

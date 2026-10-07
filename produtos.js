@@ -17,7 +17,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-capim-limao",
       cor: "cores-verde",
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -54,7 +54,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "ativos-lavanda-provence",
       cor: "cores-lilas",
-      categoria: ["mais-vendido", "promocao"],
+      categoria: ["catalogo", "promocao"],
     },
     acordeoes: {
       sobre:
@@ -91,7 +91,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: ["ativos-capim-limao", "ativos-alecrim-rosmarino"],
       cor: "cores-verde",
-      categoria: ["mais-vendido", "promocao"],
+      categoria: ["catalogo", "promocao"],
     },
     acordeoes: {
       sobre:
@@ -128,7 +128,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: ["ativos-capim-limao", "ativos-lavanda-provence"],
       cor: ["cores-verde", "cores-lilas"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -165,7 +165,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "",
       cor: ["cores-vermelho"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -202,7 +202,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "",
       cor: ["cores-vermelho"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -239,7 +239,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "",
       cor: ["cores-rosa"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -276,7 +276,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "",
       cor: ["cores-vermelho", "cores-laranja"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -313,7 +313,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "",
       cor: ["cores-rosa"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -350,7 +350,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-verde"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -387,7 +387,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-lilas"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -424,7 +424,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-verde", "cores-lilas"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -461,7 +461,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-verde"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -498,7 +498,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-verde"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -535,7 +535,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-vermelho"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -572,7 +572,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-vermelho"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -609,7 +609,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-rosa"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -646,7 +646,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-vermelho", "cores-laranja"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:
@@ -683,7 +683,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-sabonete-corporal",
       ativo: "",
       cor: ["cores-rosa"],
-      categoria: ["mais-vendido"],
+      categoria: ["catalogo"],
     },
     acordeoes: {
       sobre:

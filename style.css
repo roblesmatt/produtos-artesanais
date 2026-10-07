@@ -1003,7 +1003,7 @@ BARRA DE BUSCA
   background-color: #3d2d2d;
   color: #e0d4b9;
 }
-#sub-mais-vendido:checked ~ .submenu-todos label[for="sub-mais-vendido"],
+#sub-catalogo:checked ~ .submenu-todos label[for="sub-catalogo"],
 #sub-lancamentos:checked ~ .submenu-todos label[for="sub-lancamentos"],
 #sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
 #sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
@@ -1060,9 +1060,9 @@ BARRA DE BUSCA
   display: none;
 }
 #todos:checked
-  ~ #sub-mais-vendido:checked
+  ~ #sub-catalogo:checked
   ~ .conteudo-vitrine
-  .item-mais-vendido,
+  .item-catalogo,
 #todos:checked ~ #sub-lancamentos:checked ~ .conteudo-vitrine .item-lancamentos,
 #todos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
 #linhas:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
