@@ -37,8 +37,12 @@ function normalizarTextoBusca(texto) {
 }
 
 function pontuarProdutoBusca(produto, consulta) {
-  const palavrasNome = normalizarTextoBusca(produto.nome).split(/\s+/).filter(Boolean);
-  const termos = normalizarTextoBusca(consulta).split(/\s+/).filter(Boolean);
+  const palavrasNome = normalizarTextoBusca(produto.nome)
+    .split(/\s+/)
+    .filter((palavra) => palavra && palavra !== "de");
+  const termos = normalizarTextoBusca(consulta)
+    .split(/\s+/)
+    .filter((termo) => termo && termo !== "de");
   if (termos.length === 0) return 0;
 
   if (termos.length === 1) {
