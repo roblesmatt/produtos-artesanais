@@ -12,7 +12,6 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "produtos/perfume-artesanal-docura-citrica.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -50,7 +49,6 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "produtos/perfume-artesanal-renascenca-purpura.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -88,7 +86,6 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "produtos/perfume-artesanal-raio-verde.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -126,7 +123,6 @@ const BANCO_PRODUTOS = [
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
     video3d: "produtos/perfume-teste.webm",
-    linkPagina: "produtos/perfume-artesanal-capim-selvagem.html",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -155,6 +151,10 @@ const BANCO_PRODUTOS = [
     },
   },
 ];
+
+function gerarLinkPaginaProduto(produto) {
+  return `produto.html?id=${encodeURIComponent(produto.id)}`;
+}
 
 function encontrarProdutoDoCarrinho(item) {
   return (

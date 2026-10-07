@@ -133,7 +133,7 @@ function inicializarGlobalEvents() {
           if (produto.esgotado) {
             item.setAttribute("aria-disabled", "true");
           } else {
-            item.href = resolveUrlParaPagina(produto.linkPagina);
+            item.href = resolveUrlParaPagina(gerarLinkPaginaProduto(produto));
           }
           item.className = `search-result-card${produto.esgotado ? " search-result-card-esgotado" : ""}`;
 
@@ -294,7 +294,7 @@ function renderizarVitrinesAutomaticas() {
       const cardContentTag = produto.esgotado ? "div" : "a";
       const cardContentAttributes = produto.esgotado
         ? 'aria-disabled="true"'
-        : `href="${resolveUrlParaPagina(produto.linkPagina)}"`;
+        : `href="${resolveUrlParaPagina(gerarLinkPaginaProduto(produto))}"`;
 
       // Estrutura interna contendo a imagem e o vídeo (inicialmente oculto/pausado)
       card.innerHTML = `
@@ -344,29 +344,45 @@ function renderizarVitrinesAutomaticas() {
 function preencherPaginaProduto() {
   const params = new URLSearchParams(window.location.search);
   let idProduto = params.get("id");
+  const paginaDetalhe = document.querySelector(".product-layout-grid");
 
   if (!idProduto) {
-    const paginaAtual = window.location.pathname.split("/").pop();
     const paginaAtualSemDiretorio = window.location.pathname
       .split("/")
       .filter(Boolean)
       .slice(-1)[0];
     const produtoEncontrado = BANCO_PRODUTOS.find(
-      (p) =>
-        p.linkPagina === paginaAtual ||
-        p.linkPagina === paginaAtualSemDiretorio ||
-        p.linkPagina.endsWith(`/${paginaAtual}`) ||
-        p.linkPagina.endsWith(`/${paginaAtualSemDiretorio}`),
+      (produto) => `${produto.id}.html` === paginaAtualSemDiretorio,
     );
     if (produtoEncontrado) {
       idProduto = produtoEncontrado.id;
     }
   }
 
-  if (!idProduto) return;
+  if (!paginaDetalhe) return;
+
+  if (!idProduto) {
+    paginaDetalhe.innerHTML = `
+      <section class="stock-unavailable">
+        <h1>PRODUTO NÃO ENCONTRADO</h1>
+        <p>Não foi possível identificar o produto solicitado.</p>
+        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para a Vitrine</a>
+      </section>
+    `;
+    return;
+  }
 
   const produto = BANCO_PRODUTOS.find((p) => p.id === idProduto);
-  if (!produto) return;
+  if (!produto) {
+    paginaDetalhe.innerHTML = `
+      <section class="stock-unavailable">
+        <h1>PRODUTO NÃO ENCONTRADO</h1>
+        <p>Este produto não está disponível no catálogo.</p>
+        <a href="${resolveUrlParaPagina("index.html")}" class="button1">Voltar para a Vitrine</a>
+      </section>
+    `;
+    return;
+  }
 
   document.title = produto.nome;
 
