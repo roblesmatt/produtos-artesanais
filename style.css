@@ -753,13 +753,45 @@ details[open] .accordion-content {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px;
+  padding: 8px;
   background-color: #e0d4b9;
   color: #3d2d2d;
   text-decoration: none;
   transition: background-color 0.2s;
   border: 2px solid #3d2d2d;
   margin-bottom: -2px;
+}
+
+.search-result-card-esgotado {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.search-result-image {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.search-result-name {
+  margin: 0 0 4px;
+  color: #3d2d2d;
+  font-size: 14px;
+}
+
+.search-result-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.search-empty-state {
+  margin: 0;
+  padding: 10px;
+  color: #9A8E7E;
+  text-align: center;
 }
 
 /* Preço principal (atual ou com desconto) */

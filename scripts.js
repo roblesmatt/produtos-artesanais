@@ -27,26 +27,6 @@ function resolveAssetUrl(caminho) {
   return caminho;
 }
 
-const SINONIMOS_BUSCA = {
-  lavanda: ["relaxante", "relaxamento", "calmante", "suave"],
-  relaxante: ["lavanda", "relaxamento", "calmante"],
-  relaxamento: ["lavanda", "relaxante", "calmante"],
-  calmante: ["lavanda", "relaxante", "relaxamento"],
-  alecrim: ["rosmarino"],
-  rosmarino: ["alecrim"],
-  citrico: ["laranja", "capim", "limao"],
-  citrica: ["laranja", "capim", "limao"],
-  citrus: ["laranja", "capim", "limao"],
-  laranja: ["citrico", "citrica", "citrus"],
-  capim: ["citrico", "citrica", "citrus"],
-  limao: ["citrico", "citrica", "citrus"],
-};
-
-const PALAVRAS_IGNORADAS_BUSCA = new Set([
-  "a", "as", "ao", "aos", "com", "da", "das", "de", "do", "dos", "e", "em",
-  "na", "nas", "no", "nos", "o", "os", "para", "por",
-]);
-
 function normalizarTextoBusca(texto) {
   return String(texto || "")
     .normalize("NFD")
@@ -56,111 +36,29 @@ function normalizarTextoBusca(texto) {
     .trim();
 }
 
-function distanciaEdicaoBusca(a, b) {
-  if (Math.abs(a.length - b.length) > 1) return 2;
-
-  let linhaAnterior = Array.from({ length: b.length + 1 }, (_, i) => i);
-  for (let i = 1; i <= a.length; i++) {
-    const linhaAtual = [i];
-    let menorDistancia = i;
-
-    for (let j = 1; j <= b.length; j++) {
-      linhaAtual[j] = Math.min(
-        linhaAnterior[j] + 1,
-        linhaAtual[j - 1] + 1,
-        linhaAnterior[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
-      );
-      menorDistancia = Math.min(menorDistancia, linhaAtual[j]);
-    }
-
-    if (menorDistancia > 1) return 2;
-    linhaAnterior = linhaAtual;
-  }
-
-  return linhaAnterior[b.length];
-}
-
-function pontuarCorrespondenciaBusca(termo, palavras) {
-  let melhorPontuacao = 0;
-
-  palavras.forEach((palavra) => {
-    if (palavra === termo) {
-      melhorPontuacao = Math.max(melhorPontuacao, 100);
-    } else if (palavra.startsWith(termo)) {
-      melhorPontuacao = Math.max(melhorPontuacao, 80);
-    } else if (termo.length >= 4 && palavra.includes(termo)) {
-      melhorPontuacao = Math.max(melhorPontuacao, 65);
-    } else if (
-      termo.length >= 5 &&
-      palavra.length >= 5 &&
-      distanciaEdicaoBusca(termo, palavra) <= 1
-    ) {
-      melhorPontuacao = Math.max(melhorPontuacao, 45);
-    }
-  });
-
-  return melhorPontuacao;
-}
-
 function pontuarProdutoBusca(produto, consulta) {
-  const campos = [
-    { valor: produto.nome, peso: 1 },
-    {
-      valor: Object.values(produto.tags || {})
-        .flat()
-        .filter(Boolean)
-        .join(" "),
-      peso: 0.8,
-    },
-    {
-      valor: [
-        produto.acordeoes?.composicao,
-        produto.acordeoes?.sobre,
-        produto.acordeoes?.beneficios,
-      ]
-        .filter(Boolean)
-        .join(" "),
-      peso: 0.6,
-    },
-    { valor: `${produto.id} ${produto.subtitulo || ""}`, peso: 0.4 },
-  ].map(({ valor, peso }) => {
-    const normalizado = normalizarTextoBusca(
-      String(valor || "").replace(/<[^>]*>/g, " "),
-    );
-    return {
-      peso,
-      texto: normalizado,
-      palavras: normalizado.split(/\s+/).filter(Boolean),
-    };
-  });
-
-  const termos = normalizarTextoBusca(consulta)
-    .split(/\s+/)
-    .filter((termo) => termo && !PALAVRAS_IGNORADAS_BUSCA.has(termo));
+  const palavrasNome = normalizarTextoBusca(produto.nome).split(/\s+/).filter(Boolean);
+  const termos = normalizarTextoBusca(consulta).split(/\s+/).filter(Boolean);
   if (termos.length === 0) return 0;
 
-  let pontuacao = 0;
-  for (const termo of termos) {
-    const alternativas = [termo, ...(SINONIMOS_BUSCA[termo] || [])];
-    let melhorPontuacao = 0;
-
-    campos.forEach((campo) => {
-      alternativas.forEach((alternativa) => {
-        melhorPontuacao = Math.max(
-          melhorPontuacao,
-          pontuarCorrespondenciaBusca(alternativa, campo.palavras) * campo.peso,
-        );
-      });
-    });
-
-    if (melhorPontuacao === 0) return 0;
-    pontuacao += melhorPontuacao;
+  if (termos.length === 1) {
+    return palavrasNome.some((palavra) => palavra.startsWith(termos[0])) ? 10 : 0;
   }
 
-  const consultaNormalizada = normalizarTextoBusca(consulta);
-  if (campos[0].texto.includes(consultaNormalizada)) pontuacao += 50;
-  else if (campos.some((campo) => campo.texto.includes(consultaNormalizada))) {
-    pontuacao += 20;
+  let indicePalavraNome = 0;
+  let pontuacao = 0;
+  for (const termo of termos) {
+    let indiceEncontrado = -1;
+    for (let indice = indicePalavraNome; indice < palavrasNome.length; indice++) {
+      if (palavrasNome[indice].startsWith(termo)) {
+        indiceEncontrado = indice;
+        break;
+      }
+    }
+    if (indiceEncontrado === -1) return 0;
+
+    pontuacao += 10 + (indiceEncontrado === indicePalavraNome ? 5 : 0);
+    indicePalavraNome = indiceEncontrado + 1;
   }
 
   return pontuacao;
@@ -222,18 +120,13 @@ function inicializarGlobalEvents() {
       if (termo.length > 0) {
         searchModal.style.display = "flex";
         searchResultsList.innerHTML = "";
-
         const encontrados = BANCO_PRODUTOS
           .map((produto) => ({
             produto,
             pontuacao: pontuarProdutoBusca(produto, termo),
           }))
           .filter(({ pontuacao }) => pontuacao > 0)
-          .sort(
-            (a, b) =>
-              Number(a.produto.esgotado) - Number(b.produto.esgotado) ||
-              b.pontuacao - a.pontuacao,
-          );
+          .sort((a, b) => b.pontuacao - a.pontuacao);
 
         encontrados.forEach(({ produto }) => {
           const item = document.createElement(produto.esgotado ? "div" : "a");
@@ -242,46 +135,65 @@ function inicializarGlobalEvents() {
           } else {
             item.href = resolveUrlParaPagina(produto.linkPagina);
           }
-          item.className = "search-result-card";
-          item.style.cssText =
-            `display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; padding: 8px;${produto.esgotado ? " opacity: 0.6; cursor: default;" : ""}`;
+          item.className = `search-result-card${produto.esgotado ? " search-result-card-esgotado" : ""}`;
 
-          let blocoPrecoBusca = `<span class="preco-atual">${produto.precoOriginal}</span>`;
+          const imagem = document.createElement("img");
+          imagem.className = "search-result-image";
+          imagem.src = resolveAssetUrl(produto.imagemFrente);
+          imagem.alt = "";
 
-          if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
-            blocoPrecoBusca = `
-              <div style="display: flex; flex-direction: row; align-items: baseline; gap: 6px;">
-                <span class="preco-atual">${produto.precoDesconto}</span>
-                <span class="preco-antigo">${produto.precoOriginal}</span>
-              </div>
-            `;
+          const detalhes = document.createElement("div");
+          const nome = document.createElement("h4");
+          nome.className = "search-result-name";
+          nome.textContent = produto.nome;
+          detalhes.appendChild(nome);
+
+          const precos = document.createElement("div");
+          precos.className = "search-result-prices";
+          const precoAtual = document.createElement("span");
+          precoAtual.className = "preco-atual";
+          precoAtual.textContent = produto.precoDesconto || produto.precoOriginal;
+          precos.appendChild(precoAtual);
+
+          if (produto.precoDesconto) {
+            const precoOriginal = document.createElement("span");
+            precoOriginal.className = "preco-antigo";
+            precoOriginal.textContent = produto.precoOriginal;
+            precos.appendChild(precoOriginal);
+          }
+          detalhes.appendChild(precos);
+
+          if (produto.esgotado) {
+            const etiquetaEsgotado = document.createElement("span");
+            etiquetaEsgotado.className = "produto-esgotado-label";
+            etiquetaEsgotado.textContent = "ESGOTADO";
+            detalhes.appendChild(etiquetaEsgotado);
           }
 
-          item.innerHTML = `
-            <img src="${resolveAssetUrl(produto.imagemFrente)}" alt="" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
-            <div>
-              <h4 style="margin: 0 0 4px 0; font-size: 14px; color: #3d2d2d;">${produto.nome}</h4>
-              ${blocoPrecoBusca}
-              ${produto.esgotado ? '<span class="produto-esgotado-label">ESGOTADO</span>' : ""}
-            </div>
-          `;
+          item.append(imagem, detalhes);
           searchResultsList.appendChild(item);
         });
 
         if (encontrados.length === 0) {
-          searchResultsList.innerHTML =
-            '<p style="color: #9A8E7E; text-align: center; padding: 10px;">Nenhum produto encontrado</p>';
+          const mensagem = document.createElement("p");
+          mensagem.className = "search-empty-state";
+          mensagem.textContent = "Nenhum produto encontrado";
+          searchResultsList.appendChild(mensagem);
         }
       } else {
         searchModal.style.display = "none";
+        searchResultsList.innerHTML = "";
       }
     });
   }
 
-  if (closeSearchModal) {
+  if (closeSearchModal && searchModal) {
     closeSearchModal.addEventListener("click", () => {
       searchModal.style.display = "none";
-      if (searchInput) searchInput.value = "";
+      if (searchInput) {
+        searchInput.value = "";
+        searchInput.dispatchEvent(new Event("input", { bubbles: true }));
+      }
     });
   }
 

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produto</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="cabecalho-container"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="product-layout-grid">
+      <!-- Coluna 1: O Carrossel -->
+      <div class="product-column-gallery">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="carousel-item">
+              <img
+                id="mainImage"
+                alt="Imagem do Produto"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="thumb-verso"
+                alt="Verso do Produto"
+              />
+            </div>
+            <div class="carousel-item">
+              <div class="video-container">
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  class="responsive-video phone-video"
+                >
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-progress-bar" aria-label="Indicador do carrossel">
+          <span class="carousel-progress-dot ativo"></span>
+          <span class="carousel-progress-dot"></span>
+          <span class="carousel-progress-dot"></span>
+        </div>
+      </div>
+
+      <!-- Detalhes do Produto & Acordeões -->
+      <div class="product-column-accordion">
+        <div class="product-info">
+          <div class="product-header">
+            <h1 class="titulo">Carregando...</h1>
+          </div>
+
+          <div class="preco-container">
+            <div class="preco"></div>
+            <span class="substitulo" id="subtituloProduto"></span>
+          </div>
+
+          <div class="quantidade-carrinho">
+            <div class="quantity-selector">
+              <button
+                class="qty-btn"
+                id="btnMinus"
+                aria-label="Diminuir quantidade"
+              >
+                -
+              </button>
+              <span class="qty-value" id="qtyValue">1</span>
+              <button
+                class="qty-btn"
+                id="btnPlus"
+                aria-label="Aumentar quantidade"
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              id="cartBtn"
+              class="botao-carrinho"
+              aria-label="Adicionar a cesta"
+            >
+              <span>Adicionar à Cesta</span>
+            </button>
+          </div>
+
+          <!-- Lista de Acordeões -->
+          <section class="product-column-accordion0">
+            <div class="accordion-list">
+              <details class="accordion-item" open>
+                <summary class="accordion-header">
+                  <span class="accordion-title">SOBRE O PRODUTO</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-sobre">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">BENEFÍCIOS</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-beneficios">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">COMPOSIÇÃO</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-composicao">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">MODO DE USO</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-modo-uso">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">ADVERTÊNCIAS E PRECAUÇÕES</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-advertencias">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">FICHA TÉCNICA</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-ficha">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">FORMAS DE PAGAMENTO</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-pagamento">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">VALOR DE FRETE</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-frete">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+
+              <details class="accordion-item">
+                <summary class="accordion-header">
+                  <span class="accordion-title">TROCAS E DEVOLUÇÕES</span>
+                  <svg
+                    class="accordion-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32.8"
+                    height="32.8"
+                    viewBox="0 0 32.8 32.8"
+                  >
+                    <path
+                      d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z"
+                      fill="#3d2d2d"
+                    />
+                  </svg>
+                </summary>
+                <div class="accordion-content" id="conteudo-trocas">
+                  <p>A carregar...</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Botão de Ação Principal -->
+          <a href="#" class="whatsapp-btn" id="btnComprarAgora"
+            >Encomendar apenas este Produto</a
+          >
+        </div>
+      </div>
+
+      <div class="espaco"></div>
+    </main>
+
+    <script src="../produtos.js" defer></script>
+    <script src="../scripts.js" defer></script>
+  </body>
+</html>
