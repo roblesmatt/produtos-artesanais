@@ -28,6 +28,10 @@ body {
   background-color: #e0d4b9;
 }
 .site-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin-top: auto;
   padding: 16px 24px;
@@ -37,11 +41,29 @@ body {
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
+  white-space: nowrap;
 }
 .site-footer p {
+  margin: 0;
   color: inherit;
   font-family: inherit;
+  font-size: clamp(8px, 0.9vw, 12px);
   -webkit-text-stroke: 0;
+}
+.site-footer p:not(:last-child)::after {
+  content: " │";
+}
+@media (max-width: 767px) {
+  .site-footer {
+    flex-direction: column;
+    white-space: normal;
+  }
+  .site-footer p {
+    font-size: inherit;
+  }
+  .site-footer p:not(:last-child)::after {
+    content: none;
+  }
 }
 .stock-unavailable {
   display: flex;
