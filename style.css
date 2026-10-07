@@ -96,8 +96,8 @@ body {
 }
 @media (max-width: 767px) {
   .header {
-    justify-content: center;
-    gap: clamp(24px, 7.5vw, 30px);
+    justify-content: space-between;
+    gap: 0;
   }
 }
 @media (min-width: 1200px) {
@@ -113,33 +113,22 @@ main {
   box-sizing: border-box;
 }
 
-.logo-desktop {
-  display: none;
-}
-.logo-mobile {
+.logo {
   display: block;
-  width: 60px;
+  width: clamp(84px, 24vw, 100px);
   height: auto;
 }
 .logo-link {
   display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
   transition: transform 0.1s;
 }
 .logo-link:active {
   transform: scale(0.95);
 }
-@media (min-width: 376px) {
-  .logo-desktop {
-    display: block;
-    width: clamp(84px, 24vw, 100px);
-    height: auto;
-  }
-  .logo-mobile {
-    display: none;
-  }
-}
 @media (min-width: 768px) {
-  .logo-desktop {
+  .logo {
     width: clamp(100px, 31vw, 120px);
   }
 }
@@ -296,6 +285,21 @@ BARRA DE BUSCA
 .search-bar input:focus::placeholder {
   color: #9A8E7E;
   opacity: 1;
+}
+
+@media (max-width: 375px) {
+  .header {
+    padding: 14px;
+  }
+  .logo {
+    width: clamp(72px, 21vw, 80px);
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .search-bar input {
+    width: clamp(92px, 29vw, 110px);
+  }
 }
 
 @media (min-width: 1024px) {
