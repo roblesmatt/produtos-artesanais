@@ -330,13 +330,13 @@ function renderizarVitrinesAutomaticas() {
         ? 'aria-disabled="true"'
         : `href="${resolveUrlParaPagina(gerarLinkPaginaProduto(produto))}"`;
 
-      // Estrutura interna contendo a imagem e o vídeo (inicialmente oculto/pausado)
+      // Estrutura interna contendo a imagem frontal, o vídeo 3D (se houver) ou a imagem do verso (se houver)
       card.innerHTML = `
         ${seloEsgotadoHtml}
         <${cardContentTag} ${cardContentAttributes} style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 100%; height: 100%; ${produto.esgotado ? "opacity: 0.4; cursor: default;" : ""}">
           <div class="media-container" style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
             <img src="${resolveAssetUrl(produto.imagemFrente)}" alt="${produto.nome}" class="card-img" style="width: 100%; display: block; transition: opacity 0.3s ease;">
-            ${produto.video3d ? `<video src="${resolveAssetUrl(produto.video3d)}" class="card-video" muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none;"></video>` : ""}
+            ${produto.video3d ? `<video src="${resolveAssetUrl(produto.video3d)}" class="card-video" muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;"></video>` : (produto.imagemVerso ? `<img src="${resolveAssetUrl(produto.imagemVerso)}" alt="${produto.nome} Verso" class="card-verso" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">` : "")}
           </div>
           <div style="width: 100%;">
             <h4>${produto.nome}</h4>
@@ -345,26 +345,36 @@ function renderizarVitrinesAutomaticas() {
         </${cardContentTag}>
       `;
 
-      // Adiciona a lógica de Hover para trocar a imagem pelo vídeo se ele existir
-      if (produto.video3d && !produto.esgotado) {
+      // Adiciona a lógica de Hover com reinício do vídeo ao sair do card
+      if (!produto.esgotado) {
         const imgEl = card.querySelector(".card-img");
         const videoEl = card.querySelector(".card-video");
+        const versoEl = card.querySelector(".card-verso");
 
-        card.addEventListener("mouseenter", () => {
-          if (imgEl) imgEl.style.opacity = "0";
-          if (videoEl) {
+        if (produto.video3d && videoEl) {
+          card.addEventListener("mouseenter", () => {
+            if (imgEl) imgEl.style.opacity = "0";
             videoEl.style.opacity = "1";
             videoEl.play().catch(() => {});
-          }
-        });
+          });
 
-        card.addEventListener("mouseleave", () => {
-          if (videoEl) {
+          card.addEventListener("mouseleave", () => {
             videoEl.pause();
+            videoEl.currentTime = 0; // Garante que o vídeo reinicia do zero ao tirar o mouse
             videoEl.style.opacity = "0";
-          }
-          if (imgEl) imgEl.style.opacity = "1";
-        });
+            if (imgEl) imgEl.style.opacity = "1";
+          });
+        } else if (!produto.video3d && produto.imagemVerso && versoEl) {
+          card.addEventListener("mouseenter", () => {
+            if (imgEl) imgEl.style.opacity = "0";
+            versoEl.style.opacity = "1";
+          });
+
+          card.addEventListener("mouseleave", () => {
+            versoEl.style.opacity = "0";
+            if (imgEl) imgEl.style.opacity = "1";
+          });
+        }
       }
 
       grid.appendChild(card);
@@ -477,7 +487,7 @@ function preencherPaginaProduto() {
   const thumb2 = document.querySelector(".thumb-verso");
   if (thumb2) {
     thumb2.setAttribute("src", resolveAssetUrl(produto.imagemVerso));
-    thumb2.setAttribute("alt", `${produto.nome} - verso`);
+    thumb2.setAttribute("alt", `${produto.nome} verso`);
   }
 
   const videoSourceEl = document.getElementById("videoSource");
