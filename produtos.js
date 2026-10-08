@@ -11,7 +11,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -48,7 +48,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -85,7 +85,7 @@ const BANCO_PRODUTOS = [
     esgotado: true,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -122,7 +122,7 @@ const BANCO_PRODUTOS = [
     esgotado: true,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -159,7 +159,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -196,7 +196,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -233,7 +233,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -270,7 +270,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -307,7 +307,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
     imagemVerso: "produtos/thairo-1x1.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -344,7 +344,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -364,7 +364,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -381,7 +381,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -401,7 +401,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -418,7 +418,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -438,7 +438,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -455,7 +455,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -492,7 +492,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -512,7 +512,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -529,7 +529,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -549,7 +549,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -566,7 +566,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -586,7 +586,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -601,9 +601,9 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
-    imagemFrente: "produtos/sabonete1.svg",
-    imagemVerso: "produtos/sabonete2.svg",
-    video3d: "produtos/sabonete.webm",
+    imagemFrente: "produtos/sabonete-teste.svg",
+    imagemVerso: "produtos/sabonete-teste.svg",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -623,7 +623,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -640,7 +640,7 @@ const BANCO_PRODUTOS = [
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    video3d: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -660,7 +660,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
