@@ -154,7 +154,7 @@ const BANCO_PRODUTOS = [
     id: "perfume-artesanal-mercurio-floral",
     nome: "Perfume Artesanal Mercúrio Floral",
     precoOriginal: "R$65,00",
-    precoDesconto: "",
+    precoDesconto: "R$60,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume1.svg",
@@ -165,7 +165,7 @@ const BANCO_PRODUTOS = [
       funcao: "funcao-perfume-artesanal",
       ativo: "",
       cor: ["cores-vermelho"],
-      categoria: ["catalogo"],
+      categoria: ["catalogo", "promocao"],
     },
     acordeoes: {
       sobre:
