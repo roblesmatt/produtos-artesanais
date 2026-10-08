@@ -601,9 +601,9 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
-    imagemFrente: "produtos/sabonete-teste.svg",
-    imagemVerso: "produtos/sabonete-teste.svg",
-    video3d: "produtos/perfume-teste.webm",
+    imagemFrente: "produtos/sabonete1.svg",
+    imagemVerso: "produtos/sabonete2.svg",
+    video3d: "produtos/sabonete.webm",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
