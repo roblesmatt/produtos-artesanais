@@ -68,6 +68,18 @@ function pontuarProdutoBusca(produto, consulta) {
   return pontuacao;
 }
 
+function embaralharArray(itens) {
+  const embaralhados = [...itens];
+  for (let i = embaralhados.length - 1; i > 0; i--) {
+    const indiceAleatorio = Math.floor(Math.random() * (i + 1));
+    [embaralhados[i], embaralhados[indiceAleatorio]] = [
+      embaralhados[indiceAleatorio],
+      embaralhados[i],
+    ];
+  }
+  return embaralhados;
+}
+
 const paginaGlobal = window.location.pathname.includes("/produtos/") ? "../global.html" : "global.html";
 
 fetch(paginaGlobal)
@@ -124,13 +136,28 @@ function inicializarGlobalEvents() {
       if (termo.length > 0) {
         searchModal.style.display = "flex";
         searchResultsList.innerHTML = "";
-        const encontrados = BANCO_PRODUTOS
+        const encontradosOrdenados = BANCO_PRODUTOS
           .map((produto) => ({
             produto,
             pontuacao: pontuarProdutoBusca(produto, termo),
           }))
           .filter(({ pontuacao }) => pontuacao > 0)
           .sort((a, b) => b.pontuacao - a.pontuacao);
+        const encontrados = [];
+        for (let inicioGrupo = 0; inicioGrupo < encontradosOrdenados.length;) {
+          let fimGrupo = inicioGrupo + 1;
+          while (
+            fimGrupo < encontradosOrdenados.length &&
+            encontradosOrdenados[fimGrupo].pontuacao ===
+              encontradosOrdenados[inicioGrupo].pontuacao
+          ) {
+            fimGrupo++;
+          }
+          encontrados.push(
+            ...embaralharArray(encontradosOrdenados.slice(inicioGrupo, fimGrupo)),
+          );
+          inicioGrupo = fimGrupo;
+        }
 
         encontrados.forEach(({ produto }) => {
           const item = document.createElement(produto.esgotado ? "div" : "a");
@@ -346,11 +373,7 @@ function renderizarVitrinesAutomaticas() {
 
   gridsRenderizados.forEach((grid) => {
     const cards = Array.from(grid.querySelectorAll(":scope > .produto-card"));
-    for (let i = cards.length - 1; i > 0; i--) {
-      const indiceAleatorio = Math.floor(Math.random() * (i + 1));
-      [cards[i], cards[indiceAleatorio]] = [cards[indiceAleatorio], cards[i]];
-    }
-    cards.forEach((card) => grid.appendChild(card));
+    embaralharArray(cards).forEach((card) => grid.appendChild(card));
   });
 }
 
