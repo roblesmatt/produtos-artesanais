@@ -356,7 +356,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -364,7 +364,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -393,7 +393,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -401,7 +401,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -430,7 +430,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -438,7 +438,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -467,7 +467,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -475,7 +475,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -504,7 +504,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -512,7 +512,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -541,7 +541,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -549,7 +549,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -578,7 +578,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -586,7 +586,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -615,7 +615,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -623,7 +623,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
@@ -652,7 +652,7 @@ const BANCO_PRODUTOS = [
       sobre:
         "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais<br>- Aroma acentuado<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
@@ -660,7 +660,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
