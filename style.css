@@ -338,7 +338,7 @@ BARRA DE BUSCA
 
 /* TEXTOS */
 .product-header .titulo {
-  font-size: clamp(40px, 10vw, 50px);
+  font-size: clamp(30px, 8vw, 40px);
   font-weight: 700;
   -webkit-text-stroke: 1.5px;
 }
@@ -356,9 +356,9 @@ BARRA DE BUSCA
   margin-bottom: 40px;
 }
 .preco {
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 700;
-  -webkit-text-stroke: 3px;
+  -webkit-text-stroke: 2.5px;
   letter-spacing: 1px;
 }
 .quantidade-carrinho {
