@@ -236,6 +236,8 @@ function inicializarGlobalEvents() {
 function renderizarVitrinesAutomaticas() {
   if (typeof BANCO_PRODUTOS === "undefined") return;
 
+  const gridsRenderizados = new Set();
+
   BANCO_PRODUTOS.forEach((produto) => {
     const destinos = ["categoria", "linha", "funcao", "ativo", "cor"].flatMap(
       (classificacao) => {
@@ -260,6 +262,7 @@ function renderizarVitrinesAutomaticas() {
         document.getElementById(tagId);
 
       if (!grid) return;
+      gridsRenderizados.add(grid);
 
       let blocoPreco = `<span class="preco-atual">${produto.precoOriginal}</span>`;
       if (produto.precoDesconto && produto.precoDesconto.trim() !== "") {
@@ -339,6 +342,15 @@ function renderizarVitrinesAutomaticas() {
 
       grid.appendChild(card);
     });
+  });
+
+  gridsRenderizados.forEach((grid) => {
+    const cards = Array.from(grid.querySelectorAll(":scope > .produto-card"));
+    for (let i = cards.length - 1; i > 0; i--) {
+      const indiceAleatorio = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[indiceAleatorio]] = [cards[indiceAleatorio], cards[i]];
+    }
+    cards.forEach((card) => grid.appendChild(card));
   });
 }
 
