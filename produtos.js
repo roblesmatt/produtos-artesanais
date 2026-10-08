@@ -4,7 +4,7 @@
 const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-docura-citrica",
-    nome: "Perfume Artesanal de Doçura Cítrica",
+    nome: "Perfume Artesanal Doçura Cítrica",
     precoOriginal: "R$89,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -41,7 +41,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-renascenca-purpura",
-    nome: "Perfume Artesanal de Renascença Púrpura",
+    nome: "Perfume Artesanal Renascença Púrpura",
     precoOriginal: "R$79,90",
     precoDesconto: "R$69,90",
     subtitulo: "[1 un. / 60ml].",
@@ -78,7 +78,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-raio-verde",
-    nome: "Perfume Artesanal de Raio Verde",
+    nome: "Perfume Artesanal Raio Verde",
     precoOriginal: "R$79,90",
     precoDesconto: "R$69,90",
     subtitulo: "[1 un. / 60ml].",
@@ -115,7 +115,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-capim-selvagem",
-    nome: "Perfume Artesanal de Capim Selvagem",
+    nome: "Perfume Artesanal Capim Selvagem",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -152,7 +152,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-mercurio-floral",
-    nome: "Perfume Artesanal de Mercúrio Floral",
+    nome: "Perfume Artesanal Mercúrio Floral",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -189,7 +189,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-fruto-proibido",
-    nome: "Perfume Artesanal de Fruto Proibido",
+    nome: "Perfume Artesanal Fruto Proibido",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -226,7 +226,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-gostosura",
-    nome: "Perfume Artesanal de Gostosura",
+    nome: "Perfume Artesanal Gostosura",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -263,7 +263,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-encanto-profundo",
-    nome: "Perfume Artesanal de Encanto Profundo",
+    nome: "Perfume Artesanal Encanto Profundo",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -300,7 +300,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "perfume-artesanal-sete-versos",
-    nome: "Perfume Artesanal de Sete Versos",
+    nome: "Perfume Artesanal Sete Versos",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -337,7 +337,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-docura-citrica",
-    nome: "Sabonete Corporal de Docura Cítrica",
+    nome: "Sabonete Corporal Docura Cítrica",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -374,7 +374,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-renascença-purpura",
-    nome: "Sabonete Corporal de Renascença Púrpura",
+    nome: "Sabonete Corporal Renascença Púrpura",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -411,7 +411,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-capim-selvagem",
-    nome: "Sabonete Corporal de Capim Selvagem",
+    nome: "Sabonete Corporal Capim Selvagem",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -448,7 +448,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-raio-verde",
-    nome: "Sabonete Corporal de Raio Verde",
+    nome: "Sabonete Corporal Raio Verde",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -485,7 +485,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-capim-limao",
-    nome: "Sabonete Corporal de Capim Limão",
+    nome: "Sabonete Corporal Capim Limão",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -522,7 +522,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-mercurio-floral",
-    nome: "Sabonete Corporal de Mercúrio Floral",
+    nome: "Sabonete Corporal Mercúrio Floral",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -559,7 +559,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-fruto-proibido",
-    nome: "Sabonete Corporal de Fruto Proibido",
+    nome: "Sabonete Corporal Fruto Proibido",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -596,7 +596,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-gostosura",
-    nome: "Sabonete Corporal de Gostosura",
+    nome: "Sabonete Corporal Gostosura",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -633,7 +633,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-encanto-profundo",
-    nome: "Sabonete Corporal de Encanto Profundo",
+    nome: "Sabonete Corporal Encanto Profundo",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
@@ -670,7 +670,7 @@ const BANCO_PRODUTOS = [
   },
   {
     id: "sabonete-corporal-sete-versos",
-    nome: "Sabonete Corporal de Sete Versos",
+    nome: "Sabonete Corporal Sete Versos",
     precoOriginal: "R$99,90",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
