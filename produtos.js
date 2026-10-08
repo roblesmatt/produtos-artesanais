@@ -5,7 +5,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-docura-citrica",
     nome: "Perfume Artesanal Doçura Cítrica",
-    precoOriginal: "R$89,90",
+    precoOriginal: "R$65,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -42,8 +42,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-renascenca-purpura",
     nome: "Perfume Artesanal Renascença Púrpura",
-    precoOriginal: "R$79,90",
-    precoDesconto: "R$69,90",
+    precoOriginal: "R$65,90",
+    precoDesconto: "R$60,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/thairo-1x1.svg",
@@ -79,8 +79,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-raio-verde",
     nome: "Perfume Artesanal Raio Verde",
-    precoOriginal: "R$79,90",
-    precoDesconto: "R$69,90",
+    precoOriginal: "R$65,00",
+    precoDesconto: "R$60,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
     imagemFrente: "produtos/thairo-1x1.svg",
@@ -116,7 +116,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-capim-selvagem",
     nome: "Perfume Artesanal Capim Selvagem",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$65,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
@@ -153,7 +153,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-mercurio-floral",
     nome: "Perfume Artesanal Mercúrio Floral",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$65,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -190,7 +190,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-fruto-proibido",
     nome: "Perfume Artesanal Fruto Proibido",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$65,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -227,7 +227,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-gostosura",
     nome: "Perfume Artesanal Gostosura",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$65,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -264,7 +264,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-encanto-profundo",
     nome: "Perfume Artesanal Encanto Profundo",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$65,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -301,7 +301,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-sete-versos",
     nome: "Perfume Artesanal Sete Versos",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$65,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -338,9 +338,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-docura-citrica",
     nome: "Sabonete Corporal Docura Cítrica",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -360,7 +360,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -375,9 +375,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-renascença-purpura",
     nome: "Sabonete Corporal Renascença Púrpura",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -397,7 +397,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -412,9 +412,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-capim-selvagem",
     nome: "Sabonete Corporal Capim Selvagem",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -434,7 +434,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -449,9 +449,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-raio-verde",
     nome: "Sabonete Corporal Raio Verde",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -471,7 +471,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -486,9 +486,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-mercurio-floral",
     nome: "Sabonete Corporal Mercúrio Floral",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -508,7 +508,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -523,9 +523,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-fruto-proibido",
     nome: "Sabonete Corporal Fruto Proibido",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -545,7 +545,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -560,9 +560,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-gostosura",
     nome: "Sabonete Corporal Gostosura",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -582,7 +582,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -597,9 +597,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-encanto-profundo",
     nome: "Sabonete Corporal Encanto Profundo",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -619,7 +619,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
@@ -634,9 +634,9 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-sete-versos",
     nome: "Sabonete Corporal Sete Versos",
-    precoOriginal: "R$99,90",
+    precoOriginal: "R$7,00",
     precoDesconto: "",
-    subtitulo: "[1 un. / 60ml].",
+    subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-teste.svg",
     imagemVerso: "produtos/sabonete-teste.svg",
@@ -656,7 +656,7 @@ const BANCO_PRODUTOS = [
       composicao:
         "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
       modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+        "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
