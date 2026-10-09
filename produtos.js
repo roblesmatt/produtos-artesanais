@@ -338,7 +338,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-docura-citrica",
     nome: "Sabonete Corporal Docura Cítrica",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -375,7 +375,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-renascença-purpura",
     nome: "Sabonete Corporal Renascença Púrpura",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -412,7 +412,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-capim-selvagem",
     nome: "Sabonete Corporal Capim Selvagem",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -449,7 +449,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-raio-verde",
     nome: "Sabonete Corporal Raio Verde",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -486,7 +486,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-mercurio-floral",
     nome: "Sabonete Corporal Mercúrio Floral",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -523,7 +523,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-fruto-proibido",
     nome: "Sabonete Corporal Fruto Proibido",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -560,7 +560,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-gostosura",
     nome: "Sabonete Corporal Gostosura",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -597,7 +597,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-encanto-profundo",
     nome: "Sabonete Corporal Encanto Profundo",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -634,7 +634,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-sete-versos",
     nome: "Sabonete Corporal Sete Versos",
-    precoOriginal: "R$7,00",
+    precoOriginal: "R$8,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
