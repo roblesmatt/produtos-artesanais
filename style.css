@@ -1047,7 +1047,8 @@ BARRA DE BUSCA
 #sub-branco:checked ~ .submenu-cores label[for="sub-branco"],
 #sub-azul:checked ~ .submenu-cores label[for="sub-azul"],
 #sub-rosa:checked ~ .submenu-cores label[for="sub-rosa"],
-#sub-lilas:checked ~ .submenu-cores label[for="sub-lilas"] {
+#sub-lilas:checked ~ .submenu-cores label[for="sub-lilas"],
+#sub-marrom:checked ~ .submenu-cores label[for="sub-marrom"] {
   background-color: #3d2d2d;
   color: #e0d4b9;
 }
@@ -1135,7 +1136,8 @@ BARRA DE BUSCA
 #cores:checked ~ #sub-branco:checked ~ .conteudo-vitrine .item-branco,
 #cores:checked ~ #sub-azul:checked ~ .conteudo-vitrine .item-azul,
 #cores:checked ~ #sub-rosa:checked ~ .conteudo-vitrine .item-rosa,
-#cores:checked ~ #sub-lilas:checked ~ .conteudo-vitrine .item-lilas {
+#cores:checked ~ #sub-lilas:checked ~ .conteudo-vitrine .item-lilas,
+#cores:checked ~ #sub-marrom:checked ~ .conteudo-vitrine .item-marrom {
   display: block;
   width: 100%;
 }
