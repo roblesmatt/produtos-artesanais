@@ -469,7 +469,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Alecrim Rosmarino<br>&nbsp;&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Alecrim Rosmarino<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Capim-Limão, Alecrim Rosmarino), Óleo Essencial de Capim-Limão, Óleo Essencial de Alecrim, Argila Branca, Corantes: Corantes: CI 19140 e CI 42090; CI 19140 e CI 15985.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Capim-Limão, Alecrim Rosmarino), Óleo Essencial de Capim-Limão, Óleo Essencial de Alecrim, Argila Branca, Corantes: CI 19140 e CI 42090; CI 19140 e CI 15985.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -506,7 +506,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Flor-de-Cerejeira), Óleo Essencial de Capim-Limão, Corantes: CI 16185 e CI 15985; CI 19140 e CI 15985.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Flor-de-Cerejeira), Óleo Essencial de Capim-Limão, Argila Branca, Corantes: CI 16185 e CI 15985; CI 19140 e CI 15985.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -543,7 +543,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Morango), Óleo de Capim-Limão, Corantes: CI 16185 e CI 15985.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Morango), Óleo de Capim-Limão, Argila Branca, Corantes: CI 16185 e CI 15985.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -580,7 +580,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimenta Rosa<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Chocolate, Pimenta Rosa), Óleo de Laranja Doce, Corantes: CI 16185, CI 19140 e CI 42090.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Chocolate, Pimenta Rosa), Óleo de Laranja Doce, Argila Branca, Corantes: CI 16185, CI 19140 e CI 42090.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -617,7 +617,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Flor-de-Cerejeira, Morango), Óleo de Capim-Limão, Corantes:  CI 16185 e CI 15985; CI 19140 e CI 15985.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Flor-de-Cerejeira, Morango), Óleo de Capim-Limão, Argila Branca, Corantes:  CI 16185 e CI 15985; CI 19140 e CI 15985.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -654,7 +654,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Melaleuca<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimensa Rosa<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Pimenta Rosa), Óleo Essencial de Melaleuca, Corantes: CI 16255 e CI 77891.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Pimenta Rosa), Óleo Essencial de Melaleuca, Argila Branca, Corantes: CI 16255 e CI 77891.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -691,7 +691,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Chocolate, Morango), Óleo Essencial de Laranja, Corantes: CI 16185 e CI 15985; CI 16185, CI 19140 e CI 42090.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Chocolate, Morango), Óleo Essencial de Laranja, Argila Branca, Corantes: CI 16185 e CI 15985; CI 16185, CI 19140 e CI 42090.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -728,7 +728,7 @@ const BANCO_PRODUTOS = [
       beneficios:
         "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Erva Doce<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
-        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Erva Doce), Óleo Essencial de Capim-Limão, Corantes: CI 19140 e CI 15985; CI 19140 e         CI 42090.",
+        "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Erva Doce), Óleo Essencial de Capim-Limão, Argila Branca, Corantes: CI 19140 e CI 15985; CI 19140 e         CI 42090.",
       modoUso:
         "Friccionar na pele molhada com movimentos circulares até formar espuma e enxaguar abundantemente. Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
