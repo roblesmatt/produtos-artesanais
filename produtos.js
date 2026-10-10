@@ -356,7 +356,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'Umas notas cítricas e revigorantes de Capim-Limão que despertam os sentidos. Limpeza suave, hidratação profunda e a energia pura do frescor natural em cada banho.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Capim-Limão), Óleo Essencial de Capim-Limão, Argila Branca, Corantes: CI 19140 e CI 42090.",
       modoUso:
@@ -393,7 +393,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'Inspirado no charme e no aroma clássico do sul da França, este sabonete combina a delicadeza florada da Lavanda ao cuidado nutritivo do óleo de amêndoa doce. O ritual perfeito para desacelerar.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Lavanda Provence<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Lavanda Provence<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Lavanda Provence<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Lavanda Provence<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Lavanda Provence), Óleo Essencial de Lavanda Provence, Argila Branca, Corantes: CI 16255 e CI 42090.",
       modoUso:
@@ -430,7 +430,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'O encontro perfeito entre a energia vibrante do Capim-Limão e a serenidade relaxante da Lavanda Provence. Um banho aveludado que acalma a mente, renova os sentidos e cuida delicadamente da pele.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencal de Lavanda Provence<br>&nbsp;&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Lavanda Provence<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencal de Lavanda Provence<br>&nbsp;&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Lavanda Provence<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Capim-Limão, Lavanda Provence), Óleo Essencial de Capim-Limão, Óleo Essencial de Lavanda Provence, Argila Branca, Corantes:  CI 19140 e CI 42090; CI 16255 e CI 42090.",
       modoUso:
@@ -467,7 +467,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'Frescor cítrico e presença herbal. O equilíbrio harmonioso entre Capim-Limão e Alecrim Rosmarino, oferecendo nutrição aveludada e vitalidade pura para o seu dia.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Alecrim Rosmarino<br>&nbsp;&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Alecrim Rosmarino<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Alecrim Rosmarino<br>&nbsp;&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Alecrim Rosmarino<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Capim-Limão, Alecrim Rosmarino), Óleo Essencial de Capim-Limão, Óleo Essencial de Alecrim, Argila Branca, Corantes: CI 19140 e CI 42090; CI 19140 e CI 15985.",
       modoUso:
@@ -504,7 +504,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'Um sopro de doçura e sofisticação para a pele. A fragrância graciosa da Flor de Cerejeira cria um veludo perfumado, desenhado para nutrir e fascinar os sentidos a cada uso.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Flor-de-Cerejeira), Óleo Essencial de Capim-Limão, Argila Branca, Corantes: CI 16185 e CI 15985; CI 19140 e CI 15985.",
       modoUso:
@@ -541,7 +541,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'Doçura na medida certa. O encanto frutado do Morango em uma textura aveludada, criada para quem busca um ritual alegre, acolhedor e cheio de presença.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Morango), Óleo de Capim-Limão, Argila Branca, Corantes: CI 16185 e CI 15985.",
       modoUso:
@@ -578,7 +578,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'A intensidade aveludada do chocolate encontra a picardia sutil e elegante da pimenta rosa. Um contraste envolvente e marcante que aquece os sentidos, transformando o banho em um ritual de puro mistério e sofisticação.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimenta Rosa<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimenta Rosa<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Chocolate, Pimenta Rosa), Óleo de Laranja Doce, Argila Branca, Corantes: CI 16185, CI 19140 e CI 42090.",
       modoUso:
@@ -615,7 +615,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'A graciosidade da Flor de Cerejeira entrelaça-se ao toque alegre e sucinto do Morango. Um acorde floral-frutado envolvente, que cobre a pele com uma espuma aveludada e um perfume suavemente fascinante.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Flor-de-Cerejeira, Morango), Óleo de Capim-Limão, Argila Branca, Corantes:  CI 16185 e CI 15985; CI 19140 e CI 15985.",
       modoUso:
@@ -652,7 +652,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'Pureza ativa e presença exótica. A ação equilibrante do óleo essencial de Melaleuca combinada com a aura envolvente da Pimenta Rosa, para um banho de cuidado autêntico, leve e revitalizante.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Melaleuca<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimensa Rosa<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Melaleuca<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimensa Rosa<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Pimenta Rosa), Óleo Essencial de Melaleuca, Argila Branca, Corantes: CI 16255 e CI 77891.",
       modoUso:
@@ -689,7 +689,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'A intensidade aveludada do chocolate e a doçura do morango ganham a luz e o frescor radiante do óleo essencial de laranja doce. Uma combinação harmoniosa e envolvente, criada para aquecer a pele e ilumina a rotina.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Chocolate, Morango), Óleo Essencial de Laranja, Argila Branca, Corantes: CI 16185 e CI 15985; CI 16185, CI 19140 e CI 42090.",
       modoUso:
@@ -726,7 +726,7 @@ const BANCO_PRODUTOS = [
       sobre:
         'Aroma clássico, toque aveludado e conforto imediato. A presença suave e adocicada da Erva-Doce traduzida em um ritual de limpeza delicado, relaxante e harmonioso.<br><br><em>"Cada sabonete é uma peça única. O produto real apresenta variações orgânicas em sua pintura aqurelada devido à natureza do trabalho feito à mão"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Erva Doce<br>- Limpeza hidratante<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Base Óleo Vegetal de Amêndoa Doce<br>&nbsp;&nbsp;&nbsp;&nbsp;• Argila Branca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Erva Doce<br>- Limpeza hidratante<br>- Não testado em animais",
       composicao:
         "Glicerina, Sacarose, Álcool Etílico, Seboato de Sódio, Palmisteato de Sódio, Propilenoglicol, Água, Dióxido de Titânio, Lauril Éter Sulfato de Sódio, Copolímero de Ácido Metacrílico e Acrilato de Etila, Polidocanol, Etidronato Tetrassódico, Fenoxitanol, Metilcloroisotiazolinona, Metilisotiazolinona, Óleo Vegetal de Amêndoa Doce, Parfum (Erva Doce), Óleo Essencial de Capim-Limão, Argila Branca, Corantes: CI 19140 e CI 15985; CI 19140 e         CI 42090.",
       modoUso:
