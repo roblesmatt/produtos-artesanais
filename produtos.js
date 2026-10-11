@@ -21,11 +21,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Frescor, limpeza e revigorante. Um estímulo natural de frescor e bem-estar.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'A vibração cítrica do capim-limão entrelaçada à leveza de notas botânicas puras. Um aroma solar que desperta os sentidos, renova as energias e envolve a pele em um frescor elegante e atemporal.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Capim-Limão, Óleo Essencial de Capim-Limão.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Capim-Limão), Óleo Essencial de Capim-Limão, Corantes: CI 19140 e CI 42090.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -58,11 +58,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Relaxante, harmonioso e suave. A energia das ervas frescas para despertar o foco e a vitalidade.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'A serenidade e a elegância dos campos floridos do sul da França. Uma fragrância floral e aromática que acalma a mente, perfuma a pele suavemente e desperta uma sensação de conforto e bem-estar.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Lavanda Provence<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Lavanda Provence<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Lavanda Provence, Óleo Essencial de Lavanda Provence.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Lavanda Provence), Óleo Essencial de Lavanda Provence, Corantes: CI 16255 e CI42090.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -95,11 +95,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'Luz cítrica e herbalismo nobre. Um acorde fresco, purificante e envolvente que desperta os sentidos e traz uma sensação inconfundível de bem-estar e vitalidade.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Alecrim Rosmarino<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Alecrim Rosmarino<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Alecrim, Óleo Essencial de Alecrim.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Capim-Limão, Alecrim Rosmarino), Óleo Essencial de Capim-Limão, Óleo Essencial de Alecrim, Corantes: Corantes: CI 19140 e CI 42090; CI 19140 e CI 15985.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -132,11 +132,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'Vitalidade cítrica e aconchego floral em perfeita sintonia. Uma fragrância leve, relaxante e marcante, desenhada para criar um ritual de tranquilidade e sofisticação.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencal de Lavanda Provence<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Lavanda Provence<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Capim-Limão, Lavanda Provence), Óleo Essencial de Capim-Limão, Óleo Essencial de Lavanda Provence Corantes: CI 19140 e     CI 42090; CI 16255 e CI 42090.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -169,11 +169,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'A poesia poética da primavera em sua forma mais delicada. Uma fragrância floral suave que combina a leveza das pétalas cor-de-rosa a um toque sutilmente adocicado, envolvendo a pele em elegância e sofisticação.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Flor-de-Cerejeira), Óleo Essencial de Capim-Limão, Corantes: CI 16185 e CI 15985; CI 19140 e CI 15985.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -206,11 +206,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'O aroma suculento e luminoso dos morangos colhidos no ápice do seu frescor. Um acorde alegre, marcante e refinado, que traz leveza, sofisticação e uma sensação deliciosa ao seu dia.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Morango), Óleo de Capim-Limão, Corantes: CI 16185 e CI 15985.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -243,11 +243,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'O encontro entre a intensidade do chocolate nobre e o toque especiado e luminoso das bagas de pimenta rosa. Um acorde misterioso e apaixonante, perfeito para criar uma atmosfera de puro charme e aconchego.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimenta Rosa<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Chocolate, Pimenta Rosa), Óleo de Laranja Doce, Corantes: CI 16185,        CI 19140 e CI 42090.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -280,11 +280,11 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'Doçura frutada e elegância floral em perfeita harmonia. Uma combinação radiante, suave e marcante na medida certa, desenhada para celebrar a leveza e o encanto do dia a dia.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Flor-de-Cerejeira<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Flor-de-Cerejeira, Morango), Óleo de Capim-Limão, Corantes:  CI 16185 e CI 15985; CI 19140 e CI 15985.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
@@ -317,11 +317,85 @@ const BANCO_PRODUTOS = [
     },
     acordeoes: {
       sobre:
-        "Tonificação, ativador e adstringente.<br><br>[Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes].",
+        'A vivacidade e a sofisticação das bagas de pimenta rosa em uma criação única. Uma fragrância floral especiada que combina calor, brilho e elegância, deixando um rastro envolvente e cheio de personalidade.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
       beneficios:
-        "- Produção artesanal<br>- Com ativos naturais<br>- Sem corantes<br>- Aroma acentuado<br>- Sensação imediata<br>- Não testado em animais",
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Melaleuca<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Pimensa Rosa<br>- Sensação imediata<br>- Não testado em animais",
       composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Essência de Laranja Doce, Óleo Essencial de Laranja Doce.",
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Pimenta Rosa), Óleo Essencial de Melaleuca, Corantes: CI 16255 e   CI 77891.",
+      modoUso:
+        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+      advertencias:
+        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+      fichaTecnica:
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+      pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
+      frete:
+        "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
+      trocas:
+        "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
+    },
+  },
+  {
+    id: "perfume-artesanal-gostosura-intensa",
+    nome: "Perfume Artesanal Gostosura Intensa",
+    precoOriginal: "R$65,00",
+    precoDesconto: "",
+    subtitulo: "[1 un. / 60ml].",
+    esgotado: false,
+    imagemFrente: "produtos/perfume1.webp",
+    imagemVerso: "produtos/perfume2.webp",
+    video3d: "",
+    tags: {
+      linha: "linhas-classico",
+      funcao: "funcao-perfume-artesanal",
+      ativo: "",
+      cor: ["cores-rosa"],
+      categoria: ["catalogo"],
+    },
+    acordeoes: {
+      sobre:
+        'O brilho solar da laranja encontra a tentação suculenta do morango banhado em cacau refinado. Um acorde equilibrado, acolhedor e cheio de encanto, desenhado para transformar cada instante em um momento de puro prazer.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
+      beneficios:
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Laranja Doce<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Chocolate<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Morango<br>- Sensação imediata<br>- Não testado em animais",
+      composicao:
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Chocolate, Morango), Óleo Essencial de Laranja, Corantes: CI 16185 e CI 15985; CI 16185, CI 19140 e CI 42090.",
+      modoUso:
+        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+      advertencias:
+        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+      fichaTecnica:
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+      pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
+      frete:
+        "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
+      trocas:
+        "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
+    },
+  },
+  {
+    id: "perfume-artesanal-campo-sereno",
+    nome: "Perfume Artesanal Campo Sereno",
+    precoOriginal: "R$65,00",
+    precoDesconto: "",
+    subtitulo: "[1 un. / 60ml].",
+    esgotado: false,
+    imagemFrente: "produtos/perfume1.webp",
+    imagemVerso: "produtos/perfume2.webp",
+    video3d: "",
+    tags: {
+      linha: "linhas-classico",
+      funcao: "funcao-perfume-artesanal",
+      ativo: "",
+      cor: ["cores-rosa"],
+      categoria: ["catalogo"],
+    },
+    acordeoes: {
+      sobre:
+        'Um passeio matinal por um jardim de ervas aromáticas. O contraste entre a vivacidade cítrica e o toque suavemente adocicado resulta em uma fragrância harmoniosa, fluida e atemporal.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
+      beneficios:
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Erva Doce<br>- Sensação imediata<br>- Não testado em animais",
+      composicao:
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Erva Doce), Óleo Essencial de Capim-Limão, Corantes: CI 19140 e CI 15985; CI 19140 e CI 42090.",
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
