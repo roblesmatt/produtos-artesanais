@@ -490,7 +490,7 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
-    imagemFrente: "produtos/sabonete1.webp",
+    imagemFrente: "produtos/sabonete-artesanal-capim-selvagem1.webp",
     imagemVerso: "produtos/sabonete2.webp",
     video3d: "",
     tags: {
