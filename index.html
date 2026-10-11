@@ -13,10 +13,8 @@
 <div class="container-filtros">
   <!-- Inputs do Menu Principal -->
   <input type="radio" name="principal" id="todos" checked>
+  <input type="radio" name="principal" id="categorias">
   <input type="radio" name="principal" id="linhas">
-  <input type="radio" name="principal" id="funcao">
-  <input type="radio" name="principal" id="ativos">
-  <input type="radio" name="principal" id="cores">
 
   <!-- Inputs do Submenu: TODOS -->
   <input type="radio" name="sub-todos" id="sub-catalogo" checked>
@@ -24,6 +22,15 @@
   <input type="radio" name="sub-todos" id="sub-promocao">
   <input type="radio" name="sub-todos" id="sub-kit">
 
+  <!-- Inputs do Submenu: CATEGORIAS -->
+  <input type="radio" name="sub-categorias" id="sub-sabonete-corporal" checked>
+  <input type="radio" name="sub-categorias" id="sub-oleo-corporal">
+  <input type="radio" name="sub-categorias" id="sub-perfume-artesanal">
+  <input type="radio" name="sub-categorias" id="sub-vela-aromatica">
+  <input type="radio" name="sub-categorias" id="sub-shampoo-e-condicionador">
+  <input type="radio" name="sub-categorias" id="sub-creme-capilar">
+  <input type="radio" name="sub-categorias" id="sub-creme-facial">
+  <input type="radio" name="sub-categorias" id="sub-locao-pos-barba">
 
   <!-- Inputs do Submenu: LINHAS -->
   <input type="radio" name="sub-linhas" id="sub-classico" checked>
@@ -32,42 +39,11 @@
   <input type="radio" name="sub-linhas" id="sub-roosi">
   <input type="radio" name="sub-linhas" id="sub-nopou">
 
-  <!-- Inputs do Submenu: FUNÇÃO -->
-  <input type="radio" name="sub-funcao" id="sub-sabonete-corporal" checked>
-  <input type="radio" name="sub-funcao" id="sub-sabonete-liquido">
-  <input type="radio" name="sub-funcao" id="sub-perfume-artesanal">
-  <input type="radio" name="sub-funcao" id="sub-vela-aromatica">
-  <input type="radio" name="sub-funcao" id="sub-shampoo-e-condicionador">
-  <input type="radio" name="sub-funcao" id="sub-creme-capilar">
-  <input type="radio" name="sub-funcao" id="sub-creme-para-rosto">
-  <input type="radio" name="sub-funcao" id="sub-locao-pos-barba">
-
-  <!-- Inputs do Submenu: ATIVOS -->
-  <input type="radio" name="sub-ativos" id="sub-capim-limao" checked>
-  <input type="radio" name="sub-ativos" id="sub-lavanda-provence">
-  <input type="radio" name="sub-ativos" id="sub-alecrim-rosmarino">
-  <input type="radio" name="sub-ativos" id="sub-laranja-doce">
-  <input type="radio" name="sub-ativos" id="sub-amendoa-doce">
-  <input type="radio" name="sub-ativos" id="sub-rosa-mosqueta">
-
-  <!-- Inputs do Submenu: CORES (Acentuação removida do ID para evitar conflitos) -->
-  <input type="radio" name="sub-cores" id="sub-verde" checked>
-  <input type="radio" name="sub-cores" id="sub-amarelo">
-  <input type="radio" name="sub-cores" id="sub-vermelho">
-  <input type="radio" name="sub-cores" id="sub-laranja">
-  <input type="radio" name="sub-cores" id="sub-branco">
-  <input type="radio" name="sub-cores" id="sub-azul">
-  <input type="radio" name="sub-cores" id="sub-rosa">
-  <input type="radio" name="sub-cores" id="sub-lilas">
-  <input type="radio" name="sub-cores" id="sub-marrom">
-
   <!-- Menu Principal -->
   <div class="menu-linha menu-principal">
     <label for="todos">TODOS</label>
+    <label for="categorias">CATEGORIAS</label>
     <label for="linhas">LINHAS</label>
-    <label for="funcao">FUNÇÃO</label>
-    <label for="ativos">ATIVOS</label>
-    <label for="cores">CORES</label>
   </div>
 
   <!-- Submenus -->
@@ -78,44 +54,23 @@
     <label for="sub-kit">KIT</label>
   </div>
 
+  <div class="menu-linha menu-submenu submenu-categorias">
+    <label for="sub-sabonete-corporal">SABONETE CORPORAL</label>
+    <label for="sub-oleo-corporal">ÓLEO CORPORAL</label>
+    <label for="sub-perfume-artesanal">PERFUME ARTESANAL</label>
+    <label for="sub-vela-aromatica">VELA AROMÁTICA</label>
+    <label for="sub-shampoo-e-condicionador">SHAMPOO E CONDICIONADOR</label>
+    <label for="sub-creme-capilar">CREME CAPILAR</label>
+    <label for="sub-creme-facial">CREME FACIAL</label>
+    <label for="sub-locao-pos-barba">LOÇÃO PÓS BARBA</label>
+  </div>
+
   <div class="menu-linha menu-submenu submenu-linhas">
     <label for="sub-classico">CLÁSSICO</label>
     <label for="sub-premium">PREMIUM</label>
     <label for="sub-esoterica">ESOTÉRICA</label>
     <label for="sub-roosi">ROÓSI</label>
     <label for="sub-nopou">NOPOU</label>
-  </div>
-
-  <div class="menu-linha menu-submenu submenu-funcao">
-    <label for="sub-sabonete-corporal">SABONETE CORPORAL</label>
-    <label for="sub-sabonete-liquido">ÓLEO CORPORAL</label>
-    <label for="sub-perfume-artesanal">PERFUME ARTESANAL</label>
-    <label for="sub-vela-aromatica">VELA AROMÁTICA</label>
-    <label for="sub-shampoo-e-condicionador">SHAMPOO E CONDICIONADOR</label>
-    <label for="sub-creme-capilar">CREME CAPILAR</label>
-    <label for="sub-creme-para-rosto">CREME PARA ROSTO</label>
-    <label for="sub-locao-pos-barba">LOÇÃO PÓS BARBA</label>
-  </div>
-  
-  <div class="menu-linha menu-submenu submenu-ativos">
-    <label for="sub-capim-limao">CAPIM LIMÃO</label>
-    <label for="sub-lavanda-provence">LAVANDA PROVENCE</label>
-    <label for="sub-alecrim-rosmarino">ALECRIM ROSMARINO</label>
-    <label for="sub-laranja-doce">LARANJA DOCE</label>
-    <label for="sub-amendoa-doce">AMÊNDOA DOCE</label>
-    <label for="sub-rosa-mosqueta">ROSA MOSQUETA</label>
-  </div>
-
-  <div class="menu-linha menu-submenu submenu-cores">
-    <label for="sub-verde">VERDE</label>
-    <label for="sub-amarelo">AMARELO</label>
-    <label for="sub-vermelho">VERMELHO</label>
-    <label for="sub-laranja">LARANJA</label>
-    <label for="sub-branco">BRANCO</label>
-    <label for="sub-azul">AZUL</label>
-    <label for="sub-rosa">ROSA</label>
-    <label for="sub-lilas">LILÁS</label>
-    <label for="sub-marrom">MARROM</label>
   </div>
 
 
@@ -131,42 +86,22 @@
   <div class="vitrine-item item-promocao"><div class="vitrine-grid" id="grid-promocao"></div></div>
   <div class="vitrine-item item-kit"><div class="vitrine-grid" id="grid-kit"><div class="texto-temporario"><span>Nenhum produto<br>até o momento.</span></div></div></div>
 
+  <!-- Submenu: CATEGORIAS -->
+  <div class="vitrine-item item-sabonete-corporal"><div class="vitrine-grid" id="grid-sabonete-corporal"></div></div>
+  <div class="vitrine-item item-oleo-corporal"><div class="vitrine-grid" id="grid-oleo-corporal"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
+  <div class="vitrine-item item-perfume-artesanal"><div class="vitrine-grid" id="grid-perfume-artesanal"></div></div>
+  <div class="vitrine-item item-vela-aromatica"><div class="vitrine-grid" id="grid-vela-aromatica"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
+  <div class="vitrine-item item-shampoo-e-condicionador"><div class="vitrine-grid" id="grid-shampoo-e-condicionador"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
+  <div class="vitrine-item item-creme-capilar"><div class="vitrine-grid" id="grid-creme-capilar"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
+  <div class="vitrine-item item-creme-facial"><div class="vitrine-grid" id="grid-creme-facial"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
+  <div class="vitrine-item item-locao-pos-barba"><div class="vitrine-grid" id="grid-locao-pos-barba"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
 
-  <!-- Submenu: LINHAS -->
+<!-- Submenu: LINHAS -->
   <div class="vitrine-item item-classico"><div class="vitrine-grid" id="grid-classico"></div></div>
   <div class="vitrine-item item-premium"><div class="vitrine-grid" id="grid-premium"><div class="texto-temporario"><span>Produtos<br>mais sotisficado.<br><br>Em breve.</span></div></div></div>
   <div class="vitrine-item item-esoterica"><div class="vitrine-grid" id="grid-esoterica"><div class="texto-temporario"><span>Produtos<br>mais naturais.<br><br>Em breve.</span></div></div></div>
   <div class="vitrine-item item-roosi"><div class="vitrine-grid" id="grid-roosi"><div class="texto-temporario"><span>Produtos focados<br>em aromas de rosas.<br><br>Em breve.</span></div></div></div>
   <div class="vitrine-item item-nopou"><div class="vitrine-grid" id="grid-nopou"><div class="texto-temporario"><span>Produtos focados<br>para as técnicas<br>Low/No Poo.<br><br>Em breve.</span></div></div></div>
-
-  <!-- Submenu: FUNÇÃO -->
-  <div class="vitrine-item item-sabonete-corporal"><div class="vitrine-grid" id="grid-sabonete-corporal"></div></div>
-  <div class="vitrine-item item-sabonete-liquido"><div class="vitrine-grid" id="grid-sabonete-liquido"></div></div>
-  <div class="vitrine-item item-perfume-artesanal"><div class="vitrine-grid" id="grid-perfume-artesanal"></div></div>
-  <div class="vitrine-item item-vela-aromatica"><div class="vitrine-grid" id="grid-vela-aromatica"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
-  <div class="vitrine-item item-shampoo-e-condicionador"><div class="vitrine-grid" id="grid-shampoo-e-condicionador"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
-  <div class="vitrine-item item-creme-capilar"><div class="vitrine-grid" id="grid-creme-capilar"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
-  <div class="vitrine-item item-creme-para-rosto"><div class="vitrine-grid" id="grid-creme-para-rosto"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
-  <div class="vitrine-item item-locao-pos-barba"><div class="vitrine-grid" id="grid-locao-pos-barba"><div class="texto-temporario"><span>Em breve.</span></div></div></div>
-
-  <!-- Submenu: ATIVOS -->
-  <div class="vitrine-item item-capim-limao"><div class="vitrine-grid" id="grid-capim-limao"></div></div>
-  <div class="vitrine-item item-lavanda-provence"><div class="vitrine-grid" id="grid-lavanda-provence"></div></div>
-  <div class="vitrine-item item-alecrim-rosmarino"><div class="vitrine-grid" id="grid-alecrim-rosmarino"></div></div>
-  <div class="vitrine-item item-laranja-doce"><div class="vitrine-grid" id="grid-laranja-doce"></div></div>
-  <div class="vitrine-item item-amendoa-doce"><div class="vitrine-grid" id="grid-amendoa-doce"></div></div>
-  <div class="vitrine-item item-rosa-mosqueta"><div class="vitrine-grid" id="grid-rosa-mosqueta"></div></div>
-
-  <!-- Submenu: CORES -->
-  <div class="vitrine-item item-verde"><div class="vitrine-grid" id="grid-verde"></div></div>
-  <div class="vitrine-item item-amarelo"><div class="vitrine-grid" id="grid-amarelo"></div></div>
-  <div class="vitrine-item item-vermelho"><div class="vitrine-grid" id="grid-vermelho"></div></div>
-  <div class="vitrine-item item-laranja"><div class="vitrine-grid" id="grid-laranja"></div></div>
-  <div class="vitrine-item item-branco"><div class="vitrine-grid" id="grid-branco"></div></div>
-  <div class="vitrine-item item-azul"><div class="vitrine-grid" id="grid-azul"></div></div>
-  <div class="vitrine-item item-rosa"><div class="vitrine-grid" id="grid-rosa"></div></div>
-  <div class="vitrine-item item-lilas"><div class="vitrine-grid" id="grid-lilas"></div></div>
-  <div class="vitrine-item item-marrom"><div class="vitrine-grid" id="grid-marrom"></div></div>
 </div>
 
 <script src="produtos.js" defer></script>

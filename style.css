@@ -989,17 +989,13 @@ BARRA DE BUSCA
   border-top: none;
 }
 #todos:checked ~ .submenu-todos,
-#linhas:checked ~ .submenu-linhas,
-#funcao:checked ~ .submenu-funcao,
-#ativos:checked ~ .submenu-ativos,
-#cores:checked ~ .submenu-cores {
+#categorias:checked ~ .submenu-categorias,
+#linhas:checked ~ .submenu-linhas {
   display: flex;
 }
 #todos:checked ~ .menu-principal label[for="todos"],
-#linhas:checked ~ .menu-principal label[for="linhas"],
-#funcao:checked ~ .menu-principal label[for="funcao"],
-#ativos:checked ~ .menu-principal label[for="ativos"],
-#cores:checked ~ .menu-principal label[for="cores"] {
+#categorias:checked ~ .menu-principal label[for="categorias"],
+#linhas:checked ~ .menu-principal label[for="linhas"] {
   background-color: #3d2d2d;
   color: #e0d4b9;
 }
@@ -1007,48 +1003,19 @@ BARRA DE BUSCA
 #sub-novidades:checked ~ .submenu-todos label[for="sub-novidades"],
 #sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
 #sub-kit:checked ~ .submenu-todos label[for="sub-kit"],
+#sub-sabonete-corporal:checked ~ .submenu-categorias label[for="sub-sabonete-corporal"],
+#sub-oleo-corporal:checked ~ .submenu-categorias label[for="sub-oleo-corporal"],
+#sub-perfume-artesanal:checked ~ .submenu-categorias label[for="sub-perfume-artesanal"],
+#sub-vela-aromatica:checked ~ .submenu-categorias label[for="sub-vela-aromatica"],
+#sub-shampoo-e-condicionador:checked ~ .submenu-categorias label[for="sub-shampoo-e-condicionador"],
+#sub-creme-capilar:checked ~ .submenu-categorias label[for="sub-creme-capilar"],
+#sub-creme-facial:checked ~ .submenu-categorias label[for="sub-creme-facial"],
+#sub-locao-pos-barba:checked ~ .submenu-categorias label[for="sub-locao-pos-barba"],
 #sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
 #sub-premium:checked ~ .submenu-linhas label[for="sub-premium"],
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
 #sub-roosi:checked ~ .submenu-linhas label[for="sub-roosi"],
-#sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"],
-#sub-sabonete-corporal:checked
-  ~ .submenu-funcao
-  label[for="sub-sabonete-corporal"],
-#sub-sabonete-liquido:checked
-  ~ .submenu-funcao
-  label[for="sub-sabonete-liquido"],
-#sub-perfume-artesanal:checked
-  ~ .submenu-funcao
-  label[for="sub-perfume-artesanal"],
-#sub-vela-aromatica:checked ~ .submenu-funcao label[for="sub-vela-aromatica"],
-#sub-shampoo-e-condicionador:checked
-  ~ .submenu-funcao
-  label[for="sub-shampoo-e-condicionador"],
-#sub-creme-capilar:checked ~ .submenu-funcao label[for="sub-creme-capilar"],
-#sub-creme-para-rosto:checked
-  ~ .submenu-funcao
-  label[for="sub-creme-para-rosto"],
-#sub-locao-pos-barba:checked ~ .submenu-funcao label[for="sub-locao-pos-barba"],
-#sub-capim-limao:checked ~ .submenu-ativos label[for="sub-capim-limao"],
-#sub-lavanda-provence:checked
-  ~ .submenu-ativos
-  label[for="sub-lavanda-provence"],
-#sub-alecrim-rosmarino:checked
-  ~ .submenu-ativos
-  label[for="sub-alecrim-rosmarino"],
-#sub-laranja-doce:checked ~ .submenu-ativos label[for="sub-laranja-doce"],
-#sub-amendoa-doce:checked ~ .submenu-ativos label[for="sub-amendoa-doce"],
-#sub-rosa-mosqueta:checked ~ .submenu-ativos label[for="sub-rosa-mosqueta"],
-#sub-verde:checked ~ .submenu-cores label[for="sub-verde"],
-#sub-amarelo:checked ~ .submenu-cores label[for="sub-amarelo"],
-#sub-vermelho:checked ~ .submenu-cores label[for="sub-vermelho"],
-#sub-laranja:checked ~ .submenu-cores label[for="sub-laranja"],
-#sub-branco:checked ~ .submenu-cores label[for="sub-branco"],
-#sub-azul:checked ~ .submenu-cores label[for="sub-azul"],
-#sub-rosa:checked ~ .submenu-cores label[for="sub-rosa"],
-#sub-lilas:checked ~ .submenu-cores label[for="sub-lilas"],
-#sub-marrom:checked ~ .submenu-cores label[for="sub-marrom"] {
+#sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"] {
   background-color: #3d2d2d;
   color: #e0d4b9;
 }
@@ -1061,83 +1028,23 @@ BARRA DE BUSCA
 .conteudo-vitrine .vitrine-item {
   display: none;
 }
-#todos:checked
-  ~ #sub-catalogo:checked
-  ~ .conteudo-vitrine
-  .item-catalogo,
+#todos:checked ~ #sub-catalogo:checked ~ .conteudo-vitrine .item-catalogo,
 #todos:checked ~ #sub-novidades:checked ~ .conteudo-vitrine .item-novidades,
 #todos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
 #todos:checked ~ #sub-kit:checked ~ .conteudo-vitrine .item-kit,
+#categorias:checked ~ #sub-sabonete-corporal:checked ~ .conteudo-vitrine .item-sabonete-corporal,
+#categorias:checked ~ #sub-oleo-corporal:checked ~ .conteudo-vitrine .item-oleo-corporal,
+#categorias:checked ~ #sub-perfume-artesanal:checked ~ .conteudo-vitrine .item-perfume-artesanal,
+#categorias:checked ~ #sub-vela-aromatica:checked ~ .conteudo-vitrine .item-vela-aromatica,
+#categorias:checked ~ #sub-shampoo-e-condicionador:checked ~ .conteudo-vitrine .item-shampoo-e-condicionador,
+#categorias:checked ~ #sub-creme-capilar:checked ~ .conteudo-vitrine .item-creme-capilar,
+#categorias:checked ~ #sub-creme-facial:checked ~ .conteudo-vitrine .item-creme-facial,
+#categorias:checked ~ #sub-locao-pos-barba:checked ~ .conteudo-vitrine .item-locao-pos-barba,
 #linhas:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
 #linhas:checked ~ #sub-premium:checked ~ .conteudo-vitrine .item-premium,
 #linhas:checked ~ #sub-esoterica:checked ~ .conteudo-vitrine .item-esoterica,
 #linhas:checked ~ #sub-roosi:checked ~ .conteudo-vitrine .item-roosi,
-#linhas:checked ~ #sub-nopou:checked ~ .conteudo-vitrine .item-nopou,
-#funcao:checked
-  ~ #sub-sabonete-corporal:checked
-  ~ .conteudo-vitrine
-  .item-sabonete-corporal,
-#funcao:checked
-  ~ #sub-sabonete-liquido:checked
-  ~ .conteudo-vitrine
-  .item-sabonete-liquido,
-#funcao:checked
-  ~ #sub-perfume-artesanal:checked
-  ~ .conteudo-vitrine
-  .item-perfume-artesanal,
-#funcao:checked
-  ~ #sub-vela-aromatica:checked
-  ~ .conteudo-vitrine
-  .item-vela-aromatica,
-#funcao:checked
-  ~ #sub-shampoo-e-condicionador:checked
-  ~ .conteudo-vitrine
-  .item-shampoo-e-condicionador,
-#funcao:checked
-  ~ #sub-creme-capilar:checked
-  ~ .conteudo-vitrine
-  .item-creme-capilar,
-#funcao:checked
-  ~ #sub-creme-para-rosto:checked
-  ~ .conteudo-vitrine
-  .item-creme-para-rosto,
-#funcao:checked
-  ~ #sub-locao-pos-barba:checked
-  ~ .conteudo-vitrine
-  .item-locao-pos-barba,
-#ativos:checked
-  ~ #sub-capim-limao:checked
-  ~ .conteudo-vitrine
-  .item-capim-limao,
-#ativos:checked
-  ~ #sub-lavanda-provence:checked
-  ~ .conteudo-vitrine
-  .item-lavanda-provence,
-#ativos:checked
-  ~ #sub-alecrim-rosmarino:checked
-  ~ .conteudo-vitrine
-  .item-alecrim-rosmarino,
-#ativos:checked
-  ~ #sub-laranja-doce:checked
-  ~ .conteudo-vitrine
-  .item-laranja-doce,
-#ativos:checked
-  ~ #sub-amendoa-doce:checked
-  ~ .conteudo-vitrine
-  .item-amendoa-doce,
-#ativos:checked
-  ~ #sub-rosa-mosqueta:checked
-  ~ .conteudo-vitrine
-  .item-rosa-mosqueta,
-#cores:checked ~ #sub-verde:checked ~ .conteudo-vitrine .item-verde,
-#cores:checked ~ #sub-amarelo:checked ~ .conteudo-vitrine .item-amarelo,
-#cores:checked ~ #sub-vermelho:checked ~ .conteudo-vitrine .item-vermelho,
-#cores:checked ~ #sub-laranja:checked ~ .conteudo-vitrine .item-laranja,
-#cores:checked ~ #sub-branco:checked ~ .conteudo-vitrine .item-branco,
-#cores:checked ~ #sub-azul:checked ~ .conteudo-vitrine .item-azul,
-#cores:checked ~ #sub-rosa:checked ~ .conteudo-vitrine .item-rosa,
-#cores:checked ~ #sub-lilas:checked ~ .conteudo-vitrine .item-lilas,
-#cores:checked ~ #sub-marrom:checked ~ .conteudo-vitrine .item-marrom {
+#linhas:checked ~ #sub-nopou:checked ~ .conteudo-vitrine .item-nopou {
   display: block;
   width: 100%;
 }
