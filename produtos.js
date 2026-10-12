@@ -5,7 +5,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-docura-citrica",
     nome: "Perfume Artesanal Doçura Cítrica",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -42,8 +42,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-renascenca-purpura",
     nome: "Perfume Artesanal Renascença Púrpura",
-    precoOriginal: "R$65,90",
-    precoDesconto: "R$60,00",
+    precoOriginal: "R$70,90",
+    precoDesconto: "R$65,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume1.webp",
@@ -79,8 +79,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-raio-verde",
     nome: "Perfume Artesanal Raio Verde",
-    precoOriginal: "R$65,00",
-    precoDesconto: "R$60,00",
+    precoOriginal: "R$70,00",
+    precoDesconto: "R$65,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
     imagemFrente: "produtos/perfume1.webp",
@@ -116,7 +116,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-capim-selvagem",
     nome: "Perfume Artesanal Capim Selvagem",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
@@ -153,8 +153,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-mercurio-floral",
     nome: "Perfume Artesanal Mercúrio Floral",
-    precoOriginal: "R$65,00",
-    precoDesconto: "R$60,00",
+    precoOriginal: "R$70,00",
+    precoDesconto: "R$65,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume1.webp",
@@ -190,7 +190,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-fruto-proibido",
     nome: "Perfume Artesanal Fruto Proibido",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -227,7 +227,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-gostosura",
     nome: "Perfume Artesanal Gostosura",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -264,7 +264,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-encanto-profundo",
     nome: "Perfume Artesanal Encanto Profundo",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -301,7 +301,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-sete-versos",
     nome: "Perfume Artesanal Sete Versos",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -338,7 +338,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-gostosura-intensa",
     nome: "Perfume Artesanal Gostosura Intensa",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -375,7 +375,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-campo-sereno",
     nome: "Perfume Artesanal Campo Sereno",
-    precoOriginal: "R$65,00",
+    precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
