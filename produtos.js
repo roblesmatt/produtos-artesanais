@@ -9,8 +9,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-docura-citrica1.webp",
+    imagemVerso: "produtos/perfume-artesanal-docura-citrica2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
