@@ -33,8 +33,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -70,8 +69,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -107,8 +105,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -144,8 +141,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -182,8 +178,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -219,8 +214,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -256,8 +250,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -293,8 +286,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -330,8 +322,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -367,8 +358,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -404,8 +394,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -441,8 +430,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -478,8 +466,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -515,8 +502,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -552,8 +538,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -589,8 +574,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -626,8 +610,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -663,8 +646,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -700,8 +682,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -737,8 +718,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -774,8 +754,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
@@ -811,8 +790,7 @@ const BANCO_PRODUTOS = [
       fichaTecnica:
         "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Retirada no local ou envio a combinar pelo WhatsApp.",
+      frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
         "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
     },
