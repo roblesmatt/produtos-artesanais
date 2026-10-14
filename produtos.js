@@ -31,7 +31,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -68,7 +68,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -105,7 +105,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -142,7 +142,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -180,7 +180,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -217,7 +217,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -254,7 +254,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -291,7 +291,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -328,7 +328,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -365,7 +365,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
@@ -402,7 +402,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete:
         "Retirada no local ou envio a combinar pelo WhatsApp.",
