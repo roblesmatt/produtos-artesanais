@@ -46,8 +46,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "R$65,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-renascenca-purpura1.webp",
+    imagemVerso: "produtos/perfume-artesanal-renascenca-purpura2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -77,51 +77,14 @@ const BANCO_PRODUTOS = [
     },
   },
   {
-    id: "perfume-artesanal-raio-verde",
-    nome: "Perfume Artesanal Raio Verde",
-    precoOriginal: "R$70,00",
-    precoDesconto: "R$65,00",
-    subtitulo: "[1 un. / 60ml].",
-    esgotado: true,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
-    video3d: "",
-    tags: {
-      linha: "linhas-classico",
-      funcao: "funcao-perfume-artesanal",
-      ativo: ["ativos-capim-limao", "ativos-alecrim-rosmarino"],
-      cor: "cores-verde",
-      categoria: ["catalogo", "promocao"],
-    },
-    acordeoes: {
-      sobre:
-        'Luz cítrica e herbalismo nobre. Um acorde fresco, purificante e envolvente que desperta os sentidos e traz uma sensação inconfundível de bem-estar e vitalidade.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
-      beneficios:
-        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Alecrim Rosmarino<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Alecrim Rosmarino<br>- Sensação imediata<br>- Não testado em animais",
-      composicao:
-        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Capim-Limão, Alecrim Rosmarino), Óleo Essencial de Capim-Limão, Óleo Essencial de Alecrim, Corantes: Corantes: CI 19140 e CI 42090; CI 19140 e CI 15985.",
-      modoUso:
-        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
-      advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
-      fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
-      pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
-      frete:
-        "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
-      trocas:
-        "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
-    },
-  },
-  {
     id: "perfume-artesanal-capim-selvagem",
     nome: "Perfume Artesanal Capim Selvagem",
     precoOriginal: "R$70,00",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-capim-selvagem1.webp",
+    imagemVerso: "produtos/perfume-artesanal-capim-selvagem2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -151,14 +114,52 @@ const BANCO_PRODUTOS = [
     },
   },
   {
+    id: "perfume-artesanal-raio-verde",
+    nome: "Perfume Artesanal Raio Verde",
+    precoOriginal: "R$70,00",
+    precoDesconto: "R$65,00",
+    subtitulo: "[1 un. / 60ml].",
+    esgotado: true,
+    imagemFrente: "produtos/perfume-artesanal-raio-verde1.webp",
+    imagemVerso: "produtos/perfume-artesanal-raio-verde2.webp",
+    video3d: "",
+    tags: {
+      linha: "linhas-classico",
+      funcao: "funcao-perfume-artesanal",
+      ativo: ["ativos-capim-limao", "ativos-alecrim-rosmarino"],
+      cor: "cores-verde",
+      categoria: ["catalogo", "promocao"],
+    },
+    acordeoes: {
+      sobre:
+        'Luz cítrica e herbalismo nobre. Um acorde fresco, purificante e envolvente que desperta os sentidos e traz uma sensação inconfundível de bem-estar e vitalidade.<br><br><em>"Por conter matérias-primas naturais, a tonalidade do líquido pode apresentar variações entre os lotes"</em>.',
+      beneficios:
+        "- Produção artesanal<br>- Com ativos naturais:<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Capim-Limão<br>&nbsp;&nbsp;&nbsp;&nbsp;• Óleo Essencial de Alecrim Rosmarino<br>- Aroma acentuado:<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Capim-Limão<br>&nbsp&nbsp;&nbsp;&nbsp;• Essência de Alecrim Rosmarino<br>- Sensação imediata<br>- Não testado em animais",
+      composicao:
+        "Álcool, Propilenoglicol, Hidroxitolueno Butilado, Hexametilindanopirano, Água, Fenoxietanol, Parfum (Capim-Limão, Alecrim Rosmarino), Óleo Essencial de Capim-Limão, Óleo Essencial de Alecrim, Corantes: Corantes: CI 19140 e CI 42090; CI 19140 e CI 15985.",
+      modoUso:
+        "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
+      advertencias:
+        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+      fichaTecnica:
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong><br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+      pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
+      frete:
+        "Enviado para todo o Brasil com taxa fixa de <strong>R$ 30,00</strong>. Opção de retirada local disponível (consulte pelo atendimento no WhatsApp).",
+      trocas:
+        "<strong>Arrependimento ou Desistência:</strong> Conforme o artigo 49 do CDC, se comprar o produto através do nosso site, tem o direito de desistir da compra e solicitar o reembolso ou a troca no prazo de até 7 dias corridos a contar da data de recebimento do pedido. O produto deve ser devolvido na embalagem original, sem indícios de uso.<br><br><strong>Defeitos ou Vícios de Fabricação:</strong> Caso o produto apresente defeito, o prazo para solicitar a troca ou reparo é de até 30 dias corridos para produtos não duráveis (como cosméticos e sabonetes artesanais), contados a partir da data de entrega, nos termos do artigo 26 do CDC.<br><br><strong>Processo de Envio:</strong> Para iniciar o procedimento de troca ou devolução, entre em contato conosco através dos nossos canais de atendimento. As instruções detalhadas para a postagem serão enviadas com total suporte.",
+    },
+  },
+
+  {
     id: "perfume-artesanal-mercurio-floral",
     nome: "Perfume Artesanal Mercúrio Floral",
     precoOriginal: "R$70,00",
     precoDesconto: "R$65,00",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-mercurio-floral1.webp",
+    imagemVerso: "produtos/perfume-artesanal-mercurio-floral2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -194,8 +195,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-fruto-proibido1.webp",
+    imagemVerso: "produtos/perfume-artesanal-fruto-proibido2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -231,8 +232,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-gostosura1.webp",
+    imagemVerso: "produtos/perfume-artesanal-gostosura2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -268,8 +269,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-encanto-profundo1.webp",
+    imagemVerso: "produtos/perfume-artesanal-encanto-profundo2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -305,8 +306,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-sete-versos1.webp",
+    imagemVerso: "produtos/perfume-artesanal-sete-versos2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -342,8 +343,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-gostosura-intensa1.webp",
+    imagemVerso: "produtos/perfume-artesanal-gostosura-intensa2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
@@ -379,8 +380,8 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
-    imagemFrente: "produtos/perfume1.webp",
-    imagemVerso: "produtos/perfume2.webp",
+    imagemFrente: "produtos/perfume-artesanal-campo-sereno1.webp",
+    imagemVerso: "produtos/perfume-artesanal-campo-sereno2.webp",
     video3d: "",
     tags: {
       linha: "linhas-classico",
