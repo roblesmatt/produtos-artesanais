@@ -29,9 +29,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -65,9 +65,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -101,9 +101,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -137,9 +137,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -174,9 +174,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -210,9 +210,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -246,9 +246,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -282,9 +282,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -318,9 +318,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -354,9 +354,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -390,9 +390,9 @@ const BANCO_PRODUTOS = [
       modoUso:
         "Borrifar sobre a pele nos pontos de pulsação (pulsos e pescoço). Após aberto, consumir em até 12 (doze) meses.",
       advertencias:
-        "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
+        "Uso externo. Produto inflamável: manter afastado do fogo e de fontes de calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Aromático<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
