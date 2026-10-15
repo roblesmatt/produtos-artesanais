@@ -424,7 +424,32 @@ BARRA DE BUSCA
 .botao-carrinho:active {
   transform: scale(0.95);
 }
-
+.botao-voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  background-color: #e0d4b9;
+  color: #3d2d2d;
+  border: 2px solid #3d2d2d;
+  transition:
+    transform 0.1s,
+    background-color 0.2s;
+}
+.botao-voltar:active {
+  transform: scale(0.95);
+}
+.botao-voltar:hover {
+  background-color: #3d2d2d;
+  color: #e0d4b9;
+}
 .botao-icone {
   border: none;
   width: 50px;
