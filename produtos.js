@@ -5,7 +5,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-docura-citrica",
     nome: "Perfume Artesanal Doçura Cítrica",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -31,7 +31,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -41,8 +41,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-renascenca-purpura",
     nome: "Perfume Artesanal Renascença Púrpura",
-    precoOriginal: "R$70,90",
-    precoDesconto: "R$65,00",
+    precoOriginal: "R$70",
+    precoDesconto: "R$65",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-renascenca-purpura1.webp",
@@ -67,7 +67,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Floral<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Floral<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -77,7 +77,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-capim-selvagem",
     nome: "Perfume Artesanal Capim Selvagem",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
@@ -103,7 +103,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Floral<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Cítrico Floral<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -113,8 +113,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-raio-verde",
     nome: "Perfume Artesanal Raio Verde",
-    precoOriginal: "R$70,00",
-    precoDesconto: "R$65,00",
+    precoOriginal: "R$70",
+    precoDesconto: "R$65",
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
     imagemFrente: "produtos/perfume-artesanal-raio-verde1.webp",
@@ -139,7 +139,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Herbal Cítrico<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Herbal Cítrico<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -150,8 +150,8 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-mercurio-floral",
     nome: "Perfume Artesanal Mercúrio Floral",
-    precoOriginal: "R$70,00",
-    precoDesconto: "R$65,00",
+    precoOriginal: "R$70",
+    precoDesconto: "R$65",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-mercurio-floral1.webp",
@@ -176,7 +176,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Floral Frutado<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Floral Frutado<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -186,7 +186,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-fruto-proibido",
     nome: "Perfume Artesanal Fruto Proibido",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -212,7 +212,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Frutado Cítrico<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Frutado Cítrico<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -222,7 +222,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-gostosura",
     nome: "Perfume Artesanal Gostosura",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -248,7 +248,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Gourmand Especiado<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Gourmand Especiado<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -258,7 +258,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-encanto-profundo",
     nome: "Perfume Artesanal Encanto Profundo",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -284,7 +284,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Floral Frutado<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Floral Frutado<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -294,7 +294,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-sete-versos",
     nome: "Perfume Artesanal Sete Versos",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -320,7 +320,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Aromático Especiado<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Aromático Especiado<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -330,7 +330,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-gostosura-intensa",
     nome: "Perfume Artesanal Gostosura Intensa",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -356,7 +356,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Gourmand Frutado<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Gourmand Frutado<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -366,7 +366,7 @@ const BANCO_PRODUTOS = [
   {
     id: "perfume-artesanal-campo-sereno",
     nome: "Perfume Artesanal Campo Sereno",
-    precoOriginal: "R$70,00",
+    precoOriginal: "R$70",
     precoDesconto: "",
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
@@ -392,7 +392,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Produto inflamável: mantenha longe do fogo e calor. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Herbal Fresco<br><strong>Concentração:</strong> Eau de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Volume:</strong> 60ml<br><strong>Medida:</strong> 50 x 50 x 120 mm<br><strong>Família Olfativa:</strong> Herbal Fresco<br><strong>Concentração:</strong> Extrait de Parfum<br><strong> Fixação:</strong> 4 à 6 horas<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -402,7 +402,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-docura-citrica",
     nome: "Sabonete Corporal Doçura Cítrica",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -438,7 +438,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-renascença-purpura",
     nome: "Sabonete Corporal Renascença Púrpura",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -474,7 +474,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-capim-selvagem",
     nome: "Sabonete Corporal Capim Selvagem",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -510,7 +510,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-raio-verde",
     nome: "Sabonete Corporal Raio Verde",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -546,7 +546,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-mercurio-floral",
     nome: "Sabonete Corporal Mercúrio Floral",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -582,7 +582,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-fruto-proibido",
     nome: "Sabonete Corporal Fruto Proibido",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -618,7 +618,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-gostosura",
     nome: "Sabonete Corporal Gostosura",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -654,7 +654,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-encanto-profundo",
     nome: "Sabonete Corporal Encanto Profundo",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -690,7 +690,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-sete-versos",
     nome: "Sabonete Corporal Sete Versos",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -726,7 +726,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-gostosura-intensa",
     nome: "Sabonete Corporal Gostosura Intensa",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
@@ -762,7 +762,7 @@ const BANCO_PRODUTOS = [
   {
     id: "sabonete-corporal-campo-sereno",
     nome: "Sabonete Corporal Campo Sereno",
-    precoOriginal: "R$8,00",
+    precoOriginal: "R$8",
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
