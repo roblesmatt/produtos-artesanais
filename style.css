@@ -1025,7 +1025,7 @@ BARRA DE BUSCA
   color: #e0d4b9;
 }
 #sub-catalogo:checked ~ .submenu-todos label[for="sub-catalogo"],
-#sub-novidades:checked ~ .submenu-todos label[for="sub-novidades"],
+#sub-novidade:checked ~ .submenu-todos label[for="sub-novidade"],
 #sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
 #sub-kit:checked ~ .submenu-todos label[for="sub-kit"],
 #sub-sabonete-corporal:checked ~ .submenu-categorias label[for="sub-sabonete-corporal"],
@@ -1054,7 +1054,7 @@ BARRA DE BUSCA
   display: none;
 }
 #todos:checked ~ #sub-catalogo:checked ~ .conteudo-vitrine .item-catalogo,
-#todos:checked ~ #sub-novidades:checked ~ .conteudo-vitrine .item-novidades,
+#todos:checked ~ #sub-novidade:checked ~ .conteudo-vitrine .item-novidade,
 #todos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
 #todos:checked ~ #sub-kit:checked ~ .conteudo-vitrine .item-kit,
 #categorias:checked ~ #sub-sabonete-corporal:checked ~ .conteudo-vitrine .item-sabonete-corporal,
