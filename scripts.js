@@ -975,7 +975,7 @@ window.alterarQtd = function (index, delta, botao) {
 };
 
 // ==========================================
-// 10. ENVIO DE PEDIDO VIA WHATSAPP (Ajustado com Memória)
+// 10. ENVIO DE PEDIDO VIA WHATSAPP (com Limpeza de Carrinho)
 // ==========================================
 function enviarPedidoWhatsApp() {
   const numeroWhatsApp = "5511996624974";
@@ -986,7 +986,7 @@ function enviarPedidoWhatsApp() {
     return;
   }
 
-  // Busca dados salvos anteriormente
+  // Busca dados salvos do cliente
   let dadosSalvos = localStorage.getItem("dadosClienteThairo");
   let cliente = dadosSalvos ? JSON.parse(dadosSalvos) : null;
 
@@ -1022,6 +1022,12 @@ function enviarPedidoWhatsApp() {
 
   mensagem += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
 
+  // === ZERA O CARRINHO E ATUALIZA O BADGE DA CESTA ===
+  localStorage.removeItem("carrinho");
+  if (typeof atualizarContadorCarrinho === "function") {
+    atualizarContadorCarrinho();
+  }
+
   const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   window.open(urlWhatsApp, "_blank");
 }
@@ -1036,7 +1042,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btnComprarAgora.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // 1. Identifica o produto e a quantidade
       const nomeElemento = document.querySelector("h1");
       const nome = nomeElemento ? nomeElemento.innerText.trim() : "Produto Artesanal";
       const produto = BANCO_PRODUTOS.find((p) => p.nome === nome);
@@ -1054,11 +1059,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ) || 0;
       let totalGeral = valorNumerico * quantidade;
 
-      // 2. Verifica dados do cliente salvos
       let dadosSalvos = localStorage.getItem("dadosClienteThairo");
       let cliente = dadosSalvos ? JSON.parse(dadosSalvos) : null;
 
-      // 3. Se não houver cadastro, solicita uma vez
       if (!cliente || !cliente.nome) {
         const nomeInformado = prompt("Para finalizar o pedido, informe o seu Nome:");
         if (!nomeInformado) return;
@@ -1075,7 +1078,6 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("dadosClienteThairo", JSON.stringify(cliente));
       }
 
-      // 4. Monta e envia para o WhatsApp
       const numeroWhatsApp = "5511996624974";
       let mensagem = `Olá! Gostaria de encomendar este produto diretamente:\n\n`;
       
@@ -1084,6 +1086,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       mensagem += `*Item:* ${quantidade}x ${nome}\n`;
       mensagem += `*Total: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+
+      // === ZERA O CARRINHO SE HOUVER ITENS PENDENTES ===
+      localStorage.removeItem("carrinho");
+      if (typeof atualizarContadorCarrinho === "function") {
+        atualizarContadorCarrinho();
+      }
 
       const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
       window.open(urlWhatsApp, "_blank");
