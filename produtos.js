@@ -464,7 +464,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Floral<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -500,7 +500,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico Floral<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -536,7 +536,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Herbal Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -572,7 +572,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Floral Frutado<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -608,7 +608,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Frutado Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -644,7 +644,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Gourmand Especiado<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -680,7 +680,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Floral Frutado<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -716,7 +716,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Aromático Especiado<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -752,7 +752,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Gourmand Frutado<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
@@ -788,7 +788,7 @@ const BANCO_PRODUTOS = [
       advertencias:
         "Uso externo. Em caso de contato acidental com os olhos, enxaguar com água em abundância. Havendo irritação, suspenda o uso e procure orientação médica. Manter fora do alcance de mulheres grávidas, crianças menores de 05 (cinco) anos e animais. Conservar em local seco, fresco e longe da luz solar.",
       fichaTecnica:
-        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Cítrico<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
+        "<strong>Quantidade:</strong> 1 sabonete<strong><br>Volume:</strong> 85 gramas<br><strong>Medida:</strong> 80 x 55 x 22 mm<br><strong>Formato:</strong> Sólido (em barra)<br><strong>Indicação:</strong> Todos os tipos de pele<br><strong>Aplicador:</strong> Uso direto<br><strong>Família Olfativa:</strong> Herbal Fresco<br><strong>Concentração:</strong> Carga Olfativa Máxima<br><strong>Fixação:</strong> Intensa no banho, suave na pele<br><strong>Linha:</strong> Clássico<br><strong>Validade:</strong> após aberto, 12 meses<br><strong>Origem:</strong> São Paulo, Brasil<br>",
       pagamentos: "Pagamento facilitado via Pix com aprovação imediata.",
       frete: "Retirada no local ou envio a combinar pelo WhatsApp.",
       trocas:
