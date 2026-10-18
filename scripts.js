@@ -857,20 +857,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const cestaVazia = carrinho.length === 0;
       checkoutLink.setAttribute("aria-disabled", String(cestaVazia));
       checkoutLink.tabIndex = cestaVazia ? -1 : 0;
-
       checkoutLink.addEventListener("click", (event) => {
-        if (cestaVazia) {
-          event.preventDefault();
-          return;
-        }
-
-        // Verifica se o cliente já possui dados salvos no navegador
-        const dadosSalvos = localStorage.getItem("dadosClienteThairo");
-
-        if (dadosSalvos) {
-          event.preventDefault(); // Impede a ida para checkout.html
-          enviarPedidoWhatsApp(); // Dispara a mensagem direta
-        }
+        if (cestaVazia) event.preventDefault();
       });
     }
 
@@ -882,13 +870,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     carrinho.forEach((item, index) => {
-      const produto = typeof encontrarProdutoDoCarrinho === "function" 
-        ? encontrarProdutoDoCarrinho(item) 
-        : null;
+      const produto = encontrarProdutoDoCarrinho(item);
       const nomeProduto = produto?.nome || item.nome;
       const precoOriginal = produto ? produto.precoOriginal : item.preco;
-      const precoDesconto = produto ? produto.precoDesconto : item.precoDesconto || "";
-      let precoParaCalculo = precoDesconto && precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
+      const precoDesconto = produto
+        ? produto.precoDesconto
+        : item.precoDesconto || "";
+      let precoParaCalculo =
+        precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
 
       let valorNumerico =
         parseFloat(
@@ -904,11 +893,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const divItem = document.createElement("div");
       divItem.classList.add("cart-item-card");
-      const imagem = produto?.imagemFrente || item.imagem || "produtos/thairo-1x1.svg";
+      const imagem =
+        produto?.imagemFrente || item.imagem || "produtos/thairo-1x1.svg";
 
       let blocoPrecoCarrinho = `<span class="preco-atual">${precoOriginal}</span>`;
 
-      if (precoDesconto && precoDesconto.trim() !== "") {
+      if (precoDesconto.trim() !== "") {
         blocoPrecoCarrinho = `
           <div style="display: flex; flex-direction: row; align-items: baseline; gap: 6px;">
             <span class="preco-atual">${precoDesconto}</span>
@@ -935,10 +925,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <button onclick="alterarQtd(${index}, 1, this)" aria-label="Aumentar quantidade">+</button>
                     </div>
                     <button onclick="removerDaCesta(${index}, this)" class="cart-item-delete" style="background: none; border: none; cursor: pointer;" title="Remover item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32.8" height="32.8" viewBox="0 0 32.8 32.8"><path d="M16.8 15l7.5-7.5l1.8 1.8l-7.5 7.5l7.5 7.5l-1.8 1.8l-7.5-7.5l-7.5 7.5l-1.8-1.8l7.5-7.5l-7.5-7.5l1.8-1.8l7.5 7.5Z" fill="#3d2d2d"/></svg>
-                    </button>
-                </div>
-            </div>
+<svg xmlns="http://www.w3.org/2000/svg" width="32.8" height="32.8" viewBox="0 0 32.8 32.8"><path d="M16.8 15l7.5-7.5l1.8 1.8l-7.5 7.5l7.5 7.5l-1.8 1.8l-7.5-7.5l-7.5 7.5l-1.8-1.8l7.5-7.5l-7.5-7.5l1.8-1.8l7.5 7.5Z" fill="#3d2d2d"/></svg>            </div>
         </div>
       `;
       cartItemsList.appendChild(divItem);
@@ -975,7 +962,7 @@ window.alterarQtd = function (index, delta, botao) {
 };
 
 // ==========================================
-// 10. ENVIO DE PEDIDO VIA WHATSAPP (com Limpeza de Carrinho)
+// 10. ENVIO DE PEDIDO VIA WHATSAPP
 // ==========================================
 function enviarPedidoWhatsApp() {
   const numeroWhatsApp = "5511996624974";
@@ -986,34 +973,26 @@ function enviarPedidoWhatsApp() {
     return;
   }
 
-  // Busca dados salvos do cliente
-  let dadosSalvos = localStorage.getItem("dadosClienteThairo");
-  let cliente = dadosSalvos ? JSON.parse(dadosSalvos) : null;
-
-  let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
-
-  if (cliente && cliente.nome) {
-    mensagem += `*Cliente:* ${cliente.nome}\n`;
-    if (cliente.telefone) mensagem += `*Telefone:* ${cliente.telefone}\n`;
-    if (cliente.endereco) mensagem += `*Endereço:* ${cliente.endereco}\n`;
-    if (cliente.cep) mensagem += `*CEP:* ${cliente.cep}\n`;
-    mensagem += "\n";
-  }
-
-  mensagem += "*Produtos:* \n";
+  let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n*Produtos:* \n";
   let totalGeral = 0;
 
   carrinho.forEach((item) => {
-    const produto = typeof encontrarProdutoDoCarrinho === "function" 
-      ? encontrarProdutoDoCarrinho(item) 
-      : null;
+    const produto = encontrarProdutoDoCarrinho(item);
     const nomeProduto = produto?.nome || item.nome;
     const precoOriginal = produto ? produto.precoOriginal : item.preco;
-    const precoDesconto = produto ? produto.precoDesconto : item.precoDesconto || "";
-    const precoCobrado = precoDesconto && precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
-    let valorNumerico = parseFloat(
-      precoCobrado.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
-    ) || 0;
+    const precoDesconto = produto
+      ? produto.precoDesconto
+      : item.precoDesconto || "";
+    const precoCobrado =
+      precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
+    let valorNumerico =
+      parseFloat(
+        precoCobrado
+          .replace("R$", "")
+          .replace(/\./g, "")
+          .replace(",", ".")
+          .trim(),
+      ) || 0;
     const subtotal = valorNumerico * item.quantidade;
     totalGeral += subtotal;
 
@@ -1022,18 +1001,12 @@ function enviarPedidoWhatsApp() {
 
   mensagem += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
 
-  // === ZERA O CARRINHO E ATUALIZA O BADGE DA CESTA ===
-  localStorage.removeItem("carrinho");
-  if (typeof atualizarContadorCarrinho === "function") {
-    atualizarContadorCarrinho();
-  }
-
   const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   window.open(urlWhatsApp, "_blank");
 }
 
 // ==========================================
-// 11. BOTÃO "COMPRAR AGORA" (Direto para o WhatsApp)
+// 11. BOTÃO "COMPRAR AGORA" (Direto para Checkout)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   const btnComprarAgora = document.getElementById("btnComprarAgora");
@@ -1043,58 +1016,42 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const nomeElemento = document.querySelector("h1");
-      const nome = nomeElemento ? nomeElemento.innerText.trim() : "Produto Artesanal";
-      const produto = BANCO_PRODUTOS.find((p) => p.nome === nome);
+      const nome = nomeElemento
+        ? nomeElemento.innerText.trim()
+        : "Produto Artesanal";
 
+      const produto = BANCO_PRODUTOS.find((produto) => produto.nome === nome);
       const precoElemento = document.querySelector(".preco");
-      const precoOriginal = produto?.precoOriginal || (precoElemento ? precoElemento.innerText.trim() : "R$ 0,00");
+      const preco =
+        produto?.precoOriginal ||
+        (precoElemento ? precoElemento.innerText.trim() : "R$ 0,00");
       const precoDesconto = produto?.precoDesconto || "";
-      const precoCobrado = precoDesconto && precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
 
       const qtyElemento = document.getElementById("qtyValue");
       const quantidade = qtyElemento ? parseInt(qtyElemento.innerText) || 1 : 1;
 
-      let valorNumerico = parseFloat(
-        precoCobrado.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
-      ) || 0;
-      let totalGeral = valorNumerico * quantidade;
+      const imgElemento = document.querySelector(
+        "#mainImage, .main-image, .produto-img",
+      );
+      const imagem =
+        produto?.imagemFrente ||
+        (imgElemento?.getAttribute("src")
+          ? new URL(imgElemento.getAttribute("src"), document.baseURI).href
+          : "produtos/thairo-1x1.svg");
 
-      let dadosSalvos = localStorage.getItem("dadosClienteThairo");
-      let cliente = dadosSalvos ? JSON.parse(dadosSalvos) : null;
+      let carrinho = [
+        {
+          id: produto?.id,
+          nome: produto?.nome || nome,
+          preco,
+          precoDesconto,
+          imagem,
+          quantidade,
+        },
+      ];
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-      if (!cliente || !cliente.nome) {
-        const nomeInformado = prompt("Para finalizar o pedido, informe o seu Nome:");
-        if (!nomeInformado) return;
-
-        const enderecoInformado = prompt("Informe o seu Endereço para entrega (ou clique em OK para combinar no chat):");
-
-        cliente = {
-          nome: nomeInformado.trim(),
-          endereco: enderecoInformado ? enderecoInformado.trim() : "A combinar no WhatsApp",
-          telefone: "",
-          cep: ""
-        };
-
-        localStorage.setItem("dadosClienteThairo", JSON.stringify(cliente));
-      }
-
-      const numeroWhatsApp = "5511996624974";
-      let mensagem = `Olá! Gostaria de encomendar este produto diretamente:\n\n`;
-      
-      if (cliente.nome) mensagem += `*Cliente:* ${cliente.nome}\n`;
-      if (cliente.endereco) mensagem += `*Endereço:* ${cliente.endereco}\n\n`;
-
-      mensagem += `*Item:* ${quantidade}x ${nome}\n`;
-      mensagem += `*Total: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
-
-      // === ZERA O CARRINHO SE HOUVER ITENS PENDENTES ===
-      localStorage.removeItem("carrinho");
-      if (typeof atualizarContadorCarrinho === "function") {
-        atualizarContadorCarrinho();
-      }
-
-      const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-      window.open(urlWhatsApp, "_blank");
+      window.location.href = resolveUrlParaPagina("checkout.html");
     });
   }
 });
