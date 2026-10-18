@@ -15,8 +15,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "ativos-capim-limao",
-      cor: "cores-verde",
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -51,8 +49,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "ativos-lavanda-provence",
-      cor: "cores-lilas",
       categoria: ["catalogo", "promocao"],
     },
     acordeoes: {
@@ -87,8 +83,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: ["ativos-capim-limao", "ativos-lavanda-provence"],
-      cor: ["cores-verde", "cores-lilas"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -123,8 +117,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: ["ativos-capim-limao", "ativos-alecrim-rosmarino"],
-      cor: "cores-verde",
       categoria: ["catalogo", "promocao"],
     },
     acordeoes: {
@@ -160,8 +152,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "",
-      cor: ["cores-vermelho"],
       categoria: ["catalogo", "promocao"],
     },
     acordeoes: {
@@ -196,8 +186,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "",
-      cor: ["cores-vermelho"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -232,8 +220,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "",
-      cor: ["cores-rosa"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -268,8 +254,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "",
-      cor: ["cores-vermelho", "cores-laranja"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -304,8 +288,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "",
-      cor: ["cores-rosa"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -340,8 +322,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "",
-      cor: ["cores-rosa"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -376,8 +356,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
-      ativo: "",
-      cor: ["cores-rosa"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -412,8 +390,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-verde"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -448,8 +424,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-lilas"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -484,8 +458,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-verde", "cores-lilas"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -520,8 +492,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-verde", "cores-amarelo"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -556,8 +526,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-vermelho"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -592,8 +560,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-vermelho"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -628,8 +594,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-marrom"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -664,8 +628,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-vermelho", "cores-laranja"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -700,8 +662,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-rosa"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -736,8 +696,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-vermelho", "cores-marrom"],
       categoria: ["catalogo"],
     },
     acordeoes: {
@@ -772,8 +730,6 @@ const BANCO_PRODUTOS = [
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
-      ativo: "",
-      cor: ["cores-amarelo", "cores-verde"],
       categoria: ["catalogo"],
     },
     acordeoes: {
