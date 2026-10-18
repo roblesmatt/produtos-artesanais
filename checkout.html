@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finalizar Pedido - Dados de Entrega</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Pedido - Dados de Entrega</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<div id="cabecalho-container"></div>
+  <div id="cabecalho-container"></div>
 
   <div class="checkout-container">
     <h2>DADOS PARA ENTREGA<br>E FATURAMENTO</h2>
@@ -19,9 +19,9 @@
       </div>
 
       <div class="form-group">
-    <label for="telefone">Telefone:</label>
-    <input type="tel" id="telefone" class="input" required placeholder="(00) 00000-0000">
-</div>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" class="input" required placeholder="(00) 00000-0000">
+      </div>
 
       <div class="form-group">
         <label for="endereco">Endereço:</label>
@@ -29,69 +29,93 @@
       </div>
 
       <div class="form-group">
-    <label for="cep">CEP:</label>
-    <input type="text" id="cep" class="input" required placeholder="00000-000">
-</div>
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" class="input" required placeholder="00000-000">
+      </div>
 
-    <button class="button1" type="submit">Avançar para o WhatsApp</button>
-  
+      <button class="button1" type="submit">Avançar para o WhatsApp</button>
 
-<div class="descricao"><span>Seus dados e o pedido serão enviados pelo WhatsApp. O site não armazena os dados do formulário.</span>
-</div>
- </form>
+      <div class="descricao">
+        <span>Seus dados e o pedido serão enviados pelo WhatsApp. Seus dados de entrega ficam salvos neste dispositivo para facilitar suas próximas compras.</span>
+      </div>
+    </form>
+  </div>
 
+  <!-- Carrega os scripts globais primeiro -->
+  <script src="produtos.js"></script>
+  <script src="scripts.js"></script>
 
   <script>
-    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Recolhe os dados preenchidos no formulário
-      const nome = document.getElementById('nome').value;
-      const telefone = document.getElementById('telefone').value;
-      const endereco = document.getElementById('endereco').value;
-      const cep = document.getElementById('cep').value;
-
-      const dadosCliente = `*Dados do Cliente:*\n- Nome: ${nome}\n- Telefone: ${telefone}\n- Endereço: ${endereco}\n- CEP: ${cep}\n\n`;
-
-      // Resgata os produtos guardados no localStorage
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-      let mensagemProdutos = "*Pedido:* \n";
-      let totalGeral = 0;
-
-      if (carrinho.length === 0) {
-          alert("O seu carrinho está vazio!");
-          return;
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Preenche automaticamente se já houver dados salvos
+      const dadosSalvos = localStorage.getItem("dadosClienteThairo");
+      if (dadosSalvos) {
+        try {
+          const cliente = JSON.parse(dadosSalvos);
+          if (cliente.nome) document.getElementById("nome").value = cliente.nome;
+          if (cliente.telefone) document.getElementById("telefone").value = cliente.telefone;
+          if (cliente.endereco) document.getElementById("endereco").value = cliente.endereco;
+          if (cliente.cep) document.getElementById("cep").value = cliente.cep;
+        } catch (e) {
+          console.error("Erro ao carregar dados do cliente", e);
+        }
       }
 
-      carrinho.forEach((item) => {
-          const produto = encontrarProdutoDoCarrinho(item);
+      // 2. Envio do formulário
+      document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const endereco = document.getElementById('endereco').value.trim();
+        const cep = document.getElementById('cep').value.trim();
+
+        // Salva os dados no navegador
+        const dadosClienteObj = { nome, telefone, endereco, cep };
+        localStorage.setItem("dadosClienteThairo", JSON.stringify(dadosClienteObj));
+
+        // Formata os dados do cliente
+        const dadosCliente = `*Dados do Cliente:*\n*Nome:* ${nome}\n*Telefone:* ${telefone}\n*Endereço:* ${endereco}\n*CEP:* ${cep}\n\n`;
+
+        // Resgata os produtos do carrinho
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        let mensagemProdutos = "*Pedido:* \n";
+        let totalGeral = 0;
+
+        if (carrinho.length === 0) {
+          alert("O seu carrinho está vazio!");
+          return;
+        }
+
+        carrinho.forEach((item) => {
+          const produto = typeof encontrarProdutoDoCarrinho === "function" 
+            ? encontrarProdutoDoCarrinho(item) 
+            : null;
+            
           const nomeProduto = produto?.nome || item.nome;
           const precoOriginal = produto ? produto.precoOriginal : item.preco;
-          const precoDesconto = produto
-              ? produto.precoDesconto
-              : item.precoDesconto || "";
-          const precoCobrado = precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
+          const precoDesconto = produto ? produto.precoDesconto : item.precoDesconto || "";
+          const precoCobrado = precoDesconto && precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
+          
           let valorNumerico = parseFloat(
-              precoCobrado.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
+            precoCobrado.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
           ) || 0;
+          
           const subtotal = valorNumerico * item.quantidade;
           totalGeral += subtotal;
 
           mensagemProdutos += `- ${item.quantidade}x ${nomeProduto} (${precoCobrado}) [Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}]\n`;
+        });
+
+        mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+
+        const numeroWhatsApp = "5511996624974";
+        const mensagemFinal = dadosCliente + mensagemProdutos;
+        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemFinal)}`;
+        
+        window.location.href = urlWhatsApp;
       });
-
-      mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
-
-      const numeroWhatsApp = "5511996624974"; // Número correto com o 6 atualizado
-      const mensagemFinal = dadosCliente + mensagemProdutos;
-      const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemFinal)}`;
-      
-      window.location.href = urlWhatsApp;
     });
   </script>
-
-<script src="produtos.js"></script>
-<script src="scripts.js"></script>
-    
 </body>
 </html>
