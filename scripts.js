@@ -447,7 +447,7 @@ function preencherPaginaProduto() {
   }
 
   const h1El = document.querySelector("h1");
-  if (h1El) h1El.innerText = produto.nome;
+  if (h1El) h1El.innerHTML = produto.nome;
 
   const precoEl = document.querySelector(".preco");
   const unidadeEl = document.querySelector(".unidade");
