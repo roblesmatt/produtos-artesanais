@@ -176,7 +176,7 @@ function inicializarGlobalEvents() {
           const detalhes = document.createElement("div");
           const nome = document.createElement("h4");
           nome.className = "search-result-name";
-          nome.textContent = produto.nome;
+          nome.textContent = produto.nome.replace(/<br\s*[\/]?>/gi, " ");
           detalhes.appendChild(nome);
 
           const precos = document.createElement("div");
