@@ -362,7 +362,7 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
-    imagemFrente: "produtos/sabonete-corporal.webp",
+    imagemFrente: "produtos/sabonete-corporal-docura-citrica.webp",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -394,7 +394,7 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
-    imagemFrente: "produtos/sabonete-corporal.webp",
+    imagemFrente: "produtos/sabonete-corporal-renascenca-purpura.webp",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
