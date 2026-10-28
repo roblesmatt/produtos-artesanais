@@ -588,7 +588,7 @@ BARRA DE BUSCA
     height: auto;
   }
 }
-@media (min-width: 1200px) and (max-width: 1400px) {
+@media (min-width: 1200px) {
   .carousel-container {
     width: 140%;
     position: relative;
