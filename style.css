@@ -302,10 +302,10 @@ BARRA DE BUSCA
 }
 .search-bar input:focus {
   outline: none;
-  border-color: #9A8E7E;
+  border-color: #9a8e7e;
 }
 .search-bar input:focus::placeholder {
-  color: #9A8E7E;
+  color: #9a8e7e;
   opacity: 1;
 }
 
@@ -563,7 +563,7 @@ BARRA DE BUSCA
   .carousel-container {
     width: 110%;
     left: 0;
-   margin-inline: auto;
+    margin-inline: auto;
     align-self: center;
     margin-top: 20px;
   }
@@ -594,7 +594,8 @@ BARRA DE BUSCA
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-  }}
+  }
+}
 
 .carousel-track.is-dragging {
   cursor: grabbing;
@@ -674,7 +675,6 @@ BARRA DE BUSCA
 }
 .accordion-arrow {
   transition: transform 0.3s ease-in-out;
-
 }
 .accordion-item[open] .accordion-arrow {
   transform: rotate(180deg);
@@ -825,7 +825,7 @@ details[open] .accordion-content {
 .search-empty-state {
   margin: 0;
   padding: 10px;
-  color: #9A8E7E;
+  color: #9a8e7e;
   text-align: center;
 }
 
@@ -841,7 +841,7 @@ details[open] .accordion-content {
 .preco-antigo {
   font-weight: 700;
   font-size: 10px; /* Ajuste para 13px na cesta se preferir */
-  color: #9A8E7E;
+  color: #9a8e7e;
   margin-top: 2px;
   text-decoration: line-through;
 }
@@ -952,7 +952,7 @@ details[open] .accordion-content {
   left: 0;
   width: 100vw;
   height: 100vh;
-  margin-top: 50px;  
+  margin-top: 50px;
   pointer-events: none; /* Deixa passar os cliques para os botões de trás */
 }
 .texto-temporario span {
@@ -1038,14 +1038,24 @@ BARRA DE BUSCA
 #sub-novidade:checked ~ .submenu-todos label[for="sub-novidade"],
 #sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
 #sub-kit:checked ~ .submenu-todos label[for="sub-kit"],
-#sub-sabonete-corporal:checked ~ .submenu-categorias label[for="sub-sabonete-corporal"],
+#sub-sabonete-corporal:checked
+  ~ .submenu-categorias
+  label[for="sub-sabonete-corporal"],
 #sub-oleo-corporal:checked ~ .submenu-categorias label[for="sub-oleo-corporal"],
-#sub-perfume-artesanal:checked ~ .submenu-categorias label[for="sub-perfume-artesanal"],
-#sub-vela-aromatica:checked ~ .submenu-categorias label[for="sub-vela-aromatica"],
-#sub-shampoo-e-condicionador:checked ~ .submenu-categorias label[for="sub-shampoo-e-condicionador"],
+#sub-perfume-artesanal:checked
+  ~ .submenu-categorias
+  label[for="sub-perfume-artesanal"],
+#sub-vela-aromatica:checked
+  ~ .submenu-categorias
+  label[for="sub-vela-aromatica"],
+#sub-shampoo-e-condicionador:checked
+  ~ .submenu-categorias
+  label[for="sub-shampoo-e-condicionador"],
 #sub-creme-capilar:checked ~ .submenu-categorias label[for="sub-creme-capilar"],
 #sub-creme-facial:checked ~ .submenu-categorias label[for="sub-creme-facial"],
-#sub-locao-pos-barba:checked ~ .submenu-categorias label[for="sub-locao-pos-barba"],
+#sub-locao-pos-barba:checked
+  ~ .submenu-categorias
+  label[for="sub-locao-pos-barba"],
 #sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
 #sub-premium:checked ~ .submenu-linhas label[for="sub-premium"],
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
@@ -1067,14 +1077,38 @@ BARRA DE BUSCA
 #todos:checked ~ #sub-novidade:checked ~ .conteudo-vitrine .item-novidade,
 #todos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
 #todos:checked ~ #sub-kit:checked ~ .conteudo-vitrine .item-kit,
-#categorias:checked ~ #sub-sabonete-corporal:checked ~ .conteudo-vitrine .item-sabonete-corporal,
-#categorias:checked ~ #sub-oleo-corporal:checked ~ .conteudo-vitrine .item-oleo-corporal,
-#categorias:checked ~ #sub-perfume-artesanal:checked ~ .conteudo-vitrine .item-perfume-artesanal,
-#categorias:checked ~ #sub-vela-aromatica:checked ~ .conteudo-vitrine .item-vela-aromatica,
-#categorias:checked ~ #sub-shampoo-e-condicionador:checked ~ .conteudo-vitrine .item-shampoo-e-condicionador,
-#categorias:checked ~ #sub-creme-capilar:checked ~ .conteudo-vitrine .item-creme-capilar,
-#categorias:checked ~ #sub-creme-facial:checked ~ .conteudo-vitrine .item-creme-facial,
-#categorias:checked ~ #sub-locao-pos-barba:checked ~ .conteudo-vitrine .item-locao-pos-barba,
+#categorias:checked
+  ~ #sub-sabonete-corporal:checked
+  ~ .conteudo-vitrine
+  .item-sabonete-corporal,
+#categorias:checked
+  ~ #sub-oleo-corporal:checked
+  ~ .conteudo-vitrine
+  .item-oleo-corporal,
+#categorias:checked
+  ~ #sub-perfume-artesanal:checked
+  ~ .conteudo-vitrine
+  .item-perfume-artesanal,
+#categorias:checked
+  ~ #sub-vela-aromatica:checked
+  ~ .conteudo-vitrine
+  .item-vela-aromatica,
+#categorias:checked
+  ~ #sub-shampoo-e-condicionador:checked
+  ~ .conteudo-vitrine
+  .item-shampoo-e-condicionador,
+#categorias:checked
+  ~ #sub-creme-capilar:checked
+  ~ .conteudo-vitrine
+  .item-creme-capilar,
+#categorias:checked
+  ~ #sub-creme-facial:checked
+  ~ .conteudo-vitrine
+  .item-creme-facial,
+#categorias:checked
+  ~ #sub-locao-pos-barba:checked
+  ~ .conteudo-vitrine
+  .item-locao-pos-barba,
 #linhas:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
 #linhas:checked ~ #sub-premium:checked ~ .conteudo-vitrine .item-premium,
 #linhas:checked ~ #sub-esoterica:checked ~ .conteudo-vitrine .item-esoterica,
@@ -1087,7 +1121,8 @@ BARRA DE BUSCA
 /* =================================================
 CARD DE PRODUTOS
 ================================================= */
-.marcador-card, .produto-card {
+.marcador-card,
+.produto-card {
   border-right: 2px solid #3d2d2d;
   border-bottom: 2px solid #3d2d2d;
   box-sizing: border-box;
@@ -1103,7 +1138,8 @@ CARD DE PRODUTOS
 
 .vitrine-grid {
   display: grid;
-grid-template-columns: repeat(4, 1fr); /* Força sempre 4 colunas no desktop */  gap: 0; 
+  grid-template-columns: repeat(4, 1fr); /* Força sempre 4 colunas no desktop */
+  gap: 0;
 }
 .vitrine-item {
   width: 100%;
@@ -1365,10 +1401,10 @@ h2 {
 }
 .input:focus {
   outline: none; /* Remove o contorno padrão do navegador */
-  border-color: #9A8E7E;
+  border-color: #9a8e7e;
 }
 .input:focus::placeholder {
-  color: #9A8E7E; /* Coloque aqui a mesma cor que usa no seu contorno/borda */
+  color: #9a8e7e; /* Coloque aqui a mesma cor que usa no seu contorno/borda */
   opacity: 1; /* Garante que a cor fique sólida */
 }
 .button1 {
@@ -1394,10 +1430,7 @@ h2 {
   background-color: #e0d4b9;
 }
 
-
-
-
-strong, b {
+strong,
+b {
   -webkit-text-stroke: 0.8px;
-
 }
