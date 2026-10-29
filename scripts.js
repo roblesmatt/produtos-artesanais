@@ -459,7 +459,7 @@ function preencherPaginaProduto() {
     return;
   }
 
-  document.title = produto.nome..replace(/<br\s*[\/]?>/gi, " ").replace(/<\/?[^>]+(>|$)/g, "").replace(/\s+/g, " ").trim();
+  document.title = produto.nome.replace(/<br\s*[\/]?>/gi, " ").replace(/<\/?[^>]+(>|$)/g, "").replace(/\s+/g, " ").trim();
 
   if (produto.esgotado) {
     document.body.innerHTML = `
