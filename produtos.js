@@ -522,7 +522,7 @@ const BANCO_PRODUTOS = [
     precoDesconto: "",
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
-    imagemFrente: "produtos/sabonete-corporal.webp",
+    imagemFrente: "produtos/sabonete-corporal-fruto-proibido.webp",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
