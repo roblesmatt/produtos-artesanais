@@ -897,7 +897,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carrinho.forEach((item, index) => {
       const produto = encontrarProdutoDoCarrinho(item);
-      const nomeProduto = produto?.nome || item.nome;
+      const nomeBruto = produto?.nome || item.nome;
+      const nomeProduto = nomeBruto.replace(/<br\s*[\/]?>/gi, " ").replace(/<\/?[^>]+(>|$)/g, "").replace(/\s+/g, " ").trim();
       const precoOriginal = produto ? produto.precoOriginal : item.preco;
       const precoDesconto = produto
         ? produto.precoDesconto
