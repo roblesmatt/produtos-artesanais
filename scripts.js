@@ -2,7 +2,14 @@
 // 2. INJETA O GLOBAL (Header, Menu e Busca)
 // ==========================================
 function resolveUrlParaPagina(caminho) {
-  if (!caminho || caminho.startsWith("http") || caminho.startsWith("/") || caminho.startsWith("#") || caminho.startsWith("mailto:") || caminho.startsWith("tel:")) {
+  if (
+    !caminho ||
+    caminho.startsWith("http") ||
+    caminho.startsWith("/") ||
+    caminho.startsWith("#") ||
+    caminho.startsWith("mailto:") ||
+    caminho.startsWith("tel:")
+  ) {
     return caminho;
   }
 
@@ -15,12 +22,21 @@ function resolveUrlParaPagina(caminho) {
 }
 
 function resolveAssetUrl(caminho) {
-  if (!caminho || caminho.startsWith("http") || caminho.startsWith("/") || caminho.startsWith("data:")) {
+  if (
+    !caminho ||
+    caminho.startsWith("http") ||
+    caminho.startsWith("/") ||
+    caminho.startsWith("data:")
+  ) {
     return caminho;
   }
 
   const estaNaPastaProdutos = window.location.pathname.includes("/produtos/");
-  if (estaNaPastaProdutos && !caminho.startsWith("../") && !caminho.startsWith("./")) {
+  if (
+    estaNaPastaProdutos &&
+    !caminho.startsWith("../") &&
+    !caminho.startsWith("./")
+  ) {
     return `../${caminho}`;
   }
 
@@ -46,14 +62,20 @@ function pontuarProdutoBusca(produto, consulta) {
   if (termos.length === 0) return 0;
 
   if (termos.length === 1) {
-    return palavrasNome.some((palavra) => palavra.startsWith(termos[0])) ? 10 : 0;
+    return palavrasNome.some((palavra) => palavra.startsWith(termos[0]))
+      ? 10
+      : 0;
   }
 
   let indicePalavraNome = 0;
   let pontuacao = 0;
   for (const termo of termos) {
     let indiceEncontrado = -1;
-    for (let indice = indicePalavraNome; indice < palavrasNome.length; indice++) {
+    for (
+      let indice = indicePalavraNome;
+      indice < palavrasNome.length;
+      indice++
+    ) {
       if (palavrasNome[indice].startsWith(termo)) {
         indiceEncontrado = indice;
         break;
@@ -80,7 +102,9 @@ function embaralharArray(itens) {
   return embaralhados;
 }
 
-const paginaGlobal = window.location.pathname.includes("/produtos/") ? "../global.html" : "global.html";
+const paginaGlobal = window.location.pathname.includes("/produtos/")
+  ? "../global.html"
+  : "global.html";
 
 fetch(paginaGlobal)
   .then((response) => response.text())
@@ -136,15 +160,14 @@ function inicializarGlobalEvents() {
       if (termo.length > 0) {
         searchModal.style.display = "flex";
         searchResultsList.innerHTML = "";
-        const encontradosOrdenados = BANCO_PRODUTOS
-          .map((produto) => ({
-            produto,
-            pontuacao: pontuarProdutoBusca(produto, termo),
-          }))
+        const encontradosOrdenados = BANCO_PRODUTOS.map((produto) => ({
+          produto,
+          pontuacao: pontuarProdutoBusca(produto, termo),
+        }))
           .filter(({ pontuacao }) => pontuacao > 0)
           .sort((a, b) => b.pontuacao - a.pontuacao);
         const encontrados = [];
-        for (let inicioGrupo = 0; inicioGrupo < encontradosOrdenados.length;) {
+        for (let inicioGrupo = 0; inicioGrupo < encontradosOrdenados.length; ) {
           let fimGrupo = inicioGrupo + 1;
           while (
             fimGrupo < encontradosOrdenados.length &&
@@ -154,7 +177,9 @@ function inicializarGlobalEvents() {
             fimGrupo++;
           }
           encontrados.push(
-            ...embaralharArray(encontradosOrdenados.slice(inicioGrupo, fimGrupo)),
+            ...embaralharArray(
+              encontradosOrdenados.slice(inicioGrupo, fimGrupo),
+            ),
           );
           inicioGrupo = fimGrupo;
         }
@@ -183,7 +208,8 @@ function inicializarGlobalEvents() {
           precos.className = "search-result-prices";
           const precoAtual = document.createElement("span");
           precoAtual.className = "preco-atual";
-          precoAtual.textContent = produto.precoDesconto || produto.precoOriginal;
+          precoAtual.textContent =
+            produto.precoDesconto || produto.precoOriginal;
           precos.appendChild(precoAtual);
 
           if (produto.precoDesconto) {
@@ -336,7 +362,7 @@ function renderizarVitrinesAutomaticas() {
         <${cardContentTag} ${cardContentAttributes} style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 100%; height: 100%; ${produto.esgotado ? "opacity: 0.4; cursor: default;" : ""}">
           <div class="media-container" style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
             <img src="${resolveAssetUrl(produto.imagemFrente)}" alt="${produto.nome}" class="card-img" style="width: 100%; display: block; transition: opacity 0.3s ease;">
-            ${produto.video3d ? `<video src="${resolveAssetUrl(produto.video3d)}" class="card-video" muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;"></video>` : (produto.imagemVerso ? `<img src="${resolveAssetUrl(produto.imagemVerso)}" alt="${produto.nome} Verso" class="card-verso" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">` : "")}
+            ${produto.video3d ? `<video src="${resolveAssetUrl(produto.video3d)}" class="card-video" muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;"></video>` : produto.imagemVerso ? `<img src="${resolveAssetUrl(produto.imagemVerso)}" alt="${produto.nome} Verso" class="card-verso" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">` : ""}
           </div>
           <div style="width: 100%;">
             <h4>${produto.nome}</h4>
@@ -1067,7 +1093,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const nomeAtual = nomeElemento ? nomeElemento.innerText.trim() : "";
 
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    const produtoAtual = BANCO_PRODUTOS.find((produto) => produto.nome === nomeAtual);
+    const produtoAtual = BANCO_PRODUTOS.find(
+      (produto) => produto.nome === nomeAtual,
+    );
     const produtoExiste = carrinho.some(
       (item) =>
         (produtoAtual && item.id === produtoAtual.id) ||
@@ -1077,7 +1105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (produtoExiste && nomeAtual !== "") {
       btnAdicionarCesta.innerText = "Adicionado à Cesta";
       btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
-      btnAdicionarCesta.style.color = "#e0d4b9";
+      btnAdicionarCesta.style.color = "#CEC8B8";
       btnAdicionarCesta.style.borderColor = "#3d2d2d";
     }
 
@@ -1139,7 +1167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       btnAdicionarCesta.innerText = "Adicionado à Cesta";
       btnAdicionarCesta.style.backgroundColor = "#3d2d2d";
-      btnAdicionarCesta.style.color = "#e0d4b9";
+      btnAdicionarCesta.style.color = "#CEC8B8";
       btnAdicionarCesta.style.borderColor = "#3d2d2d";
       btnAdicionarCesta.style.transition = "all 0.3s ease";
     });

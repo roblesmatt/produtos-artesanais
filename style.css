@@ -8,7 +8,7 @@
 
 html,
 body {
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   width: 100%;
   height: auto;
   margin: 0;
@@ -25,7 +25,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
 }
 .site-footer {
   display: flex;
@@ -35,7 +35,7 @@ body {
   width: 100%;
   margin-top: auto;
   padding: 16px 24px;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   color: #3d2d2d;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -157,7 +157,7 @@ main {
 
 .menu-hamburguer {
   display: flex !important;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   width: 25px;
   height: auto;
   cursor: pointer;
@@ -178,7 +178,7 @@ main {
   left: 0; /* Cola na esquerda absoluta */
   width: 100vw; /* Ocupa 100% da largura da viewport */
   height: 100vh; /* Ocupa 100% da altura da viewport */
-  background-color: #e0d4b9; /* Mantém a cor com transparência */
+  background-color: #CEC8B8; /* Mantém a cor com transparência */
   flex-direction: column;
   justify-content: center; /* Centraliza os itens verticalmente no ecran */
   align-items: center; /* Centraliza os itens horizontalmente */
@@ -272,7 +272,7 @@ BARRA DE BUSCA
   }
 }
 .search-bar input {
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   padding: 8px 10px 8px 16px;
   font-size: 14px;
   outline: none;
@@ -415,7 +415,7 @@ BARRA DE BUSCA
   position: relative;
   margin-bottom: 40px;
   border-radius: 20px;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   border: 2px solid #3d2d2d;
   transition:
     transform 0.1s,
@@ -436,7 +436,7 @@ BARRA DE BUSCA
   margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 40px;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   color: #3d2d2d;
   border: 2px solid #3d2d2d;
   transition:
@@ -448,7 +448,7 @@ BARRA DE BUSCA
 }
 .botao-voltar:hover {
   background-color: #3d2d2d;
-  color: #e0d4b9;
+  color: #CEC8B8;
 }
 .botao-icone {
   border: none;
@@ -459,7 +459,7 @@ BARRA DE BUSCA
   cursor: pointer;
   font-size: 15px;
   position: relative;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   transition:
     transform 0.1s,
     background-color 0.2s;
@@ -481,7 +481,7 @@ BARRA DE BUSCA
   margin-top: 40px;
   border-radius: 40px;
   background-color: #3d2d2d;
-  color: #e0d4b9;
+  color: #CEC8B8;
   border: 2px solid #3d2d2d;
   transition:
     transform 0.1s,
@@ -491,7 +491,7 @@ BARRA DE BUSCA
   transform: scale(0.95);
 }
 .whatsapp-btn:hover {
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   color: #3d2d2d;
 }
 .whatsapp-btn[aria-disabled="true"] {
@@ -733,7 +733,7 @@ details[open] .accordion-content {
 }
 
 .search-modal-content {
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   padding: 24px;
   width: 90%;
   max-width: 500px;
@@ -789,7 +789,7 @@ details[open] .accordion-content {
   align-items: center;
   gap: 12px;
   padding: 8px;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   color: #3d2d2d;
   text-decoration: none;
   transition: background-color 0.2s;
@@ -882,7 +882,7 @@ details[open] .accordion-content {
 }
 .product-column-accordion {
   width: 100%;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   z-index: 10;
 }
 .product-column-accordion0 {
@@ -983,7 +983,7 @@ BARRA DE BUSCA
   width: 100%;
 
   top: 0;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
 }
 .container-filtros input {
   display: none;
@@ -992,7 +992,7 @@ BARRA DE BUSCA
   display: flex;
   flex-wrap: wrap;
   border-top: 2px solid #3d2d2d;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
 }
 .menu-linha label {
   flex: 1;
@@ -1013,7 +1013,7 @@ BARRA DE BUSCA
 
 .menu-linha label:hover {
   background-color: #3d2d2d;
-  color: #e0d4b9;
+  color: #CEC8B8;
 }
 
 .menu-linha label:last-child {
@@ -1032,7 +1032,7 @@ BARRA DE BUSCA
 #categorias:checked ~ .menu-principal label[for="categorias"],
 #linhas:checked ~ .menu-principal label[for="linhas"] {
   background-color: #3d2d2d;
-  color: #e0d4b9;
+  color: #CEC8B8;
 }
 #sub-catalogo:checked ~ .submenu-todos label[for="sub-catalogo"],
 #sub-novidade:checked ~ .submenu-todos label[for="sub-novidade"],
@@ -1062,12 +1062,12 @@ BARRA DE BUSCA
 #sub-roosi:checked ~ .submenu-linhas label[for="sub-roosi"],
 #sub-nopou:checked ~ .submenu-linhas label[for="sub-nopou"] {
   background-color: #3d2d2d;
-  color: #e0d4b9;
+  color: #CEC8B8;
 }
 .conteudo-vitrine {
   border-top: none;
   min-height: 100px;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   text-align: center;
 }
 .conteudo-vitrine .vitrine-item {
@@ -1126,7 +1126,7 @@ CARD DE PRODUTOS
   border-right: 2px solid #3d2d2d;
   border-bottom: 2px solid #3d2d2d;
   box-sizing: border-box;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1160,7 +1160,7 @@ CARD DE PRODUTOS
   border-right: 2px solid #3d2d2d; /* Linha divisória vertical */
   border-bottom: 2px solid #3d2d2d; /* Linha divisória horizontal */
   box-sizing: border-box;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1219,7 +1219,7 @@ CARD DE CESTA
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #e0d4b9; /* Tom de fundo levemente diferente ou o mesmo do seu tema */
+  background-color: #CEC8B8; /* Tom de fundo levemente diferente ou o mesmo do seu tema */
   border: 2px solid #3d2d2d;
   padding: 12px;
   margin-bottom: -2px;
@@ -1236,7 +1236,7 @@ CARD DE CESTA
   width: 55px;
   height: 55px;
   object-fit: cover;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
 }
 .cart-item-title {
   font-size: 18px;
@@ -1257,7 +1257,7 @@ CARD DE CESTA
 .qty-selector {
   display: flex;
   align-items: center;
-  background: #e0d4b9;
+  background: #CEC8B8;
   border: 2px solid #3d2d2d;
   border-radius: 20px;
   width: 92px;
@@ -1338,9 +1338,9 @@ ICONE DE CESTA
 .badge-contador {
   position: absolute;
   left: 22px;
-  outline: 2px solid #e0d4b9;
+  outline: 2px solid #CEC8B8;
   background-color: #3d2d2d;
-  color: #e0d4b9;
+  color: #CEC8B8;
   font-size: 11px;
   font-weight: bold;
   min-width: 20px;
@@ -1356,7 +1356,7 @@ ICONE DE CESTA
 CHECKOUT
 ================================================= */
 .checkout-container {
-  background: #e0d4b9;
+  background: #CEC8B8;
   padding: 30px;
   border-radius: 12px;
   width: 100%;
@@ -1383,7 +1383,7 @@ h2 {
 .input {
   width: 100%;
   padding: 10px;
-  background-color: #e0d4b9; /* Adicione esta linha com a cor que preferir */
+  background-color: #CEC8B8; /* Adicione esta linha com a cor que preferir */
   border: 2px solid #3d2d2d;
   font-size: 14px;
   box-sizing: border-box;
@@ -1409,7 +1409,7 @@ h2 {
 }
 .button1 {
   background-color: #3d2d2d;
-  color: #e0d4b9;
+  color: #CEC8B8;
   border: none;
   padding: 12px;
   width: 100%;
@@ -1427,7 +1427,7 @@ h2 {
 }
 .button1:hover {
   color: #3d2d2d;
-  background-color: #e0d4b9;
+  background-color: #CEC8B8;
 }
 
 strong,
