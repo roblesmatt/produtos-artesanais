@@ -1038,24 +1038,14 @@ BARRA DE BUSCA
 #sub-novidade:checked ~ .submenu-todos label[for="sub-novidade"],
 #sub-promocao:checked ~ .submenu-todos label[for="sub-promocao"],
 #sub-kit:checked ~ .submenu-todos label[for="sub-kit"],
-#sub-sabonete-corporal:checked
-  ~ .submenu-categorias
-  label[for="sub-sabonete-corporal"],
+#sub-sabonete-corporal:checked ~ .submenu-categorias label[for="sub-sabonete-corporal"],
 #sub-oleo-corporal:checked ~ .submenu-categorias label[for="sub-oleo-corporal"],
-#sub-perfume-artesanal:checked
-  ~ .submenu-categorias
-  label[for="sub-perfume-artesanal"],
-#sub-vela-aromatica:checked
-  ~ .submenu-categorias
-  label[for="sub-vela-aromatica"],
-#sub-shampoo-e-condicionador:checked
-  ~ .submenu-categorias
-  label[for="sub-shampoo-e-condicionador"],
+#sub-perfume-artesanal:checked ~ .submenu-categorias label[for="sub-perfume-artesanal"],
+#sub-vela-aromatica:checked ~ .submenu-categorias label[for="sub-vela-aromatica"],
+#sub-shampoo-e-condicionador:checked ~ .submenu-categorias label[for="sub-shampoo-e-condicionador"],
 #sub-creme-capilar:checked ~ .submenu-categorias label[for="sub-creme-capilar"],
 #sub-creme-facial:checked ~ .submenu-categorias label[for="sub-creme-facial"],
-#sub-locao-pos-barba:checked
-  ~ .submenu-categorias
-  label[for="sub-locao-pos-barba"],
+#sub-locao-pos-barba:checked ~ .submenu-categorias label[for="sub-locao-pos-barba"],
 #sub-classico:checked ~ .submenu-linhas label[for="sub-classico"],
 #sub-premium:checked ~ .submenu-linhas label[for="sub-premium"],
 #sub-esoterica:checked ~ .submenu-linhas label[for="sub-esoterica"],
@@ -1077,38 +1067,14 @@ BARRA DE BUSCA
 #todos:checked ~ #sub-novidade:checked ~ .conteudo-vitrine .item-novidade,
 #todos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
 #todos:checked ~ #sub-kit:checked ~ .conteudo-vitrine .item-kit,
-#categorias:checked
-  ~ #sub-sabonete-corporal:checked
-  ~ .conteudo-vitrine
-  .item-sabonete-corporal,
-#categorias:checked
-  ~ #sub-oleo-corporal:checked
-  ~ .conteudo-vitrine
-  .item-oleo-corporal,
-#categorias:checked
-  ~ #sub-perfume-artesanal:checked
-  ~ .conteudo-vitrine
-  .item-perfume-artesanal,
-#categorias:checked
-  ~ #sub-vela-aromatica:checked
-  ~ .conteudo-vitrine
-  .item-vela-aromatica,
-#categorias:checked
-  ~ #sub-shampoo-e-condicionador:checked
-  ~ .conteudo-vitrine
-  .item-shampoo-e-condicionador,
-#categorias:checked
-  ~ #sub-creme-capilar:checked
-  ~ .conteudo-vitrine
-  .item-creme-capilar,
-#categorias:checked
-  ~ #sub-creme-facial:checked
-  ~ .conteudo-vitrine
-  .item-creme-facial,
-#categorias:checked
-  ~ #sub-locao-pos-barba:checked
-  ~ .conteudo-vitrine
-  .item-locao-pos-barba,
+#categorias:checked ~ #sub-sabonete-corporal:checked ~ .conteudo-vitrine .item-sabonete-corporal,
+#categorias:checked ~ #sub-oleo-corporal:checked ~ .conteudo-vitrine .item-oleo-corporal,
+#categorias:checked ~ #sub-perfume-artesanal:checked ~ .conteudo-vitrine .item-perfume-artesanal,
+#categorias:checked ~ #sub-vela-aromatica:checked ~ .conteudo-vitrine .item-vela-aromatica,
+#categorias:checked ~ #sub-shampoo-e-condicionador:checked ~ .conteudo-vitrine .item-shampoo-e-condicionador,
+#categorias:checked ~ #sub-creme-capilar:checked ~ .conteudo-vitrine .item-creme-capilar,
+#categorias:checked ~ #sub-creme-facial:checked ~ .conteudo-vitrine .item-creme-facial,
+#categorias:checked ~ #sub-locao-pos-barba:checked ~ .conteudo-vitrine .item-locao-pos-barba,
 #linhas:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
 #linhas:checked ~ #sub-premium:checked ~ .conteudo-vitrine .item-premium,
 #linhas:checked ~ #sub-esoterica:checked ~ .conteudo-vitrine .item-esoterica,
@@ -1117,6 +1083,75 @@ BARRA DE BUSCA
   display: block;
   width: 100%;
 }
+
+
+
+
+
+
+
+#produtos:checked ~ .submenu-produtos,
+#pedidos:checked ~ .submenu-pedidos,
+#caixa:checked ~ .submenu-caixa {
+  display: flex;
+}
+#produtos:checked ~ .menu-principal label[for="produtos"],
+#pedidos:checked ~ .menu-principal label[for="pedidos"],
+#caixa:checked ~ .menu-principal label[for="caixa"] {
+  background-color: #3d2d2d;
+  color: #CEC8B8;
+}
+#sub-sabonete-corporal:checked ~ .submenu-produtos label[for="sub-sabonete-corporal"],
+#sub-oleo-corporal:checked ~ .submenu-produtos label[for="sub-oleo-corporal"],
+#sub-perfume-artesanal:checked ~ .submenu-produtos label[for="sub-perfume-artesanal"],
+#sub-vela-aromatica:checked ~ .submenu-produtos label[for="sub-vela-aromatica"],
+#sub-shampoo-e-condicionador:checked ~ .submenu-produtos label[for="sub-shampoo-e-condicionador"],
+#sub-creme-capilar:checked ~ .submenu-produtos label[for="sub-creme-capilar"],
+#sub-creme-facial:checked ~ .submenu-produtos label[for="sub-creme-facial"],
+#sub-locao-pos-barba:checked ~ .submenu-produtos label[for="sub-locao-pos-barba"],
+#sub-catalogo:checked ~ .submenu-pedidos label[for="sub-catalogo"],
+#sub-novidade:checked ~ .submenu-pedidos label[for="sub-novidade"],
+#sub-promocao:checked ~ .submenu-pedidos label[for="sub-promocao"],
+#sub-kit:checked ~ .submenu-pedidos label[for="sub-kit"],
+#sub-classico:checked ~ .submenu-caixa label[for="sub-classico"],
+#sub-premium:checked ~ .submenu-caixa label[for="sub-premium"],
+#sub-esoterica:checked ~ .submenu-caixa label[for="sub-esoterica"],
+#sub-roosi:checked ~ .submenu-caixa label[for="sub-roosi"],
+#sub-nopou:checked ~ .submenu-caixa label[for="sub-nopou"] {
+  background-color: #3d2d2d;
+  color: #CEC8B8;
+}
+.conteudo-vitrine {
+  border-top: none;
+  min-height: 100px;
+  background-color: #CEC8B8;
+  text-align: center;
+}
+.conteudo-vitrine .vitrine-item {
+  display: none;
+}
+#produtos:checked ~ #sub-sabonete-corporal:checked ~ .conteudo-vitrine .item-sabonete-corporal,
+#produtos:checked ~ #sub-oleo-corporal:checked ~ .conteudo-vitrine .item-oleo-corporal,
+#produtos:checked ~ #sub-perfume-artesanal:checked ~ .conteudo-vitrine .item-perfume-artesanal,
+#produtos:checked ~ #sub-vela-aromatica:checked ~ .conteudo-vitrine .item-vela-aromatica,
+#produtos:checked ~ #sub-shampoo-e-condicionador:checked ~ .conteudo-vitrine .item-shampoo-e-condicionador,
+#produtos:checked ~ #sub-creme-capilar:checked ~ .conteudo-vitrine .item-creme-capilar,
+#produtos:checked ~ #sub-creme-facial:checked ~ .conteudo-vitrine .item-creme-facial,
+#produtos:checked ~ #sub-locao-pos-barba:checked ~ .conteudo-vitrine .item-locao-pos-barba,
+#pedidos:checked ~ #sub-catalogo:checked ~ .conteudo-vitrine .item-catalogo,
+#pedidos:checked ~ #sub-novidade:checked ~ .conteudo-vitrine .item-novidade,
+#pedidos:checked ~ #sub-promocao:checked ~ .conteudo-vitrine .item-promocao,
+#pedidos:checked ~ #sub-kit:checked ~ .conteudo-vitrine .item-kit,
+#caixa:checked ~ #sub-classico:checked ~ .conteudo-vitrine .item-classico,
+#caixa:checked ~ #sub-premium:checked ~ .conteudo-vitrine .item-premium,
+#caixa:checked ~ #sub-esoterica:checked ~ .conteudo-vitrine .item-esoterica,
+#caixa:checked ~ #sub-roosi:checked ~ .conteudo-vitrine .item-roosi,
+#caixa:checked ~ #sub-nopou:checked ~ .conteudo-vitrine .item-nopou {
+  display: block;
+  width: 100%;
+}
+
+
 
 /* =================================================
 CARD DE PRODUTOS
@@ -1434,3 +1469,146 @@ strong,
 b {
   -webkit-text-stroke: 0.8px;
 }
+
+
+
+
+
+
+  .painel-gerenciador {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    min-height: 80vh !important;
+    background: #CEC8B8 !important;
+    box-sizing: border-box !important;
+    align-items: stretch !important;
+  }
+
+  /* 1. Coluna Esquerda: Lista de Produtos */
+  .lista-lateral-admin {
+    width: 280px !important;
+    min-width: 280px !important;
+    border-radius: 2px solid #3d2d2d !important;
+    overflow-y: auto !important;
+    max-height: 80vh !important;
+  }
+  .item-lista-admin {
+    padding: 15px 20px;
+    border-bottom: 2px solid #3d2d2d;
+    cursor: pointer;
+    font-weight: bold;
+    color: #3d2d2d;
+    transition: background 0.2s;
+  }
+  .item-lista-admin:hover, .item-lista-admin.ativo {
+    background: #3d2d2d;
+    color: #CEC8B8;
+  }
+  .item-adicionar {
+    background: #3d2d2d !important;
+    color: #CEC8B8 !important;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  /* 2. Coluna do Meio: Preview da Imagem */
+  .coluna-imagem-admin {
+    width: 350px !important;
+    min-width: 350px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    border-radius: 2px solid #3d2d2d !important;
+    box-sizing: border-box !important;
+  }
+  .coluna-imagem-admin img {
+    width: 100% !important;
+    max-height: 420px !important;
+    object-fit: contain !important;
+  }
+
+  /* 3. Coluna da Direita: Formulário de Edição */
+  .conteudo-formulario-admin {
+    flex: 1 !important;
+    width: auto !important;
+    padding: 30px !important;
+    overflow-y: auto !important;
+    max-height: 80vh !important;
+    color: #3d2d2d !important;
+    box-sizing: border-box !important;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .form-group-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  .form-group-admin.full {
+    grid-column: span 2;
+  }
+  .form-group-admin label {
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .form-group-admin input, .form-group-admin textarea {
+    padding: 10px;
+    border: 2px solid #3d2d2d;
+    background: #CEC8B8;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .btn-salvar-admin {
+    background: #3d2d2d;
+    color: #CEC8B8;
+    padding: 12px 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .btn-salvar-admin:hover { opacity: 0.9; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.form-group-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+.form-group-admin.full {
+  grid-column: span 2;
+}
+.form-group-admin label {
+  font-weight: bold;
+  font-size: 13px;
+}
+.form-group-admin input, .form-group-admin textarea {
+  padding: 10px;
+  border: 2px solid #3d2d2d;
+  background: #CEC8B8;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+.btn-salvar-admin {
+  background: #3d2d2d;
+  color: #CEC8B8;
+  padding: 12px 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn-salvar-admin:hover { opacity: 0.9; }

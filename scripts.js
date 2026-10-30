@@ -1204,3 +1204,277 @@ window.addEventListener("pageshow", (event) => {
     window.location.reload();
   }
 });
+
+
+
+
+// ==========================================
+// 14. INFO EDIÇÃO
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const listaLateral = document.getElementById("listaLateralProdutos");
+    const formEdicao = document.getElementById("formEdicaoProduto");
+    const tituloAcao = document.getElementById("tituloAcaoAdmin");
+    const imgPreview = document.getElementById("previewImagemProduto");
+    const placeholderMsg = document.getElementById("placeholderImgMsg");
+    const areaExport = document.getElementById("areaCodigoExportado");
+    const outputJson = document.getElementById("outputJsonProdutos");
+    const containerExtras = document.getElementById("containerAcordeoesExtras");
+    const btnAddExtra = document.getElementById("btnAdicionarAcordeaoExtra");
+
+    let customizados = JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
+    let produtosLocal = (typeof BANCO_PRODUTOS !== "undefined") ? [...BANCO_PRODUTOS, ...customizados] : [];
+
+    function renderizarListaLateral(filtroFuncao = "funcao-sabonete-corporal") {
+      listaLateral.innerHTML = "";
+      const filtrados = produtosLocal.filter(p => p.tags && p.tags.funcao === filtroFuncao);
+
+      filtrados.forEach((produto) => {
+        const globalIndex = produtosLocal.indexOf(produto);
+        const divItem = document.createElement("div");
+        divItem.className = "item-lista-admin";
+        divItem.innerHTML = produto.nome.replace(/<br\s*[\/]?>/gi, " ");
+        
+        divItem.addEventListener("click", () => {
+          document.querySelectorAll(".item-lista-admin").forEach(el => el.classList.remove("ativo"));
+          divItem.classList.add("ativo");
+          carregarFormulario(globalIndex);
+        });
+        
+        listaLateral.appendChild(divItem);
+      });
+
+      const btnAdicionar = document.createElement("div");
+      btnAdicionar.className = "item-lista-admin item-adicionar";
+      btnAdicionar.textContent = "+ Adicionar";
+      btnAdicionar.addEventListener("click", () => {
+        document.querySelectorAll(".item-lista-admin").forEach(el => el.classList.remove("ativo"));
+        btnAdicionar.classList.add("ativo");
+        prepararNovoProduto(filtroFuncao);
+      });
+      listaLateral.appendChild(btnAdicionar);
+
+      if (filtrados.length > 0) {
+        const primeiroItem = listaLateral.querySelector(".item-lista-admin");
+        if (primeiroItem) primeiroItem.click();
+      }
+    }
+
+    // Função para criar os campos visuais de acordeão extra no painel
+    function criarCampoAcordeaoExtra(titulo = "", conteudo = "") {
+      const wrapper = document.createElement("div");
+      wrapper.className = "acordeao-extra-item";
+      wrapper.style.cssText = "background: #CEC8B8; padding: 12px; margin-bottom: 10px; border: 2px solid #3d2d2d;";
+
+      wrapper.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+          <label style="font-weight: bold; font-size: 12px;">Título do Acordeão:</label>
+          <button type="button" class="btn-remover-extra" style="background: #a94442; color: #CEC8B8; border: none; padding: 2px 6px; cursor: pointer; font-size: 11px;">Remover</button>
+        </div>
+        <input type="text" class="extra-titulo" value="${titulo}" placeholder="Ex: Informações de Segurança" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 2px solid #3d2d2d; box-sizing: border-box;">
+        
+        <label style="font-weight: bold; font-size: 12px;">Conteúdo / Descrição:</label>
+        <textarea class="extra-conteudo" rows="2" placeholder="Escreva o conteúdo aqui..." style="width: 100%; padding: 8px; border: 2px solid #3d2d2d; box-sizing: border-box;">${conteudo}</textarea>
+      `;
+
+      wrapper.querySelector(".btn-remover-extra").addEventListener("click", () => {
+        wrapper.remove();
+      });
+
+      containerExtras.appendChild(wrapper);
+    }
+
+    btnAddExtra.addEventListener("click", () => {
+      criarCampoAcordeaoExtra();
+    });
+
+    function carregarFormulario(index) {
+      const p = produtosLocal[index];
+      if (!p) return;
+
+      tituloAcao.textContent = `Editando: ${p.nome.replace(/<br>/g, " ")}`;
+      formEdicao.style.display = "block";
+      areaExport.style.display = "block";
+
+      document.getElementById("editIndex").value = index;
+      document.getElementById("editId").value = p.id || "";
+      document.getElementById("editNome").value = p.nome || "";
+      document.getElementById("editPrecoOriginal").value = p.precoOriginal || "";
+      document.getElementById("editPrecoDesconto").value = p.precoDesconto || "";
+      document.getElementById("editSubtitulo").value = p.subtitulo || "";
+      document.getElementById("editImagem").value = p.imagemFrente || "";
+
+      // Conteúdos Fixos
+      const ac = p.acordeoes || {};
+      document.getElementById("editSobre").value = ac.sobre || "";
+      document.getElementById("editBeneficios").value = ac.beneficios || "";
+      document.getElementById("editComposicao").value = ac.composicao || "";
+      document.getElementById("editModoUso").value = ac.modoUso || "";
+      document.getElementById("editAdvertencias").value = ac.advertencias || "";
+      document.getElementById("editFichaTecnica").value = ac.fichaTecnica || "";
+      document.getElementById("editPagamentos").value = ac.pagamentos || "";
+      document.getElementById("editFrete").value = ac.frete || "";
+      document.getElementById("editTrocas").value = ac.trocas || "";
+
+      // Títulos Fixos
+      const tit = p.titulosAcordeoes || {};
+      document.getElementById("editTituloSobre").value = tit.sobre || "SOBRE O PRODUTO";
+      document.getElementById("editTituloBeneficios").value = tit.beneficios || "BENEFÍCIOS";
+      document.getElementById("editTituloComposicao").value = tit.composicao || "COMPOSIÇÃO";
+      document.getElementById("editTituloModoUso").value = tit.modoUso || "MODO DE USO";
+      document.getElementById("editTituloAdvertencias").value = tit.advertencias || "ADVERTÊNCIAS E PRECAUÇÕES";
+      document.getElementById("editTituloFichaTecnica").value = tit.fichaTecnica || "FICHA TÉCNICA";
+      document.getElementById("editTituloPagamentos").value = tit.pagamentos || "PAGAMENTO";
+      document.getElementById("editTituloFrete").value = tit.frete || "FRETE E ENVIO";
+      document.getElementById("editTituloTrocas").value = tit.trocas || "POLÍTICA DE TROCAS E DEVOLUÇÕES";
+
+      // Limpa e recarrega os Acordeões Extras dinâmicos salvos no produto
+      containerExtras.innerHTML = "";
+      if (p.acordeoesExtras && Array.isArray(p.acordeoesExtras)) {
+        p.acordeoesExtras.forEach(item => {
+          criarCampoAcordeaoExtra(item.titulo, item.conteudo);
+        });
+      }
+
+      if (p.imagemFrente) {
+        const caminhoFinal = typeof resolveAssetUrl === "function" ? resolveAssetUrl(p.imagemFrente) : p.imagemFrente;
+        imgPreview.src = caminhoFinal;
+        imgPreview.style.display = "block";
+        placeholderMsg.style.display = "none";
+      }
+
+      outputJson.value = JSON.stringify(p, null, 2);
+    }
+
+    function prepararNovoProduto(funcaoAtual) {
+      tituloAcao.textContent = "Adicionar Novo Produto";
+      formEdicao.style.display = "block";
+      areaExport.style.display = "none";
+
+      document.getElementById("editIndex").value = "novo";
+      document.getElementById("editId").value = "novo-produto-id";
+      document.getElementById("editNome").value = "Novo Produto<br>Artesanal";
+      document.getElementById("editPrecoOriginal").value = "R$10";
+      document.getElementById("editPrecoDesconto").value = "";
+      document.getElementById("editSubtitulo").value = "[1 un. / 85g].";
+      document.getElementById("editImagem").value = "produtos/";
+      
+      document.getElementById("editSobre").value = "Descrição...";
+      document.getElementById("editBeneficios").value = "- Produção artesanal";
+      document.getElementById("editComposicao").value = "Ingredientes naturais";
+      document.getElementById("editModoUso").value = "Uso externo";
+      document.getElementById("editAdvertencias").value = "Conservar em local seco";
+      document.getElementById("editFichaTecnica").value = "Volume: 60ml";
+      document.getElementById("editPagamentos").value = "Pagamento facilitado via Pix com aprovação imediata.";
+      document.getElementById("editFrete").value = "Retirada no local ou envio a combinar pelo WhatsApp.";
+      document.getElementById("editTrocas").value = "Conforme o CDC.";
+
+      document.getElementById("editTituloSobre").value = "SOBRE O PRODUTO";
+      document.getElementById("editTituloBeneficios").value = "BENEFÍCIOS";
+      document.getElementById("editTituloComposicao").value = "COMPOSIÇÃO";
+      document.getElementById("editTituloModoUso").value = "MODO DE USO";
+      document.getElementById("editTituloAdvertencias").value = "ADVERTÊNCIAS E PRECAUÇÕES";
+      document.getElementById("editTituloFichaTecnica").value = "FICHA TÉCNICA";
+      document.getElementById("editTituloPagamentos").value = "PAGAMENTO";
+      document.getElementById("editTituloFrete").value = "FRETE E ENVIO";
+      document.getElementById("editTituloTrocas").value = "POLÍTICA DE TROCAS E DEVOLUÇÕES";
+
+      containerExtras.innerHTML = ""; // Limpa extras para novo produto
+
+      imgPreview.style.display = "none";
+      placeholderMsg.style.display = "block";
+    }
+
+    document.getElementById("editImagem").addEventListener("input", (e) => {
+      const caminho = e.target.value;
+      if (caminho.trim() !== "") {
+        const caminhoFinal = typeof resolveAssetUrl === "function" ? resolveAssetUrl(caminho) : caminho;
+        imgPreview.src = caminhoFinal;
+        imgPreview.style.display = "block";
+        placeholderMsg.style.display = "none";
+      }
+    });
+
+    formEdicao.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const idx = document.getElementById("editIndex").value;
+      const produtoAtual = idx !== "novo" ? produtosLocal[idx] : {};
+
+      // Captura todos os acordeões extras criados dinamicamente na tela
+      const acordeoesExtrasArray = [];
+      document.querySelectorAll(".acordeao-extra-item").forEach(item => {
+        const titulo = item.querySelector(".extra-titulo").value.trim();
+        const conteudo = item.querySelector(".extra-conteudo").value.trim();
+        if (titulo !== "" || conteudo !== "") {
+          acordeoesExtrasArray.push({ titulo, conteudo });
+        }
+      });
+
+      const dadosForm = {
+        id: document.getElementById("editId").value,
+        nome: document.getElementById("editNome").value,
+        precoOriginal: document.getElementById("editPrecoOriginal").value,
+        precoDesconto: document.getElementById("editPrecoDesconto").value,
+        subtitulo: document.getElementById("editSubtitulo").value,
+        esgotado: produtoAtual.esgotado || false,
+        imagemFrente: document.getElementById("editImagem").value,
+        tags: produtoAtual.tags || {
+          linha: "linhas-classico",
+          funcao: document.querySelector("input[name='sub-produtos']:checked") ? `funcao-${document.querySelector("input[name='sub-produtos']:checked").id.replace("sub-", "")}` : "funcao-sabonete-corporal",
+          categoria: ["catalogo"]
+        },
+        titulosAcordeoes: {
+          sobre: document.getElementById("editTituloSobre").value,
+          beneficios: document.getElementById("editTituloBeneficios").value,
+          composicao: document.getElementById("editTituloComposicao").value,
+          modoUso: document.getElementById("editTituloModoUso").value,
+          advertencias: document.getElementById("editTituloAdvertencias").value,
+          fichaTecnica: document.getElementById("editTituloFichaTecnica").value,
+          pagamentos: document.getElementById("editTituloPagamentos").value,
+          frete: document.getElementById("editTituloFrete").value,
+          trocas: document.getElementById("editTituloTrocas").value
+        },
+        acordeoes: {
+          sobre: document.getElementById("editSobre").value,
+          beneficios: document.getElementById("editBeneficios").value,
+          composicao: document.getElementById("editComposicao").value,
+          modoUso: document.getElementById("editModoUso").value,
+          advertencias: document.getElementById("editAdvertencias").value,
+          fichaTecnica: document.getElementById("editFichaTecnica").value,
+          pagamentos: document.getElementById("editPagamentos").value,
+          frete: document.getElementById("editFrete").value,
+          trocas: document.getElementById("editTrocas").value
+        },
+        acordeoesExtras: acordeoesExtrasArray // Salva as novas seções dinâmicas criadas
+      };
+
+      if (idx === "novo") {
+        customizados.push(dadosForm);
+        produtosLocal.push(dadosForm);
+      } else {
+        dadosForm.tags = produtosLocal[idx].tags;
+        produtosLocal[idx] = dadosForm;
+        
+        const originalId = produtosLocal[idx].id;
+        const custIndex = customizados.findIndex(c => c.id === originalId);
+        if (custIndex >= 0) {
+          customizados[custIndex] = dadosForm;
+        } else {
+          customizados.push(dadosForm);
+        }
+      }
+
+      localStorage.setItem("banco_produtos_custom", JSON.stringify(customizados));
+      alert("Produto e acordeões extras salvos com sucesso!");
+      carregarFormulario(idx);
+    });
+
+    document.querySelectorAll("input[name='sub-produtos']").forEach(input => {
+      input.addEventListener("change", (e) => {
+        const funcaoId = `funcao-${e.target.id.replace("sub-", "")}`;
+        renderizarListaLateral(funcaoId);
+      });
+    });
+
+    renderizarListaLateral("funcao-sabonete-corporal");
+  });

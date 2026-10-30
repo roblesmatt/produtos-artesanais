@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gerenciador de Produtos - Thairo's</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="cabecalho-container"></div>
+
+<div class="container-filtros">
+  <input type="radio" name="principal" id="produtos" checked>
+  <input type="radio" name="principal" id="pedidos">
+  <input type="radio" name="principal" id="caixa">
+
+  <input type="radio" name="sub-produtos" id="sub-sabonete-corporal" checked>
+  <input type="radio" name="sub-produtos" id="sub-oleo-corporal">
+  <input type="radio" name="sub-produtos" id="sub-perfume-artesanal">
+  <input type="radio" name="sub-produtos" id="sub-vela-aromatica">
+  <input type="radio" name="sub-produtos" id="sub-shampoo-e-condicionador">
+  <input type="radio" name="sub-produtos" id="sub-creme-capilar">
+  <input type="radio" name="sub-produtos" id="sub-creme-facial">
+  <input type="radio" name="sub-produtos" id="sub-locao-pos-barba">
+
+  <div class="menu-linha menu-principal">
+    <label for="produtos">PRODUTOS</label>
+    <label for="pedidos">PEDIDOS</label>
+    <label for="caixa">CAIXA</label>
+  </div>
+
+  <div class="menu-linha menu-submenu submenu-produtos">
+    <label for="sub-sabonete-corporal">SABONETE CORPORAL</label>
+    <label for="sub-oleo-corporal">ÓLEO CORPORAL</label>
+    <label for="sub-perfume-artesanal">PERFUME ARTESANAL</label>
+    <label for="sub-vela-aromatica">VELA AROMÁTICA</label>
+    <label for="sub-shampoo-e-condicionador">SHAMPOO E CONDICIONADOR</label>
+    <label for="sub-creme-capilar">CREME CAPILAR</label>
+    <label for="sub-creme-facial">CREME FACIAL</label>
+    <label for="sub-locao-pos-barba">LOÇÃO PÓS BARBA</label>
+  </div>
+</div>
+
+<div class="conteudo-vitrine">
+  <div class="vitrine-item item-sabonete-corporal" style="display: block !important; width: 100% !important;">
+    
+    <!-- CONTÊINER MÃE DE 3 COLUNAS -->
+    <div class="painel-gerenciador">
+      
+      <!-- 1. COLUNA ESQUERDA: Lista de Produtos -->
+      <div class="lista-lateral-admin" id="listaLateralProdutos"></div>
+
+      <!-- 2. COLUNA DO MEIO: Imagem em Destaque -->
+      <div class="coluna-imagem-admin">
+        <div style="text-align: center; width: 100%;">
+          <img id="previewImagemProduto" src="" alt="Preview do Produto" style="display: none;" />
+          <p id="placeholderImgMsg" style="color: #666; font-size: 14px;">Selecione um produto</p>
+        </div>
+      </div>
+
+      <!-- 3. COLUNA DA DIREITA: Formulário Completo (Dados + Títulos e Acordeões) -->
+      <div class="conteudo-formulario-admin">
+        <h2 id="tituloAcaoAdmin" style="margin-bottom: 20px;">Gerenciador de Produtos</h2>
+        
+        <form id="formEdicaoProduto" style="display: none;">
+          <input type="hidden" id="editIndex">
+          
+          <div class="form-grid">
+            <div class="form-group-admin">
+              <label>ID do Produto:</label>
+              <input type="text" id="editId" required>
+            </div>
+            <div class="form-group-admin">
+              <label>Nome (Aceita &lt;br&gt;):</label>
+              <input type="text" id="editNome" required>
+            </div>
+            <div class="form-group-admin">
+              <label>Preço Original:</label>
+              <input type="text" id="editPrecoOriginal" required>
+            </div>
+            <div class="form-group-admin">
+              <label>Preço Desconto:</label>
+              <input type="text" id="editPrecoDesconto">
+            </div>
+            <div class="form-group-admin">
+              <label>Subtítulo / Volume:</label>
+              <input type="text" id="editSubtitulo">
+            </div>
+            <div class="form-group-admin">
+              <label>Caminho da Imagem (.webp):</label>
+              <input type="text" id="editImagem" required placeholder="produtos/foto.webp">
+            </div>
+
+            <!-- ACORDEÃO 1: SOBRE -->
+            <div class="form-group-admin">
+  <label>Título Acordeão 1:</label>
+  <input type="text" id="editTituloSobre" value="SOBRE O PRODUTO">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Sobre:</label>
+  <textarea id="editSobre" rows="3"></textarea>
+</div>
+
+<div class="form-group-admin">
+  <label>Título Acordeão 2:</label>
+  <input type="text" id="editTituloBeneficios" value="BENEFÍCIOS">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Benefícios:</label>
+  <textarea id="editBeneficios" rows="3"></textarea>
+</div>
+
+<div class="form-group-admin">
+  <label>Título Acordeão 3:</label>
+  <input type="text" id="editTituloComposicao" value="COMPOSIÇÃO">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Composição:</label>
+  <textarea id="editComposicao" rows="3"></textarea>
+</div>
+
+<div class="form-group-admin">
+  <label>Título Acordeão 4:</label>
+  <input type="text" id="editTituloModoUso" value="MODO DE USO">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Modo de Uso:</label>
+  <textarea id="editModoUso" rows="2"></textarea>
+</div>
+
+<div class="form-group-admin">
+  <label>Título Acordeão 5:</label>
+  <input type="text" id="editTituloAdvertencias" value="ADVERTÊNCIAS E PRECAUÇÕES">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Advertências:</label>
+  <textarea id="editAdvertencias" rows="2"></textarea>
+</div>
+
+<div class="form-group-admin">
+  <label>Título Acordeão 6:</label>
+  <input type="text" id="editTituloFichaTecnica" value="FICHA TÉCNICA">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Ficha Técnica:</label>
+  <textarea id="editFichaTecnica" rows="3"></textarea>
+</div>
+
+<!-- NOVOS CAMPOS: PAGAMENTOS, FRETE E TROCAS -->
+<div class="form-group-admin">
+  <label>Título Acordeão 7 (Pagamentos):</label>
+  <input type="text" id="editTituloPagamentos" value="PAGAMENTO">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Pagamentos:</label>
+  <textarea id="editPagamentos" rows="2"></textarea>
+</div>
+
+<div class="form-group-admin">
+  <label>Título Acordeão 8 (Frete):</label>
+  <input type="text" id="editTituloFrete" value="FRETE E ENVIO">
+</div>
+<div class="form-group-admin">
+  <label>Conteúdo - Frete:</label>
+  <textarea id="editFrete" rows="2"></textarea>
+</div>
+
+<div class="form-group-admin full">
+  <label>Título Acordeão 9 (Trocas):</label>
+  <input type="text" id="editTituloTrocas" value="POLÍTICA DE TROCAS E DEVOLUÇÕES">
+</div>
+<div class="form-group-admin full">
+  <label>Conteúdo - Trocas (Aceita HTML/Tags):</label>
+  <textarea id="editTrocas" rows="4"></textarea>
+</div>
+
+<!-- CONTAINER DE ACORDEÕES EXTRAS DINÂMICOS -->
+<div class="form-group-admin full" style="border-top: 1px dashed #3d2d2d; padding-top: 15px; margin-top: 15px;">
+  <label style="font-size: 15px; margin-bottom: 10px; display: block;"></label>
+  <div id="containerAcordeoesExtras"></div>
+  <button type="button" id="btnAdicionarAcordeaoExtra" class="btn-salvar-admin" style="background: #3d2d2d; color: #CEC8B8; margin-top: 10px;">Adicionar Novo Título e Descrição</button>
+</div>
+
+          <button type="submit" class="btn-salvar-admin" style="margin-top: 15px;">Salvar Alterações</button>
+        </form>
+
+        <div id="areaCodigoExportado" style="margin-top: 30px; display: none;">
+          <textarea id="outputJsonProdutos" style="width:100%; height:100px; font-family:monospace; background:#CEC8B8; padding:10px;" readonly></textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="produtos.js" defer></script>
+<script src="scripts.js" defer></script>
+<script>
+  
+</script>
+</body>
+</html>
