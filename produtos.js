@@ -714,16 +714,16 @@ function gerarLinkPaginaProduto(produto) {
   return `produto.html?id=${encodeURIComponent(produto.id)}`;
 }
 
-
 // 2. Mescla automaticamente com as edições ou novos produtos salvos no painel (localStorage)
 function carregarBancoProdutos() {
-  const customizados = JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
-  
+  const customizados =
+    JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
+
   // Se houver customizações, atualiza ou adiciona os produtos
   let produtosUnificados = [...BANCO_PRODUTOS_ORIGINAIS];
 
-  customizados.forEach(cust => {
-    const index = produtosUnificados.findIndex(p => p.id === cust.id);
+  customizados.forEach((cust) => {
+    const index = produtosUnificados.findIndex((p) => p.id === cust.id);
     if (index >= 0) {
       // Se o produto já existe, substitui com os dados atualizados no painel
       produtosUnificados[index] = cust;
@@ -739,7 +739,6 @@ function carregarBancoProdutos() {
 // 3. O BANCO_PRODUTOS global passa a ser dinâmico para o site todo
 const BANCO_PRODUTOS = carregarBancoProdutos();
 
-  
 function encontrarProdutoDoCarrinho(item) {
   return (
     BANCO_PRODUTOS.find((produto) => produto.id === item.id) ||
