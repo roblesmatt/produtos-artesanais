@@ -1292,6 +1292,25 @@ document.addEventListener("DOMContentLoaded", () => {
       const p = produtosLocal[index];
       if (!p) return;
 
+
+      // Carrega os filtros do editor gráfico do mockup (se existirem guardados)
+      const f = p.filtrosMockup || {};
+      const fBrilho = document.getElementById("filtroBrilho");
+      const fSaturacao = document.getElementById("filtroSaturacao");
+      const fContraste = document.getElementById("filtroContraste");
+      const fMatiz = document.getElementById("filtroMatiz");
+
+      if (fBrilho) fBrilho.value = f.brilho !== undefined ? f.brilho : 100;
+      if (fSaturacao) fSaturacao.value = f.saturacao !== undefined ? f.saturacao : 100;
+      if (fContraste) fContraste.value = f.contraste !== undefined ? f.contraste : 100;
+      if (fMatiz) fMatiz.value = f.matiz !== undefined ? f.matiz : 0;
+
+      // Aplica os filtros na imagem de preview em tempo real
+      if (imgPreview) {
+        imgPreview.style.filter = `brightness(${fBrilho ? fBrilho.value : 100}%) saturate(${fSaturacao ? fSaturacao.value : 100}%) contrast(${fContraste ? fContraste.value : 100}%) hue-rotate(${fMatiz ? fMatiz.value : 0}deg)`;
+      }
+
+
       tituloAcao.textContent = `${p.nome.replace(/<br>/g, " ")}`;
       formEdicao.style.display = "block";
       areaExport.style.display = "block";

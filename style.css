@@ -1475,7 +1475,8 @@ b {
 
 
 
-  .painel-gerenciador {
+  /* --- ESTUDO / PADRÃO DESKTOP --- */
+.painel-gerenciador {
     display: flex !important;
     flex-direction: row !important;
     width: 100% !important;
@@ -1485,49 +1486,37 @@ b {
     align-items: stretch !important;
     border: none;
     border-bottom: 2px solid #3d2d2d !important;
-  }
-  /* Força o formulário a usar apenas 1 coluna de largura total */
-.form-grid {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 15px !important;
 }
 
-/* Garante que qualquer bloco de campo ocupe toda a largura disponível */
-.form-group-admin {
-  width: 100% !important;
-  grid-column: span 1 !important;
-}
-
-  /* 1. Coluna Esquerda: Lista de Produtos */
-  .lista-lateral-admin {
+/* 1. Coluna Esquerda: Lista de Produtos */
+.lista-lateral-admin {
     width: 400px !important;
     min-width: 400px !important;
     border: none;
     overflow-y: auto !important;
     max-height: 80vh !important;
-  }
-  .item-lista-admin {
+}
+.item-lista-admin {
     padding: 15px 20px;
     border-bottom: 2px solid #3d2d2d;
     cursor: pointer;
     font-weight: bold;
     color: #3d2d2d;
     transition: background 0.2s;
-  }
-  .item-lista-admin:hover, .item-lista-admin.ativo {
+}
+.item-lista-admin:hover, .item-lista-admin.ativo {
     background: #3d2d2d;
     color: #CEC8B8;
-  }
-  .item-adicionar {
+}
+.item-adicionar {
     background: #3d2d2d !important;
     color: #CEC8B8 !important;
     text-align: center;
     letter-spacing: 2px;
-  }
+}
 
-  /* 2. Coluna do Meio: Preview da Imagem */
-  .coluna-imagem-admin {
+/* 2. Coluna do Meio: Preview da Imagem */
+.coluna-imagem-admin {
     width: 500px !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1536,55 +1525,55 @@ b {
     padding: 20px !important;
     border: none;
     border-left: 2px solid #3d2d2d !important;
-  border-right: 2px solid #3d2d2d !important;
+    border-right: 2px solid #3d2d2d !important;
     box-sizing: border-box !important;
-  }
-  .coluna-imagem-admin img {
+}
+.coluna-imagem-admin img {
     width: 100% !important;
     max-height: 450px !important;
     object-fit: contain !important;
-  }
+}
 
-  /* 3. Coluna da Direita: Formulário de Edição */
-  .conteudo-formulario-admin {
+/* 3. Coluna da Direita: Formulário de Edição */
+.conteudo-formulario-admin {
     flex: 1 !important;
     width: auto !important;
     padding: 30px !important;
     overflow-y: auto !important;
-    margin-left: auto !important;   /* Empurra para a direita */
+    margin-left: auto !important;
     max-width: 60%;
     max-height: 80vh !important;
     color: #3d2d2d !important;
     box-sizing: border-box !important;
-    
-  }
-  .form-grid {
+}
+
+.form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-  }
-  .form-group-admin {
+}
+.form-group-admin {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-bottom: 15px;
-  }
-  .form-group-admin.full {
+}
+.form-group-admin.full {
     grid-column: span 2;
-  }
-  .form-group-admin label {
+}
+.form-group-admin label {
     font-weight: bold;
     font-size: 13px;
-  }
-  .form-group-admin input, .form-group-admin textarea {
+}
+.form-group-admin input, .form-group-admin textarea {
     padding: 10px;
     border: 2px solid #3d2d2d;
     background: #CEC8B8;
     font-family: inherit;
     width: 100%;
     box-sizing: border-box;
-  }
-  .btn-salvar-admin {
+}
+.btn-salvar-admin {
     background: #3d2d2d;
     color: #CEC8B8;
     padding: 12px 25px;
@@ -1592,41 +1581,79 @@ b {
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
-  }
-  .btn-salvar-admin:hover { opacity: 0.9; }
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-.form-group-admin {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-bottom: 15px;
-}
-.form-group-admin.full {
-  grid-column: span 2;
-}
-.form-group-admin label {
-  font-weight: bold;
-  font-size: 13px;
-}
-.form-group-admin input, .form-group-admin textarea {
-  padding: 10px;
-  border: 2px solid #3d2d2d;
-  background: #CEC8B8;
-  font-family: inherit;
-  width: 100%;
-  box-sizing: border-box;
-}
-.btn-salvar-admin {
-  background: #3d2d2d;
-  color: #CEC8B8;
-  padding: 12px 25px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
 }
 .btn-salvar-admin:hover { opacity: 0.9; }
+
+
+/* --- VERSÃO MOBILE EMPILHADO & BOTÕES FIXOS --- */
+@media screen and (max-width: 768px) {
+    .painel-gerenciador {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    /* 1. Transforma a lista num carrossel de botões horizontal FIXO no topo */
+    .lista-lateral-admin {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 100 !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        max-height: none !important;
+        background: #CEC8B8 !important;
+        border-bottom: 2px solid #3d2d2d !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Estilo de botão individual para os itens da lista no mobile */
+    .item-lista-admin {
+        flex: 0 0 auto !important;
+        padding: 12px 18px !important;
+        border-bottom: none !important;
+        border-right: 2px solid #3d2d2d !important;
+        text-align: center !important;
+        font-size: 14px !important;
+    }
+
+    /* 2. Coluna da imagem */
+    .coluna-imagem-admin {
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        border-bottom: 2px solid #3d2d2d !important;
+        padding: 15px !important;
+    }
+
+    .coluna-imagem-admin img {
+        max-height: 280px !important;
+    }
+
+    /* 3. Formulário de edição */
+    .conteudo-formulario-admin {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        margin-left: 0 !important;
+        padding: 20px !important;
+    }
+
+    /* Força o formulário a usar 1 coluna no mobile */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-group-admin {
+        width: 100% !important;
+        grid-column: span 1 !important;
+    }
+    
+    .form-group-admin.full {
+        grid-column: span 1 !important;
+    }
+}
