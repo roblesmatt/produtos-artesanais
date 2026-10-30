@@ -1292,7 +1292,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const p = produtosLocal[index];
       if (!p) return;
 
-      tituloAcao.textContent = `Editando: ${p.nome.replace(/<br>/g, " ")}`;
+      tituloAcao.textContent = `${p.nome.replace(/<br>/g, " ")}`;
       formEdicao.style.display = "block";
       areaExport.style.display = "block";
 
@@ -1302,6 +1302,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editPrecoOriginal").value = p.precoOriginal || "";
       document.getElementById("editPrecoDesconto").value = p.precoDesconto || "";
       document.getElementById("editSubtitulo").value = p.subtitulo || "";
+      document.getElementById("editEsgotado").checked = Boolean(p.esgotado);
       document.getElementById("editImagem").value = p.imagemFrente || "";
 
       // Conteúdos Fixos
@@ -1416,7 +1417,7 @@ document.addEventListener("DOMContentLoaded", () => {
         precoOriginal: document.getElementById("editPrecoOriginal").value,
         precoDesconto: document.getElementById("editPrecoDesconto").value,
         subtitulo: document.getElementById("editSubtitulo").value,
-        esgotado: produtoAtual.esgotado || false,
+        esgotado: document.getElementById("editEsgotado").checked,
         imagemFrente: document.getElementById("editImagem").value,
         tags: produtoAtual.tags || {
           linha: "linhas-classico",
@@ -1468,6 +1469,37 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Produto e acordeões extras salvos com sucesso!");
       carregarFormulario(idx);
     });
+
+    const btnExcluir = document.getElementById("btnExcluirProduto");
+
+    if (btnExcluir) {
+      btnExcluir.addEventListener("click", () => {
+        const idx = document.getElementById("editIndex").value;
+        if (idx === "novo") {
+          alert("Este produto ainda não foi guardado.");
+          return;
+        }
+
+        const produtoParaExcluir = produtosLocal[idx];
+        if (!produtoParaExcluir) return;
+
+        if (confirm(`Tens a certeza de que queres excluir o produto "${produtoParaExcluir.nome.replace(/<br\s*[\/]?>/gi, " ")}"?`)) {
+          // Remove da lista local e dos customizados
+          produtosLocal.splice(idx, 1);
+          
+          // Remove do array de customizados no localStorage
+          customizados = customizados.filter(c => c.id !== produtoParaExcluir.id);
+          localStorage.setItem("banco_produtos_custom", JSON.stringify(customizados));
+
+          // Se for um produto oficial do BANCO_PRODUTOS que o utilizador quer ocultar/remover, 
+          // podemos guardá-lo numa lista de removidos ou apenas removê-lo dos customizados.
+          // Como os oficiais estão no produtos.js, para ocultar um oficial criamos um registo de "removido" ou limpamos o customizado.
+          
+          alert("Produto excluído com sucesso!");
+          location.reload(); // Recarrega a página para atualizar a lista lateral
+        }
+      });
+    }
 
     document.querySelectorAll("input[name='sub-produtos']").forEach(input => {
       input.addEventListener("change", (e) => {

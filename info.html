@@ -88,6 +88,12 @@
               <input type="text" id="editSubtitulo">
             </div>
             <div class="form-group-admin">
+  <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+    <input type="checkbox" id="editEsgotado" style="width: 20px; height: 20px; accent-color: #3d2d2d;">
+    Produto Esgotado?
+  </label>
+</div>
+            <div class="form-group-admin">
               <label>Caminho da Imagem (.webp):</label>
               <input type="text" id="editImagem" required placeholder="produtos/foto.webp">
             </div>
@@ -162,6 +168,8 @@
           <textarea id="outputJsonProdutos" style="width:100%; height:100px; font-family:monospace; background:#CEC8B8; padding:10px;" readonly></textarea>
         </div>
       </div>
+
+<button type="button" id="btnExcluirProduto" class="btn-excluir-admin" style="background: #a94442; color: #CEC8B8; margin-top: 10px; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; width: 100%;">Excluir Produto</button>
 
     </div>
   </div>

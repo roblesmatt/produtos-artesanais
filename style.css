@@ -1483,13 +1483,27 @@ b {
     background: #CEC8B8 !important;
     box-sizing: border-box !important;
     align-items: stretch !important;
+    border: none;
+    border-bottom: 2px solid #3d2d2d !important;
   }
+  /* Força o formulário a usar apenas 1 coluna de largura total */
+.form-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 15px !important;
+}
+
+/* Garante que qualquer bloco de campo ocupe toda a largura disponível */
+.form-group-admin {
+  width: 100% !important;
+  grid-column: span 1 !important;
+}
 
   /* 1. Coluna Esquerda: Lista de Produtos */
   .lista-lateral-admin {
-    width: 280px !important;
-    min-width: 280px !important;
-    border-radius: 2px solid #3d2d2d !important;
+    width: 400px !important;
+    min-width: 400px !important;
+    border: none;
     overflow-y: auto !important;
     max-height: 80vh !important;
   }
@@ -1514,19 +1528,20 @@ b {
 
   /* 2. Coluna do Meio: Preview da Imagem */
   .coluna-imagem-admin {
-    width: 350px !important;
-    min-width: 350px !important;
+    width: 500px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 20px !important;
-    border-radius: 2px solid #3d2d2d !important;
+    border: none;
+    border-left: 2px solid #3d2d2d !important;
+  border-right: 2px solid #3d2d2d !important;
     box-sizing: border-box !important;
   }
   .coluna-imagem-admin img {
     width: 100% !important;
-    max-height: 420px !important;
+    max-height: 450px !important;
     object-fit: contain !important;
   }
 
@@ -1536,9 +1551,12 @@ b {
     width: auto !important;
     padding: 30px !important;
     overflow-y: auto !important;
+    margin-left: auto !important;   /* Empurra para a direita */
+    max-width: 60%;
     max-height: 80vh !important;
     color: #3d2d2d !important;
     box-sizing: border-box !important;
+    
   }
   .form-grid {
     display: grid;
