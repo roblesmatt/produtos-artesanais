@@ -1622,3 +1622,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderizarListaLateral("funcao-sabonete-corporal");
 });
+
+// ==========================================
+// RENDERIZAR ACORDEÕES EXTRAS DINÂMICOS
+// ==========================================
+const containerAcordeoesPrincipal = document.getElementById("seu-container-de-acordeoes"); // Substitua pelo ID real da div onde ficam os acordeões na página do produto
+
+if (produto.acordeoesExtras && Array.isArray(produto.acordeoesExtras) && containerAcordeoesPrincipal) {
+  produto.acordeoesExtras.forEach(extra => {
+    // Cria a estrutura visual idêntica aos outros acordeões do seu site
+    const divAcordeao = document.createElement("div");
+    divAcordeao.className = "acordeao-item"; // Use a mesma classe CSS dos outros acordeões
+    
+    divAcordeao.innerHTML = `
+      <div class="acordeao-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 15px; border-bottom: 1px solid #3d2d2d; background: #CEC8B8;">
+        <span style="font-weight: bold; color: #3d2d2d;">${extra.titulo}</span>
+        <span class="icone-seta">▼</span>
+      </div>
+      <div class="acordeao-content" style="display: none; padding: 15px; background: #fdfbf7; color: #3d2d2d;">
+        <p>${extra.conteudo}</p>
+      </div>
+    `;
+
+    // Adiciona o evento de clique para abrir/fechar o acordeão (igual aos demais do site)
+    const header = divAcordeao.querySelector(".acordeao-header");
+    const content = divAcordeao.querySelector(".acordeao-content");
+    
+    header.addEventListener("click", () => {
+      const isOpen = content.style.display === "block";
+      content.style.display = isOpen ? "none" : "block";
+    });
+
+    // Insere o acordeão extra na página logo após os acordeões fixos
+    containerAcordeoesPrincipal.appendChild(divAcordeao);
+  });
+}
