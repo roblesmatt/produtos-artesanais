@@ -675,7 +675,7 @@ const BANCO_PRODUTOS = [
     "acordeoesExtras": []
   },
   {
-    "id": "novo-produto-id",
+    "id": "Teste",
     "nome": "Teste",
     "precoOriginal": "R$10",
     "precoDesconto": "R$5",
