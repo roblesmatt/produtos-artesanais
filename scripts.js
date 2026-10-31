@@ -1209,7 +1209,7 @@ window.addEventListener("pageshow", (event) => {
 
 
 // ==========================================
-// 14. INFO EDIÇÃO (Integrado ao novo carregarBancoProdutos)
+// 14. INFO EDIÇÃO (Integrado ao novo carregarBancoProdutos + Memória de Token)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
     const listaLateral = document.getElementById("listaLateralProdutos");
@@ -1221,6 +1221,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const outputJson = document.getElementById("outputJsonProdutos");
     const containerExtras = document.getElementById("containerAcordeoesExtras");
     const btnAddExtra = document.getElementById("btnAdicionarAcordeaoExtra");
+
+    // Restaura o token guardado no navegador automaticamente (se existir)
+    const tokenSalvoNoNavegador = localStorage.getItem("github_token_admin");
+    if (tokenSalvoNoNavegador) {
+      const inputTokenEl = document.getElementById("gitToken");
+      if (inputTokenEl) inputTokenEl.value = tokenSalvoNoNavegador;
+    }
 
     // Usa a função do seu novo produtos.js para carregar unificado
     let produtosLocal = typeof carregarBancoProdutos === "function" ? carregarBancoProdutos() : (typeof BANCO_PRODUTOS !== "undefined" ? BANCO_PRODUTOS : []);
@@ -1410,9 +1417,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função auxiliar para atualizar o localStorage mantendo a lógica de customizados
     function salvarCustomizados() {
       const originais = (typeof BANCO_PRODUTOS_ORIGINAIS !== "undefined") ? BANCO_PRODUTOS_ORIGINAIS : [];
-      const originaisIds = originais.map(o => o.id);
       
-      // Filtra produtos que são novos ou foram modificados em relação aos originais
       const customizados = produtosLocal.filter(p => {
         const original = originais.find(o => o.id === p.id);
         if (!original) return true; // É novo
@@ -1437,6 +1442,9 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Por favor, preencha os dados de sincronização do GitHub (Utilizador, Repositório e Token) nos campos abaixo antes de salvar!");
         return;
       }
+
+      // MEMORIZA O TOKEN NO NAVEGADOR PARA AS PRÓXIMAS VEZES
+      localStorage.setItem("github_token_admin", token);
 
       const idx = document.getElementById("editIndex").value;
       const produtoAtual = idx !== "novo" ? produtosLocal[idx] : {};
@@ -1495,17 +1503,14 @@ document.addEventListener("DOMContentLoaded", () => {
         produtosLocal[idx] = dadosForm;
       }
 
-      // Atualiza o localStorage localmente
       salvarCustomizados();
 
       alert("Salvando alteração local e enviando diretamente para o GitHub... Aguarde um momento.");
 
       try {
-        // Pega a lista atualizada de customizados para gravar no repositório
         const customizadosParaSalvar = JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
         const baseOriginais = (typeof BANCO_PRODUTOS_ORIGINAIS !== "undefined") ? BANCO_PRODUTOS_ORIGINAIS : [];
 
-        // Reconstrói o arquivo produtos.js mantendo o seu padrão exato com BANCO_PRODUTOS_ORIGINAIS
         const conteudoNovoJS = `const BANCO_PRODUTOS_ORIGINAIS = ${JSON.stringify(baseOriginais, null, 2)};\n\n` +
           `function gerarLinkPaginaProduto(produto) {\n  return \`produto.html?id=\${encodeURIComponent(produto.id)}\`;\n}\n\n` +
           `function carregarBancoProdutos() {\n  const customizados = ${JSON.stringify(customizadosParaSalvar, null, 2)};\n  let produtosUnificados = [...BANCO_PRODUTOS_ORIGINAIS];\n\n  customizados.forEach((cust) => {\n    const index = produtosUnificados.findIndex((p) => p.id === cust.id);\n    if (index >= 0) {\n      produtosUnificados[index] = cust;\n    } else {\n      produtosUnificados.push(cust);\n    }\n  });\n\n  return produtosUnificados;\n}\n\n` +
@@ -1566,7 +1571,6 @@ document.addEventListener("DOMContentLoaded", () => {
           produtosLocal.splice(idx, 1);
           salvarCustomizados();
 
-          // Tenta atualizar automaticamente no GitHub após excluir
           const usuario = document.getElementById("gitUser")?.value.trim();
           const repositorio = document.getElementById("gitRepo")?.value.trim();
           const token = document.getElementById("gitToken")?.value.trim();
