@@ -261,10 +261,96 @@
           <!-- Botão de Ação Principal -->
           <a href="#" class="whatsapp-btn" id="btnComprarAgora">Encomendar apenas este Produto</a></div>
         <a href="index.html" class="botao-voltar">Voltar para o Catálogo</a></div>
+        
 
     </main>
 
+    <!-- CARROSSEL DE TODOS OS PRODUTOS NA PARTE INFERIOR -->
+<div class="container-carrossel-inferior">
+  <div class="carrossel-inferior-track" id="carrosselLateralProdutos">
+    <!-- Os produtos entram aqui via script -->
+  </div>
+</div>
+    </div>
+
     <script src="produtos.js" defer></script>
     <script src="scripts.js" defer></script>
+    
+    <!-- Script para carregar e embaralhar o carrossel inferior -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          let todosProdutos = typeof carregarBancoProdutos === "function" ? carregarBancoProdutos() : (typeof BANCO_PRODUTOS !== "undefined" ? BANCO_PRODUTOS : []);
+
+          function embaralharArray(array) {
+              let arr = [...array];
+              for (let i = arr.length - 1; i > 0; i--) {
+                  let j = Math.floor(Math.random() * (i + 1));
+                  [arr[i], arr[j]] = [arr[j], arr[i]];
+              }
+              return arr;
+          }
+
+          const produtosAleatorios = embaralharArray(todosProdutos);
+          const containerCarrossel = document.getElementById("carrosselLateralProdutos");
+          
+          if (containerCarrossel) {
+              containerCarrossel.innerHTML = "";
+
+              produtosAleatorios.forEach(produto => {
+                  const linkProduto = typeof gerarLinkPaginaProduto === "function" ? gerarLinkPaginaProduto(produto) : `produto.html?id=${encodeURIComponent(produto.id)}`;
+                  const imagemSrc = typeof resolveAssetUrl === "function" ? resolveAssetUrl(produto.imagemFrente) : produto.imagemFrente;
+                  const precoExibido = produto.precoDesconto || produto.precoOriginal || "";
+
+                  const itemDiv = document.createElement("a");
+                  itemDiv.href = linkProduto;
+                  itemDiv.className = "carousel-item";
+                  itemDiv.style.cssText = "display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit; padding: 10px; border: 2px solid #3d2d2d; background: #CEC8B8; flex: 0 0 100px; box-sizing: border-box;";
+
+                  itemDiv.innerHTML = `
+                      <img src="${imagemSrc}" alt="${produto.nome}" style="width: 55px; height: 55px; object-fit: contain; margin-bottom: 4px;">
+                      <span style="font-size: 10px; font-weight: bold; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px;">${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}</span>
+                      <span style="font-size: 11px; color: #3d2d2d; margin-top: 2px;">${precoExibido}</span>
+                  `;
+
+                  containerCarrossel.appendChild(itemDiv);
+              });
+          }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("carrosselLateralProdutos");
+    
+    if (track) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        track.addEventListener("mousedown", (e) => {
+            isDown = true;
+            track.classList.add("is-dragging");
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+        });
+
+        track.addEventListener("mouseleave", () => {
+            isDown = false;
+            track.classList.remove("is-dragging");
+        });
+
+        track.addEventListener("mouseup", () => {
+            isDown = false;
+            track.classList.remove("is-dragging");
+        });
+
+        track.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 2; // Velocidade do arrasto
+            track.scrollLeft = scrollLeft - walk;
+        });
+    }
+});
+    </script>
   </body>
 </html>

@@ -1731,3 +1731,72 @@ b {
     color: #3d2d2d;
     font-size: 12px;
 }
+
+
+ /* --- ESTILO DO CARROSSEL INFERIOR DE PRODUTOS --- */
+.container-carrossel-inferior {
+    max-width: 1920px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.carrossel-inferior-track {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0px; /* Alinha perfeitamente com o padrão de bordas coladas do site */
+    padding: 0;
+    background-color: #CEC8B8;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.carrossel-inferior-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel-inferior-item {
+    flex: 0 0 140px; /* Largura fixa e elegante para cada cartão */
+    border-right: 2px solid #3d2d2d;
+    background-color: #CEC8B8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #3d2d2d;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    transition: background-color 0.2s;
+}
+
+.carrossel-inferior-item:hover {
+    background-color: #3d2d2d;
+    color: #CEC8B8;
+}
+
+.carrossel-inferior-item:hover span {
+    color: #CEC8B8 !important;
+}
+
+.carrossel-inferior-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    display: block;
+    pointer-events: none;
+}
+.carrossel-inferior-track {
+    cursor: grab;
+    user-select: none;
+}
+
+.carrossel-inferior-track.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none; /* Desativa temporariamente o snap enquanto arrastas para ficar fluido */
+}
