@@ -1488,6 +1488,7 @@ b {
     border-bottom: 2px solid #3d2d2d !important;
 }
 
+
 /* 1. Coluna Esquerda: Lista de Produtos */
 .lista-lateral-admin {
     flex: 0 100px 400px; /* Tamanho base que encolhe/estica com inteligência */    border: none;
@@ -1577,7 +1578,6 @@ b {
     border: none;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 4px;
 }
 .btn-salvar-admin:hover { opacity: 0.9; }
 
@@ -1653,4 +1653,81 @@ b {
     .form-group-admin.full {
         grid-column: span 1 !important;
     }
+}.form-group-admin textarea {
+    padding: 10px;
+    border: 2px solid #3d2d2d;
+    background: #CEC8B8;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 150px !important; 
+}
+::placeholder {
+    color: #9A8E7E;
+}
+/* Container principal do switch */
+.switch-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: 2px solid #3d2d2d;
+    padding: 10px 10px;
+    background: #CEC8B8;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Esconde o checkbox original */
+.switch-container input[type="checkbox"] {
+    display: none;
+}
+
+/* Caixa visual dos botões ON / OFF */
+.switch-btn {
+    display: flex;
+    width: 90px;
+    height: 30px;
+    border: 2px solid #3d2d2d;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Estilo de cada lado (ON e OFF) */
+.switch-btn span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Estado padrão (Desligado / OFF): OFF fica destacado em escuro, ON fica claro */
+.switch-btn .opt-on {
+    background: #CEC8B8;
+    color: #3d2d2d;
+}
+
+.switch-btn .opt-off {
+    background: #3d2d2d;
+    color: #CEC8B8;
+}
+
+/* QUANDO O CHECKBOX ESTÁ MARCADO (Ligado / ON): */
+/* O lado ON fica escuro e o OFF fica claro */
+.switch-container input[type="checkbox"]:checked ~ .switch-btn .opt-on {
+    background: #3d2d2d;
+    color: #CEC8B8;
+}
+
+.switch-container input[type="checkbox"]:checked ~ .switch-btn .opt-off {
+    background: #CEC8B8;
+    color: #3d2d2d;
+}
+
+/* Texto ao lado do botão */
+.switch-label {
+    color: #3d2d2d;
+    font-size: 12px;
 }

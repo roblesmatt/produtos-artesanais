@@ -74,14 +74,21 @@
             <div class="form-group-admin">
               <input type="text" id="editPrecoOriginal" required>
             <div class="form-group-admin">
-              <input type="text" id="editPrecoDesconto">
+              <input type="text" placeholder="Valor de desconto" id="editPrecoDesconto">
             <div class="form-group-admin">
               <input type="text" id="editSubtitulo">
             <div class="form-group-admin">
-  <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-    <input type="checkbox" id="editEsgotado" style="width: 20px; height: 20px; accent-color: #3d2d2d;">
-    Produto Esgotado?
+  <label style="font-weight: bold; font-size: 13px; display: block;"></label>
+  
+  <label class="switch-container">
+    <input type="checkbox" id="editEsgotado">
+    <div class="switch-btn">
+      <span class="opt-on">ON</span>
+      <span class="opt-off">OFF</span>
+    </div>
+    <span class="switch-label">PRODUTO ESGOTADO</span>
   </label>
+
             <div class="form-group-admin">
               <input type="text" id="editImagem" required placeholder="produtos/foto.webp">
             </div>
@@ -148,7 +155,7 @@
 <div class="form-group-admin full">
   <label style="font-size: 15px; margin-bottom: 10px; display: block; font-weight: bold; color: #3d2d2d;"></label>
   <div id="containerAcordeoesExtras"></div>
-  <button type="button" id="btnAdicionarAcordeaoExtra" class="btn-salvar-admin" style="background: #3d2d2d; color: #CEC8B8; margin-top: 10px;">Adicionar Novo Título e Descrição</button>
+  <button type="button" id="btnAdicionarAcordeaoExtra" class="btn-salvar-admin" style="background: #CEC8B8; color: #3d2d2d; border: 2px solid #3d2d2d; margin-top: 10px;">Adicionar Novo Título e Descrição</button>
 </div>
 
           <button type="submit" class="btn-salvar-admin" style="margin-top: 15px;">Salvar Alterações</button>
@@ -162,21 +169,18 @@
 <button type="button" id="btnExcluirProduto" class="btn-excluir-admin" style="background: #a94442; color: #CEC8B8; margin-top: 10px; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; width: 100%;">Excluir Produto</button></div>
 
 <!-- CONFIGURAÇÃO DA API DO GITHUB -->
-<div style="margin-top: 20px; background: #CEC8B8; padding: 15px; color: #CEC8B8; border: 2px solid #3d2d2d;">
+<div style="margin-top: 10px; margin-bottom: -90px; background: #CEC8B8; color: #CEC8B8;">
   
-  <div style="margin-bottom: 10px;">
-    <label style="font-size: 12px; display: block; margin-bottom: 3px;">Utilizador do GitHub:</label>
-    <input type="text" id="gitUser" value="roblesmatt" style="width: 100%; padding: 6px; box-sizing: border-box;">
-  </div>
-
-  <div style="margin-bottom: 10px;">
-    <label style="font-size: 12px; display: block; margin-bottom: 3px;">Nome do Repositório:</label>
-    <input type="text" id="gitRepo" value="produtos-artesanais" style="width: 100%; padding: 6px; box-sizing: border-box;">
+  <div>
+    <input type="text" id="gitUser" value="roblesmatt" style="width: 100%; box-sizing: border-box;">
   </div>
 
   <div>
-    <label style="font-size: 12px; display: block; margin-bottom: 3px;">Token do GitHub:</label>
-    <input type="password" id="gitToken" placeholder="Cole o seu token aqui" style="width: 100%; padding: 6px; box-sizing: border-box;">
+    <input type="text" id="gitRepo" value="produtos-artesanais" style="width: 100%; margin-top: -2px; border-box;">
+  </div>
+
+  <div>
+    <input type="password" id="gitToken" placeholder="Cole o seu token aqui" style="width: 100%; margin-top: -2px; box-sizing: border-box;">
   </div>
 </div>
 
