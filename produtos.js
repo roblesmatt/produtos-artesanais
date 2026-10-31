@@ -673,6 +673,45 @@ const BANCO_PRODUTOS = [
       "trocas": "Conforme o CDC."
     },
     "acordeoesExtras": []
+  },
+  {
+    "id": "novo-produto-id",
+    "nome": "Novo Produto<br>Artesanal",
+    "precoOriginal": "R$10",
+    "precoDesconto": "R$5",
+    "subtitulo": "[1 un. / 85g].",
+    "esgotado": false,
+    "imagemFrente": "produtos/sabonete-corporal-docura-citrica.webp",
+    "tags": {
+      "linha": "linhas-classico",
+      "funcao": "funcao-sabonete-corporal",
+      "categoria": [
+        "catalogo"
+      ]
+    },
+    "titulosAcordeoes": {
+      "sobre": "SOBRE O PRODUTO",
+      "beneficios": "BENEFÍCIOS",
+      "composicao": "COMPOSIÇÃO",
+      "modoUso": "MODO DE USO",
+      "advertencias": "ADVERTÊNCIAS E PRECAUÇÕES",
+      "fichaTecnica": "FICHA TÉCNICA",
+      "pagamentos": "PAGAMENTO",
+      "frete": "FRETE E ENVIO",
+      "trocas": "POLÍTICA DE TROCAS E DEVOLUÇÕES"
+    },
+    "acordeoes": {
+      "sobre": "Descrição...",
+      "beneficios": "- Produção artesanal",
+      "composicao": "Ingredientes naturais",
+      "modoUso": "Uso externo",
+      "advertencias": "Conservar em local seco",
+      "fichaTecnica": "Volume: 60ml",
+      "pagamentos": "Pagamento facilitado via Pix com aprovação imediata.",
+      "frete": "Retirada no local ou envio a combinar pelo WhatsApp.",
+      "trocas": "Conforme o CDC."
+    },
+    "acordeoesExtras": []
   }
 ];
 
