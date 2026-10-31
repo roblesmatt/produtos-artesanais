@@ -603,56 +603,7 @@ function gerarLinkPaginaProduto(produto) {
 }
 
 function carregarBancoProdutos() {
-  const customizados = [
-  {
-    "id": "teste",
-    "nome": "teste",
-    "precoOriginal": "R$10",
-    "precoDesconto": "R$5",
-    "subtitulo": "[1 un. / 85g].",
-    "esgotado": false,
-    "imagemFrente": "produtos/",
-    "tags": {
-      "linha": "linhas-classico",
-      "funcao": "funcao-sabonete-corporal",
-      "categoria": [
-        "catalogo"
-      ]
-    },
-    "titulosAcordeoes": {
-      "sobre": "SOBRE O PRODUTO",
-      "beneficios": "BENEFÍCIOS",
-      "composicao": "COMPOSIÇÃO",
-      "modoUso": "MODO DE USO",
-      "advertencias": "ADVERTÊNCIAS E PRECAUÇÕES",
-      "fichaTecnica": "FICHA TÉCNICA",
-      "pagamentos": "PAGAMENTO",
-      "frete": "FRETE E ENVIO",
-      "trocas": "POLÍTICA DE TROCAS E DEVOLUÇÕES"
-    },
-    "acordeoes": {
-      "sobre": "Descrição...",
-      "beneficios": "- Produção artesanal",
-      "composicao": "Ingredientes naturais",
-      "modoUso": "Uso externo",
-      "advertencias": "Conservar em local seco",
-      "fichaTecnica": "Volume: 60ml",
-      "pagamentos": "Pagamento facilitado via Pix com aprovação imediata.",
-      "frete": "Retirada no local ou envio a combinar pelo WhatsApp.",
-      "trocas": "Conforme o CDC."
-    },
-    "acordeoesExtras": [
-      {
-        "titulo": "teste",
-        "conteudo": "teste"
-      },
-      {
-        "titulo": "tyeste",
-        "conteudo": "tteste"
-      }
-    ]
-  }
-];
+  const customizados = [];
   let produtosUnificados = [...BANCO_PRODUTOS_ORIGINAIS];
 
   customizados.forEach((cust) => {
