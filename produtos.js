@@ -711,7 +711,12 @@ const BANCO_PRODUTOS = [
       "frete": "Retirada no local ou envio a combinar pelo WhatsApp.",
       "trocas": "Conforme o CDC."
     },
-    "acordeoesExtras": []
+    "acordeoesExtras": [
+      {
+        "titulo": "Teste",
+        "conteudo": "Teste..."
+      }
+    ]
   }
 ];
 
