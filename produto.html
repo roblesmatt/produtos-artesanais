@@ -279,8 +279,10 @@
     <!-- Script para carregar e embaralhar o carrossel inferior -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+          // 1. Obtém todos os produtos do banco unificado
           let todosProdutos = typeof carregarBancoProdutos === "function" ? carregarBancoProdutos() : (typeof BANCO_PRODUTOS !== "undefined" ? BANCO_PRODUTOS : []);
 
+          // 2. Função para embaralhar a ordem dos produtos aleatoriamente
           function embaralharArray(array) {
               let arr = [...array];
               for (let i = arr.length - 1; i > 0; i--) {
@@ -290,11 +292,14 @@
               return arr;
           }
 
+          // Aplica o embaralhamento aleatório
           const produtosAleatorios = embaralharArray(todosProdutos);
+
+          // 3. Seleciona o container do carrossel inferior
           const containerCarrossel = document.getElementById("carrosselLateralProdutos");
           
           if (containerCarrossel) {
-              containerCarrossel.innerHTML = "";
+              containerCarrossel.innerHTML = ""; // Limpa antes de preencher
 
               produtosAleatorios.forEach(produto => {
                   const linkProduto = typeof gerarLinkPaginaProduto === "function" ? gerarLinkPaginaProduto(produto) : `produto.html?id=${encodeURIComponent(produto.id)}`;
@@ -303,54 +308,55 @@
 
                   const itemDiv = document.createElement("a");
                   itemDiv.href = linkProduto;
-                  itemDiv.className = "carousel-item";
-                  itemDiv.style.cssText = "display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit; padding: 10px; border: 2px solid #3d2d2d; background: #CEC8B8; flex: 0 0 100px; box-sizing: border-box;";
+                  itemDiv.className = "carrossel-inferior-item"; // Ajustado para a classe correta do carrossel inferior
+                  itemDiv.style.cssText = "display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; padding: 10px; border: 2px solid #3d2d2d; background: #CEC8B8; flex: 0 0 140px; box-sizing: border-box; margin-left: -2px;";
 
+                  // Título sem propriedades de corte para aparecer completo
                   itemDiv.innerHTML = `
-                      <img src="${imagemSrc}" alt="${produto.nome}" style="width: 55px; height: 55px; object-fit: contain; margin-bottom: 4px;">
-                      <span style="font-size: 10px; font-weight: bold; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px;">${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}</span>
-                      <span style="font-size: 11px; color: #3d2d2d; margin-top: 2px;">${precoExibido}</span>
-                  `;
+    <img src="${imagemSrc}" alt="${produto.nome}" style="width: 85px; height: 85px; object-fit: contain; margin-bottom: 8px; display: block; pointer-events: none;">
+    <span style="font-size: 11px; font-weight: bold; text-align: center; width: 100%; display: block; line-height: 1.2; margin-bottom: 4px;">${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}</span>
+    <span style="font-size: 11px; color: #3d2d2d; font-weight: bold;">${precoExibido}</span>
+`;
 
                   containerCarrossel.appendChild(itemDiv);
               });
           }
+
+          // 4. Funcionalidade de deslizar o carrossel com o rato (Drag to scroll)
+          const track = document.getElementById("carrosselLateralProdutos");
+          
+          if (track) {
+              let isDown = false;
+              let startX;
+              let scrollLeft;
+
+              track.addEventListener("mousedown", (e) => {
+                  isDown = true;
+                  track.classList.add("is-dragging");
+                  startX = e.pageX - track.offsetLeft;
+                  scrollLeft = track.scrollLeft;
+              });
+
+              track.addEventListener("mouseleave", () => {
+                  isDown = false;
+                  track.classList.remove("is-dragging");
+              });
+
+              track.addEventListener("mouseup", () => {
+                  isDown = false;
+                  track.classList.remove("is-dragging");
+              });
+
+              track.addEventListener("mousemove", (e) => {
+                  if (!isDown) return;
+                  e.preventDefault();
+                  const x = e.pageX - track.offsetLeft;
+                  const walk = (x - startX) * 2; // Velocidade do arrasto
+                  track.scrollLeft = scrollLeft - walk;
+              });
+          }
       });
-
-      document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById("carrosselLateralProdutos");
-    
-    if (track) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        track.addEventListener("mousedown", (e) => {
-            isDown = true;
-            track.classList.add("is-dragging");
-            startX = e.pageX - track.offsetLeft;
-            scrollLeft = track.scrollLeft;
-        });
-
-        track.addEventListener("mouseleave", () => {
-            isDown = false;
-            track.classList.remove("is-dragging");
-        });
-
-        track.addEventListener("mouseup", () => {
-            isDown = false;
-            track.classList.remove("is-dragging");
-        });
-
-        track.addEventListener("mousemove", (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - track.offsetLeft;
-            const walk = (x - startX) * 2; // Velocidade do arrasto
-            track.scrollLeft = scrollLeft - walk;
-        });
-    }
-});
+</script>
     </script>
   </body>
 </html>

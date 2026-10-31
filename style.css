@@ -1779,8 +1779,16 @@ b {
     color: #CEC8B8;
 }
 
-.carrossel-inferior-item:hover span {
-    color: #CEC8B8 !important;
+
+
+/* Permite que o título do produto quebre em linhas e apareça por completo */
+.carrossel-inferior-item span {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    display: block;
+    line-height: 1.2;
+    margin-top: 4px;
 }
 
 .carrossel-inferior-item img {
