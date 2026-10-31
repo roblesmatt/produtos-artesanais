@@ -644,11 +644,11 @@ function carregarBancoProdutos() {
     "acordeoesExtras": [
       {
         "titulo": "teste",
-        "conteudo": "teste ..."
+        "conteudo": "teste"
       },
       {
-        "titulo": "novo",
-        "conteudo": "novo ..."
+        "titulo": "tyeste",
+        "conteudo": "tteste"
       }
     ]
   }
