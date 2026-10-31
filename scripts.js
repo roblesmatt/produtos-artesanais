@@ -1209,7 +1209,7 @@ window.addEventListener("pageshow", (event) => {
 
 
 // ==========================================
-// 14. INFO EDIÇÃO
+// 14. INFO EDIÇÃO (Integrado ao novo carregarBancoProdutos)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
     const listaLateral = document.getElementById("listaLateralProdutos");
@@ -1222,8 +1222,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerExtras = document.getElementById("containerAcordeoesExtras");
     const btnAddExtra = document.getElementById("btnAdicionarAcordeaoExtra");
 
-    let customizados = JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
-    let produtosLocal = (typeof BANCO_PRODUTOS !== "undefined") ? [...BANCO_PRODUTOS, ...customizados] : [];
+    // Usa a função do seu novo produtos.js para carregar unificado
+    let produtosLocal = typeof carregarBancoProdutos === "function" ? carregarBancoProdutos() : (typeof BANCO_PRODUTOS !== "undefined" ? BANCO_PRODUTOS : []);
 
     function renderizarListaLateral(filtroFuncao = "funcao-sabonete-corporal") {
       listaLateral.innerHTML = "";
@@ -1260,7 +1260,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Função para criar os campos visuais de acordeão extra no painel
     function criarCampoAcordeaoExtra(titulo = "", conteudo = "") {
       const wrapper = document.createElement("div");
       wrapper.className = "acordeao-extra-item";
@@ -1320,7 +1319,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editEsgotado").checked = Boolean(p.esgotado);
       document.getElementById("editImagem").value = p.imagemFrente || "";
 
-      // Conteúdos Fixos
       const ac = p.acordeoes || {};
       document.getElementById("editSobre").value = ac.sobre || "";
       document.getElementById("editBeneficios").value = ac.beneficios || "";
@@ -1332,7 +1330,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editFrete").value = ac.frete || "";
       document.getElementById("editTrocas").value = ac.trocas || "";
 
-      // Títulos Fixos
       const tit = p.titulosAcordeoes || {};
       document.getElementById("editTituloSobre").value = tit.sobre || "SOBRE O PRODUTO";
       document.getElementById("editTituloBeneficios").value = tit.beneficios || "BENEFÍCIOS";
@@ -1410,6 +1407,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Função auxiliar para atualizar o localStorage mantendo a lógica de customizados
+    function salvarCustomizados() {
+      const originais = (typeof BANCO_PRODUTOS_ORIGINAIS !== "undefined") ? BANCO_PRODUTOS_ORIGINAIS : [];
+      const originaisIds = originais.map(o => o.id);
+      
+      // Filtra produtos que são novos ou foram modificados em relação aos originais
+      const customizados = produtosLocal.filter(p => {
+        const original = originais.find(o => o.id === p.id);
+        if (!original) return true; // É novo
+        return JSON.stringify(original) !== JSON.stringify(p); // Foi alterado
+      });
+
+      localStorage.setItem("banco_produtos_custom", JSON.stringify(customizados));
+      return customizados;
+    }
+
     // ==========================================
     // FORMULÁRIO DE SALVAMENTO COM API DO GITHUB
     // ==========================================
@@ -1476,41 +1489,40 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       if (idx === "novo") {
-        customizados.push(dadosForm);
         produtosLocal.push(dadosForm);
       } else {
         dadosForm.tags = produtosLocal[idx].tags;
         produtosLocal[idx] = dadosForm;
-        const custIndex = customizados.findIndex(c => c.id === dadosForm.id);
-        if (custIndex >= 0) {
-          customizados[custIndex] = dadosForm;
-        } else {
-          customizados.push(dadosForm);
-        }
       }
 
-      // Salva localmente para uso imediato na sessão
-      localStorage.setItem("banco_produtos_custom", JSON.stringify(customizados));
+      // Atualiza o localStorage localmente
+      salvarCustomizados();
 
       alert("Salvando alteração local e enviando diretamente para o GitHub... Aguarde um momento.");
 
       try {
-        // Reconstrói o conteúdo completo do arquivo produtos.js com a lista atualizada
-        const conteudoNovoJS = `const BANCO_PRODUTOS = ${JSON.stringify(produtosLocal, null, 2)};\n\nfunction gerarLinkPaginaProduto(produto) {\n  return \`produto.html?id=\${encodeURIComponent(produto.id)}\`;\n}\n\nfunction encontrarProdutoDoCarrinho(item) {\n  return (\n    BANCO_PRODUTOS.find((produto) => produto.id === item.id) ||\n    BANCO_PRODUTOS.find((produto) => produto.nome === item.nome)\n  );\n}`;
+        // Pega a lista atualizada de customizados para gravar no repositório
+        const customizadosParaSalvar = JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
+        const baseOriginais = (typeof BANCO_PRODUTOS_ORIGINAIS !== "undefined") ? BANCO_PRODUTOS_ORIGINAIS : [];
+
+        // Reconstrói o arquivo produtos.js mantendo o seu padrão exato com BANCO_PRODUTOS_ORIGINAIS
+        const conteudoNovoJS = `const BANCO_PRODUTOS_ORIGINAIS = ${JSON.stringify(baseOriginais, null, 2)};\n\n` +
+          `function gerarLinkPaginaProduto(produto) {\n  return \`produto.html?id=\${encodeURIComponent(produto.id)}\`;\n}\n\n` +
+          `function carregarBancoProdutos() {\n  const customizados = ${JSON.stringify(customizadosParaSalvar, null, 2)};\n  let produtosUnificados = [...BANCO_PRODUTOS_ORIGINAIS];\n\n  customizados.forEach((cust) => {\n    const index = produtosUnificados.findIndex((p) => p.id === cust.id);\n    if (index >= 0) {\n      produtosUnificados[index] = cust;\n    } else {\n      produtosUnificados.push(cust);\n    }\n  });\n\n  return produtosUnificados;\n}\n\n` +
+          `const BANCO_PRODUTOS = carregarBancoProdutos();\n\n` +
+          `function encontrarProdutoDoCarrinho(item) {\n  return (\n    BANCO_PRODUTOS.find((produto) => produto.id === item.id) ||\n    BANCO_PRODUTOS.find((produto) => produto.nome === item.nome)\n  );\n}`;
 
         const caminhoArquivo = "produtos.js";
         const urlApi = `https://api.github.com/repos/${usuario}/${repositorio}/contents/${caminhoArquivo}`;
 
-        // Obtém o SHA atual do arquivo no GitHub
         const respostaGet = await fetch(urlApi, {
           headers: { Authorization: `token ${token}` }
         });
         
-        if (!respostaGet.ok) throw new Error("Não foi possível localizar o arquivo produtos.js no GitHub. Verifique o nome do utilizador e do repositório.");
+        if (!respostaGet.ok) throw new Error("Não foi possível localizar o arquivo produtos.js no GitHub. Verifique os dados.");
         const dadosArquivo = await respostaGet.json();
         const shaAtual = dadosArquivo.sha;
 
-        // Atualiza o arquivo no GitHub via PUT
         const respostaPut = await fetch(urlApi, {
           method: "PUT",
           headers: {
@@ -1518,29 +1530,29 @@ document.addEventListener("DOMContentLoaded", () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            message: `Atualização automática de produtos via painel admin (${new Date().toLocaleString()})`,
+            message: `Atualização automática de produtos via painel (${new Date().toLocaleString()})`,
             content: btoa(unescape(encodeURIComponent(conteudoNovoJS))),
             sha: shaAtual
           })
         });
 
         if (respostaPut.ok) {
-          alert("Sucesso absoluto! O arquivo produtos.js foi atualizado no GitHub. O site estará no ar com as novas alterações em 1 minuto.");
+          alert("Sucesso absoluto! O produtos.js foi atualizado no GitHub e refletirá no site em 1 minuto.");
           carregarFormulario(idx);
         } else {
           const erroGitHub = await respostaPut.json();
-          throw new Error(erroGitHub.message || "Erro desconhecido ao salvar no GitHub.");
+          throw new Error(erroGitHub.message || "Erro ao salvar no GitHub.");
         }
 
       } catch (erro) {
-        alert("Aviso: Salvo no navegador com sucesso, mas ocorreu um erro ao atualizar o GitHub: " + erro.message);
+        alert("Aviso: Salvo localmente, mas ocorreu um erro ao atualizar o GitHub: " + erro.message);
       }
     });
 
     const btnExcluir = document.getElementById("btnExcluirProduto");
 
     if (btnExcluir) {
-      btnExcluir.addEventListener("click", () => {
+      btnExcluir.addEventListener("click", async () => {
         const idx = document.getElementById("editIndex").value;
         if (idx === "novo") {
           alert("Este produto ainda não foi guardado.");
@@ -1552,9 +1564,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (confirm(`Tens a certeza de que queres excluir o produto "${produtoParaExcluir.nome.replace(/<br\s*[\/]?>/gi, " ")}"?`)) {
           produtosLocal.splice(idx, 1);
-          
-          customizados = customizados.filter(c => c.id !== produtoParaExcluir.id);
-          localStorage.setItem("banco_produtos_custom", JSON.stringify(customizados));
+          salvarCustomizados();
+
+          // Tenta atualizar automaticamente no GitHub após excluir
+          const usuario = document.getElementById("gitUser")?.value.trim();
+          const repositorio = document.getElementById("gitRepo")?.value.trim();
+          const token = document.getElementById("gitToken")?.value.trim();
+
+          if (usuario && repositorio && token) {
+            try {
+              const customizadosParaSalvar = JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
+              const baseOriginais = (typeof BANCO_PRODUTOS_ORIGINAIS !== "undefined") ? BANCO_PRODUTOS_ORIGINAIS : [];
+
+              const conteudoNovoJS = `const BANCO_PRODUTOS_ORIGINAIS = ${JSON.stringify(baseOriginais, null, 2)};\n\n` +
+                `function gerarLinkPaginaProduto(produto) {\n  return \`produto.html?id=\${encodeURIComponent(produto.id)}\`;\n}\n\n` +
+                `function carregarBancoProdutos() {\n  const customizados = ${JSON.stringify(customizadosParaSalvar, null, 2)};\n  let produtosUnificados = [...BANCO_PRODUTOS_ORIGINAIS];\n\n  customizados.forEach((cust) => {\n    const index = produtosUnificados.findIndex((p) => p.id === cust.id);\n    if (index >= 0) {\n      produtosUnificados[index] = cust;\n    } else {\n      produtosUnificados.push(cust);\n    }\n  });\n\n  return produtosUnificados;\n}\n\n` +
+                `const BANCO_PRODUTOS = carregarBancoProdutos();\n\n` +
+                `function encontrarProdutoDoCarrinho(item) {\n  return (\n    BANCO_PRODUTOS.find((produto) => produto.id === item.id) ||\n    BANCO_PRODUTOS.find((produto) => produto.nome === item.nome)\n  );\n}`;
+
+              const caminhoArquivo = "produtos.js";
+              const urlApi = `https://api.github.com/repos/${usuario}/${repositorio}/contents/${caminhoArquivo}`;
+
+              const respostaGet = await fetch(urlApi, { headers: { Authorization: `token ${token}` } });
+              if (respostaGet.ok) {
+                const dadosArquivo = await respostaGet.json();
+                await fetch(urlApi, {
+                  method: "PUT",
+                  headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    message: `Exclusão de produto via painel (${new Date().toLocaleString()})`,
+                    content: btoa(unescape(encodeURIComponent(conteudoNovoJS))),
+                    sha: dadosArquivo.sha
+                  })
+                });
+              }
+            } catch (e) {
+              console.error("Erro ao sincronizar exclusão com o GitHub:", e);
+            }
+          }
           
           alert("Produto excluído com sucesso!");
           location.reload();

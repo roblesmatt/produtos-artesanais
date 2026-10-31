@@ -714,7 +714,6 @@ function gerarLinkPaginaProduto(produto) {
   return `produto.html?id=${encodeURIComponent(produto.id)}`;
 }
 
-// 2. Mescla automaticamente com as edições ou novos produtos salvos no painel (localStorage)
 function carregarBancoProdutos() {
   const customizados =
     JSON.parse(localStorage.getItem("banco_produtos_custom")) || [];
