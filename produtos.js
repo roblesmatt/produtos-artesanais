@@ -676,7 +676,7 @@ const BANCO_PRODUTOS = [
   },
   {
     "id": "novo-produto-id",
-    "nome": "Novo Produto<br>Artesanal",
+    "nome": "Teste",
     "precoOriginal": "R$10",
     "precoDesconto": "R$5",
     "subtitulo": "[1 un. / 85g].",
