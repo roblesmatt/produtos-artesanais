@@ -19,13 +19,23 @@
       </div>
 
       <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" class="input" placeholder="000.000.000-00">
+      </div>
+
+      <div class="form-group">
     <label for="telefone">Telefone:</label>
     <input type="tel" id="telefone" class="input" required placeholder="(00) 00000-0000">
 </div>
 
       <div class="form-group">
         <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" class="input" required placeholder="Ex: Rua das Flores, 123 - Centro - SP">
+        <input type="text" id="endereco" class="input" required placeholder="Ex: Rua das Flores">
+      </div>
+
+      <div class="form-group">
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" class="input" required placeholder="123">
       </div>
 
       <div class="form-group">
@@ -33,10 +43,15 @@
     <input type="text" id="cep" class="input" required placeholder="00000-000">
 </div>
 
+      <div class="form-group">
+        <label for="complemento">Complemento:</label>
+        <input type="text" id="complemento" class="input" placeholder="Casa, apartamento, referência">
+      </div>
+
     <button class="button1" type="submit">Avançar para o WhatsApp</button>
   
 
-<div class="descricao"><span>Seus dados e o pedido serão enviados pelo WhatsApp. O site não armazena os dados do formulário.</span>
+<div class="descricao"><span>Seus dados e o pedido serão enviados pelo WhatsApp. Para exibir o pedido no painel deste navegador, os dados também ficam salvos localmente neste dispositivo.</span>
 </div>
  </form>
 
@@ -47,11 +62,14 @@
 
       // Recolhe os dados preenchidos no formulário
       const nome = document.getElementById('nome').value;
+      const cpf = document.getElementById('cpf').value;
       const telefone = document.getElementById('telefone').value;
       const endereco = document.getElementById('endereco').value;
+      const numero = document.getElementById('numero').value;
       const cep = document.getElementById('cep').value;
+      const complemento = document.getElementById('complemento').value;
 
-      const dadosCliente = `*Dados do Cliente:*\n- Nome: ${nome}\n- Telefone: ${telefone}\n- Endereço: ${endereco}\n- CEP: ${cep}\n\n`;
+      const dadosCliente = `*Dados do Cliente:*\n- Nome: ${nome}\n- CPF: ${cpf || "Não informado"}\n- Telefone: ${telefone}\n- Endereço: ${endereco}, ${numero}\n- CEP: ${cep}\n- Complemento: ${complemento || "Não informado"}\n\n`;
 
       // Resgata os produtos guardados no localStorage
       let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -81,6 +99,44 @@
       });
 
       mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+
+      const pedidosSalvos = JSON.parse(localStorage.getItem("pedidos_admin") || "[]");
+      pedidosSalvos.push({
+          id: `PED-${Date.now()}`,
+          origem: "Site",
+          dataCriacao: new Date().toISOString(),
+          cliente: {
+              nome,
+              cpf,
+              telefone,
+              endereco,
+              numero,
+              cep,
+              complemento
+          },
+          itens: carrinho.map((item) => {
+              const produto = encontrarProdutoDoCarrinho(item);
+              const preco = produto
+                  ? (produto.precoDesconto || produto.precoOriginal)
+                  : (item.precoDesconto || item.preco || "");
+              const quantidade = Number(item.quantidade) || 1;
+              const precoNumerico = parseFloat(
+                  String(preco).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
+              ) || 0;
+              return {
+                  id: produto?.id || item.id,
+                  codigoBarras: produto?.codigoBarras || "",
+                  nome: produto?.nome || item.nome,
+                  quantidade,
+                  preco,
+                  subtotal: precoNumerico * quantidade
+              };
+          }),
+          total: totalGeral,
+          formaPagamento: "A combinar",
+          status: "Aguardando confirmação"
+      });
+      localStorage.setItem("pedidos_admin", JSON.stringify(pedidosSalvos));
 
       const numeroWhatsApp = "5511996624974"; // Número correto com o 6 atualizado
       const mensagemFinal = dadosCliente + mensagemProdutos;

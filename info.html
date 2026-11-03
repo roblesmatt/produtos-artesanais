@@ -1,195 +1,364 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gerenciador de Produtos - Thairo's</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciador de Produtos - Thairo's</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="cabecalho-container"></div>
 
-<div id="cabecalho-container"></div>
+  <main class="container-filtros admin-container">
+    <input type="radio" name="principal" id="produtos" checked>
+    <input type="radio" name="principal" id="pedidos">
+    <input type="radio" name="principal" id="caixa">
+    <input type="radio" name="principal" id="clientes">
+    <input type="radio" name="principal" id="relatorios">
 
-<div class="container-filtros">
-  <input type="radio" name="principal" id="produtos" checked>
-  <input type="radio" name="principal" id="pedidos">
-  <input type="radio" name="principal" id="caixa">
+    <input type="radio" name="sub-produtos" id="sub-sabonete-corporal" checked>
+    <input type="radio" name="sub-produtos" id="sub-oleo-corporal">
+    <input type="radio" name="sub-produtos" id="sub-perfume-artesanal">
+    <input type="radio" name="sub-produtos" id="sub-vela-aromatica">
+    <input type="radio" name="sub-produtos" id="sub-shampoo-e-condicionador">
+    <input type="radio" name="sub-produtos" id="sub-creme-capilar">
+    <input type="radio" name="sub-produtos" id="sub-creme-facial">
+    <input type="radio" name="sub-produtos" id="sub-locao-pos-barba">
 
-  <input type="radio" name="sub-produtos" id="sub-sabonete-corporal" checked>
-  <input type="radio" name="sub-produtos" id="sub-oleo-corporal">
-  <input type="radio" name="sub-produtos" id="sub-perfume-artesanal">
-  <input type="radio" name="sub-produtos" id="sub-vela-aromatica">
-  <input type="radio" name="sub-produtos" id="sub-shampoo-e-condicionador">
-  <input type="radio" name="sub-produtos" id="sub-creme-capilar">
-  <input type="radio" name="sub-produtos" id="sub-creme-facial">
-  <input type="radio" name="sub-produtos" id="sub-locao-pos-barba">
-
-  <div class="menu-linha menu-principal">
-    <label for="produtos">PRODUTOS</label>
-    <label for="pedidos">PEDIDOS</label>
-    <label for="caixa">CAIXA</label>
-  </div>
-
-  <div class="menu-linha menu-submenu submenu-produtos">
-    <label for="sub-sabonete-corporal">SABONETE CORPORAL</label>
-    <label for="sub-oleo-corporal">ÓLEO CORPORAL</label>
-    <label for="sub-perfume-artesanal">PERFUME ARTESANAL</label>
-    <label for="sub-vela-aromatica">VELA AROMÁTICA</label>
-    <label for="sub-shampoo-e-condicionador">SHAMPOO E CONDICIONADOR</label>
-    <label for="sub-creme-capilar">CREME CAPILAR</label>
-    <label for="sub-creme-facial">CREME FACIAL</label>
-    <label for="sub-locao-pos-barba">LOÇÃO PÓS BARBA</label>
-  </div>
-</div>
-
-<div class="conteudo-vitrine">
-  <div class="vitrine-item item-sabonete-corporal" style="display: block !important; width: 100% !important;">
-    
-    <!-- CONTÊINER MÃE DE 3 COLUNAS -->
-    <div class="painel-gerenciador">
-      
-      <!-- 1. COLUNA ESQUERDA: Lista de Produtos -->
-      <div class="lista-lateral-admin" id="listaLateralProdutos"></div>
-
-      <!-- 2. COLUNA DO MEIO: Imagem em Destaque -->
-      <div class="coluna-imagem-admin">
-        <div style="text-align: center; width: 100%;">
-          <img id="previewImagemProduto" src="" alt="Preview do Produto" style="display: none;" />
-          <p id="placeholderImgMsg" style="color: #666; font-size: 14px;">Selecione um produto</p>
-        </div>
-      </div>
-
-      <!-- 3. COLUNA DA DIREITA: Formulário Completo (Dados + Títulos e Acordeões) -->
-      <div class="conteudo-formulario-admin">
-        <h2 id="tituloAcaoAdmin" style="margin-bottom: 20px;">Gerenciador de Produtos</h2>
-        
-        <form id="formEdicaoProduto" style="display: none;">
-          <input type="hidden" id="editIndex">
-          
-          <div class="form-grid">
-            <div class="form-group-admin">
-              <input type="text" id="editId" required>
-            <div class="form-group-admin">
-              <input type="text" id="editNome" required>
-            <div class="form-group-admin">
-              <input type="text" id="editPrecoOriginal" required>
-            <div class="form-group-admin">
-              <input type="text" placeholder="Valor de desconto" id="editPrecoDesconto">
-            <div class="form-group-admin">
-              <input type="text" id="editSubtitulo">
-            <div class="form-group-admin">
-  <label style="font-weight: bold; font-size: 13px; display: block;"></label>
-  
-  <label class="switch-container">
-    <input type="checkbox" id="editEsgotado">
-    <div class="switch-btn">
-      <span class="opt-on">ON</span>
-      <span class="opt-off">OFF</span>
+    <nav class="menu-linha menu-principal" aria-label="Seções do painel">
+      <label for="produtos">PRODUTOS</label>
+      <label for="pedidos">PEDIDOS</label>
+      <label for="caixa">CAIXA</label>
+      <label for="clientes">CLIENTES</label>
+      <label for="relatorios">RELATÓRIOS</label>
+    </nav>
+    <div class="menu-linha menu-submenu submenu-produtos">
+      <label for="sub-sabonete-corporal">SABONETE CORPORAL</label>
+      <label for="sub-oleo-corporal">ÓLEO CORPORAL</label>
+      <label for="sub-perfume-artesanal">PERFUME ARTESANAL</label>
+      <label for="sub-vela-aromatica">VELA AROMÁTICA</label>
+      <label for="sub-shampoo-e-condicionador">SHAMPOO E CONDICIONADOR</label>
+      <label for="sub-creme-capilar">CREME CAPILAR</label>
+      <label for="sub-creme-facial">CREME FACIAL</label>
+      <label for="sub-locao-pos-barba">LOÇÃO PÓS BARBA</label>
     </div>
-    <span class="switch-label">PRODUTO ESGOTADO</span>
-  </label>
 
-            <div class="form-group-admin">
-              <input type="text" id="editImagem" required placeholder="produtos/foto.webp">
+    <div class="conteudo-vitrine admin-conteudo">
+      <section class="vitrine-item admin-produtos">
+        <div class="admin-section-heading admin-products-heading">
+          <h2>Produtos</h2>
+          <div class="admin-section-actions">
+            <span id="notificacaoProdutosNovos" class="admin-products-notification" hidden></span>
+            <button type="button" class="btn-secundario admin-export-button" data-export-report="products">Exportar CSV</button>
+          </div>
+        </div>
+        <div class="painel-gerenciador">
+          <div class="lista-lateral-admin" id="listaLateralProdutos"></div>
+
+          <div class="coluna-imagem-admin">
+            <div class="admin-preview">
+              <img id="previewImagemProduto" src="" alt="Prévia do produto" hidden>
+              <p id="placeholderImgMsg">Selecione um produto</p>
             </div>
+          </div>
 
+          <div class="conteudo-formulario-admin">
+            <h2 id="tituloAcaoAdmin" style="margin-bottom: 20px;">Gerenciador de Produtos</h2>
+            <form id="formEdicaoProduto" hidden>
+              <input type="hidden" id="editIndex">
 
+              <div class="form-grid admin-product-edit-grid">
+                <div class="form-group-admin">
+                  <label for="editId">ID do produto</label>
+                  <input type="text" id="editId" required placeholder="ID do produto">
+                </div>
+                <div class="form-group-admin">
+                  <label for="editCodigoBarras">Código de barras</label>
+                  <input type="text" id="editCodigoBarras" inputmode="numeric" autocomplete="off" placeholder="Código de barras">
+                </div>
+                <div class="form-group-admin">
+                  <label for="editNome">Nome do produto</label>
+                  <input type="text" id="editNome" required placeholder="Nome do produto">
+                </div>
+                <div class="form-group-admin">
+                  <label for="editPrecoOriginal">Preço original</label>
+                  <input type="text" id="editPrecoOriginal" required placeholder="Preço original">
+                </div>
+                <div class="form-group-admin">
+                  <label for="editPrecoDesconto">Preço promocional</label>
+                  <input type="text" id="editPrecoDesconto" placeholder="Preço promocional (opcional)">
+                </div>
+                <div class="form-group-admin">
+                  <label for="editSubtitulo">Informação complementar</label>
+                  <input type="text" id="editSubtitulo" placeholder="Informação complementar">
+                </div>
+                <div class="form-group-admin">
+                  <label for="editImagem">Caminho da imagem</label>
+                  <input type="text" id="editImagem" required placeholder="produtos/foto.webp">
+                </div>
+                <div class="form-group-admin admin-product-status-field">
+                  <label class="switch-container">
+                    <input type="checkbox" id="editEsgotado">
+                    <span class="switch-btn"><span class="opt-on">ON</span><span class="opt-off">OFF</span></span>
+                    <span class="switch-label">PRODUTO ESGOTADO</span>
+                  </label>
+                </div>
+              </div>
 
-            <!-- ACORDEÃO 1: SOBRE -->
-            <div class="form-group-admin">
-  <input type="text" id="editTituloSobre" value="SOBRE O PRODUTO">
-<div class="form-group-admin">
-  <textarea id="editSobre" rows="3"></textarea>
-</div></div>
+              <details id="painelConteudoProduto" class="accordion-item admin-product-content-panel">
+                <summary class="accordion-header">
+                  <span class="accordion-title">Conteúdo da página interna do produto</span>
+                  <svg class="accordion-arrow" width="32.8" height="32.8" viewBox="0 0 32.8 32.8" aria-hidden="true">
+                    <path d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z" fill="#3d2d2d" />
+                  </svg>
+                </summary>
+                <h3>Informações da página do produto</h3>
+              <div class="form-grid admin-product-content-grid">
+                <div class="form-group-admin">
+                  <label for="editTituloSobre">Título: sobre o produto</label>
+                  <input type="text" id="editTituloSobre" placeholder="Título: sobre o produto">
+                  <textarea id="editSobre" rows="3" aria-label="Descrição sobre o produto" placeholder="Descrição sobre o produto"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label for="editTituloBeneficios">Título: benefícios</label>
+                  <input type="text" id="editTituloBeneficios" placeholder="Título: benefícios">
+                  <textarea id="editBeneficios" rows="3" aria-label="Benefícios" placeholder="Benefícios"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label for="editTituloComposicao">Título: composição</label>
+                  <input type="text" id="editTituloComposicao" placeholder="Título: composição">
+                  <textarea id="editComposicao" rows="3" aria-label="Composição" placeholder="Composição"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label for="editTituloModoUso">Título: modo de uso</label>
+                  <input type="text" id="editTituloModoUso" placeholder="Título: modo de uso">
+                  <textarea id="editModoUso" rows="3" aria-label="Modo de uso" placeholder="Modo de uso"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label for="editTituloAdvertencias">Título: advertências</label>
+                  <input type="text" id="editTituloAdvertencias" placeholder="Título: advertências">
+                  <textarea id="editAdvertencias" rows="3" aria-label="Advertências e precauções" placeholder="Advertências e precauções"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label for="editTituloFichaTecnica">Título: ficha técnica</label>
+                  <input type="text" id="editTituloFichaTecnica" placeholder="Título: ficha técnica">
+                  <textarea id="editFichaTecnica" rows="3" aria-label="Ficha técnica" placeholder="Ficha técnica"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label for="editTituloPagamentos">Título: pagamento</label>
+                  <input type="text" id="editTituloPagamentos" placeholder="Título: pagamento">
+                  <textarea id="editPagamentos" rows="3" aria-label="Informações de pagamento" placeholder="Informações de pagamento"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label for="editTituloFrete">Título: frete e envio</label>
+                  <input type="text" id="editTituloFrete" placeholder="Título: frete e envio">
+                  <textarea id="editFrete" rows="3" aria-label="Informações de frete e envio" placeholder="Informações de frete e envio"></textarea>
+                </div>
+                <div class="form-group-admin full">
+                  <label for="editTituloTrocas">Título: trocas e devoluções</label>
+                  <input type="text" id="editTituloTrocas" placeholder="Título: trocas e devoluções">
+                  <textarea id="editTrocas" rows="3" aria-label="Política de trocas e devoluções" placeholder="Política de trocas e devoluções"></textarea>
+                </div>
+              </div>
 
-<div class="form-group-admin">
-  <input type="text" id="editTituloBeneficios" value="BENEFÍCIOS">
-<div class="form-group-admin">
-  <textarea id="editBeneficios" rows="3"></textarea>
-</div></div>
+              <div class="form-group-admin full">
+                <label>Acordeões extras</label>
+                <div id="containerAcordeoesExtras"></div>
+                <button type="button" id="btnAdicionarAcordeaoExtra" class="btn-salvar-admin admin-btn-extra">
+                  Adicionar título e descrição
+                </button>
+              </div>
+              </details>
+              <div class="admin-form-actions">
+                <button type="submit" class="btn-salvar-admin">Salvar alterações</button>
+                <button type="button" id="btnExcluirProduto" class="btn-excluir-admin" hidden>Excluir produto</button>
+              </div>
+            </form>
 
-<div class="form-group-admin">
-  <input type="text" id="editTituloComposicao" value="COMPOSIÇÃO">
-<div class="form-group-admin">
-  <textarea id="editComposicao" rows="3"></textarea>
-</div></div>
-
-<div class="form-group-admin">
-  <input type="text" id="editTituloModoUso" value="MODO DE USO">
-<div class="form-group-admin">
-  <textarea id="editModoUso" rows="2"></textarea>
-</div></div>
-
-<div class="form-group-admin">
-  <input type="text" id="editTituloAdvertencias" value="ADVERTÊNCIAS E PRECAUÇÕES">
-<div class="form-group-admin">
-  <textarea id="editAdvertencias" rows="2"></textarea>
-</div></div>
-
-<div class="form-group-admin">
-  <input type="text" id="editTituloFichaTecnica" value="FICHA TÉCNICA">
-<div class="form-group-admin">
-  <textarea id="editFichaTecnica" rows="3"></textarea>
-</div></div>
-
-<!-- NOVOS CAMPOS: PAGAMENTOS, FRETE E TROCAS -->
-<div class="form-group-admin">
-  <input type="text" id="editTituloPagamentos" value="PAGAMENTO">
-<div class="form-group-admin">
-  <textarea id="editPagamentos" rows="2"></textarea>
-</div></div>
-
-<div class="form-group-admin">
-  <input type="text" id="editTituloFrete" value="FRETE E ENVIO">
-<div class="form-group-admin">
-  <textarea id="editFrete" rows="2"></textarea>
-</div></div>
-
-<div class="form-group-admin full">
-  <input type="text" id="editTituloTrocas" value="POLÍTICA DE TROCAS E DEVOLUÇÕES">
-<div class="form-group-admin full">
-  <textarea id="editTrocas" rows="4"></textarea>
-</div>
-
-<!-- CONTAINER DE ACORDEÕES EXTRAS DINÂMICOS -->
-<div class="form-group-admin full">
-  <label style="font-size: 15px; margin-bottom: 10px; display: block; font-weight: bold; color: #3d2d2d;"></label>
-  <div id="containerAcordeoesExtras"></div>
-  <button type="button" id="btnAdicionarAcordeaoExtra" class="btn-salvar-admin" style="background: #CEC8B8; color: #3d2d2d; border: 2px solid #3d2d2d; margin-top: 10px;">Adicionar Novo Título e Descrição</button>
-</div>
-
-          <button type="submit" class="btn-salvar-admin" style="margin-top: 15px;">Salvar Alterações</button>
-        </form>
-
-        <div id="areaCodigoExportado" style="margin-top: 30px; display: none;">
-          <textarea id="outputJsonProdutos" style="width:100%; height:100px; font-family:monospace; background:#CEC8B8; padding:10px;" readonly></textarea>
+            <div id="areaCodigoExportado" hidden>
+              <label for="outputJsonProdutos">Dados salvos do produto</label>
+              <textarea id="outputJsonProdutos" readonly></textarea>
+            </div>
+            <details class="accordion-item admin-github-settings">
+              <summary class="accordion-header">
+                <span class="accordion-title">Sincronização do catálogo</span>
+                <svg class="accordion-arrow" width="32.8" height="32.8" viewBox="0 0 32.8 32.8" aria-hidden="true">
+                  <path d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z" fill="#3d2d2d" />
+                </svg>
+              </summary>
+              <label for="gitUser">Usuário GitHub</label>
+              <input type="text" id="gitUser" value="roblesmatt">
+              <label for="gitRepo">Repositório</label>
+              <input type="text" id="gitRepo" value="produtos-artesanais">
+              <label for="gitToken">Token de acesso</label>
+              <input type="password" id="gitToken" autocomplete="off" placeholder="Cole o seu token aqui">
+            </details>
+          </div>
         </div>
-      </div>
+      </section>
 
-<button type="button" id="btnExcluirProduto" class="btn-excluir-admin" style="background: #a94442; color: #CEC8B8; margin-top: 10px; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; width: 100%;">Excluir Produto</button></div>
+      <section class="vitrine-item admin-secondary-panel item-admin-pedidos" aria-label="Pedidos">
+        <div class="admin-section-heading">
+          <h2>Pedidos</h2>
+          <button type="button" class="btn-secundario admin-export-button" data-export-report="orders">Exportar CSV</button>
+        </div>
+        <details class="accordion-item admin-create-panel">
+          <summary class="accordion-header">
+            <span class="accordion-title">Cadastrar pedido</span>
+            <svg class="accordion-arrow" width="32.8" height="32.8" viewBox="0 0 32.8 32.8" aria-hidden="true">
+              <path d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z" fill="#3d2d2d" />
+            </svg>
+          </summary>
+          <form id="formCadastroPedido" class="admin-create-form">
+            <div class="admin-create-grid">
+              <label>Cliente cadastrado
+                <select id="pedidoClienteSelect" required></select>
+              </label>
+              <label>Produto
+                <select id="pedidoProdutoSelect" required></select>
+              </label>
+              <label>Quantidade<input id="pedidoProdutoQuantidade" type="number" min="1" value="1" required></label>
+              <button type="button" class="btn-salvar-admin" id="adicionarItemPedido">Adicionar produto</button>
+            </div>
+            <fieldset id="pedidoNovoClienteCampos" class="admin-create-grid">
+              <legend>Dados do novo cliente</legend>
+              <label>Nome<input id="pedidoClienteNome" required></label>
+              <label>Telefone<input id="pedidoClienteTelefone" inputmode="tel" required></label>
+              <label>CPF<input id="pedidoClienteCpf" required></label>
+              <label>Endereço<input id="pedidoClienteEndereco" required></label>
+              <label>Número<input id="pedidoClienteNumero" required></label>
+              <label>Complemento<input id="pedidoClienteComplemento"></label>
+              <label>CEP<input id="pedidoClienteCep" inputmode="numeric" required></label>
+            </fieldset>
+            <div id="pedidoItensSelecionados" class="admin-create-items"></div>
+            <div class="admin-create-footer">
+              <strong>Total: <span id="pedidoTotalCadastro">R$ 0,00</span></strong>
+              <button type="submit" class="btn-salvar-admin">Salvar pedido</button>
+            </div>
+          </form>
+        </details>
+        <div class="admin-orders-layout">
+          <div id="listaPedidosAdmin" class="admin-orders-list"></div>
+          <section id="detalhesPedidoAdmin" class="admin-order-details" aria-live="polite">
+            <p>Selecione um pedido para ver os detalhes.</p>
+          </section>
+        </div>
+      </section>
 
-<!-- CONFIGURAÇÃO DA API DO GITHUB -->
-<div style="margin-top: 10px; margin-bottom: -90px; background: #CEC8B8; color: #CEC8B8;">
-  
-  <div>
-    <input type="text" id="gitUser" value="roblesmatt" style="width: 100%; box-sizing: border-box;">
-  </div>
+      <section class="vitrine-item admin-secondary-panel item-admin-caixa" aria-label="Caixa">
+        <div class="admin-section-heading">
+          <h2>Caixa</h2>
+          <button type="button" class="btn-secundario admin-export-button" data-export-report="cash">Exportar CSV</button>
+        </div>
+        <div class="caixa-layout">
+          <section class="caixa-venda">
+            <div class="caixa-barcode-search">
+              <label for="buscaCodigoBarras">Código de barras / produto</label>
+              <input id="buscaCodigoBarras" type="text" autocomplete="off" placeholder="Escaneie ou digite o código de barras">
+              <button type="button" id="btnAdicionarProdutoCaixa" class="btn-salvar-admin">Adicionar produto</button>
+            </div>
+            <div class="caixa-sale-content">
+              <div>
+                <div class="caixa-sale-heading" aria-hidden="true">
+                  <span>Produto</span><span>Código</span><span>Preço unitário</span><span>Qtd.</span><span>Subtotal</span>
+                </div>
+                <div id="listaVendaCaixa" class="caixa-sale-list"></div>
+              </div>
+              <figure class="caixa-product-preview">
+                <img id="imagemProdutoCaixa" src="" alt="Imagem do produto selecionado" hidden>
+                <figcaption id="legendaProdutoCaixa">Imagem do produto</figcaption>
+              </figure>
+            </div>
+            <div class="caixa-total">Total: <strong id="totalVendaCaixa">R$ 0,00</strong></div>
+          </section>
+          <aside class="caixa-actions">
+            <h3>Forma de pagamento</h3>
+            <div class="caixa-payment-actions">
+              <button type="button" data-forma-pagamento="Pix" data-shortcut="F1">F1 · Pix</button>
+              <button type="button" data-forma-pagamento="Cartão de crédito" data-shortcut="F3">F3 · Cartão de crédito</button>
+              <button type="button" data-forma-pagamento="Cartão de débito" data-shortcut="F2">F2 · Cartão de débito</button>
+              <button type="button" data-forma-pagamento="Dinheiro" data-shortcut="F4">F4 · Dinheiro</button>
+              <button type="button" id="btnClienteVip" data-shortcut="F5">F5 · Cliente VIP</button>
+            </div>
+            <p id="formaPagamentoSelecionada" aria-live="polite">Selecione uma forma de pagamento.</p>
+            <button type="button" id="btnConcluirVenda" class="btn-salvar-admin">Concluir venda</button>
+            <div class="caixa-shortcut-actions">
+              <button type="button" id="atalhoAdicionarProdutoCaixa" data-shortcut="F6">F6 · Adicionar produto</button>
+              <button type="button" id="btnCancelarVenda" data-shortcut="Esc">Esc · Cancelar venda</button>
+            </div>
+          </aside>
+        </div>
+        <footer class="caixa-clock" aria-live="off">
+          <span>Data e horário</span>
+          <time id="relogioCaixa"></time>
+        </footer>
+      </section>
 
-  <div>
-    <input type="text" id="gitRepo" value="produtos-artesanais" style="width: 100%; margin-top: -2px; border-box;">
-  </div>
+      <section class="vitrine-item admin-secondary-panel item-admin-clientes" aria-label="Clientes">
+        <div class="admin-section-heading">
+          <h2>Clientes</h2>
+          <div class="admin-section-actions">
+            <button type="button" class="btn-salvar-admin" id="btnAbrirCadastroCliente">Adicionar cliente</button>
+            <button type="button" class="btn-secundario admin-export-button" data-export-report="clients">Exportar CSV</button>
+          </div>
+        </div>
+        <details id="painelCadastroCliente" class="accordion-item admin-create-panel">
+          <summary class="accordion-header">
+            <span class="accordion-title">Cadastrar cliente</span>
+            <svg class="accordion-arrow" width="32.8" height="32.8" viewBox="0 0 32.8 32.8" aria-hidden="true">
+              <path d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z" fill="#3d2d2d" />
+            </svg>
+          </summary>
+          <form id="formCadastroCliente" class="admin-create-form">
+            <div class="admin-create-grid">
+              <label>Nome<input id="novoClienteNome" required></label>
+              <label>Telefone<input id="novoClienteTelefone" inputmode="tel" required></label>
+              <label>CPF<input id="novoClienteCpf" required></label>
+              <label>Endereço<input id="novoClienteEndereco" required></label>
+              <label>Número<input id="novoClienteNumero" required></label>
+              <label>Complemento<input id="novoClienteComplemento"></label>
+              <label>CEP<input id="novoClienteCep" inputmode="numeric" required></label>
+              <button type="submit" class="btn-salvar-admin">Salvar cliente</button>
+            </div>
+          </form>
+        </details>
+        <div id="listaClientesAdmin" class="admin-clients-layout"></div>
+      </section>
 
-  <div>
-    <input type="password" id="gitToken" placeholder="Cole o seu token aqui" style="width: 100%; margin-top: -2px; box-sizing: border-box;">
-  </div>
-</div>
-
+      <section class="vitrine-item admin-secondary-panel item-admin-relatorios" aria-label="Relatórios">
+        <div class="admin-section-heading">
+          <h2>Relatórios</h2>
+          <div class="admin-section-actions">
+            <button type="button" class="btn-secundario admin-export-button" data-export-report="reports">Exportar CSV</button>
+            <button type="button" class="btn-salvar-admin" id="carregarDemonstracao">Carregar demonstração</button>
+            <button type="button" class="btn-excluir-admin" id="removerDemonstracao" hidden>Remover demonstração</button>
+          </div>
+        </div>
+        <p class="admin-demo-description">A demonstração adiciona um pedido e cliente fictícios neste navegador. Você pode removê-los sem afetar os pedidos reais.</p>
+        <div id="resumoRelatoriosAdmin" class="admin-report-cards"></div>
+        <div class="admin-report-visuals">
+          <section class="admin-report-chart-section admin-report-sales" aria-labelledby="tituloGraficoRelatorios">
+            <h3 id="tituloGraficoRelatorios">Vendas concluídas · últimos 7 dias</h3>
+            <div id="graficoRelatoriosAdmin" class="admin-sales-chart" role="img" aria-label="Gráfico de valores de vendas concluídas por dia"></div>
+          </section>
+          <section class="admin-report-chart-section admin-report-payment" aria-labelledby="tituloGraficoPagamentos">
+            <h3 id="tituloGraficoPagamentos">Vendas por pagamento</h3>
+            <div class="admin-payment-chart-layout">
+              <div id="graficoPagamentosAdmin" class="admin-payment-donut" role="img" aria-label="Distribuição das vendas por forma de pagamento"></div>
+              <ul id="legendaPagamentosAdmin" class="admin-payment-legend"></ul>
+            </div>
+          </section>
+          <section class="admin-report-chart-section admin-report-ranking" aria-labelledby="tituloRankingProdutos">
+            <h3 id="tituloRankingProdutos">Produtos mais vendidos</h3>
+            <div id="rankingProdutosAdmin" class="admin-product-ranking"></div>
+          </section>
+        </div>
+        <div id="relatorioProdutosAdmin" class="admin-table-wrap"></div>
+      </section>
     </div>
-  </div>
-</div>
+  </main>
 
-<script src="produtos.js" defer></script>
-<script src="scripts.js" defer></script>
-
+  <script src="produtos.js" defer></script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>

@@ -308,15 +308,16 @@
 
                   const itemDiv = document.createElement("a");
                   itemDiv.href = linkProduto;
-                  itemDiv.className = "carrossel-inferior-item"; // Ajustado para a classe correta do carrossel inferior
-                  itemDiv.style.cssText = "display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; padding: 10px; border: 2px solid #3d2d2d; background: #CEC8B8; flex: 0 0 140px; box-sizing: border-box; margin-left: -2px;";
+                  itemDiv.className = `carrossel-inferior-item${produto.esgotado ? " carrossel-inferior-item-esgotado" : ""}`;
 
-                  // Título sem propriedades de corte para aparecer completo
                   itemDiv.innerHTML = `
-    <img src="${imagemSrc}" alt="${produto.nome}" style="width: 85px; height: 85px; object-fit: contain; margin-bottom: 8px; display: block; pointer-events: none;">
-    <span style="font-size: 11px; font-weight: bold; text-align: center; width: 100%; display: block; line-height: 1.2; margin-bottom: 4px;">${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}</span>
-    <span style="font-size: 11px; color: #3d2d2d; font-weight: bold;">${precoExibido}</span>
-`;
+                    <div class="carrossel-inferior-conteudo">
+                      <img src="${imagemSrc}" alt="${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}">
+                      <span style="font-size: 11px; font-weight: bold; text-align: center; width: 100%; display: block; line-height: 1.2; margin-bottom: 4px;">${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}</span>
+                      <span class="carrossel-inferior-preco">${precoExibido}</span>
+                    </div>
+                    ${produto.esgotado ? '<div class="button1 produto-selo-esgotado">ESGOTADO</div>' : ""}
+                  `;
 
                   containerCarrossel.appendChild(itemDiv);
               });
@@ -329,9 +330,64 @@
               let isDown = false;
               let startX;
               let scrollLeft;
+              let isVisible = false;
+              let isHovered = false;
+              let autoScrollTimer = null;
+              let hoverResumeTimer = null;
+
+              function stopAutoScroll() {
+                  if (autoScrollTimer) {
+                      clearInterval(autoScrollTimer);
+                      autoScrollTimer = null;
+                  }
+              }
+
+              function startAutoScroll() {
+                  if (!isVisible || isDown || (isHovered && hoverResumeTimer)) return;
+                  if (autoScrollTimer) return;
+
+                  autoScrollTimer = setInterval(() => {
+                      const item = track.querySelector(".carrossel-inferior-item");
+                      if (!item) return;
+
+                      const maxScroll = track.scrollWidth - track.clientWidth;
+                      const nextLeft = track.scrollLeft + item.offsetWidth;
+                      track.scrollTo({
+                          left: nextLeft >= maxScroll - 4 ? 0 : nextLeft,
+                          behavior: "smooth",
+                      });
+                  }, 6000);
+              }
+
+              const carouselObserver = new IntersectionObserver((entries) => {
+                  isVisible = entries.some((entry) => entry.isIntersecting);
+                  if (isVisible) startAutoScroll();
+                  else stopAutoScroll();
+              }, { threshold: 0.2 });
+              carouselObserver.observe(track);
+
+              track.addEventListener("mouseenter", () => {
+                  isHovered = true;
+                  stopAutoScroll();
+                  if (hoverResumeTimer) clearTimeout(hoverResumeTimer);
+                  hoverResumeTimer = setTimeout(() => {
+                      hoverResumeTimer = null;
+                      startAutoScroll();
+                  }, 6000);
+              });
+
+              track.addEventListener("mouseleave", () => {
+                  isHovered = false;
+                  if (hoverResumeTimer) {
+                      clearTimeout(hoverResumeTimer);
+                      hoverResumeTimer = null;
+                  }
+                  startAutoScroll();
+              });
 
               track.addEventListener("mousedown", (e) => {
                   isDown = true;
+                  stopAutoScroll();
                   track.classList.add("is-dragging");
                   startX = e.pageX - track.offsetLeft;
                   scrollLeft = track.scrollLeft;
@@ -340,11 +396,13 @@
               track.addEventListener("mouseleave", () => {
                   isDown = false;
                   track.classList.remove("is-dragging");
+                  startAutoScroll();
               });
 
               track.addEventListener("mouseup", () => {
                   isDown = false;
                   track.classList.remove("is-dragging");
+                  startAutoScroll();
               });
 
               track.addEventListener("mousemove", (e) => {

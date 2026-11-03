@@ -1,3 +1,30 @@
+function calcularDigitoVerificadorEan13(codigo) {
+  const soma = [...codigo].reduce(
+    (total, digito, indice) =>
+      total + Number(digito) * (indice % 2 === 0 ? 1 : 3),
+    0,
+  );
+  return String((10 - (soma % 10)) % 10);
+}
+
+function gerarCodigoBarrasInterno(idProduto, codigosUtilizados) {
+  let hash = 17;
+  for (const caractere of idProduto) {
+    hash = (hash * 31 + caractere.charCodeAt(0)) % 10000000000;
+  }
+
+  for (let tentativa = 0; tentativa < 10000000000; tentativa += 1) {
+    const base = `20${String((hash + tentativa) % 10000000000).padStart(10, "0")}`;
+    const codigo = `${base}${calcularDigitoVerificadorEan13(base)}`;
+    if (!codigosUtilizados.has(codigo)) {
+      codigosUtilizados.add(codigo);
+      return codigo;
+    }
+  }
+
+  throw new Error("Não foi possível gerar um código de barras único.");
+}
+
 const BANCO_PRODUTOS_ORIGINAIS = [
   {
     id: "perfume-artesanal-docura-citrica",
@@ -705,15 +732,35 @@ const BANCO_PRODUTOS_ORIGINAIS = [
   },
 ];
 
+const codigosBarrasOriginais = new Set(
+  BANCO_PRODUTOS_ORIGINAIS
+    .map((produto) => produto.codigoBarras)
+    .filter(Boolean),
+);
+BANCO_PRODUTOS_ORIGINAIS.forEach((produto, indice) => {
+  if (!produto.id) produto.id = `produto-${String(indice + 1).padStart(3, "0")}`;
+  if (!produto.codigoBarras) {
+    produto.codigoBarras = gerarCodigoBarrasInterno(
+      produto.id,
+      codigosBarrasOriginais,
+    );
+  }
+});
+
+const PRODUTOS_CUSTOMIZADOS_GITHUB = [];
+const PRODUTOS_EXCLUIDOS_GITHUB = [];
+
 function gerarLinkPaginaProduto(produto) {
   return `produto.html?id=${encodeURIComponent(produto.id)}`;
 }
 
 function carregarBancoProdutos() {
-  const customizados = [];
+  const customizadosLocais = JSON.parse(localStorage.getItem("banco_produtos_custom") || "[]");
+  const produtosExcluidosLocais = JSON.parse(localStorage.getItem("banco_produtos_excluidos") || "[]");
+  const produtosExcluidos = [...PRODUTOS_EXCLUIDOS_GITHUB, ...produtosExcluidosLocais];
   let produtosUnificados = [...BANCO_PRODUTOS_ORIGINAIS];
 
-  customizados.forEach((cust) => {
+  [...PRODUTOS_CUSTOMIZADOS_GITHUB, ...customizadosLocais].forEach((cust) => {
     const index = produtosUnificados.findIndex((p) => p.id === cust.id);
     if (index >= 0) {
       produtosUnificados[index] = cust;
@@ -722,7 +769,20 @@ function carregarBancoProdutos() {
     }
   });
 
-  return produtosUnificados;
+  const produtosAtivos = produtosUnificados.filter(
+    (produto) => !produtosExcluidos.includes(produto.id),
+  );
+  const codigosBarras = new Set(
+    produtosAtivos.map((produto) => produto.codigoBarras).filter(Boolean),
+  );
+  produtosAtivos.forEach((produto, indice) => {
+    if (!produto.id) produto.id = `produto-${String(indice + 1).padStart(3, "0")}`;
+    if (!produto.codigoBarras) {
+      produto.codigoBarras = gerarCodigoBarrasInterno(produto.id, codigosBarras);
+    }
+  });
+
+  return produtosAtivos;
 }
 
 const BANCO_PRODUTOS = carregarBancoProdutos();
