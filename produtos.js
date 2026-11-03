@@ -733,12 +733,13 @@ const BANCO_PRODUTOS_ORIGINAIS = [
 ];
 
 const codigosBarrasOriginais = new Set(
-  BANCO_PRODUTOS_ORIGINAIS
-    .map((produto) => produto.codigoBarras)
-    .filter(Boolean),
+  BANCO_PRODUTOS_ORIGINAIS.map((produto) => produto.codigoBarras).filter(
+    Boolean,
+  ),
 );
 BANCO_PRODUTOS_ORIGINAIS.forEach((produto, indice) => {
-  if (!produto.id) produto.id = `produto-${String(indice + 1).padStart(3, "0")}`;
+  if (!produto.id)
+    produto.id = `produto-${String(indice + 1).padStart(3, "0")}`;
   if (!produto.codigoBarras) {
     produto.codigoBarras = gerarCodigoBarrasInterno(
       produto.id,
@@ -755,9 +756,16 @@ function gerarLinkPaginaProduto(produto) {
 }
 
 function carregarBancoProdutos() {
-  const customizadosLocais = JSON.parse(localStorage.getItem("banco_produtos_custom") || "[]");
-  const produtosExcluidosLocais = JSON.parse(localStorage.getItem("banco_produtos_excluidos") || "[]");
-  const produtosExcluidos = [...PRODUTOS_EXCLUIDOS_GITHUB, ...produtosExcluidosLocais];
+  const customizadosLocais = JSON.parse(
+    localStorage.getItem("banco_produtos_custom") || "[]",
+  );
+  const produtosExcluidosLocais = JSON.parse(
+    localStorage.getItem("banco_produtos_excluidos") || "[]",
+  );
+  const produtosExcluidos = [
+    ...PRODUTOS_EXCLUIDOS_GITHUB,
+    ...produtosExcluidosLocais,
+  ];
   let produtosUnificados = [...BANCO_PRODUTOS_ORIGINAIS];
 
   [...PRODUTOS_CUSTOMIZADOS_GITHUB, ...customizadosLocais].forEach((cust) => {
@@ -776,9 +784,13 @@ function carregarBancoProdutos() {
     produtosAtivos.map((produto) => produto.codigoBarras).filter(Boolean),
   );
   produtosAtivos.forEach((produto, indice) => {
-    if (!produto.id) produto.id = `produto-${String(indice + 1).padStart(3, "0")}`;
+    if (!produto.id)
+      produto.id = `produto-${String(indice + 1).padStart(3, "0")}`;
     if (!produto.codigoBarras) {
-      produto.codigoBarras = gerarCodigoBarrasInterno(produto.id, codigosBarras);
+      produto.codigoBarras = gerarCodigoBarrasInterno(
+        produto.id,
+        codigosBarras,
+      );
     }
   });
 
