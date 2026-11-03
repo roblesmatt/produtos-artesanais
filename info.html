@@ -213,6 +213,19 @@
             </div>
           </form>
         </details>
+        <section class="admin-pix-settings" aria-labelledby="adminPixHeading">
+          <div>
+            <h3 id="adminPixHeading">Pix do checkout</h3>
+            <p>Configure a chave Pix ou o código Copia e Cola exibido ao cliente. A configuração fica salva neste navegador.</p>
+          </div>
+          <form id="adminPixForm">
+            <label for="adminPixKey">Chave Pix ou Pix Copia e Cola
+              <input id="adminPixKey" type="text" autocomplete="off" required>
+            </label>
+            <button type="submit" class="btn-salvar-admin">Salvar Pix</button>
+            <span id="adminPixStatus" role="status" aria-live="polite"></span>
+          </form>
+        </section>
         <div class="admin-orders-layout">
           <div id="listaPedidosAdmin" class="admin-orders-list"></div>
           <section id="detalhesPedidoAdmin" class="admin-order-details" aria-live="polite">
@@ -336,5 +349,23 @@
 
   <script src="produtos.js" defer></script>
   <script src="scripts.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("adminPixForm");
+      const campo = document.getElementById("adminPixKey");
+      const status = document.getElementById("adminPixStatus");
+      campo.value = localStorage.getItem(CHAVE_PIX_STORAGE) || CHAVE_PIX_PADRAO;
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const chave = campo.value.trim();
+        if (!chave) {
+          status.textContent = "Informe uma chave Pix ou código Copia e Cola.";
+          return;
+        }
+        localStorage.setItem(CHAVE_PIX_STORAGE, chave);
+        status.textContent = "Pix salvo neste navegador.";
+      });
+    });
+  </script>
 </body>
 </html>

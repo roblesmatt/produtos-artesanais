@@ -131,12 +131,23 @@ function embaralharArray(itens) {
   return embaralhados;
 }
 
-const paginaGlobal = window.location.pathname.includes("/produtos/")
-  ? "../global.html"
-  : "global.html";
+const CHAVE_PIX_STORAGE = "pix_chave_checkout";
+const CHAVE_PIX_PADRAO = "595f8490-c36b-461b-8fdc-a15e602b22a6";
+
+const paginaInfo = window.location.pathname.endsWith("/info.html");
+const paginaGlobal = paginaInfo
+  ? "global.html"
+  : window.location.pathname.includes("/produtos/")
+    ? "../global.html"
+    : "global.html";
 
 fetch(paginaGlobal)
-  .then((response) => response.text())
+.then((response) => {
+  if (!response.ok) {
+    throw new Error(`Não foi possível carregar o cabeçalho: ${response.status}`);
+  }
+  return response.text();
+})
   .then((data) => {
     const cabecalhoContainer = document.getElementById("cabecalho-container");
     if (cabecalhoContainer) {
@@ -149,7 +160,12 @@ fetch(paginaGlobal)
         }
       });
 
-      if (window.location.pathname.endsWith("/info.html")) {
+      if (paginaInfo) {
+        const cabecalho = cabecalhoContainer.querySelector(".header");
+        cabecalho?.classList.add("admin-site-header");
+        cabecalhoContainer.querySelector("#menuToggle")?.remove();
+        cabecalhoContainer.querySelector("#navMenu")?.remove();
+
         const carrinho = cabecalhoContainer.querySelector(".header-actions .botao-icone");
         if (carrinho) {
           const linkPedidos = carrinho.querySelector("a[href]");
@@ -178,6 +194,7 @@ fetch(paginaGlobal)
               const novosPedidos = pedidos.filter(
                 (pedido) =>
                   pedido.origem === "Site" &&
+                  pedido.demonstracao !== true &&
                   pedido.id &&
                   !visualizados.has(String(pedido.id)),
               );
@@ -190,7 +207,7 @@ fetch(paginaGlobal)
                 `${novosPedidos.length} ${novosPedidos.length === 1 ? "pedido novo" : "pedidos novos"} do checkout`,
               );
               linkPedidos.title = novosPedidos.length
-                ? `${novosPedidos.length} pedido(s) novo(s) do checkout; pagamento ainda não confirmado`
+                ? `${novosPedidos.length} pedido(s) novo(s) do checkout; pagamento informado para conferência`
                 : "Abrir pedidos";
             };
 
@@ -202,7 +219,7 @@ fetch(paginaGlobal)
               pedidosTab.checked = true;
               pedidosTab.dispatchEvent(new Event("change", { bubbles: true }));
               const pedidosSite = JSON.parse(localStorage.getItem("pedidos_admin") || "[]")
-                .filter((pedido) => pedido.origem === "Site" && pedido.id)
+                .filter((pedido) => pedido.origem === "Site" && pedido.demonstracao !== true && pedido.id)
                 .map((pedido) => String(pedido.id));
               localStorage.setItem(chavePedidosVisualizados, JSON.stringify(pedidosSite));
               atualizarNotificacaoPedidos();
@@ -2236,10 +2253,10 @@ function exportarRelatorio(tipo, estadoCaixa = {}, clientes = []) {
       const ultimaCompra = compras
         .slice()
         .sort((a, b) => new Date(b.dataCriacao || 0) - new Date(a.dataCriacao || 0))[0];
-      const sugestoes = (cliente.sugestoes || [])
-        .map((id) => BANCO_PRODUTOS.find((produto) => produto.id === id)?.nome)
+      const sugestoes = (cliente.sugestoesCliente || [])
+        .map((sugestao) => sugestao.texto)
         .filter(Boolean)
-        .join(", ");
+        .join(" | ");
       return [
         cliente.nome,
         cliente.telefone,
@@ -2255,7 +2272,7 @@ function exportarRelatorio(tipo, estadoCaixa = {}, clientes = []) {
     });
     baixarCsv(
       "relatorio-clientes",
-      ["Cliente", "Telefone", "CPF", "Endereço", "CEP", "Pedidos", "Itens comprados", "Total comprado", "Última compra", "Sugestões cadastradas"],
+      ["Cliente", "Telefone", "CPF", "Endereço", "CEP", "Pedidos", "Itens comprados", "Total comprado", "Última compra", "Comentários/sugestões do cliente"],
       linhas,
     );
     return;
@@ -2534,6 +2551,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const status = document.createElement("select");
     [
       "Aguardando confirmação",
+      "Pagamento informado; aguardando confirmação",
       "Em preparação",
       "Concluído",
       "Cancelado",
@@ -2651,6 +2669,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ...cliente,
         chave,
         pedidos: [],
+        sugestoesCliente: Array.isArray(cliente.sugestoesCliente)
+          ? cliente.sugestoesCliente
+          : [],
         sugestoes: Array.isArray(cliente.sugestoes) ? cliente.sugestoes : [],
         sugestoesRemovidas: Array.isArray(cliente.sugestoesRemovidas)
           ? cliente.sugestoesRemovidas
@@ -2663,19 +2684,30 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!clientePedido?.nome) return;
       const chavePedido = obterChaveCliente(clientePedido);
       const chave = chavesRelacionadas.get(chavePedido) || chavePedido;
-      const atual = clientes.get(chave) || {
+      const atual = clientes.get(chave);
+      const clienteUnificado = {
         ...clientePedido,
+        ...atual,
         chave,
-        pedidos: [],
-        sugestoes: [],
-        sugestoesRemovidas: [],
+        pedidos: atual?.pedidos || [],
+        sugestoesCliente: Array.isArray(atual?.sugestoesCliente)
+          ? atual.sugestoesCliente
+          : [],
+        camposPersonalizados: Array.isArray(atual?.camposPersonalizados)
+          ? atual.camposPersonalizados
+          : [],
         demonstracao: false,
       };
-      atual.pedidos.push(pedido);
-      atual.demonstracao = atual.pedidos.every(
+      ["nome", "telefone", "cpf", "endereco", "numero", "complemento", "cep"].forEach((campo) => {
+        if (!String(clienteUnificado[campo] || "").trim() && clientePedido[campo]) {
+          clienteUnificado[campo] = clientePedido[campo];
+        }
+      });
+      clienteUnificado.pedidos.push(pedido);
+      clienteUnificado.demonstracao = clienteUnificado.pedidos.every(
         (registro) => registro.demonstracao === true,
       );
-      clientes.set(chave, atual);
+      clientes.set(chave, clienteUnificado);
     });
     return clientes;
   }
@@ -2776,10 +2808,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const dados = document.createElement("dl");
     dados.className = "admin-client-data";
     [
+      ["Nome", cliente.nome || "—"],
       ["Telefone", cliente.telefone || "—"],
       ["CPF", cliente.cpf || "—"],
       ["Endereço", [cliente.endereco, cliente.numero, cliente.complemento].filter(Boolean).join(", ") || "—"],
       ["CEP", cliente.cep || "—"],
+      ["Cliente VIP", cliente.clienteVip === true || pedidosCliente.some((pedido) => pedido.clienteVip === true) ? "Sim" : "Não"],
+      ["Pedidos", String(pedidosCliente.length)],
+      ["Total comprado", formatarMoeda(pedidosCliente.reduce((total, pedido) => total + Number(pedido.total || 0), 0))],
       ["Última compra", pedidosCliente[0]?.dataCriacao
         ? new Date(pedidosCliente[0].dataCriacao).toLocaleString("pt-BR")
         : "—"],
@@ -3093,14 +3129,39 @@ document.addEventListener("DOMContentLoaded", () => {
         const dataPedido = pedido.dataCriacao
           ? new Date(pedido.dataCriacao).toLocaleString("pt-BR")
           : "Data não informada";
-        cabecalho.textContent = `Pedido ${pedido.id || "—"} · ${dataPedido} · ${pedido.formaPagamento || "Pagamento não informado"} · ${pedido.status || "Status não informado"}`;
+        cabecalho.textContent = `Pedido ${pedido.id || "—"} · ${dataPedido}`;
         grupo.appendChild(cabecalho);
+        const dadosPedido = document.createElement("dl");
+        dadosPedido.className = "admin-client-order-data";
+        [
+          ["Total", formatarMoeda(pedido.total)],
+          ["Pagamento", pedido.formaPagamento || "Pagamento não informado"],
+          ["Status", pedido.status || "Status não informado"],
+          ["Data do pagamento", pedido.dataPagamento
+            ? new Date(pedido.dataPagamento).toLocaleDateString("pt-BR")
+            : "—"],
+          ["Data de entrega", pedido.dataEntrega
+            ? new Date(pedido.dataEntrega).toLocaleDateString("pt-BR")
+            : "—"],
+        ].forEach(([rotulo, valor]) => {
+          const termo = document.createElement("dt");
+          termo.textContent = rotulo;
+          const descricao = document.createElement("dd");
+          descricao.textContent = valor;
+          dadosPedido.append(termo, descricao);
+        });
+        grupo.appendChild(dadosPedido);
         const itens = document.createElement("ul");
         itens.className = "admin-client-product-list";
         (Array.isArray(pedido.itens) ? pedido.itens : []).forEach((item) => {
           itens.appendChild(criarDetalhesItemPedido(item));
         });
-        grupo.appendChild(itens);
+          if (!itens.childElementCount) {
+            const itemVazio = document.createElement("li");
+            itemVazio.textContent = "Este pedido não possui itens detalhados.";
+            itens.appendChild(itemVazio);
+          }
+          grupo.appendChild(itens);
         resumoCompras.appendChild(grupo);
       });
     }
@@ -3156,123 +3217,95 @@ document.addEventListener("DOMContentLoaded", () => {
       areaDevolucoes.appendChild(vazio);
     }
 
-    const idsComprados = new Set(
-      pedidosCliente.flatMap((pedido) =>
-        (Array.isArray(pedido.itens) ? pedido.itens : []).map((item) => item.id),
-      ),
-    );
-    const funcoesCompradas = new Set(
-      BANCO_PRODUTOS
-        .filter((produto) => idsComprados.has(produto.id))
-        .map((produto) => produto.tags?.funcao)
-        .filter(Boolean),
-    );
-    const sugestoesRemovidas = new Set(cliente.sugestoesRemovidas || []);
-    const sugestoesAutomaticas = BANCO_PRODUTOS
-      .filter((produto) => !produto.esgotado && !idsComprados.has(produto.id))
-      .filter((produto) => !sugestoesRemovidas.has(produto.id))
-      .sort((a, b) =>
-        Number(funcoesCompradas.has(b.tags?.funcao)) -
-        Number(funcoesCompradas.has(a.tags?.funcao)),
-      )
-      .slice(0, 3);
-    const areaSugestoes = criarAcordeao("Sugestões de produtos");
-    const seletorSugestao = document.createElement("select");
-    seletorSugestao.className = "admin-client-suggestion-select";
-    seletorSugestao.setAttribute("aria-label", "Selecionar produto para sugestão");
-    const opcaoPadrao = document.createElement("option");
-    opcaoPadrao.value = "";
-    opcaoPadrao.textContent = "Selecione um produto";
-    seletorSugestao.appendChild(opcaoPadrao);
-    BANCO_PRODUTOS.filter((produto) => !produto.esgotado).forEach((produto) => {
-      const opcao = document.createElement("option");
-      opcao.value = produto.id;
-      opcao.textContent = produto.nome.replace(/<br\s*[\/]?>/gi, " ");
-      seletorSugestao.appendChild(opcao);
-    });
-    const botaoAdicionarSugestao = document.createElement("button");
-    botaoAdicionarSugestao.type = "button";
-    botaoAdicionarSugestao.className = "btn-salvar-admin";
-    botaoAdicionarSugestao.textContent = "Adicionar sugestão";
-    botaoAdicionarSugestao.addEventListener("click", () => {
-      const produtoId = seletorSugestao.value;
-      if (!produtoId) {
-        seletorSugestao.focus();
-        return;
-      }
+    const areaSugestoes = criarAcordeao("Sugestões e comentários do cliente");
+    const formularioSugestao = document.createElement("form");
+    formularioSugestao.className = "admin-client-suggestion-form";
+    const rotuloSugestao = document.createElement("label");
+    rotuloSugestao.textContent = "Anote uma sugestão, comentário ou observação informada pelo cliente";
+    const campoSugestao = document.createElement("textarea");
+    campoSugestao.name = "sugestao";
+    campoSugestao.rows = 3;
+    campoSugestao.required = true;
+    campoSugestao.maxLength = 2000;
+    campoSugestao.placeholder = "Digite aqui o comentário do cliente...";
+    rotuloSugestao.appendChild(campoSugestao);
+    const salvarSugestao = document.createElement("button");
+    salvarSugestao.type = "submit";
+    salvarSugestao.className = "btn-salvar-admin";
+    salvarSugestao.textContent = "Registrar comentário";
+    formularioSugestao.append(rotuloSugestao, salvarSugestao);
+    formularioSugestao.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const texto = campoSugestao.value.trim();
+      if (!texto) return;
       const clientesSalvos = lerClientesAdmin();
-      const dadosSalvos = clientesSalvos.find(
-        (registro) => obterChaveCliente(registro) === cliente.chave,
-      ) || obterDadosSalvaveisCliente(cliente);
-      const idsSugestoes = new Set(dadosSalvos.sugestoes || []);
-      idsSugestoes.add(produtoId);
-      dadosSalvos.sugestoes = [...idsSugestoes];
-      dadosSalvos.sugestoesRemovidas = (dadosSalvos.sugestoesRemovidas || [])
-        .filter((id) => id !== produtoId);
-      const indexClienteSalvo = clientesSalvos.findIndex(
-        (registro) => obterChaveCliente(registro) === cliente.chave,
+      const indiceSalvo = clientesSalvos.findIndex((registro) =>
+        obterChaveCliente(registro) === cliente.chave ||
+        (Array.isArray(registro.chavesVinculadas) &&
+          registro.chavesVinculadas.includes(cliente.chave)),
       );
-      if (indexClienteSalvo < 0) clientesSalvos.push(dadosSalvos);
-      else clientesSalvos[indexClienteSalvo] = dadosSalvos;
+      const registroSalvo = indiceSalvo >= 0
+        ? { ...clientesSalvos[indiceSalvo] }
+        : obterDadosSalvaveisCliente(cliente);
+      const sugestoesSalvas = Array.isArray(registroSalvo.sugestoesCliente)
+        ? registroSalvo.sugestoesCliente
+        : [];
+      registroSalvo.sugestoesCliente = [
+        ...sugestoesSalvas,
+        {
+          id: `sugestao-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+          texto,
+          dataCriacao: new Date().toISOString(),
+        },
+      ];
+      if (indiceSalvo < 0) clientesSalvos.push(registroSalvo);
+      else clientesSalvos[indiceSalvo] = registroSalvo;
       salvarClientesAdmin(clientesSalvos);
       renderizarClientes();
     });
-    const controlesSugestao = document.createElement("div");
-    controlesSugestao.className = "admin-client-suggestion-controls";
-    controlesSugestao.append(seletorSugestao, botaoAdicionarSugestao);
-    areaSugestoes.appendChild(controlesSugestao);
+    areaSugestoes.appendChild(formularioSugestao);
 
-    const idsSugestoesManuais = cliente.sugestoes || [];
-    const sugestoesManuais = idsSugestoesManuais
-      .map((id) => BANCO_PRODUTOS.find((produto) => produto.id === id))
-      .filter((produto) => produto && !produto.esgotado && !sugestoesRemovidas.has(produto.id));
-    const sugestoes = [...sugestoesManuais];
-    sugestoesAutomaticas.forEach((produto) => {
-      if (!sugestoes.some((sugestao) => sugestao.id === produto.id)) {
-        sugestoes.push(produto);
-      }
-    });
-    if (sugestoes.length) {
+    const sugestoesCliente = Array.isArray(cliente.sugestoesCliente)
+      ? cliente.sugestoesCliente
+      : [];
+    if (sugestoesCliente.length) {
       const listaSugestoes = document.createElement("ul");
-      listaSugestoes.className = "admin-client-product-list";
-      sugestoes.forEach((produto) => {
+      listaSugestoes.className = "admin-client-suggestions";
+      sugestoesCliente.slice().reverse().forEach((sugestao) => {
         const linha = document.createElement("li");
-        const texto = document.createElement("span");
-        texto.textContent = `${produto.nome.replace(/<br\s*[\/]?>/gi, " ")} · ${produto.precoDesconto || produto.precoOriginal}`;
-        linha.appendChild(texto);
-        const nomeProduto = produto.nome.replace(/<br\s*[\/]?>/gi, " ");
+        const texto = document.createElement("p");
+        texto.textContent = sugestao.texto;
+        const data = document.createElement("time");
+        data.dateTime = sugestao.dataCriacao || "";
+        data.textContent = sugestao.dataCriacao
+          ? new Date(sugestao.dataCriacao).toLocaleString("pt-BR")
+          : "Data não informada";
         const remover = document.createElement("button");
         remover.type = "button";
         remover.className = "suggestion-remove-button";
-        remover.setAttribute("aria-label", `Remover sugestão de ${nomeProduto}`);
-        remover.title = "Remover sugestão";
-        remover.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32.8 32.8" aria-hidden="true"><path d="M16.8 15l7.5-7.5l1.8 1.8l-7.5 7.5l7.5 7.5l-1.8 1.8l-7.5-7.5l-7.5 7.5l-1.8-1.8l7.5-7.5l-7.5-7.5l1.8-1.8l7.5 7.5Z" fill="#3d2d2d"/></svg>`;
+        remover.textContent = "Excluir";
         remover.addEventListener("click", () => {
           const clientesSalvos = lerClientesAdmin();
-          const registroSalvo = clientesSalvos.find(
-            (registro) => obterChaveCliente(registro) === cliente.chave,
-          ) || obterDadosSalvaveisCliente(cliente);
-          registroSalvo.sugestoes = (registroSalvo.sugestoes || [])
-            .filter((id) => id !== produto.id);
-          registroSalvo.sugestoesRemovidas = [
-            ...new Set([...(registroSalvo.sugestoesRemovidas || []), produto.id]),
-          ];
-          const indiceSalvo = clientesSalvos.findIndex(
-            (registro) => obterChaveCliente(registro) === cliente.chave,
+          const indiceSalvo = clientesSalvos.findIndex((registro) =>
+            obterChaveCliente(registro) === cliente.chave ||
+            (Array.isArray(registro.chavesVinculadas) &&
+              registro.chavesVinculadas.includes(cliente.chave)),
           );
-          if (indiceSalvo < 0) clientesSalvos.push(registroSalvo);
-          else clientesSalvos[indiceSalvo] = registroSalvo;
+          if (indiceSalvo < 0) return;
+          clientesSalvos[indiceSalvo].sugestoesCliente = (
+            clientesSalvos[indiceSalvo].sugestoesCliente || []
+          ).filter((item) => item.id !== sugestao.id);
           salvarClientesAdmin(clientesSalvos);
           renderizarClientes();
         });
-        linha.appendChild(remover);
+        linha.append(texto, data, remover);
         listaSugestoes.appendChild(linha);
       });
       areaSugestoes.appendChild(listaSugestoes);
     } else {
       const vazio = document.createElement("p");
       vazio.className = "admin-empty-state";
-      vazio.textContent = "Não há sugestões disponíveis neste momento.";
+      vazio.textContent = "Ainda não há comentários ou sugestões registrados para este cliente.";
       areaSugestoes.appendChild(vazio);
     }
 
@@ -3489,42 +3522,55 @@ document.addEventListener("DOMContentLoaded", () => {
     const pedidos = lerPedidosArmazenados();
     if (pedidos.some((pedido) => pedido.demonstracao === true)) return;
 
-    const produto = BANCO_PRODUTOS.find((item) => !item.esgotado);
-    if (!produto) {
+    const produtos = BANCO_PRODUTOS.filter((item) => !item.esgotado).slice(0, 3);
+    if (produtos.length === 0) {
       alert("Não há produtos disponíveis para criar a compra de demonstração.");
       return;
     }
 
-    const preco = produto.precoDesconto || produto.precoOriginal;
-    const total = converterPrecoParaNumero(preco);
-    const dataDemonstracao = new Date();
-    dataDemonstracao.setDate(dataDemonstracao.getDate() - 1);
-    pedidos.push({
-      id: `DEMO-${Date.now()}`,
-      origem: "Demonstração",
-      demonstracao: true,
-      dataCriacao: dataDemonstracao.toISOString(),
-      cliente: {
-        nome: "Cliente Demonstração",
-        telefone: "(00) 00000-0000",
-        cpf: "000.000.000-00",
-        endereco: "Rua Exemplo",
-        numero: "123",
-        complemento: "Dados fictícios",
-        cep: "00000-000",
-      },
-      itens: [{
-        id: produto.id,
-        codigoBarras: produto.codigoBarras || "",
-        nome: produto.nome,
-        quantidade: 1,
-        preco,
-        subtotal: total,
-      }],
-      total,
-      formaPagamento: "Pix",
-      clienteVip: false,
-      status: "Concluído",
+    const cliente = {
+      nome: "Marina Exemplo",
+      telefone: "(11) 90000-0000",
+      cpf: "000.000.000-00",
+      endereco: "Rua das Flores",
+      numero: "123",
+      complemento: "Apto. 12 · dados fictícios",
+      cep: "01000-000",
+    };
+    const agora = Date.now();
+    const compras = [
+      { diasAtras: 5, sufixo: "01", produtos: produtos.slice(0, 2) },
+      { diasAtras: 1, sufixo: "02", produtos: [produtos[produtos.length - 1]] },
+    ];
+
+    compras.forEach((compra) => {
+      const dataCompra = new Date(agora - compra.diasAtras * 24 * 60 * 60 * 1000);
+      const itens = compra.produtos.map((produto, index) => {
+        const preco = produto.precoDesconto || produto.precoOriginal;
+        const quantidade = index === 0 && compra.produtos.length > 1 ? 2 : 1;
+        const subtotal = converterPrecoParaNumero(preco) * quantidade;
+        return {
+          id: produto.id,
+          codigoBarras: produto.codigoBarras || "",
+          nome: produto.nome,
+          quantidade,
+          preco,
+          subtotal,
+        };
+      });
+      pedidos.push({
+        id: `DEMO-${agora}-${compra.sufixo}`,
+        origem: "Demonstração",
+        demonstracao: true,
+        dataCriacao: dataCompra.toISOString(),
+        dataPagamento: dataCompra.toISOString().slice(0, 10),
+        cliente,
+        itens,
+        total: itens.reduce((soma, item) => soma + item.subtotal, 0),
+        formaPagamento: "Pix",
+        clienteVip: false,
+        status: "Concluído",
+      });
     });
     salvarPedidosArmazenados(pedidos);
     atualizarAbasAdministrativas();
@@ -3839,7 +3885,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (registro) => obterChaveCliente(registro) === chaveCliente,
     );
     if (indiceCliente < 0) {
-      clientes.push({ ...clienteParaSalvar, sugestoes: [] });
+      clientes.push({ ...clienteParaSalvar, sugestoesCliente: [] });
     } else {
       clientes[indiceCliente] = { ...clientes[indiceCliente], ...clienteParaSalvar };
     }
@@ -3863,7 +3909,7 @@ document.addEventListener("DOMContentLoaded", () => {
       numero: document.getElementById("novoClienteNumero").value.trim(),
       complemento: document.getElementById("novoClienteComplemento").value.trim(),
       cep: document.getElementById("novoClienteCep").value.trim(),
-      sugestoes: [],
+      sugestoesCliente: [],
     };
     const clientes = lerClientesAdmin();
     const chaveCliente = obterChaveCliente(cliente);
@@ -3880,7 +3926,7 @@ document.addEventListener("DOMContentLoaded", () => {
             valor !== "" || chave === "complemento" || !(chave in clienteExistente),
         ),
       );
-      clientes[indice].sugestoes = clienteExistente.sugestoes || [];
+      clientes[indice].sugestoesCliente = clienteExistente.sugestoesCliente || [];
     }
     salvarClientesAdmin(clientes);
     clienteSelecionadoId = chaveCliente;

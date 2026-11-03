@@ -1,36 +1,172 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minha Cesta</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha cesta - Thairo's</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="cabecalho-container"></div>
 
-    <!-- Container onde o global.html (menu/topo) é injetado -->
-    <div id="cabecalho-container"></div>
+  <main class="container-cesta customer-area">
+    <nav class="customer-tabs" role="tablist" aria-label="Minha conta">
+      <button type="button" class="customer-tab is-active" role="tab" id="tabCesta" aria-selected="true" aria-controls="panelCesta" data-customer-tab="cesta">MINHA CESTA</button>
+      <button type="button" class="customer-tab" role="tab" id="tabPedidos" aria-selected="false" aria-controls="panelPedidos" data-customer-tab="pedidos">PEDIDOS</button>
+      <button type="button" class="customer-tab" role="tab" id="tabDados" aria-selected="false" aria-controls="panelDados" data-customer-tab="dados">MEUS DADOS</button>
+    </nav>
 
-    <main class="container-cesta" style="padding: 20px;">
-        <h2>MINHA CESTA</h2>
+    <section class="customer-panel is-active" id="panelCesta" role="tabpanel" aria-labelledby="tabCesta">
+      <div id="cartItemsList" class="cart-items-list"></div>
+      <div class="cart-summary">Total: <strong id="cartTotal">R$ 0,00</strong></div>
+      <a href="checkout.html" id="checkoutLink" class="whatsapp-btn">Finalizar pedido</a>
+      <a href="index.html" class="botao-voltar">Adicionar mais produtos</a>
+    </section>
 
-        <!-- LISTA ONDE OS PRODUTOS VÃO APARECER -->
-        <div id="cartItemsList"></div>
+    <section class="customer-panel" id="panelPedidos" role="tabpanel" aria-labelledby="tabPedidos" hidden>
+      <div id="customerOrders" class="customer-orders"></div>
+    </section>
 
-        <!-- TOTAL DO CARRINHO -->
-        <div class="cart-summary" style="margin-top: 20px; font-weight: bold;">
-            Total: <span id="cartTotal">R$ 0,00</span>
-        </div>
-        
+    <section class="customer-panel" id="panelDados" role="tabpanel" aria-labelledby="tabDados" hidden>
+      <div id="customerProfile" class="customer-profile"></div>
+    </section>
+  </main>
 
-<a href="checkout.html" id="checkoutLink" class="whatsapp-btn">Finalizar Pedido via WhatsApp</a>
-<a href="index.html" class="botao-voltar">Adicionar mais Produtos</a></div>
+  <script src="produtos.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const abas = [...document.querySelectorAll("[data-customer-tab]")];
+      const paineis = {
+        cesta: document.getElementById("panelCesta"),
+        pedidos: document.getElementById("panelPedidos"),
+        dados: document.getElementById("panelDados"),
+      };
+      const listaPedidos = document.getElementById("customerOrders");
+      const painelPerfil = document.getElementById("customerProfile");
 
+      const telefoneNormalizado = (valor) => String(valor || "").replace(/\D/g, "");
+      const moeda = (valor) => Number(valor || 0).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
 
-</main>
+      const criarCampo = (rotulo, valor) => {
+        const linha = document.createElement("div");
+        linha.className = "customer-profile-row";
+        const titulo = document.createElement("strong");
+        titulo.textContent = `${rotulo}:`;
+        const conteudo = document.createElement("span");
+        conteudo.textContent = valor || "—";
+        linha.append(titulo, conteudo);
+        return linha;
+      };
 
-<script src="produtos.js"></script>
-<script src="scripts.js"></script>
+      const renderizarPerfil = () => {
+        const cliente = JSON.parse(localStorage.getItem("cliente_checkout") || "null");
+        painelPerfil.replaceChildren();
+        const titulo = document.createElement("h2");
+        titulo.textContent = "DADOS PESSOAIS";
+        painelPerfil.appendChild(titulo);
+        if (!cliente) {
+          const vazio = document.createElement("p");
+          vazio.className = "customer-empty-state";
+          vazio.textContent = "Seus dados aparecerão aqui depois que você finalizar um pedido neste dispositivo.";
+          painelPerfil.appendChild(vazio);
+          return;
+        }
+        [
+          ["Nome", cliente.nome],
+          ["CPF", cliente.cpf],
+          ["Telefone", cliente.telefone],
+          ["Endereço", cliente.endereco],
+          ["Número", cliente.numero],
+          ["CEP", cliente.cep],
+          ["Complemento", cliente.complemento],
+        ].forEach(([rotulo, valor]) => painelPerfil.appendChild(criarCampo(rotulo, valor)));
+      };
 
+      const renderizarPedidos = () => {
+        const cliente = JSON.parse(localStorage.getItem("cliente_checkout") || "null");
+        const pedidos = JSON.parse(localStorage.getItem("pedidos_admin") || "[]");
+        if (!Array.isArray(pedidos)) {
+          throw new Error("Os pedidos salvos neste navegador estão em um formato inválido.");
+        }
+        const telefone = telefoneNormalizado(cliente?.telefone);
+        const pedidosCliente = telefone
+          ? pedidos.filter((pedido) =>
+              pedido.origem === "Site" &&
+              telefoneNormalizado(pedido.cliente?.telefone) === telefone,
+            ).reverse()
+          : [];
+        listaPedidos.replaceChildren();
+        if (!pedidosCliente.length) {
+          const vazio = document.createElement("p");
+          vazio.className = "customer-empty-state";
+          vazio.textContent = "Nenhum pedido encontrado para este telefone neste dispositivo.";
+          listaPedidos.appendChild(vazio);
+          return;
+        }
+        pedidosCliente.forEach((pedido) => {
+          const cartao = document.createElement("article");
+          cartao.className = "customer-order-card";
+          const titulo = document.createElement("h2");
+          const data = pedido.dataCriacao
+            ? new Date(pedido.dataCriacao).toLocaleString("pt-BR")
+            : "Data não informada";
+          titulo.textContent = `Pedido ${pedido.id || "—"} · ${data}`;
+          cartao.appendChild(titulo);
+          (Array.isArray(pedido.itens) ? pedido.itens : []).forEach((item) => {
+            const produto = document.createElement("p");
+            produto.className = "customer-order-product";
+            produto.textContent = `${item.quantidade || 1} × ${String(item.nome || "Produto").replace(/<br\s*[\/]?>/gi, " ")} · ${moeda(item.subtotal)}`;
+            cartao.appendChild(produto);
+          });
+          const status = document.createElement("dl");
+          status.className = "customer-order-status";
+          [
+            ["Total", moeda(pedido.total)],
+            ["Forma de pagamento", pedido.formaPagamento || "—"],
+            ["Status do pedido", pedido.status || "Aguardando confirmação"],
+            ["Data do pagamento", pedido.dataPagamento ? new Date(pedido.dataPagamento).toLocaleDateString("pt-BR") : "Aguardando confirmação"],
+          ].forEach(([rotulo, valor]) => {
+            const linha = document.createElement("div");
+            const termo = document.createElement("dt");
+            termo.textContent = `${rotulo}:`;
+            const definicao = document.createElement("dd");
+            definicao.textContent = valor;
+            linha.append(termo, definicao);
+            status.appendChild(linha);
+          });
+          cartao.appendChild(status);
+          listaPedidos.appendChild(cartao);
+        });
+      };
+
+      const selecionarAba = (nome) => {
+        abas.forEach((aba) => {
+          const ativo = aba.dataset.customerTab === nome;
+          aba.classList.toggle("is-active", ativo);
+          aba.setAttribute("aria-selected", String(ativo));
+        });
+        Object.entries(paineis).forEach(([chave, painel]) => {
+          const ativo = chave === nome;
+          painel.hidden = !ativo;
+          painel.classList.toggle("is-active", ativo);
+        });
+        if (nome === "pedidos") renderizarPedidos();
+        if (nome === "dados") renderizarPerfil();
+      };
+
+      abas.forEach((aba) => {
+        aba.addEventListener("click", () => selecionarAba(aba.dataset.customerTab));
+      });
+      window.addEventListener("storage", (event) => {
+        if (event.key === "pedidos_admin" && !paineis.pedidos.hidden) renderizarPedidos();
+        if (event.key === "cliente_checkout" && !paineis.dados.hidden) renderizarPerfil();
+      });
+      renderizarPerfil();
+    });
+  </script>
 </body>
 </html>

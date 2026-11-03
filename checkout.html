@@ -1,153 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finalizar Pedido - Dados de Entrega</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar pedido - Thairo's</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="cabecalho-container"></div>
 
-<div id="cabecalho-container"></div>
+  <main class="checkout-page">
+    <nav class="checkout-steps" aria-label="Etapas do checkout">
+      <button type="button" class="checkout-step is-active" data-step="dados" aria-current="step">DADOS</button>
+      <button type="button" class="checkout-step" data-step="pagamento" disabled>PAGAMENTO</button>
+      <button type="button" class="checkout-step" data-step="conclusao" disabled>CONCLUSÃO</button>
+    </nav>
 
-  <div class="checkout-container">
-    <h2>DADOS PARA ENTREGA<br>E FATURAMENTO</h2>
-    <form id="checkoutForm">
-      <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" class="input" required placeholder="Digite o seu nome completo">
+    <section class="checkout-panel is-active" id="checkoutDados" aria-labelledby="tituloDados">
+      <div class="checkout-container">
+        <h1 id="tituloDados">DADOS PARA ENTREGA<br>E FATURAMENTO</h1>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" class="input" autocomplete="name" required placeholder="Digite o seu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" class="input" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00">
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" class="input" autocomplete="tel" required placeholder="(00) 00000-0000">
+          </div>
+          <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" class="input" autocomplete="street-address" required placeholder="Ex: Rua das Flores">
+          </div>
+          <div class="form-group">
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" class="input" required placeholder="123">
+          </div>
+          <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" class="input" inputmode="numeric" autocomplete="postal-code" required placeholder="00000-000">
+          </div>
+          <div class="form-group">
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" class="input" autocomplete="address-line2" placeholder="Casa, apartamento, referência">
+          </div>
+          <button class="button1" type="submit">Avançar para o pagamento</button>
+          <p class="descricao"><span>Seus dados ficam salvos localmente neste dispositivo e são enviados pelo WhatsApp para a loja.</span></p>
+        </form>
       </div>
+    </section>
 
-      <div class="form-group">
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" class="input" placeholder="000.000.000-00">
+    <section class="checkout-panel" id="checkoutPagamento" aria-labelledby="tituloPagamento" hidden>
+      <div class="checkout-container checkout-payment">
+        <h1 id="tituloPagamento">CÓDIGO PIX E<br>VALIDAÇÃO DE PAGAMENTO</h1>
+        <p id="pixInstructions" class="checkout-help">Copie a chave Pix e, no aplicativo do banco, escolha pagar por chave Pix.</p>
+        <div class="pix-code-wrap">
+          <label id="pixLabel" for="pixCode">Chave Pix</label>
+          <textarea id="pixCode" class="pix-code" readonly aria-label="Código Pix Copia e Cola"></textarea>
+        </div>
+        <p id="pixUnavailable" class="pix-unavailable" role="status" hidden>O Pix da loja ainda não foi configurado.</p>
+        <button type="button" id="copyPixButton" class="button1">Copiar chave Pix</button>
+        <p class="checkout-total">Valor do pedido: <strong id="checkoutTotal">R$ 0,00</strong></p>
+        <p class="checkout-help">Depois de pagar, avise a loja. O pagamento será conferido manualmente antes da preparação do pedido.</p>
+        <button type="button" id="confirmPaymentButton" class="button1" disabled>Já fiz o pagamento — avisar a loja</button>
+        <p id="paymentMessage" class="checkout-message" role="status" aria-live="polite"></p>
+        <a id="whatsappOrderLink" class="checkout-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer">Enviar ou abrir o pedido no WhatsApp</a>
+        <button type="button" class="checkout-back-button" data-go-to="dados">Voltar aos dados</button>
       </div>
+    </section>
 
-      <div class="form-group">
-    <label for="telefone">Telefone:</label>
-    <input type="tel" id="telefone" class="input" required placeholder="(00) 00000-0000">
-</div>
-
-      <div class="form-group">
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" class="input" required placeholder="Ex: Rua das Flores">
+    <section class="checkout-panel" id="checkoutConclusao" aria-labelledby="tituloConclusao" hidden>
+      <div class="checkout-completion">
+        <h1 id="tituloConclusao">PEDIDO ENVIADO!</h1>
+        <p>Seu aviso de pagamento foi registrado neste navegador e aguarda a conferência manual da loja.</p>
+        <p id="confirmationOrderId" class="confirmation-order-id"></p>
+        <p>O pedido aparecerá na aba <strong>Pedidos</strong> do painel administrativo neste dispositivo.</p>
+        <a class="button1 checkout-home-link" href="index.html">Voltar à loja</a>
       </div>
+    </section>
+  </main>
 
-      <div class="form-group">
-        <label for="numero">Número:</label>
-        <input type="text" id="numero" class="input" required placeholder="123">
-      </div>
-
-      <div class="form-group">
-    <label for="cep">CEP:</label>
-    <input type="text" id="cep" class="input" required placeholder="00000-000">
-</div>
-
-      <div class="form-group">
-        <label for="complemento">Complemento:</label>
-        <input type="text" id="complemento" class="input" placeholder="Casa, apartamento, referência">
-      </div>
-
-    <button class="button1" type="submit">Avançar para o WhatsApp</button>
-  
-
-<div class="descricao"><span>Seus dados e o pedido serão enviados pelo WhatsApp. Para exibir o pedido no painel deste navegador, os dados também ficam salvos localmente neste dispositivo.</span>
-</div>
- </form>
-
-
+  <script src="produtos.js"></script>
+  <script src="scripts.js"></script>
   <script>
-    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    document.addEventListener("DOMContentLoaded", () => {
+      const codigoPix = localStorage.getItem(CHAVE_PIX_STORAGE)?.trim() || CHAVE_PIX_PADRAO;
+      const pixCopiaECola = codigoPix.startsWith("000201");
+      const etapas = [...document.querySelectorAll(".checkout-step")];
+      const paineis = {
+        dados: document.getElementById("checkoutDados"),
+        pagamento: document.getElementById("checkoutPagamento"),
+        conclusao: document.getElementById("checkoutConclusao"),
+      };
+      const form = document.getElementById("checkoutForm");
+      const pixCode = document.getElementById("pixCode");
+      const copyPixButton = document.getElementById("copyPixButton");
+      const confirmPaymentButton = document.getElementById("confirmPaymentButton");
+      const paymentMessage = document.getElementById("paymentMessage");
+      const whatsappOrderLink = document.getElementById("whatsappOrderLink");
+      const checkoutTotal = document.getElementById("checkoutTotal");
+      const chaveCliente = "cliente_checkout";
+      const chavePedidoPendente = "checkout_pedido_pendente";
+      const camposCliente = ["nome", "cpf", "telefone", "endereco", "numero", "cep", "complemento"];
 
-      // Recolhe os dados preenchidos no formulário
-      const nome = document.getElementById('nome').value;
-      const cpf = document.getElementById('cpf').value;
-      const telefone = document.getElementById('telefone').value;
-      const endereco = document.getElementById('endereco').value;
-      const numero = document.getElementById('numero').value;
-      const cep = document.getElementById('cep').value;
-      const complemento = document.getElementById('complemento').value;
+      const exibirEtapa = (nomeEtapa) => {
+        Object.entries(paineis).forEach(([nome, painel]) => {
+          const ativo = nome === nomeEtapa;
+          painel.hidden = !ativo;
+          painel.classList.toggle("is-active", ativo);
+        });
+        etapas.forEach((botao) => {
+          const ativo = botao.dataset.step === nomeEtapa;
+          botao.classList.toggle("is-active", ativo);
+          if (ativo) botao.setAttribute("aria-current", "step");
+          else botao.removeAttribute("aria-current");
+        });
+      };
 
-      const dadosCliente = `*Dados do Cliente:*\n- Nome: ${nome}\n- CPF: ${cpf || "Não informado"}\n- Telefone: ${telefone}\n- Endereço: ${endereco}, ${numero}\n- CEP: ${cep}\n- Complemento: ${complemento || "Não informado"}\n\n`;
-
-      // Resgata os produtos guardados no localStorage
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-      let mensagemProdutos = "*Pedido:* \n";
-      let totalGeral = 0;
-
-      if (carrinho.length === 0) {
-          alert("O seu carrinho está vazio!");
-          return;
-      }
-
-      carrinho.forEach((item) => {
-          const produto = encontrarProdutoDoCarrinho(item);
-          const nomeProduto = produto?.nome || item.nome;
-          const precoOriginal = produto ? produto.precoOriginal : item.preco;
-          const precoDesconto = produto
-              ? produto.precoDesconto
-              : item.precoDesconto || "";
-          const precoCobrado = precoDesconto.trim() !== "" ? precoDesconto : precoOriginal;
-          let valorNumerico = parseFloat(
-              precoCobrado.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
-          ) || 0;
-          const subtotal = valorNumerico * item.quantidade;
-          totalGeral += subtotal;
-
-          mensagemProdutos += `- ${item.quantidade}x ${nomeProduto} (${precoCobrado}) [Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}]\n`;
+      const formatarMoeda = (valor) => Number(valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
       });
 
-      mensagemProdutos += `\n*Total do Pedido: R$ ${totalGeral.toFixed(2).replace(".", ",")}*`;
+      const normalizarPreco = (preco) => {
+        const valor = String(preco || "").replace(/[^\d,.-]/g, "").trim();
+        const normalizado = valor.includes(",")
+          ? valor.replace(/\./g, "").replace(",", ".")
+          : valor;
+        const numero = Number(normalizado);
+        return Number.isFinite(numero) ? numero : 0;
+      };
 
-      const pedidosSalvos = JSON.parse(localStorage.getItem("pedidos_admin") || "[]");
-      pedidosSalvos.push({
+      const carregarClienteSalvo = () => {
+        const cliente = JSON.parse(localStorage.getItem(chaveCliente) || "null");
+        if (!cliente) return;
+        camposCliente.forEach((campo) => {
+          const input = document.getElementById(campo);
+          if (input && cliente[campo]) input.value = cliente[campo];
+        });
+      };
+
+      const pedidoPendente = JSON.parse(localStorage.getItem(chavePedidoPendente) || "null");
+      const inicializarPagamento = (pedido) => {
+        checkoutTotal.textContent = formatarMoeda(pedido.total);
+        whatsappOrderLink.href = pedido.urlWhatsApp || "#";
+        pixCode.value = codigoPix;
+        document.getElementById("pixLabel").textContent = pixCopiaECola ? "Pix Copia e Cola" : "Chave Pix";
+        document.getElementById("copyPixButton").textContent = pixCopiaECola ? "Copiar código Pix" : "Copiar chave Pix";
+        document.getElementById("pixInstructions").textContent = pixCopiaECola
+          ? "Copie o código e use a opção Pix Copia e Cola no aplicativo do seu banco."
+          : "No aplicativo do banco, escolha pagar por chave Pix, selecione Chave aleatória, cole a chave abaixo e informe o valor total do pedido.";
+        const pixConfigurado = codigoPix.length > 0;
+        document.getElementById("pixUnavailable").hidden = pixConfigurado;
+        pixCode.hidden = !pixConfigurado;
+        copyPixButton.disabled = !pixConfigurado;
+        confirmPaymentButton.disabled = !pixConfigurado;
+        if (!pixConfigurado) paymentMessage.textContent = "A loja precisa configurar o Pix antes de receber o aviso de pagamento.";
+      };
+
+      carregarClienteSalvo();
+      if (pedidoPendente) {
+        inicializarPagamento(pedidoPendente);
+        etapas.find((botao) => botao.dataset.step === "pagamento").disabled = false;
+        exibirEtapa("pagamento");
+      } else {
+        exibirEtapa("dados");
+      }
+
+      etapas.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          if (!botao.disabled) exibirEtapa(botao.dataset.step);
+        });
+      });
+      document.querySelectorAll("[data-go-to]").forEach((botao) => {
+        botao.addEventListener("click", () => exibirEtapa(botao.dataset.goTo));
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
+        if (!Array.isArray(carrinho) || carrinho.length === 0) {
+          window.alert("O seu carrinho está vazio.");
+          return;
+        }
+
+        const cliente = Object.fromEntries(
+          camposCliente.map((campo) => [campo, document.getElementById(campo).value.trim()]),
+        );
+        localStorage.setItem(chaveCliente, JSON.stringify(cliente));
+
+        let total = 0;
+        const itens = carrinho.map((item) => {
+          const produto = encontrarProdutoDoCarrinho(item);
+          const precoOriginal = produto ? produto.precoOriginal : item.preco;
+          const precoDesconto = produto ? produto.precoDesconto : item.precoDesconto || "";
+          const preco = String(precoDesconto).trim() ? precoDesconto : precoOriginal;
+          const quantidade = Number(item.quantidade) || 1;
+          const subtotal = normalizarPreco(preco) * quantidade;
+          total += subtotal;
+          const nomeBruto = String(produto?.nome || item.nome || "Produto");
+          const nome = nomeBruto
+            .replace(/<br\s*[\/]?>/gi, " ")
+            .replace(/<\/?[^>]+(>|$)/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+          return {
+            id: produto?.id || item.id,
+            codigoBarras: produto?.codigoBarras || "",
+            nome,
+            quantidade,
+            preco: String(preco || ""),
+            subtotal,
+          };
+        });
+        const dadosCliente = `*Dados do Cliente:*\n- Nome: ${cliente.nome}\n- CPF: ${cliente.cpf || "Não informado"}\n- Telefone: ${cliente.telefone}\n- Endereço: ${cliente.endereco}, ${cliente.numero}\n- CEP: ${cliente.cep}\n- Complemento: ${cliente.complemento || "Não informado"}\n\n`;
+        const produtos = itens.map((item) =>
+          `- ${item.quantidade}x ${item.nome} (${item.preco}) [Subtotal: ${formatarMoeda(item.subtotal)}]`,
+        ).join("\n");
+        const mensagem = `${dadosCliente}*Pedido:*\n${produtos}\n\n*Total do Pedido: ${formatarMoeda(total)}*\n\nPagamento via Pix pendente.`;
+        const urlWhatsApp = `https://wa.me/5511996624974?text=${encodeURIComponent(mensagem)}`;
+        const pendente = {
           id: `PED-${Date.now()}`,
           origem: "Site",
           dataCriacao: new Date().toISOString(),
-          cliente: {
-              nome,
-              cpf,
-              telefone,
-              endereco,
-              numero,
-              cep,
-              complemento
-          },
-          itens: carrinho.map((item) => {
-              const produto = encontrarProdutoDoCarrinho(item);
-              const preco = produto
-                  ? (produto.precoDesconto || produto.precoOriginal)
-                  : (item.precoDesconto || item.preco || "");
-              const quantidade = Number(item.quantidade) || 1;
-              const precoNumerico = parseFloat(
-                  String(preco).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()
-              ) || 0;
-              return {
-                  id: produto?.id || item.id,
-                  codigoBarras: produto?.codigoBarras || "",
-                  nome: produto?.nome || item.nome,
-                  quantidade,
-                  preco,
-                  subtotal: precoNumerico * quantidade
-              };
-          }),
-          total: totalGeral,
-          formaPagamento: "A combinar",
-          status: "Aguardando confirmação"
+          cliente,
+          itens,
+          total,
+          formaPagamento: "Pix",
+          status: "Aguardando confirmação",
+          urlWhatsApp,
+        };
+        localStorage.setItem(chavePedidoPendente, JSON.stringify(pendente));
+        inicializarPagamento(pendente);
+        etapas.find((botao) => botao.dataset.step === "pagamento").disabled = false;
+        exibirEtapa("pagamento");
+        window.open(urlWhatsApp, "_blank", "noopener,noreferrer");
       });
-      localStorage.setItem("pedidos_admin", JSON.stringify(pedidosSalvos));
 
-      const numeroWhatsApp = "5511996624974"; // Número correto com o 6 atualizado
-      const mensagemFinal = dadosCliente + mensagemProdutos;
-      const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemFinal)}`;
-      
-      window.location.href = urlWhatsApp;
+      copyPixButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(codigoPix);
+          paymentMessage.textContent = "Código Pix copiado.";
+        } catch (error) {
+          pixCode.focus();
+          pixCode.select();
+          const copiado = document.execCommand("copy");
+          if (!copiado) throw new Error(`Não foi possível copiar o código Pix: ${error.message}`);
+          paymentMessage.textContent = "Código Pix copiado.";
+        }
+      });
+
+      confirmPaymentButton.addEventListener("click", () => {
+        const pedido = JSON.parse(localStorage.getItem(chavePedidoPendente) || "null");
+        if (!pedido) {
+          paymentMessage.textContent = "Não há pedido aguardando confirmação neste dispositivo.";
+          return;
+        }
+        const pedidos = JSON.parse(localStorage.getItem("pedidos_admin") || "[]");
+        if (!Array.isArray(pedidos)) {
+          throw new Error("Os pedidos salvos neste navegador estão em um formato inválido.");
+        }
+        if (!pedidos.some((item) => item.id === pedido.id)) {
+          pedidos.push({
+            ...pedido,
+            status: "Pagamento informado; aguardando confirmação",
+            dataAvisoPagamento: new Date().toISOString(),
+          });
+          localStorage.setItem("pedidos_admin", JSON.stringify(pedidos));
+        }
+        localStorage.removeItem(chavePedidoPendente);
+        localStorage.setItem("carrinho", "[]");
+        document.getElementById("confirmationOrderId").textContent = `Número do pedido: ${pedido.id}`;
+        etapas.find((botao) => botao.dataset.step === "conclusao").disabled = false;
+        exibirEtapa("conclusao");
+        if (typeof atualizarContadorCarrinho === "function") atualizarContadorCarrinho();
+      });
     });
   </script>
-
-<script src="produtos.js"></script>
-<script src="scripts.js"></script>
-    
 </body>
 </html>
