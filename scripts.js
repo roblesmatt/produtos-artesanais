@@ -219,8 +219,8 @@ fetch(paginaGlobal)
           const botaoAtualizar = document.createElement("button");
           botaoAtualizar.type = "button";
           botaoAtualizar.className = "botao-icone admin-notifications-button";
-          botaoAtualizar.setAttribute("aria-label", "Atualizar notificações de produtos novos");
-          botaoAtualizar.title = "Atualizar notificações de produtos novos";
+          botaoAtualizar.setAttribute("aria-label", "Atualizar dados do painel administrativo");
+          botaoAtualizar.title = "Atualizar dados do painel administrativo";
           botaoAtualizar.innerHTML = `<span class="admin-notifications-icon" aria-hidden="true">↻</span><span id="admin-products-badge" class="badge-contador" hidden></span>`;
           botaoAtualizar.addEventListener("click", () => {
             window.dispatchEvent(new CustomEvent("admin:refresh-products"));
@@ -1458,18 +1458,6 @@ document.addEventListener("DOMContentLoaded", () => {
       listaLateral.innerHTML = "";
       const filtrados = produtosLocal.filter(p => p.tags && p.tags.funcao === filtroFuncao);
 
-      if (filtrados.length === 0) {
-        formEdicao.hidden = true;
-        tituloAcao.textContent = "";
-        areaExport.hidden = true;
-        outputJson.value = "";
-        document.getElementById("btnExcluirProduto").hidden = true;
-        imgPreview.hidden = true;
-        placeholderMsg.hidden = true;
-        containerExtras.innerHTML = "";
-        return;
-      }
-
       const seletorMobile = document.createElement("select");
       seletorMobile.className = "admin-product-mobile-select";
       seletorMobile.setAttribute("aria-label", "Selecionar produto");
@@ -1484,9 +1472,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const divItem = document.createElement("button");
         divItem.type = "button";
         divItem.className = "item-lista-admin";
-        if (indiceProdutoLista % 2 === 1) {
-          divItem.classList.add("admin-product-row-even");
-        }
         divItem.dataset.produtoIndex = String(globalIndex);
         divItem.textContent = produto.nome.replace(/<br\s*[\/]?>/gi, " ");
         
@@ -1527,6 +1512,19 @@ document.addEventListener("DOMContentLoaded", () => {
         prepararNovoProduto(filtroFuncao);
       });
       listaLateral.appendChild(btnAdicionar);
+
+      if (filtrados.length === 0) {
+        formEdicao.hidden = true;
+        tituloAcao.textContent = "Nenhum produto nesta categoria";
+        areaExport.hidden = true;
+        outputJson.value = "";
+        document.getElementById("btnExcluirProduto").hidden = true;
+        imgPreview.hidden = true;
+        placeholderMsg.textContent = "Use “+ Adicionar” para cadastrar o primeiro produto desta categoria.";
+        placeholderMsg.hidden = false;
+        containerExtras.innerHTML = "";
+        return;
+      }
 
       const indiceProduto = produtoSelecionadoIndex === null
         ? 0
@@ -1791,9 +1789,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const idx = document.getElementById("editIndex").value;
       const produtoAtual = idx !== "novo" ? produtosLocal[idx] : {};
+      const indiceAtual = idx === "novo" ? -1 : Number(idx);
+      const campoId = document.getElementById("editId");
+      const campoNome = document.getElementById("editNome");
+      const campoPrecoOriginal = document.getElementById("editPrecoOriginal");
+      const campoImagem = document.getElementById("editImagem");
+      const idProduto = campoId.value.trim();
+      const nomeProduto = campoNome.value.trim();
+      const precoOriginal = campoPrecoOriginal.value.trim();
+      const imagemFrente = campoImagem.value.trim();
+      const precoNumerico = converterPrecoParaNumero(precoOriginal);
+
+      const campoObrigatorioInvalido = [
+        [campoId, idProduto, "Informe o ID do produto."],
+        [campoNome, nomeProduto, "Informe o nome do produto."],
+        [campoPrecoOriginal, precoOriginal, "Informe o preço original do produto."],
+        [campoImagem, imagemFrente, "Informe o caminho da imagem do produto."],
+      ].find(([, valor]) => !valor);
+      if (campoObrigatorioInvalido) {
+        const [campo, , mensagem] = campoObrigatorioInvalido;
+        alert(mensagem);
+        campo.focus();
+        return;
+      }
+
+      if (!Number.isFinite(precoNumerico) || precoNumerico <= 0) {
+        alert("Informe um preço original válido e maior que zero.");
+        campoPrecoOriginal.focus();
+        return;
+      }
+
+      if (imagemFrente.endsWith("/")) {
+        alert("Informe o nome do arquivo da imagem, não apenas a pasta.");
+        campoImagem.focus();
+        return;
+      }
+
+      if (produtosLocal.some((produto, index) => index !== indiceAtual && produto.id === idProduto)) {
+        alert("Este ID já está vinculado a outro produto.");
+        campoId.focus();
+        return;
+      }
+
       let codigoBarras = document.getElementById("editCodigoBarras").value.trim();
       const codigoDuplicado = codigoBarras && produtosLocal.some((produto, index) =>
-        index !== Number(idx) && produto.codigoBarras === codigoBarras
+        index !== indiceAtual && produto.codigoBarras === codigoBarras
       );
 
       if (codigoDuplicado) {
@@ -1805,7 +1845,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!codigoBarras && typeof gerarCodigoBarrasInterno === "function") {
         const codigosUtilizados = new Set(
           produtosLocal
-            .filter((_, index) => index !== Number(idx))
+            .filter((_, index) => index !== indiceAtual)
             .map((produto) => produto.codigoBarras)
             .filter(Boolean),
         );
@@ -1826,14 +1866,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const dadosForm = {
-        id: document.getElementById("editId").value,
+        id: idProduto,
         codigoBarras,
-        nome: document.getElementById("editNome").value,
-        precoOriginal: document.getElementById("editPrecoOriginal").value,
+        nome: nomeProduto,
+        precoOriginal,
         precoDesconto: document.getElementById("editPrecoDesconto").value,
         subtitulo: document.getElementById("editSubtitulo").value,
         esgotado: document.getElementById("editEsgotado").checked,
-        imagemFrente: document.getElementById("editImagem").value,
+        imagemFrente,
         tags: produtoAtual.tags || {
           linha: "linhas-classico",
           funcao: obterCategoriaSelecionada(),

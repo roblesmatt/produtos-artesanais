@@ -304,19 +304,24 @@
               produtosAleatorios.forEach(produto => {
                   const linkProduto = typeof gerarLinkPaginaProduto === "function" ? gerarLinkPaginaProduto(produto) : `produto.html?id=${encodeURIComponent(produto.id)}`;
                   const imagemSrc = typeof resolveAssetUrl === "function" ? resolveAssetUrl(produto.imagemFrente) : produto.imagemFrente;
-                  const precoExibido = produto.precoDesconto || produto.precoOriginal || "";
 
                   const itemDiv = document.createElement("a");
                   itemDiv.href = linkProduto;
                   itemDiv.className = `carrossel-inferior-item${produto.esgotado ? " carrossel-inferior-item-esgotado" : ""}`;
 
+                  const precos = produto.precoDesconto
+                    ? `<span class="carrossel-inferior-preco preco-atual">${produto.precoDesconto}</span><span class="carrossel-inferior-preco-antigo preco-antigo">${produto.precoOriginal}</span>`
+                    : `<span class="carrossel-inferior-preco preco-atual">${produto.precoOriginal || ""}</span>`;
+
                   itemDiv.innerHTML = `
                     <div class="carrossel-inferior-conteudo">
-                      <img src="${imagemSrc}" alt="${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}">
-                      <span style="font-size: 11px; font-weight: bold; text-align: center; width: 100%; display: block; line-height: 1.2; margin-bottom: 4px;">${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}</span>
-                      <span class="carrossel-inferior-preco">${precoExibido}</span>
+                      <div class="carrossel-inferior-imagem">
+                        <img src="${imagemSrc}" alt="${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}">
+                        ${produto.esgotado ? '<div class="button1 produto-selo-esgotado carrossel-inferior-selo-esgotado">ESGOTADO</div>' : ""}
+                      </div>
+                      <span class="carrossel-inferior-nome">${produto.nome.replace(/<br\s*[\/]?>/gi, " ")}</span>
+                      <span class="carrossel-inferior-precos">${precos}</span>
                     </div>
-                    ${produto.esgotado ? '<div class="button1 produto-selo-esgotado">ESGOTADO</div>' : ""}
                   `;
 
                   containerCarrossel.appendChild(itemDiv);

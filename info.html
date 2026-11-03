@@ -46,7 +46,6 @@
     <div class="conteudo-vitrine admin-conteudo">
       <section class="vitrine-item admin-produtos">
         <div class="admin-section-heading admin-products-heading">
-          <h2>Produtos</h2>
           <div class="admin-section-actions">
             <span id="notificacaoProdutosNovos" class="admin-products-notification" hidden></span>
             <button type="button" class="btn-secundario admin-export-button" data-export-report="products">Exportar CSV</button>
@@ -69,31 +68,24 @@
 
               <div class="form-grid admin-product-edit-grid">
                 <div class="form-group-admin">
-                  <label for="editId">ID do produto</label>
                   <input type="text" id="editId" required placeholder="ID do produto">
                 </div>
                 <div class="form-group-admin">
-                  <label for="editCodigoBarras">Código de barras</label>
                   <input type="text" id="editCodigoBarras" inputmode="numeric" autocomplete="off" placeholder="Código de barras">
                 </div>
                 <div class="form-group-admin">
-                  <label for="editNome">Nome do produto</label>
                   <input type="text" id="editNome" required placeholder="Nome do produto">
                 </div>
                 <div class="form-group-admin">
-                  <label for="editPrecoOriginal">Preço original</label>
                   <input type="text" id="editPrecoOriginal" required placeholder="Preço original">
                 </div>
                 <div class="form-group-admin">
-                  <label for="editPrecoDesconto">Preço promocional</label>
                   <input type="text" id="editPrecoDesconto" placeholder="Preço promocional (opcional)">
                 </div>
                 <div class="form-group-admin">
-                  <label for="editSubtitulo">Informação complementar</label>
                   <input type="text" id="editSubtitulo" placeholder="Informação complementar">
                 </div>
                 <div class="form-group-admin">
-                  <label for="editImagem">Caminho da imagem</label>
                   <input type="text" id="editImagem" required placeholder="produtos/foto.webp">
                 </div>
                 <div class="form-group-admin admin-product-status-field">
@@ -105,89 +97,73 @@
                 </div>
               </div>
 
-              <details id="painelConteudoProduto" class="accordion-item admin-product-content-panel">
+              <details id="painelConteudoProduto" class="admin-product-content-panel">
                 <summary class="accordion-header">
-                  <span class="accordion-title">Conteúdo da página interna do produto</span>
+                  <span class="accordion-title">Conteúdo e acordeões do produto</span>
                   <svg class="accordion-arrow" width="32.8" height="32.8" viewBox="0 0 32.8 32.8" aria-hidden="true">
                     <path d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z" fill="#3d2d2d" />
                   </svg>
                 </summary>
-                <h3>Informações da página do produto</h3>
-              <div class="form-grid admin-product-content-grid">
-                <div class="form-group-admin">
-                  <label for="editTituloSobre">Título: sobre o produto</label>
-                  <input type="text" id="editTituloSobre" placeholder="Título: sobre o produto">
-                  <textarea id="editSobre" rows="3" aria-label="Descrição sobre o produto" placeholder="Descrição sobre o produto"></textarea>
+                <div class="form-grid admin-product-content-grid">
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloSobre" placeholder="Título: sobre o produto">
+                    <textarea id="editSobre" rows="3" aria-label="Descrição sobre o produto" placeholder="Descrição sobre o produto"></textarea>
+                  </div>
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloBeneficios" placeholder="Título: benefícios">
+                    <textarea id="editBeneficios" rows="3" aria-label="Benefícios" placeholder="Benefícios"></textarea>
+                  </div>
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloComposicao" placeholder="Título: composição">
+                    <textarea id="editComposicao" rows="3" aria-label="Composição" placeholder="Composição"></textarea>
+                  </div>
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloModoUso" placeholder="Título: modo de uso">
+                    <textarea id="editModoUso" rows="3" aria-label="Modo de uso" placeholder="Modo de uso"></textarea>
+                  </div>
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloAdvertencias" placeholder="Título: advertências">
+                    <textarea id="editAdvertencias" rows="3" aria-label="Advertências e precauções" placeholder="Advertências e precauções"></textarea>
+                  </div>
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloFichaTecnica" placeholder="Título: ficha técnica">
+                    <textarea id="editFichaTecnica" rows="3" aria-label="Ficha técnica" placeholder="Ficha técnica"></textarea>
+                  </div>
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloPagamentos" placeholder="Título: pagamento">
+                    <textarea id="editPagamentos" rows="3" aria-label="Informações de pagamento" placeholder="Informações de pagamento"></textarea>
+                  </div>
+                  <div class="form-group-admin">
+                    <input type="text" id="editTituloFrete" placeholder="Título: frete e envio">
+                    <textarea id="editFrete" rows="3" aria-label="Informações de frete e envio" placeholder="Informações de frete e envio"></textarea>
+                  </div>
+                  <div class="form-group-admin full">
+                    <input type="text" id="editTituloTrocas" placeholder="Título: trocas e devoluções">
+                    <textarea id="editTrocas" rows="3" aria-label="Política de trocas e devoluções" placeholder="Política de trocas e devoluções"></textarea>
+                  </div>
                 </div>
-                <div class="form-group-admin">
-                  <label for="editTituloBeneficios">Título: benefícios</label>
-                  <input type="text" id="editTituloBeneficios" placeholder="Título: benefícios">
-                  <textarea id="editBeneficios" rows="3" aria-label="Benefícios" placeholder="Benefícios"></textarea>
-                </div>
-                <div class="form-group-admin">
-                  <label for="editTituloComposicao">Título: composição</label>
-                  <input type="text" id="editTituloComposicao" placeholder="Título: composição">
-                  <textarea id="editComposicao" rows="3" aria-label="Composição" placeholder="Composição"></textarea>
-                </div>
-                <div class="form-group-admin">
-                  <label for="editTituloModoUso">Título: modo de uso</label>
-                  <input type="text" id="editTituloModoUso" placeholder="Título: modo de uso">
-                  <textarea id="editModoUso" rows="3" aria-label="Modo de uso" placeholder="Modo de uso"></textarea>
-                </div>
-                <div class="form-group-admin">
-                  <label for="editTituloAdvertencias">Título: advertências</label>
-                  <input type="text" id="editTituloAdvertencias" placeholder="Título: advertências">
-                  <textarea id="editAdvertencias" rows="3" aria-label="Advertências e precauções" placeholder="Advertências e precauções"></textarea>
-                </div>
-                <div class="form-group-admin">
-                  <label for="editTituloFichaTecnica">Título: ficha técnica</label>
-                  <input type="text" id="editTituloFichaTecnica" placeholder="Título: ficha técnica">
-                  <textarea id="editFichaTecnica" rows="3" aria-label="Ficha técnica" placeholder="Ficha técnica"></textarea>
-                </div>
-                <div class="form-group-admin">
-                  <label for="editTituloPagamentos">Título: pagamento</label>
-                  <input type="text" id="editTituloPagamentos" placeholder="Título: pagamento">
-                  <textarea id="editPagamentos" rows="3" aria-label="Informações de pagamento" placeholder="Informações de pagamento"></textarea>
-                </div>
-                <div class="form-group-admin">
-                  <label for="editTituloFrete">Título: frete e envio</label>
-                  <input type="text" id="editTituloFrete" placeholder="Título: frete e envio">
-                  <textarea id="editFrete" rows="3" aria-label="Informações de frete e envio" placeholder="Informações de frete e envio"></textarea>
-                </div>
+
                 <div class="form-group-admin full">
-                  <label for="editTituloTrocas">Título: trocas e devoluções</label>
-                  <input type="text" id="editTituloTrocas" placeholder="Título: trocas e devoluções">
-                  <textarea id="editTrocas" rows="3" aria-label="Política de trocas e devoluções" placeholder="Política de trocas e devoluções"></textarea>
+                  <div id="containerAcordeoesExtras"></div>
+                  <button type="button" id="btnAdicionarAcordeaoExtra" class="btn-salvar-admin admin-btn-extra">
+                    Adicionar título e descrição
+                  </button>
                 </div>
-              </div>
+              </details>
 
               <div class="form-group-admin full">
-                <label>Acordeões extras</label>
-                <div id="containerAcordeoesExtras"></div>
-                <button type="button" id="btnAdicionarAcordeaoExtra" class="btn-salvar-admin admin-btn-extra">
-                  Adicionar título e descrição
-                </button>
-              </div>
-              </details>
-              <div class="admin-form-actions">
                 <button type="submit" class="btn-salvar-admin">Salvar alterações</button>
                 <button type="button" id="btnExcluirProduto" class="btn-excluir-admin" hidden>Excluir produto</button>
               </div>
             </form>
 
             <div id="areaCodigoExportado" hidden>
-              <label for="outputJsonProdutos">Dados salvos do produto</label>
               <textarea id="outputJsonProdutos" readonly></textarea>
             </div>
-            <details class="accordion-item admin-github-settings">
-              <summary class="accordion-header">
-                <span class="accordion-title">Sincronização do catálogo</span>
-                <svg class="accordion-arrow" width="32.8" height="32.8" viewBox="0 0 32.8 32.8" aria-hidden="true">
-                  <path d="M16.4 14.4l-7.5 7.5l-1.8-1.7l9.3-9.3l9.3 9.3l-1.8 1.7l-7.5-7.5Z" fill="#3d2d2d" />
-                </svg>
-              </summary>
+            <details class="admin-github-settings">
+              <summary>Sincronização com GitHub</summary>
               <label for="gitUser">Usuário GitHub</label>
-              <input type="text" id="gitUser" value="roblesmatt">
+              <input type="text" id="gitUser" value="roblesmatt" autocomplete="username">
               <label for="gitRepo">Repositório</label>
               <input type="text" id="gitRepo" value="produtos-artesanais">
               <label for="gitToken">Token de acesso</label>
