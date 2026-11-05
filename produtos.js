@@ -7,6 +7,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-docura-citrica.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -40,6 +41,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-renascenca-purpura.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -73,6 +75,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
     imagemFrente: "produtos/perfume-artesanal-capim-selvagem.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -106,6 +109,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: true,
     imagemFrente: "produtos/perfume-artesanal-raio-verde.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -139,6 +143,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-mercurio-floral.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -172,6 +177,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-fruto-proibido.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -205,6 +211,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-gostosura.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -238,6 +245,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-encanto-profundo.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -271,6 +279,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-sete-versos.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -304,6 +313,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-gostosura-intensa.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -337,6 +347,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 60ml].",
     esgotado: false,
     imagemFrente: "produtos/perfume-artesanal-campo-sereno.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-perfume-artesanal",
@@ -370,6 +381,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-docura-citrica.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -403,6 +415,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-renascenca-purpura.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -436,6 +449,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-capim-selvagem.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -469,6 +483,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-raio-verde.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -502,6 +517,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-mercurio-floral.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -535,6 +551,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-fruto-proibido.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -568,6 +585,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-gostosura.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -601,6 +619,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-encanto-profundo.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -634,6 +653,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-sete-versos.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -667,6 +687,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-gostosura-intensa.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -700,6 +721,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-campo-sereno.webp",
+    imagemVerso: "produtos/sabonete-corporal-campo-sereno.webp",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -736,6 +758,7 @@ const PRODUTOS_CUSTOMIZADOS_GITHUB = [
     subtitulo: "[1 un. / 85g].",
     esgotado: true,
     imagemFrente: "produtos/sabonete-corporal-docura-citrica.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",

@@ -597,6 +597,34 @@ function preencherPaginaProduto() {
     mainImage.setAttribute("src", resolveAssetUrl(produto.imagemFrente));
     mainImage.setAttribute("alt", produto.nome);
   }
+  const carouselTrack = document.querySelector(".carousel-track");
+  const carouselDots = document.querySelector(".carousel-progress-bar");
+  const imagemVersoExistente = carouselTrack?.querySelector("[data-product-image-verso]");
+  imagemVersoExistente?.remove();
+  if (carouselTrack && produto.imagemVerso) {
+    const itemVerso = document.createElement("div");
+    itemVerso.className = "carousel-item";
+    itemVerso.dataset.productImageVerso = "";
+    const imagemVerso = document.createElement("img");
+    imagemVerso.src = resolveAssetUrl(produto.imagemVerso);
+    imagemVerso.alt = `${produto.nome.replace(/<br\s*[\/]?>/gi, " ")} — verso`;
+    itemVerso.appendChild(imagemVerso);
+    carouselTrack.appendChild(itemVerso);
+  }
+  if (carouselTrack && carouselDots) {
+    const itensCarrossel = [...carouselTrack.querySelectorAll(".carousel-item")];
+    carouselDots.replaceChildren();
+    carouselDots.hidden = itensCarrossel.length < 2;
+    itensCarrossel.forEach((item, index) => {
+      const indicador = document.createElement("button");
+      indicador.type = "button";
+      indicador.className = "carousel-progress-dot";
+      indicador.setAttribute("aria-label", `Exibir imagem ${index + 1} de ${itensCarrossel.length}`);
+      indicador.setAttribute("aria-current", index === 0 ? "true" : "false");
+      indicador.dataset.carouselIndex = String(index);
+      carouselDots.appendChild(indicador);
+    });
+  }
   if (produto.esgotado) {
     const gallery = document.querySelector(".product-column-gallery");
     const carouselItem = mainImage?.closest(".carousel-item");
@@ -722,64 +750,92 @@ document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
   if (!track) return;
 
-  const items = track.querySelectorAll(".carousel-item");
+  const items = [...track.querySelectorAll(".carousel-item")];
   const indicatorDots = document.querySelectorAll(".carousel-progress-dot");
+  if (!items.length) return;
 
   function updateCarouselIndicator(index) {
+    carouselIndex = index;
+    items.forEach((item, itemIndex) => {
+      const active = itemIndex === index;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-hidden", String(!active));
+    });
     indicatorDots.forEach((dot, dotIndex) => {
       dot.classList.toggle("ativo", dotIndex === index);
+      dot.setAttribute("aria-current", String(dotIndex === index));
     });
   }
 
-  function syncCarouselIndicator() {
-    const trackCenter =
-      track.getBoundingClientRect().left + track.clientWidth / 2;
-    let closestIndex = 0;
-    let closestDistance = Infinity;
+  function getNearestSlideIndex() {
+    const trackRect = track.getBoundingClientRect();
+    const trackCenter = trackRect.left + track.clientWidth / 2;
+    let nearestIndex = 0;
+    let nearestDistance = Infinity;
 
     items.forEach((item, index) => {
       const itemRect = item.getBoundingClientRect();
       const itemCenter = itemRect.left + itemRect.width / 2;
       const distance = Math.abs(trackCenter - itemCenter);
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestIndex = index;
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
       }
     });
 
-    updateCarouselIndicator(closestIndex);
+    return nearestIndex;
   }
 
-  track.addEventListener("scroll", syncCarouselIndicator, { passive: true });
-  syncCarouselIndicator();
+  function goToSlide(index, behavior = "smooth") {
+    const nextIndex = (index + items.length) % items.length;
+    const item = items[nextIndex];
+    const trackRect = track.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const left =
+      track.scrollLeft +
+      itemRect.left -
+      trackRect.left -
+      (track.clientWidth - item.clientWidth) / 2;
+
+    updateCarouselIndicator(nextIndex);
+    track.scrollTo({ left, behavior });
+  }
+
+  let carouselIndex = 0;
+  updateCarouselIndicator(carouselIndex);
+  indicatorDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      goToSlide(index);
+    });
+  });
 
   let autoPlayTimer = null;
   let hoverResumeTimer = null;
-  let isDown = false,
-    startX,
-    scrollLeft;
   let isHovered = false;
-  let carouselIndex = 0;
+  let isDragging = false;
   let isCarouselVisible = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let scrollSyncFrame = null;
 
   const HOVER_PAUSE_DURATION = 6000;
-
-  function checkAndStartAutoPlay(forceResume = false) {
-    const canPlay = isCarouselVisible && !isDown && (!isHovered || forceResume);
-
-    if (canPlay) {
-      if (!autoPlayTimer) {
-        autoPlayTimer = setInterval(nextSlide, 6000);
-      }
-    } else {
-      stopAutoPlay();
-    }
-  }
 
   function stopAutoPlay() {
     if (autoPlayTimer) {
       clearInterval(autoPlayTimer);
       autoPlayTimer = null;
+    }
+  }
+
+  function checkAndStartAutoPlay(forceResume = false) {
+    const canPlay = items.length > 1 &&
+      isCarouselVisible &&
+      !isDragging &&
+      (!isHovered || forceResume);
+    if (canPlay && !autoPlayTimer) {
+      autoPlayTimer = setInterval(nextSlide, 6000);
+    } else if (!canPlay) {
+      stopAutoPlay();
     }
   }
 
@@ -807,59 +863,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   carouselVisibilityObserver.observe(track);
 
-  function setupItemObserver() {
-    const trackWidth = track.clientWidth;
-    const marginX = Math.floor(trackWidth / 2 - 10);
-
-    const observerOptions = {
-      root: track,
-      rootMargin: `0px -${marginX}px 0px -${marginX}px`,
-      threshold: 0,
-    };
-
-    const itemObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = Array.from(items).indexOf(entry.target);
-          if (index !== -1) {
-            carouselIndex = index;
-          }
-        }
-      });
-    }, observerOptions);
-
-    items.forEach((item) => itemObserver.observe(item));
-  }
-
-  setupItemObserver();
-  window.addEventListener("resize", setupItemObserver);
-
-  function getCardStep() {
-    const item = track.querySelector(".carousel-item");
-    const gap = parseFloat(getComputedStyle(track).gap) || 20;
-    return item ? item.offsetWidth + gap : 300;
-  }
-
   function nextSlide() {
-    if (items.length === 0) return;
-
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    const isAtEnd =
-      carouselIndex >= items.length - 1 || track.scrollLeft >= maxScroll - 10;
-
-    if (isAtEnd) {
-      carouselIndex = 0;
-    } else {
-      carouselIndex++;
-    }
-
-    const cardStep = getCardStep();
-
-    track.scrollTo({
-      left: carouselIndex * cardStep,
-      behavior: "smooth",
-    });
+    goToSlide(carouselIndex + 1);
   }
+
+  track.addEventListener(
+    "scroll",
+    () => {
+      if (scrollSyncFrame !== null) return;
+      scrollSyncFrame = requestAnimationFrame(() => {
+        scrollSyncFrame = null;
+        updateCarouselIndicator(getNearestSlideIndex());
+      });
+    },
+    { passive: true },
+  );
+
+  track.addEventListener("scrollend", () => {
+    updateCarouselIndicator(getNearestSlideIndex());
+  });
 
   track.addEventListener("mouseenter", () => {
     isHovered = true;
@@ -876,37 +898,36 @@ document.addEventListener("DOMContentLoaded", () => {
     checkAndStartAutoPlay();
   });
 
-  track.addEventListener("pointerdown", (e) => {
-    isDown = true;
-    clearHoverResumeTimer();
-    checkAndStartAutoPlay();
+  track.addEventListener("pointerdown", (event) => {
+    if (!event.isPrimary || event.pointerType !== "mouse") return;
+    isDragging = true;
+    startX = event.clientX;
+    startScrollLeft = track.scrollLeft;
     track.classList.add("is-dragging");
-    startX = e.pageX - track.offsetLeft;
-    scrollLeft = track.scrollLeft;
-    track.setPointerCapture(e.pointerId);
+    clearHoverResumeTimer();
+    stopAutoPlay();
+    track.setPointerCapture(event.pointerId);
   });
 
-  track.addEventListener("pointerup", (e) => {
-    isDown = false;
+  track.addEventListener("pointermove", (event) => {
+    if (!isDragging) return;
+    event.preventDefault();
+    track.scrollLeft = startScrollLeft - (event.clientX - startX);
+  });
+
+  function stopDragging(event) {
+    if (!isDragging) return;
+    isDragging = false;
     track.classList.remove("is-dragging");
-    track.releasePointerCapture(e.pointerId);
+    updateCarouselIndicator(getNearestSlideIndex());
+    if (track.hasPointerCapture(event.pointerId)) {
+      track.releasePointerCapture(event.pointerId);
+    }
     checkAndStartAutoPlay();
-  });
+  }
 
-  track.addEventListener("pointercancel", (e) => {
-    isDown = false;
-    track.classList.remove("is-dragging");
-    track.releasePointerCapture(e.pointerId);
-    checkAndStartAutoPlay();
-  });
-
-  track.addEventListener("pointermove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1.2;
-    track.scrollLeft = scrollLeft - walk;
-  });
+  track.addEventListener("pointerup", stopDragging);
+  track.addEventListener("pointercancel", stopDragging);
 });
 
 // ==========================================
@@ -1675,6 +1696,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editSubtitulo").value = p.subtitulo || "";
       document.getElementById("editEsgotado").checked = Boolean(p.esgotado);
       document.getElementById("editImagem").value = p.imagemFrente || "";
+      document.getElementById("editImagemVerso").value = p.imagemVerso || "";
 
       const ac = p.acordeoes || {};
       document.getElementById("editSobre").value = ac.sobre || "";
@@ -1733,6 +1755,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editSubtitulo").value = "[1 un. / 85g].";
       document.getElementById("editEsgotado").checked = false;
       document.getElementById("editImagem").value = "produtos/";
+      document.getElementById("editImagemVerso").value = "";
       
       document.getElementById("editSobre").value = "Descrição...";
       document.getElementById("editBeneficios").value = "- Produção artesanal";
@@ -1891,6 +1914,7 @@ document.addEventListener("DOMContentLoaded", () => {
         subtitulo: document.getElementById("editSubtitulo").value,
         esgotado: document.getElementById("editEsgotado").checked,
         imagemFrente,
+        imagemVerso: document.getElementById("editImagemVerso").value.trim(),
         tags: produtoAtual.tags || {
           linha: "linhas-classico",
           funcao: obterCategoriaSelecionada(),
@@ -2425,15 +2449,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const cliente = pedido.cliente || {};
     const dadosCliente = [
       ["Nome", cliente.nome || "Venda no caixa"],
-      ["Telefone", cliente.telefone || "—"],
       ["CPF", cliente.cpf || "—"],
-      ["Endereço", [cliente.endereco, cliente.numero, cliente.complemento].filter(Boolean).join(", ") || "—"],
+      ["Telefone", cliente.telefone || "—"],
+      ["Endereço", cliente.endereco || "—"],
+      ["Número", cliente.numero || "—"],
+      ["Complemento", cliente.complemento || "—"],
       ["CEP", cliente.cep || "—"],
       ["Cliente VIP", pedido.clienteVip ? "Sim" : "Não"],
       ["Data", pedido.dataCriacao ? new Date(pedido.dataCriacao).toLocaleString("pt-BR") : "—"],
       ["Pagamento", pedido.formaPagamento || "Aguardando"],
     ];
-    const secaoCliente = criarAcordeaoPedido("Dados do cliente", true);
+    const secaoCliente = criarAcordeaoPedido("Dados do cliente");
+    const acordeaoCliente = secaoCliente.closest("details");
     const tabelaCliente = document.createElement("dl");
     tabelaCliente.className = "admin-order-customer";
     dadosCliente.forEach(([rotulo, valor]) => {
@@ -2446,7 +2473,8 @@ document.addEventListener("DOMContentLoaded", () => {
     secaoCliente.appendChild(tabelaCliente);
 
     const itensPedido = Array.isArray(pedido.itens) ? pedido.itens : [];
-    const secaoItens = criarAcordeaoPedido(`Produtos · ${itensPedido.length}`);
+    const secaoItens = criarAcordeaoPedido(`Produtos · ${itensPedido.length}`, true);
+    const acordeaoItens = secaoItens.closest("details");
     const produtos = document.createElement("div");
     produtos.className = "admin-order-products";
     itensPedido.forEach((item) => {
@@ -2515,6 +2543,7 @@ document.addEventListener("DOMContentLoaded", () => {
     secaoItens.appendChild(total);
 
     const secaoStatus = criarAcordeaoPedido("Entrega e pagamento");
+    const acordeaoStatus = secaoStatus.closest("details");
     const camposPedido = document.createElement("div");
     camposPedido.className = "admin-order-fields";
     [
@@ -2571,6 +2600,7 @@ document.addEventListener("DOMContentLoaded", () => {
     labelStatus.appendChild(status);
     camposPedido.appendChild(labelStatus);
     secaoStatus.appendChild(camposPedido);
+    detalhesPedido.append(acordeaoItens, acordeaoStatus, acordeaoCliente);
   }
 
   function atualizarPedido(id, chave, valor) {
@@ -2809,9 +2839,11 @@ document.addEventListener("DOMContentLoaded", () => {
     dados.className = "admin-client-data";
     [
       ["Nome", cliente.nome || "—"],
-      ["Telefone", cliente.telefone || "—"],
       ["CPF", cliente.cpf || "—"],
-      ["Endereço", [cliente.endereco, cliente.numero, cliente.complemento].filter(Boolean).join(", ") || "—"],
+      ["Telefone", cliente.telefone || "—"],
+      ["Endereço", cliente.endereco || "—"],
+      ["Número", cliente.numero || "—"],
+      ["Complemento", cliente.complemento || "—"],
       ["CEP", cliente.cep || "—"],
       ["Cliente VIP", cliente.clienteVip === true || pedidosCliente.some((pedido) => pedido.clienteVip === true) ? "Sim" : "Não"],
       ["Pedidos", String(pedidosCliente.length)],
@@ -2967,8 +2999,8 @@ document.addEventListener("DOMContentLoaded", () => {
     camposEdicaoCliente.className = "admin-client-edit-grid";
     [
       ["nome", "Nome", true],
-      ["telefone", "Telefone", false],
       ["cpf", "CPF", false],
+      ["telefone", "Telefone", false],
       ["endereco", "Endereço", false],
       ["numero", "Número", false],
       ["complemento", "Complemento", false],
@@ -3274,7 +3306,12 @@ document.addEventListener("DOMContentLoaded", () => {
       sugestoesCliente.slice().reverse().forEach((sugestao) => {
         const linha = document.createElement("li");
         const texto = document.createElement("p");
-        texto.textContent = sugestao.texto;
+        if (sugestao.tipo) {
+          const tipo = document.createElement("strong");
+          tipo.textContent = `${sugestao.tipo === "reclamacao" ? "Reclamação" : "Sugestão"}: `;
+          texto.appendChild(tipo);
+        }
+        texto.appendChild(document.createTextNode(sugestao.texto || ""));
         const data = document.createElement("time");
         data.dateTime = sugestao.dataCriacao || "";
         data.textContent = sugestao.dataCriacao
@@ -3994,6 +4031,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   window.addEventListener("admin:refresh-products", atualizarAbasAdministrativas);
+  window.addEventListener("storage", (event) => {
+    if (event.key === "clientes_admin" || event.key === "pedidos_admin") {
+      atualizarAbasAdministrativas();
+    }
+  });
   document.getElementById("carregarDemonstracao").addEventListener("click", carregarDadosDemonstracao);
   document.getElementById("removerDemonstracao").addEventListener("click", removerDadosDemonstracao);
   document.querySelectorAll("#relatorios, #clientes, #pedidos").forEach((aba) => {

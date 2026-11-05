@@ -46,20 +46,85 @@
       const painelPerfil = document.getElementById("customerProfile");
 
       const telefoneNormalizado = (valor) => String(valor || "").replace(/\D/g, "");
+      const chaveCliente = (cliente) => {
+        const telefone = telefoneNormalizado(cliente.telefone);
+        return telefone
+          ? `telefone:${telefone}`
+          : `nome:${String(cliente.nome || "").trim().toLocaleLowerCase("pt-BR")}`;
+      };
       const moeda = (valor) => Number(valor || 0).toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
       });
+      const limparNomeProduto = (nome) => String(nome || "")
+        .replace(/<br\s*[\/]?>/gi, " ")
+        .replace(/<\/?[^>]+(>|$)/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      const encontrarProdutoDoPedido = (item) => {
+        if (typeof BANCO_PRODUTOS === "undefined") return undefined;
+        return BANCO_PRODUTOS.find((produto) => produto.id === item.id) ||
+          BANCO_PRODUTOS.find((produto) =>
+            limparNomeProduto(produto.nome).toLocaleLowerCase("pt-BR") ===
+            limparNomeProduto(item.nome).toLocaleLowerCase("pt-BR"),
+          );
+      };
 
-      const criarCampo = (rotulo, valor) => {
-        const linha = document.createElement("div");
-        linha.className = "customer-profile-row";
-        const titulo = document.createElement("strong");
-        titulo.textContent = `${rotulo}:`;
-        const conteudo = document.createElement("span");
-        conteudo.textContent = valor || "—";
-        linha.append(titulo, conteudo);
-        return linha;
+      const lerClientesAdmin = () => {
+        const clientes = JSON.parse(localStorage.getItem("clientes_admin") || "[]");
+        if (!Array.isArray(clientes)) {
+          throw new Error("Os clientes salvos neste navegador estão em um formato inválido.");
+        }
+        return clientes;
+      };
+
+      const salvarClientesAdmin = (clientes) => {
+        localStorage.setItem("clientes_admin", JSON.stringify(clientes));
+      };
+
+      const salvarSugestaoDoCliente = (cliente, sugestao) => {
+        const clientes = lerClientesAdmin();
+        const chaves = new Set([
+          chaveCliente(cliente),
+          ...(Array.isArray(cliente.chavesVinculadas) ? cliente.chavesVinculadas : []),
+        ]);
+        const indice = clientes.findIndex((registro) =>
+          chaves.has(chaveCliente(registro)) ||
+          (Array.isArray(registro.chavesVinculadas) &&
+            registro.chavesVinculadas.some((chave) => chaves.has(chave))),
+        );
+        const registro = indice >= 0
+          ? { ...clientes[indice] }
+          : { ...cliente };
+        registro.chavesVinculadas = [...new Set([
+          ...(Array.isArray(registro.chavesVinculadas) ? registro.chavesVinculadas : []),
+          ...chaves,
+        ])];
+        registro.sugestoesCliente = [
+          ...(Array.isArray(registro.sugestoesCliente) ? registro.sugestoesCliente : []),
+          sugestao,
+        ];
+        if (indice < 0) clientes.push(registro);
+        else clientes[indice] = registro;
+        salvarClientesAdmin(clientes);
+      };
+
+      const criarCampoEditavel = (rotulo, nome, valor, obrigatorio = false) => {
+        const campo = document.createElement("label");
+        campo.className = "customer-profile-field";
+        campo.textContent = rotulo;
+        const entrada = document.createElement("input");
+        entrada.name = nome;
+        entrada.value = valor || "";
+        entrada.required = obrigatorio;
+        entrada.autocomplete = nome === "telefone" ? "tel" : "off";
+        if (nome === "telefone") entrada.type = "tel";
+        if (nome === "cep") {
+          entrada.inputMode = "numeric";
+          entrada.autocomplete = "postal-code";
+        }
+        campo.appendChild(entrada);
+        return campo;
       };
 
       const renderizarPerfil = () => {
@@ -75,15 +140,155 @@
           painelPerfil.appendChild(vazio);
           return;
         }
+
+        const formularioDados = document.createElement("form");
+        formularioDados.className = "customer-profile-form";
+        formularioDados.dataset.editing = "false";
         [
-          ["Nome", cliente.nome],
-          ["CPF", cliente.cpf],
-          ["Telefone", cliente.telefone],
-          ["Endereço", cliente.endereco],
-          ["Número", cliente.numero],
-          ["CEP", cliente.cep],
-          ["Complemento", cliente.complemento],
-        ].forEach(([rotulo, valor]) => painelPerfil.appendChild(criarCampo(rotulo, valor)));
+          ["Nome", "nome", true],
+          ["CPF", "cpf", true],
+          ["Telefone", "telefone", true],
+          ["Endereço", "endereco", true],
+          ["Número", "numero", true],
+          ["CEP", "cep", true],
+          ["Complemento", "complemento", false],
+        ].forEach(([rotulo, nome, obrigatorio]) => {
+          formularioDados.appendChild(
+            criarCampoEditavel(rotulo, nome, cliente[nome], obrigatorio),
+          );
+        });
+        const acoesDados = document.createElement("div");
+        acoesDados.className = "customer-profile-actions";
+        const botaoEditar = document.createElement("button");
+        botaoEditar.type = "button";
+        botaoEditar.className = "btn-secundario customer-action-button";
+        botaoEditar.textContent = "Editar";
+        const botaoSalvar = document.createElement("button");
+        botaoSalvar.type = "submit";
+        botaoSalvar.className = "btn-salvar-admin customer-action-button";
+        botaoSalvar.textContent = "Salvar";
+        botaoSalvar.hidden = true;
+        const statusDados = document.createElement("p");
+        statusDados.className = "customer-form-status";
+        statusDados.setAttribute("role", "status");
+        statusDados.setAttribute("aria-live", "polite");
+        botaoEditar.addEventListener("click", () => {
+          formularioDados.dataset.editing = "true";
+          formularioDados.querySelectorAll("input").forEach((entrada) => {
+            entrada.disabled = false;
+          });
+          botaoEditar.hidden = true;
+          botaoSalvar.hidden = false;
+          statusDados.textContent = "";
+          formularioDados.querySelector("input").focus();
+        });
+        formularioDados.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const atualizados = Object.fromEntries(new FormData(formularioDados).entries());
+          Object.keys(atualizados).forEach((chave) => {
+            atualizados[chave] = String(atualizados[chave]).trim();
+          });
+          const clienteAtualizado = { ...cliente, ...atualizados };
+          const chaves = new Set([
+            ...(Array.isArray(cliente.chavesVinculadas) ? cliente.chavesVinculadas : []),
+            chaveCliente(cliente),
+            chaveCliente(clienteAtualizado),
+          ]);
+          clienteAtualizado.chavesVinculadas = [...chaves];
+          const clientes = lerClientesAdmin();
+          const indice = clientes.findIndex((registro) =>
+            chaves.has(chaveCliente(registro)) ||
+            (Array.isArray(registro.chavesVinculadas) &&
+              registro.chavesVinculadas.some((chave) => chaves.has(chave))),
+          );
+          const indiceDuplicado = clientes.findIndex((registro, index) =>
+            index !== indice &&
+            telefoneNormalizado(registro.telefone) === telefoneNormalizado(clienteAtualizado.telefone),
+          );
+          if (indiceDuplicado >= 0) {
+            statusDados.textContent = "Já existe um cliente com este telefone. Confira o número e tente novamente.";
+            formularioDados.elements.namedItem("telefone").focus();
+            return;
+          }
+          if (indice >= 0) {
+            const registroAtualizado = { ...clientes[indice], ...clienteAtualizado };
+            registroAtualizado.chavesVinculadas = [...new Set([
+              ...(Array.isArray(clientes[indice].chavesVinculadas)
+                ? clientes[indice].chavesVinculadas
+                : []),
+              ...chaves,
+            ])];
+            clientes[indice] = registroAtualizado;
+          } else {
+            clientes.push(clienteAtualizado);
+          }
+          localStorage.setItem("cliente_checkout", JSON.stringify(clienteAtualizado));
+          salvarClientesAdmin(clientes);
+          renderizarPerfil();
+          const confirmacao = painelPerfil.querySelector(".customer-form-status");
+          confirmacao.textContent = "Dados salvos neste navegador.";
+        });
+        acoesDados.append(botaoEditar, botaoSalvar);
+        formularioDados.append(acoesDados, statusDados);
+        formularioDados.querySelectorAll("input").forEach((entrada) => {
+          entrada.disabled = true;
+        });
+        painelPerfil.appendChild(formularioDados);
+
+        const secaoSugestoes = document.createElement("section");
+        secaoSugestoes.className = "customer-suggestions";
+        const tituloSugestoes = document.createElement("h2");
+        tituloSugestoes.textContent = "SUGESTÕES E RECLAMAÇÕES";
+        const formularioSugestao = document.createElement("form");
+        formularioSugestao.className = "customer-suggestion-form";
+        const rotuloTipo = document.createElement("label");
+        rotuloTipo.textContent = "Tipo";
+        const tipo = document.createElement("select");
+        tipo.name = "tipo";
+        [
+          ["sugestao", "Sugestão"],
+          ["reclamacao", "Reclamação"],
+        ].forEach(([valor, texto]) => {
+          const opcao = document.createElement("option");
+          opcao.value = valor;
+          opcao.textContent = texto;
+          tipo.appendChild(opcao);
+        });
+        rotuloTipo.appendChild(tipo);
+        const rotuloTexto = document.createElement("label");
+        rotuloTexto.textContent = "Conte para nós";
+        const texto = document.createElement("textarea");
+        texto.name = "texto";
+        texto.rows = 4;
+        texto.maxLength = 2000;
+        texto.required = true;
+        texto.placeholder = "Escreva sua sugestão ou reclamação...";
+        rotuloTexto.appendChild(texto);
+        const enviar = document.createElement("button");
+        enviar.type = "submit";
+        enviar.className = "btn-salvar-admin customer-action-button";
+        enviar.textContent = "Enviar";
+        const statusSugestao = document.createElement("p");
+        statusSugestao.className = "customer-form-status";
+        statusSugestao.setAttribute("role", "status");
+        statusSugestao.setAttribute("aria-live", "polite");
+        formularioSugestao.append(rotuloTipo, rotuloTexto, enviar, statusSugestao);
+        formularioSugestao.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const conteudo = texto.value.trim();
+          if (!conteudo) return;
+          salvarSugestaoDoCliente(cliente, {
+            id: `cliente-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            tipo: tipo.value,
+            texto: conteudo,
+            origem: "cliente",
+            dataCriacao: new Date().toISOString(),
+          });
+          formularioSugestao.reset();
+          statusSugestao.textContent = "Enviado. Obrigado pelo seu comentário!";
+        });
+        secaoSugestoes.append(tituloSugestoes, formularioSugestao);
+        painelPerfil.appendChild(secaoSugestoes);
       };
 
       const renderizarPedidos = () => {
@@ -92,11 +297,18 @@
         if (!Array.isArray(pedidos)) {
           throw new Error("Os pedidos salvos neste navegador estão em um formato inválido.");
         }
-        const telefone = telefoneNormalizado(cliente?.telefone);
-        const pedidosCliente = telefone
+        const telefonesCliente = new Set([
+          telefoneNormalizado(cliente?.telefone),
+          ...(Array.isArray(cliente?.chavesVinculadas)
+            ? cliente.chavesVinculadas
+                .filter((chave) => chave.startsWith("telefone:"))
+                .map((chave) => chave.slice("telefone:".length))
+            : []),
+        ].filter(Boolean));
+        const pedidosCliente = telefonesCliente.size
           ? pedidos.filter((pedido) =>
               pedido.origem === "Site" &&
-              telefoneNormalizado(pedido.cliente?.telefone) === telefone,
+              telefonesCliente.has(telefoneNormalizado(pedido.cliente?.telefone)),
             ).reverse()
           : [];
         listaPedidos.replaceChildren();
@@ -117,10 +329,23 @@
           titulo.textContent = `Pedido ${pedido.id || "—"} · ${data}`;
           cartao.appendChild(titulo);
           (Array.isArray(pedido.itens) ? pedido.itens : []).forEach((item) => {
-            const produto = document.createElement("p");
-            produto.className = "customer-order-product";
-            produto.textContent = `${item.quantidade || 1} × ${String(item.nome || "Produto").replace(/<br\s*[\/]?>/gi, " ")} · ${moeda(item.subtotal)}`;
-            cartao.appendChild(produto);
+            const produto = encontrarProdutoDoPedido(item);
+            const linhaProduto = document.createElement("div");
+            linhaProduto.className = "customer-order-product";
+            const caminhoImagem = produto?.imagemFrente || item.imagem;
+            if (caminhoImagem) {
+              const imagem = document.createElement("img");
+              imagem.src = typeof resolveAssetUrl === "function"
+                ? resolveAssetUrl(caminhoImagem)
+                : caminhoImagem;
+              imagem.alt = limparNomeProduto(produto?.nome || item.nome || "Produto");
+              imagem.loading = "eager";
+              linhaProduto.appendChild(imagem);
+            }
+            const descricaoProduto = document.createElement("span");
+            descricaoProduto.textContent = `${item.quantidade || 1} × ${limparNomeProduto(produto?.nome || item.nome || "Produto")} · ${moeda(item.subtotal)}`;
+            linhaProduto.appendChild(descricaoProduto);
+            cartao.appendChild(linhaProduto);
           });
           const status = document.createElement("dl");
           status.className = "customer-order-status";
@@ -139,6 +364,50 @@
             status.appendChild(linha);
           });
           cartao.appendChild(status);
+          const encerrado = /conclu[ií]d|entregue|cancelad|devolu|reembols/i
+            .test(String(pedido.status || ""));
+          if (!encerrado) {
+            const cancelarPedido = () => {
+              if (!window.confirm(`Deseja cancelar a compra do pedido ${pedido.id || ""}?`)) return;
+              const pedidosAtualizados = JSON.parse(localStorage.getItem("pedidos_admin") || "[]");
+              if (!Array.isArray(pedidosAtualizados)) {
+                throw new Error("Os pedidos salvos neste navegador estão em um formato inválido.");
+              }
+              const indice = pedidosAtualizados.findIndex((registro) => registro.id === pedido.id);
+              if (indice < 0) {
+                throw new Error("Não foi possível localizar este pedido para cancelamento.");
+              }
+              if (/conclu[ií]d|entregue|cancelad|devolu|reembols/i
+                .test(String(pedidosAtualizados[indice].status || ""))) {
+                renderizarPedidos();
+                return;
+              }
+              pedidosAtualizados[indice] = {
+                ...pedidosAtualizados[indice],
+                status: "Cancelado pelo cliente",
+                dataAtualizacao: new Date().toISOString(),
+              };
+              localStorage.setItem("pedidos_admin", JSON.stringify(pedidosAtualizados));
+              renderizarPedidos();
+            };
+            const cancelar = document.createElement("button");
+            cancelar.type = "button";
+            cancelar.className = "cart-item-delete customer-order-cancel";
+            cancelar.title = "Cancelar compra";
+            cancelar.setAttribute("aria-label", `Cancelar compra ${pedido.id || ""}`.trim());
+            cancelar.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="32.8" height="32.8" viewBox="0 0 32.8 32.8" aria-hidden="true"><path d="M16.8 15l7.5-7.5l1.8 1.8l-7.5 7.5l7.5 7.5l-1.8 1.8l-7.5-7.5l-7.5 7.5l-1.8-1.8l7.5-7.5l-7.5-7.5l1.8-1.8l7.5 7.5Z" fill="#3d2d2d"/></svg>';
+            cancelar.addEventListener("click", cancelarPedido);
+            cartao.appendChild(cancelar);
+            const acoes = document.createElement("div");
+            acoes.className = "customer-order-actions";
+            const botaoCancelar = document.createElement("button");
+            botaoCancelar.type = "button";
+            botaoCancelar.className = "btn-secundario customer-order-cancel-button";
+            botaoCancelar.textContent = "Cancelar compra";
+            botaoCancelar.addEventListener("click", cancelarPedido);
+            acoes.appendChild(botaoCancelar);
+            cartao.appendChild(acoes);
+          }
           listaPedidos.appendChild(cartao);
         });
       };
@@ -164,6 +433,7 @@
       window.addEventListener("storage", (event) => {
         if (event.key === "pedidos_admin" && !paineis.pedidos.hidden) renderizarPedidos();
         if (event.key === "cliente_checkout" && !paineis.dados.hidden) renderizarPerfil();
+        if (event.key === "clientes_admin" && !paineis.dados.hidden) renderizarPerfil();
       });
       renderizarPerfil();
     });

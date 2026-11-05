@@ -771,6 +771,7 @@ BARRA DE BUSCA
 .carousel-item {
   flex: 0 0 100%;
   max-width: 480px;
+  aspect-ratio: 1;
   scroll-snap-align: center;
 }
 .carousel-item img,
@@ -779,6 +780,17 @@ BARRA DE BUSCA
   height: auto;
   display: block;
   pointer-events: none;
+}
+.product-column-gallery .carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.product-column-gallery .carousel-item img {
+  height: 100%;
+  object-fit: contain;
+  object-fit: contain;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
   .carousel-track {
@@ -844,12 +856,22 @@ BARRA DE BUSCA
   display: block;
   width: 6px;
   height: 6px;
+  padding: 0;
+  border: 0;
   background-color: #9a8e7e;
   border-radius: 50%;
+  cursor: pointer;
   transition:
     width 0.2s ease,
     height 0.2s ease,
     opacity 0.2s ease;
+}
+.carousel-progress-bar[hidden] {
+  display: none;
+}
+.carousel-progress-dot:focus-visible {
+  outline: 2px solid #3d2d2d;
+  outline-offset: 3px;
 }
 .carousel-progress-dot.ativo {
   width: 10px;
@@ -3267,18 +3289,19 @@ b {
   margin-left: auto;
 }
 .admin-pix-settings {
+  display: block;
+  margin: 20px 0;
+}
+.admin-pix-settings-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 1.2fr);
   gap: 20px;
   align-items: end;
-  margin: 20px 0;
   padding: 16px;
-  border: 1px solid #3d2d2d;
+  border-top: 1px solid #3d2d2d;
 }
-.admin-pix-settings h3 {
-  margin: 0 0 8px;
-}
-.admin-pix-settings p {
+.admin-pix-settings-content > p {
+  margin: 0;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -3503,6 +3526,9 @@ b {
 .customer-area .botao-voltar:hover {
   color: #CEC8B8;
 }
+.customer-area [hidden] {
+  display: none !important;
+}
 .customer-orders {
   display: grid;
   gap: 16px;
@@ -3510,7 +3536,11 @@ b {
 .customer-order-card,
 .customer-profile {
   padding: 16px;
-  border: 1px solid #3d2d2d;
+  border: 2px solid #3d2d2d;
+  background: #CEC8B8;
+}
+.customer-order-card {
+  position: relative;
 }
 .customer-order-card h2,
 .customer-profile h2 {
@@ -3518,10 +3548,44 @@ b {
   font-size: 15px;
   text-align: left;
 }
+.customer-order-card h2 {
+  padding-right: 42px;
+}
+.customer-order-cancel {
+  top: 12px;
+  right: 12px;
+}
 .customer-order-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 8px 0;
   border-bottom: 1px solid rgba(61, 45, 45, 0.4);
   font-size: 13px;
+}
+.customer-order-product img {
+  width: 56px;
+  height: 64px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  background: #CEC8B8;
+}
+.customer-order-product span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.customer-order-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.customer-order-cancel-button {
+  min-height: 36px;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
 }
 .customer-order-status {
   display: grid;
@@ -3552,6 +3616,70 @@ b {
 .customer-profile h2 {
   margin-bottom: 4px;
 }
+.customer-profile-form,
+.customer-suggestion-form {
+  display: grid;
+  gap: 12px;
+}
+.customer-profile-field,
+.customer-suggestion-form label {
+  display: grid;
+  gap: 6px;
+  color: #3d2d2d;
+  font-size: 13px;
+  font-weight: bold;
+}
+.customer-profile-field input,
+.customer-suggestion-form select,
+.customer-suggestion-form textarea {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 10px;
+  border: 1px solid #3d2d2d;
+  border-radius: 0;
+  background: #CEC8B8;
+  color: #3d2d2d;
+  font: inherit;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+.customer-profile-field input:disabled {
+  border-color: transparent;
+  background: transparent;
+  padding-inline: 0;
+}
+.customer-suggestion-form textarea {
+  resize: vertical;
+}
+.customer-profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.customer-action-button {
+  min-width: 100px;
+  min-height: 40px;
+  padding: 9px 14px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.customer-form-status {
+  min-height: 1em;
+  margin: 0;
+  font-size: 13px;
+}
+.customer-suggestions {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #3d2d2d;
+}
+.customer-suggestions h2 {
+  margin: 0;
+}
 .customer-empty-state {
   padding: 24px 12px;
   text-align: center;
@@ -3575,7 +3703,7 @@ b {
   .admin-site-header .botao-icone {
     width: 42px;
   }
-  .admin-pix-settings {
+  .admin-pix-settings-content {
     grid-template-columns: 1fr;
   }
   .checkout-page,
