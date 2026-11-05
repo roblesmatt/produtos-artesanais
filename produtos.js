@@ -381,7 +381,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-docura-citrica.webp",
-    imagemVerso: "",
+    imagemVerso: "produtos/sabonete-corporal-docura-citrica1.webp",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
@@ -721,7 +721,7 @@ const BANCO_PRODUTOS_ORIGINAIS = [
     subtitulo: "[1 un. / 85g].",
     esgotado: false,
     imagemFrente: "produtos/sabonete-corporal-campo-sereno.webp",
-    imagemVerso: "produtos/sabonete-corporal-campo-sereno.webp",
+    imagemVerso: "",
     tags: {
       linha: "linhas-classico",
       funcao: "funcao-sabonete-corporal",
