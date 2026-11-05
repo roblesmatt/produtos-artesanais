@@ -850,7 +850,6 @@ BARRA DE BUSCA
   justify-content: center;
   gap: 7px;
   margin: 15px auto 0 auto;
-  margin-top: -30px;
 }
 .carousel-progress-dot {
   display: block;
