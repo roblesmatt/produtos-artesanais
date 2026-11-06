@@ -1157,13 +1157,14 @@ details[open] .accordion-content {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     align-items: start;
-    column-gap: clamp(24px, 4vw, 50px);
+    column-gap: clamp(24px, 10vw, 100px);
   }
 
   .product-column-gallery {
-    width: 100%;
+    width: 95%;
     min-width: 0;
     margin-bottom: 0;
+    margin-left: 40px;
     position: sticky;
     top: calc(var(--header-height, 110px) + 20px);
     align-self: start;
