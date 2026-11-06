@@ -1122,71 +1122,11 @@ details[open] .accordion-content {
   transform: scale(0.95);
 }
 
-/* =================================================
-   LAYOUT DE GRID (RESPONSIVO)
+/* =================================================_
+   LAYOUT DE GRID (2 COLUNAS)
    ================================================= */
 
-/* 1. Mobile (Estado padrão): empilhado e fluido */
-.product-layout-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.product-column-gallery {
-  position: relative; /* No mobile não fica sticky */
-  top: auto;
-  z-index: 1;
-  width: 100%;
-  height: auto; /* Altura automática no mobile para evitar cortes */
-  margin: 0;
-}
-
-.product-column-accordion {
-  position: relative;
-  width: 100%;
-  background-color: #CEC8B8;
-  z-index: 2;
-}
-
-.product-column-accordion0 {
-  width: 100%;
-}
-
-.product-column-gallery .carousel-container {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  left: auto;
-  right: auto;
-  margin: 0;
-  overflow: hidden;
-  transform: none;
-}
-
-.product-column-gallery .carousel-track {
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-}
-
-.product-column-gallery .carousel-item {
-  flex: 0 0 100%;
-  width: 100%;
-  max-width: none;
-  height: auto;
-  aspect-ratio: 1 / 1; /* Garante proporção correta das fotos no mobile */
-}
-
-
-/* =================================================
-   LAYOUT PADRÃO (Mobile e Tablets): Altura natural/fluida
-   ================================================= */
+/* 1. Mobile (Estado padrão): empilhado em coluna única */
 .product-layout-grid {
   display: flex;
   flex-direction: column;
@@ -1196,61 +1136,49 @@ details[open] .accordion-content {
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 .product-column-gallery {
-  position: relative; /* Sem sticky no mobile e tablet */
-  top: auto;
-  z-index: 1;
-  width: 110%;
-  height: auto; /* Altura automática no mobile e tablet */
-  margin-top: 30px;
-  margin-left: -5%;
+  width: 100%;
 }
-
 .product-column-accordion {
-  position: relative;
   width: 100%;
   background-color: #CEC8B8;
-  z-index: 2;
+  z-index: 10;
 }
-
 .product-column-accordion0 {
   width: 100%;
 }
-
-
+@media (min-width: 480px) {
+  .product-column-gallery {
+    margin-bottom: 50px;
+  }
+}
 @media (min-width: 1024px) {
-  :root {
-    --header-height: 70px;
+  .product-layout-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: start;
+    column-gap: clamp(24px, 10vw, 100px);
   }
 
   .product-column-gallery {
+    width: 95%;
+    min-width: 0;
+    margin-bottom: 0;
+    margin-left: 40px;
     position: sticky;
-    top: var(--header-height, 70px);
-    z-index: 1;
-    /* Altura de tela cheia aplicada exclusivamente no desktop */
-    height: calc(100vh - var(--header-height, 70px));
-    height: calc(100svh - var(--header-height, 70px));
-    height: calc(100dvh - var(--header-height, 70px));
-    align-self: stretch;
-    margin-top: -20px;
-  }
-
-  .product-column-gallery .carousel-container,
-  .product-column-gallery .carousel-track,
-  .product-column-gallery .carousel-item {
-    height: 100%;
-  }
-
-  .product-column-gallery .carousel-item {
-    aspect-ratio: auto;
+    top: calc(var(--header-height, 110px) + 20px);
+    align-self: start;
   }
 
   .product-column-accordion {
-    position: relative;
-    z-index: 2; /* Sobe por cima da galeria sticky no desktop */
+    width: 100%;
     min-width: 0;
     padding: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --header-height: 70px;
   }
 }
 
@@ -1623,13 +1551,6 @@ CARD DE CESTA
   margin: 0;
   padding-right: 56px;
   line-height: 1.2;
-}
-.cart-item-card[data-product-url] {
-  cursor: pointer;
-}
-.cart-item-card[data-product-url]:focus-visible {
-  outline: 3px solid #3d2d2d;
-  outline-offset: 3px;
 }
 /* Controles de quantidade e lixeira */
 .cart-item-controls {
