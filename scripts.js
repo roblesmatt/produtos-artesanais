@@ -1127,6 +1127,27 @@ document.addEventListener("DOMContentLoaded", () => {
 <svg xmlns="http://www.w3.org/2000/svg" width="32.8" height="32.8" viewBox="0 0 32.8 32.8"><path d="M16.8 15l7.5-7.5l1.8 1.8l-7.5 7.5l7.5 7.5l-1.8 1.8l-7.5-7.5l-7.5 7.5l-1.8-1.8l7.5-7.5l-7.5-7.5l1.8-1.8l7.5 7.5Z" fill="#3d2d2d"/></svg>            </div>
         </div>
       `;
+      if (produto) {
+        divItem.dataset.productUrl = resolveUrlParaPagina(
+          gerarLinkPaginaProduto(produto),
+        );
+        divItem.setAttribute("role", "link");
+        divItem.tabIndex = 0;
+        divItem.setAttribute("aria-label", `Ver ${nomeProduto}`);
+        divItem.addEventListener("click", (event) => {
+          if (event.target.closest("button, a, input, select, textarea")) return;
+          window.location.href = divItem.dataset.productUrl;
+        });
+        divItem.addEventListener("keydown", (event) => {
+          if (
+            event.target === divItem &&
+            (event.key === "Enter" || event.key === " ")
+          ) {
+            event.preventDefault();
+            window.location.href = divItem.dataset.productUrl;
+          }
+        });
+      }
       cartItemsList.appendChild(divItem);
     });
 
